@@ -1,0 +1,3486 @@
+<!-- -----header--------- -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Contact us | Kirti Realty</title>
+    <link rel="shortcut icon" href="Images/Favicon.jpg" type="image/x-icon" />
+    <!-- Google Fonts for Elegance & Luxury Typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 (Rich Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fdfcf8;
+        color: #1e2a2f;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      /* Luxury Color Palette - Gold & Charcoal */
+      :root {
+        --gold: #dca341;
+        --gold-dark: #c08517;
+        --gold-light: #e8dcc4;
+        --gold-glow: rgba(197, 162, 103, 0.25);
+        --dark-charcoal: #1e2a2f;
+        --cream: #fdfcf8;
+        --shadow-elegant: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
+        --shadow-gold: 0 10px 25px -8px rgba(197, 162, 103, 0.3);
+        --transition-smooth: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        --transition-luxury: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      /* Header Styles */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgb(12 12 12 / 54%);
+        color: white;
+        backdrop-filter: blur(2px);
+        z-index: 1000;
+        transition: var(--transition-smooth);
+        border-bottom: 1px solid rgba(197, 162, 103, 0.2);
+      }
+
+      /* Compact on scroll */
+      .header.compact {
+        padding-block: 0px;
+        background: #00000092;
+        color: white;
+        backdrop-filter: blur(2px);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+        border-bottom-color: var(--gold-light);
+      }
+
+      .header.compact .header-logo-img {
+        max-height: 44px;
+        transition: var(--transition-luxury);
+      }
+
+      .header.compact .header-logo-text {
+        font-size: 1.3rem;
+      }
+      .header.compact .nav-links a {
+        font-size: 14px;
+      }
+
+      .nav-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: padding 0.3s ease;
+      }
+
+      .header.compact .nav-container {
+        padding-block: 0.7rem;
+      }
+
+      /* Logo Section with hover animation */
+      .header-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        z-index: 1100;
+        transition: transform 0.25s ease;
+      }
+
+      .header-logo:hover {
+        transform: scale(1.02);
+      }
+
+      .header-logo-img {
+        width: auto;
+        max-height: 48px;
+        /* border-radius: 14px; */
+        object-fit: cover;
+        transition: var(--transition-luxury);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .header-logo:hover .logo-img {
+        box-shadow: 0 6px 18px rgba(197, 162, 103, 0.2);
+      }
+
+      .header-logo-text {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.2px;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f5e7d3 40%,
+          #ff9a00 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        transition: var(--transition-luxury);
+      }
+
+      .header-logo:hover .logo-text {
+        background: linear-gradient(135deg, #c5a267 30%, #8b6b3d 80%);
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+
+      /* Desktop Navigation */
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links li {
+        position: relative;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+        color: #f0f0f0;
+        transition: var(--transition-luxury);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 0;
+        position: relative;
+      }
+
+      /* Elegant underline animation */
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--gold),
+          #b48b42,
+          var(--gold-light)
+        );
+        transition: width 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        border-radius: 2px;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold);
+        transform: translateY(-2px);
+        text-shadow: 0 2px 4px rgba(197, 162, 103, 0.2);
+      }
+
+      /* Premium button animation */
+      .contact-btn {
+        background: transparent;
+        border: 1px solid var(--gold);
+        padding: 7px 22px;
+        border-radius: 40px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .contact-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(197, 162, 103, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+        z-index: -1;
+      }
+
+      .contact-btn:hover::before {
+        left: 100%;
+      }
+
+      .contact-btn a {
+        text-decoration: none;
+        color: rgb(232, 232, 232);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition-luxury);
+      }
+
+      .contact-btn:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        transform: scale(0.96);
+        box-shadow: var(--shadow-gold);
+      }
+
+      .contact-btn:hover a {
+        color: white;
+      }
+
+      /* Mega Dropdown Menu (Big Dropdown) with enhanced hover animations */
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 42px;
+        left: -25rem;
+        width: 780px;
+        background: #faf7e7;
+        border-radius: 28px;
+        box-shadow: var(--shadow-elegant);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+        z-index: 200;
+        border: 1px solid rgba(197, 162, 103, 0.25);
+        padding: 1.8rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 1.5rem;
+        backdrop-filter: blur(0px);
+        transform-origin: top center;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(10px) scale(1);
+        box-shadow:
+          0 30px 50px -20px rgba(0, 0, 0, 0.2),
+          0 0 0 1px rgba(197, 162, 103, 0.3);
+      }
+
+      /* Dropdown Intro Animation */
+      .dropdown-intro {
+        grid-column: span 2;
+        margin-bottom: 6px;
+        border-bottom: 1px solid rgba(197, 162, 103, 0.3);
+        padding-bottom: 12px;
+        transition: all 0.3s;
+      }
+
+      .dropdown:hover .dropdown-intro h3 {
+        letter-spacing: 0.5px;
+      }
+
+      .dropdown-intro h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--dark-charcoal);
+        transition: letter-spacing 0.3s ease;
+      }
+
+      .dropdown-intro p {
+        font-size: 0.75rem;
+        color: #6c7a6e;
+        margin-top: 4px;
+      }
+
+      /* Service Items with luxury hover animations */
+      .service-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 10px 14px;
+        border-radius: 20px;
+        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+        cursor: pointer;
+        background: transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(
+          95deg,
+          rgba(197, 162, 103, 0.08),
+          rgba(197, 162, 103, 0.02)
+        );
+        transition: width 0.4s ease;
+        z-index: 0;
+        border-radius: 20px;
+      }
+
+      .service-item:hover::before {
+        width: 100%;
+      }
+
+      .service-item i {
+        font-size: 1.6rem;
+        color: var(--gold);
+        min-width: 32px;
+        margin-top: 3px;
+        transition:
+          transform 0.25s ease,
+          color 0.2s;
+        z-index: 1;
+      }
+
+      .service-item:hover i {
+        transform: scale(1.1) rotate(2deg);
+        color: var(--gold-dark);
+      }
+
+      .service-text h4 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #1e2a2f;
+        transition: color 0.2s;
+        z-index: 1;
+        position: relative;
+      }
+
+      .service-item:hover .service-text h4 {
+        color: var(--gold-dark);
+      }
+
+      .service-text p {
+        font-size: 0.7rem;
+        color: #687477;
+        line-height: 1.35;
+        transition: color 0.2s;
+      }
+
+      .service-item:hover .service-text p {
+        color: #4a5a5e;
+      }
+
+      .service-item:hover {
+        /* transform: translateX(8px) translateY(-2px); */
+        background: rgba(197, 162, 103, 0.06);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      }
+
+      /* Hamburger Icon */
+      .hamburger {
+        display: none;
+        font-size: 1.7rem;
+        cursor: pointer;
+        color: #a99604;
+        transition: all 0.25s;
+        z-index: 1100;
+      }
+
+      .hamburger:hover {
+        color: var(--gold);
+        transform: scale(1.05);
+      }
+
+      /* ========== LEFT SIDEBAR MOBILE MENU ========== */
+      .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(3px);
+        z-index: 2000;
+        visibility: hidden;
+        opacity: 0;
+        transition:
+          visibility 0.3s,
+          opacity 0.3s ease;
+      }
+
+      .mobile-menu-overlay.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .mobile-sidebar {
+        position: fixed;
+        top: 0;
+        left: -320px;
+        width: min(320px, 85%);
+        height: 100vh;
+        background: #ffffff;
+        z-index: 2100;
+        box-shadow: 8px 0 30px rgba(0, 0, 0, 0.12);
+        transition: left 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        overflow-y: auto;
+        border-right: 1px solid var(--gold-light);
+      }
+
+      .mobile-sidebar.open {
+        left: 0;
+      }
+
+      .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(197, 162, 103, 0.3);
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .mobile-menu-header .logo-mobile-text {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #1e2a2f, #a67c45);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .close-mobile {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #2c3a3f;
+        transition: transform 0.2s;
+      }
+
+      .close-mobile:hover {
+        transform: rotate(90deg);
+        color: var(--gold);
+      }
+
+      .mobile-nav-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .mobile-nav-list li a {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #1e2a2f;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 0;
+        transition: 0.2s;
+      }
+
+      .mobile-nav-list li a i {
+        width: 24px;
+        color: var(--gold);
+      }
+
+      .mobile-dropdown .mobile-dropdown-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 0.8rem;
+        margin-left: 2rem;
+        padding-left: 0.8rem;
+        border-left: 2px solid var(--gold-light);
+      }
+
+      .mobile-dropdown.active-mobile-dropdown .mobile-dropdown-menu {
+        display: flex;
+      }
+
+      .mobile-dropdown-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .mobile-service-item {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        margin-bottom: 0.6rem;
+      }
+
+      .mobile-service-item i {
+        font-size: 1.2rem;
+        color: var(--gold);
+        margin-top: 2px;
+      }
+
+      .mobile-service-text h4 {
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .mobile-service-text p {
+        font-size: 0.65rem;
+        color: #6c6f62;
+      }
+
+      .mobile-contact-btn {
+        margin-top: 1.8rem;
+        background: var(--gold);
+        text-align: center;
+        padding: 10px;
+        border-radius: 40px;
+        transition: all 0.2s;
+      }
+
+      .mobile-contact-btn:hover {
+        background: var(--gold-dark);
+        transform: scale(0.98);
+      }
+
+      .mobile-contact-btn a {
+        color: white !important;
+        justify-content: center;
+      }
+
+      /* Hero Section
+      .hero-section {
+        margin-top: 100px;
+        height: 85vh;
+        background: linear-gradient(112deg, #f1ede3 0%, #e6dfce 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0 48px 48px;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+      }
+
+      .gold-line {
+        width: 70px;
+        height: 3px;
+        background: var(--gold);
+        margin: 1rem auto;
+      }
+
+      .content-spacer {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      } */
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .dropdown-menu {
+          width: 680px;
+          left: -160px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+        }
+        .dropdown-menu {
+          display: none;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .nav-container {
+          padding: 0.8rem 1.2rem;
+        }
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        .dropdown-menu {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="mainHeader">
+      <div class="nav-container">
+        <div class="header-logo">
+          <img
+            class="header-logo-img"
+            src="Images/Kirti-Realty.png"
+            alt="Kirti Realty"
+          />
+          <!-- <span class="header-logo-text">Kirti Realty</span> -->
+        </div>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="About.html">ABOUT US</a></li>
+          <li class="dropdown">
+            <a href="#"
+              >SERVICES
+              <i class="fas fa-chevron-down" style="font-size: 10px"></i
+            ></a>
+            <div class="dropdown-menu">
+              <div class="dropdown-intro">
+                <h3>Our Services</h3>
+                <p>
+                  At Kirti Realty, we offer a wide range of real estate
+                  solutions designed to meet residential, investment, and
+                  development needs.
+                </p>
+              </div>
+              <a href="Services/Residential.html"
+                ><div class="service-item">
+                  <i class="fas fa-draw-polygon"></i>
+                  <div class="service-text">
+                    <h4>Residential Plotting</h4>
+                    <p>
+                      Well-planned plots with modern infrastructure & future
+                      growth.
+                    </p>
+                  </div>
+                </div></a
+              >
+              <a href="Services/villas.html"
+                ><div class="service-item">
+                  <i class="fas fa-home"></i>
+                  <div class="service-text">
+                    <h4>Villas/Private Home</h4>
+                    <p>
+                      Premium villas with elegant spaces & quality construction.
+                    </p>
+                  </div>
+                </div></a
+              >
+              <a href="Services/FlatsApartment.html"
+                ><div class="service-item">
+                  <i class="fas fa-building"></i>
+                  <div class="service-text">
+                    <h4>Flats & Apartments</h4>
+                    <p>
+                      Affordable & luxury flats, smart layouts & modern
+                      amenities.
+                    </p>
+                  </div>
+                </div></a
+              >
+              <a href="Services/bigLand.html"
+                ><div class="service-item">
+                  <i class="fas fa-map-marked-alt"></i>
+                  <div class="service-text">
+                    <h4>Big Land Deals</h4>
+                    <p>
+                      Land acquisition for large-scale projects & future
+                      developments.
+                    </p>
+                  </div>
+                </div></a
+              >
+              <!-- <a href="Services/Development.html"><div class="service-item">
+                <i class="fas fa-hard-hat"></i>
+                <div class="service-text">
+                  <h4>Real Estate Development</h4>
+                  <p>
+                    End-to-end project development with quality & transparency.
+                  </p>
+                </div>
+              </div></a> -->
+              <a href="Services/PropertyInvestment.html"
+                ><div class="service-item">
+                  <i class="fas fa-chart-line"></i>
+                  <div class="service-text">
+                    <h4>Property Investment</h4>
+                    <p>
+                      High-return investment opportunities & strong future
+                      returns.
+                    </p>
+                  </div>
+                </div></a
+              >
+              <!-- <a href="Services/Consultation.html"><div class="service-item">
+                <i class="fas fa-handshake"></i>
+                <div class="service-text">
+                  <h4>Property Consultation</h4>
+                  <p>
+                    Expert guidance with complete transparency for all
+                    transactions.
+                  </p>
+                </div>
+              </div></a> -->
+            </div>
+          </li>
+          <li><a href="career.html">CAREER</a></li>
+          <li class="contact-btn">
+            <a href="Contact.html"
+              ><i class="fas fa-phone-alt"></i> Get in Touch</a
+            >
+          </li>
+        </ul>
+
+        <div class="hamburger" id="hamburgerIcon">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- LEFT SLIDING MOBILE MENU -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-sidebar" id="mobileSidebar">
+      <div class="mobile-menu-header">
+        <span class="logo-mobile-text">Kirti Realty</span>
+        <i class="fas fa-times close-mobile" id="closeMobileMenu"></i>
+      </div>
+      <ul class="mobile-nav-list">
+        <li>
+          <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+        </li>
+        <li>
+          <a href="About.html"><i class="fas fa-users"></i> ABOUT US</a>
+        </li>
+        <li class="mobile-dropdown" id="mobileServicesDropdown">
+          <div class="mobile-dropdown-toggle">
+            <a href="#"><i class="fas fa-cogs"></i> SERVICES</a>
+            <i
+              class="fas fa-chevron-down"
+              id="mobileDropdownIcon"
+              style="color: var(--gold)"
+            ></i>
+          </div>
+          <div class="mobile-dropdown-menu" id="mobileDropdownMenu">
+            <div style="margin-bottom: 8px">
+              <small style="color: #a67c45"
+                >Comprehensive real estate solutions</small
+              >
+            </div>
+            <a href="Services/Residential.html">
+              <div class="mobile-service-item">
+                <i class="fas fa-draw-polygon"></i>
+                <div class="mobile-service-text">
+                  <h4>Residential Plotting</h4>
+                  <p>Prime locations, modern infra</p>
+                </div>
+              </div>
+            </a>
+            <a href="Services/villas.html">
+              <div class="mobile-service-item">
+                <i class="fas fa-home"></i>
+                <div class="mobile-service-text">
+                  <h4>Villas/Private Home</h4>
+                  <p>Premium & comfortable living</p>
+                </div>
+              </div>
+            </a>
+            <a href="Services/FlatsApartment.html">
+              <div class="mobile-service-item">
+                <i class="fas fa-building"></i>
+                <div class="mobile-service-text">
+                  <h4>Flats & Apartments</h4>
+                  <p>Smart layouts, luxury amenities</p>
+                </div>
+              </div>
+            </a>
+            <a href="Services/bigLand.html">
+              <div class="mobile-service-item">
+                <i class="fas fa-map-marked-alt"></i>
+                <div class="mobile-service-text">
+                  <h4>Big Land Deals</h4>
+                  <p>Large-scale property solutions</p>
+                </div>
+              </div>
+            </a>
+            <!-- <div class="mobile-service-item">
+              <i class="fas fa-hard-hat"></i>
+              <div class="mobile-service-text">
+                <h4>Real Estate Development</h4>
+                <p>Quality & timely delivery</p>
+              </div>
+            </div> -->
+            <a href="Services/PropertyInvestment.html">
+              <div class="mobile-service-item">
+                <i class="fas fa-chart-line"></i>
+                <div class="mobile-service-text">
+                  <h4>Property Investment</h4>
+                  <p>Strong future returns</p>
+                </div>
+              </div>
+            </a>
+            <!-- <div class="mobile-service-item">
+              <i class="fas fa-handshake"></i>
+              <div class="mobile-service-text">
+                <h4>Property Consultation</h4>
+                <p>Complete transparency</p>
+              </div>
+            </div> -->
+          </div>
+        </li>
+        <li>
+          <a href="career.html"><i class="fas fa-envelope"></i> CAREER</a>
+        </li>
+        <li class="mobile-contact-btn">
+          <a href="Contact.html"
+            ><i class="fas fa-phone-alt"></i> Get in Touch</a
+          >
+        </li>
+      </ul>
+    </div>
+    <script>
+      // Scroll Compact Header
+      const header = document.getElementById("mainHeader");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 30) {
+          header.classList.add("compact");
+        } else {
+          header.classList.remove("compact");
+        }
+      });
+
+      // Left Sidebar Menu Logic
+      const hamburger = document.getElementById("hamburgerIcon");
+      const mobileSidebar = document.getElementById("mobileSidebar");
+      const overlay = document.getElementById("mobileOverlay");
+      const closeBtn = document.getElementById("closeMobileMenu");
+
+      function openMobileMenu() {
+        mobileSidebar.classList.add("open");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMobileMenu() {
+        mobileSidebar.classList.remove("open");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      hamburger.addEventListener("click", openMobileMenu);
+      closeBtn.addEventListener("click", closeMobileMenu);
+      overlay.addEventListener("click", closeMobileMenu);
+
+      // Close menu on link click with smooth scroll
+      const allMobileLinks = document.querySelectorAll(".mobile-nav-list a");
+      allMobileLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const hash = link.getAttribute("href");
+          if (hash && hash.startsWith("#")) {
+            e.preventDefault();
+            const targetId = hash.substring(1);
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+              const offset = header.offsetHeight + 15;
+              const elementPos =
+                targetEl.getBoundingClientRect().top + window.pageYOffset;
+              window.scrollTo({
+                top: elementPos - offset,
+                behavior: "smooth",
+              });
+            }
+            closeMobileMenu();
+          } else {
+            closeMobileMenu();
+          }
+        });
+      });
+
+      // Toggle mobile dropdown for services
+      const mobileDropdownToggle = document.querySelector(
+        ".mobile-dropdown-toggle",
+      );
+      const mobileServicesLi = document.getElementById(
+        "mobileServicesDropdown",
+      );
+      if (mobileDropdownToggle) {
+        mobileDropdownToggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          mobileServicesLi.classList.toggle("active-mobile-dropdown");
+          const icon = document.getElementById("mobileDropdownIcon");
+          if (mobileServicesLi.classList.contains("active-mobile-dropdown")) {
+            icon.classList.remove("fa-chevron-down");
+            icon.classList.add("fa-chevron-up");
+          } else {
+            icon.classList.remove("fa-chevron-up");
+            icon.classList.add("fa-chevron-down");
+          }
+        });
+      }
+
+      // Desktop dropdown: prevent default link jump
+      const desktopDropdownLink = document.querySelector(".dropdown > a");
+      if (desktopDropdownLink) {
+        desktopDropdownLink.addEventListener("click", (e) => {
+          e.preventDefault();
+        });
+      }
+
+      // Additional luxury touch: service items click console
+      const serviceItems = document.querySelectorAll(".service-item");
+      serviceItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const title = item.querySelector("h4")?.innerText;
+          if (title)
+            console.log(
+              `✨ Inquiring about ${title} - Kirti Realty Luxury Services`,
+            );
+        });
+      });
+
+      // Logo click to top
+      const logoDiv = document.querySelector(".header-logo");
+      if (logoDiv) {
+        logoDiv.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          closeMobileMenu();
+        });
+      }
+
+      // Close sidebar on window resize if in desktop mode
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) {
+          if (mobileSidebar.classList.contains("open")) {
+            closeMobileMenu();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- ----- alll---------- -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Kirti Realty | Luxury Contact</title>
+    <!-- Google Fonts: Elegant Serif + Clean Sans -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 (Free Icons - pure vector icons, no emojis) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        color: #1e1e2a;
+        line-height: 1.5;
+      }
+
+      /* ----- FULL WIDTH LUXURY HEADER (white bg context, but header has bg image + animation) ----- */
+      .luxury-header {
+        width: 100%;
+        min-height: 280px;
+        position: relative;
+        overflow: hidden;
+        background-color: #faf9f7;
+      }
+
+      /* Background image layer with gentle zoom animation (premium feel) */
+      .header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80");
+        background-size: cover;
+        background-position: center 35%;
+        background-repeat: no-repeat;
+        z-index: 0;
+        will-change: transform;
+        animation: premiumZoom 12s ease-in-out infinite alternate;
+        transform-origin: center center;
+      }
+
+      /* Elegant overlay: soft white-to-dark gradient for text contrast */
+      .luxury-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          115deg,
+          rgba(0, 0, 0, 0.55) 0%,
+          rgba(0, 0, 0, 0.4) 45%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+        z-index: 1;
+      }
+
+      /* Gold shimmer line at bottom of header */
+      .luxury-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #c9a03d,
+          #f2c94c,
+          #c9a03d,
+          transparent
+        );
+        z-index: 3;
+        box-shadow: 0 0 5px rgba(210, 175, 70, 0.5);
+      }
+
+      /* Content wrapper (text + heading) */
+      .header-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        min-height: 380px;
+        padding: 2rem 1.5rem;
+      }
+
+      .contact-heading {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.6rem, 8vw, 4.6rem);
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f5e7d3 40%,
+          #ff9a00 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0.6rem;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+        animation: fadeUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+
+      .luxury-sub {
+        font-size: clamp(0.75rem, 3vw, 0.95rem);
+        font-weight: 500;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        color: #e5d5b0;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(6px);
+        display: inline-block;
+        padding: 0.45rem 1.6rem;
+        border-radius: 50px;
+        border: 0.5px solid rgba(220, 190, 110, 0.5);
+        animation: fadeUp 0.7s 0.1s forwards;
+        opacity: 0;
+        transform: translateY(18px);
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes premiumZoom {
+        0% {
+          transform: scale(1);
+          background-position: center 35%;
+        }
+        100% {
+          transform: scale(1.06);
+          background-position: center 33%;
+        }
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ----- BUSINESS INFO SECTION: WHITE BACKGROUND, SMALL BUT PREMIUM CARDS ----- */
+      .business-section {
+        background: #ffffff;
+        padding: 2.5rem 1.5rem 2.5rem;
+        width: 100%;
+      }
+
+      .info-grid {
+        max-width: 1250px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 1.2rem;
+      }
+
+      /* Premium small cards — elegant, minimal, elevated */
+      .premium-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 1.2rem 1rem;
+        flex: 1;
+        min-width: 270px;
+        max-width: 210px;
+        transition: all 0.3s ease;
+        border: 1px solid #f0eade;
+        box-shadow:
+          0 6px 14px rgba(0, 0, 0, 0.02),
+          0 2px 4px rgba(0, 0, 0, 0.02);
+        text-align: center;
+        backdrop-filter: blur(0px);
+      }
+
+      /* Slight hover for luxury touch */
+      .premium-card:hover {
+        transform: translateY(-3px);
+        border-color: #e2cfaa;
+        box-shadow:
+          0 18px 28px -12px rgba(0, 0, 0, 0.08),
+          0 0 0 1px rgba(200, 170, 90, 0.2);
+        background: #fefcf9;
+      }
+
+      /* Icon styling: gold-ish, refined */
+      .premium-card .info-icon {
+        font-size: 1.7rem;
+        color: #c5850d;
+        margin-bottom: 0.65rem;
+        display: inline-block;
+        transition: color 0.2s;
+      }
+
+      .premium-card:hover .info-icon {
+        color: #c9a13b;
+      }
+
+      .info-label {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        color: #9a8a6b;
+        margin-bottom: 10px;
+      }
+
+      .info-value {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #252525;
+        word-break: break-word;
+        line-height: 1.35;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      /* specific for company name emphasis */
+      .company-name {
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: -0.2px;
+        background: linear-gradient(120deg, #2a241a, #5a4a2e);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .address-text {
+        font-size: 14px;
+        font-weight: 500;
+        color: #4a3f2f;
+        line-height: 1.4;
+      }
+
+      .premium-card .contact-link {
+        text-decoration: none;
+        color: #2c2b26;
+        font-weight: 600;
+        transition: color 0.2s;
+        font-size: 17px;
+      }
+
+      .premium-card .contact-link:hover {
+        color: #bb9a5c;
+      }
+
+      /* small gold accent divider within card (optional) */
+      .card-divider {
+        width: 24px;
+        height: 1px;
+        background: #e2cfaa;
+        margin: 0.6rem auto 0.4rem;
+      }
+
+      /* responsiveness: make cards smaller on mobile but still premium */
+      @media (max-width: 780px) {
+        .info-grid {
+          gap: 1rem;
+        }
+        .premium-card {
+          min-width: 160px;
+          max-width: 180px;
+          padding: 1rem 0.8rem;
+        }
+        .info-value {
+          font-size: 0.75rem;
+        }
+        .company-name {
+          font-size: 0.9rem;
+        }
+        .address-text {
+          font-size: 0.7rem;
+        }
+        .premium-card .info-icon {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .info-grid {
+          justify-content: center;
+        }
+        .premium-card {
+          min-width: 150px;
+          max-width: 165px;
+        }
+      }
+
+      @media (max-width: 540px) {
+        .premium-card {
+          flex-basis: calc(50% - 1rem);
+          max-width: none;
+          min-width: 140px;
+        }
+        .business-section {
+          padding: 1.8rem 1rem;
+        }
+      }
+
+      /* extra luxury divider line */
+      .elegant-separator {
+        width: 45px;
+        height: 2px;
+        background: #dfca9c;
+        margin: 1.5rem auto 0;
+        opacity: 0.6;
+      }
+
+      /* subtle brand quote */
+      .brand-note {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.7rem;
+        color: #a49171;
+        letter-spacing: 0.8px;
+        font-weight: 400;
+      }
+
+      .fa-gem,
+      .fa-building,
+      .fa-mobile-alt,
+      .fa-envelope,
+      .fa-map-marker-alt {
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+      }
+    </style>
+  </head>
+  <body>
+    <!-- FULL WIDTH HEADER: CONTACT US WITH BACKGROUND IMAGE + ANIMATION (small height) -->
+    <div class="luxury-header">
+      <div class="header-bg"></div>
+      <div class="luxury-overlay"></div>
+      <div class="header-content">
+        <div class="contact-heading">Contact Us</div>
+        <div class="luxury-sub">Kirti Realty — luxury estates & legacy</div>
+      </div>
+    </div>
+
+    <!-- BUSINESS INFORMATION SECTION: WHITE BACKGROUND, SMALL PREMIUM CARDS (NO EMOJIS, ONLY ICONS) -->
+    <div class="business-section">
+      <div class="info-grid">
+        <!-- Company Name Card -->
+        <div class="premium-card">
+          <div class="info-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="info-label">ESTATE HOUSE</div>
+          <div class="info-value company-name">Kirti Realty</div>
+          <div class="card-divider"></div>
+          <!-- <div style="font-size: 12px; color: #caa54c; letter-spacing: 0.3px">
+            Bespoke Realty
+          </div> -->
+        </div>
+
+        <!-- Mobile Number Card -->
+        <div class="premium-card">
+          <div class="info-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="info-label">DIRECT LINE</div>
+          <div class="info-value">
+            <a href="tel:+917351105105" class="contact-link"
+              >+91 7351-105-105</a
+            >
+          </div>
+          <div class="card-divider"></div>
+          <div style="font-size: 16px; color: #caa54c">Anytime</div>
+        </div>
+
+        <!-- Email Address Card -->
+        <div class="premium-card">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-label">MAIL US</div>
+          <div class="info-value">
+            <a href="mailto:kirtirealtyofficial@gmail.com" class="contact-link"
+              >kirtirealty<br />official@gmail.com</a
+            >
+          </div>
+          <div class="card-divider"></div>
+          <div style="font-size: 12px; color: #caa54c">Concierge Service</div>
+        </div>
+
+        <!-- Office Address Card (premium small card with detailed address) -->
+        <div class="premium-card">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-label">VRINDAVAN OFFICE</div>
+          <div class="info-value address-text">
+            Kirti Realty, PNB Bank Nearby, MERO VRINDAVAN Gate, Pass Chhatikara,
+            Vrindavan
+          </div>
+          <div class="card-divider"></div>
+          <div style="font-size: 12px; color: #caa54c">
+            <i class="fas fa-route" style="margin-right: 3px"></i> Prime
+            spiritual corridor
+          </div>
+        </div>
+      </div>
+
+      <div class="elegant-separator"></div>
+      <!-- <div class="brand-note">
+        <i
+          class="fas fa-gem"
+          style="font-size: 0.6rem; margin-right: 5px; color: #dbb45c"
+        ></i>
+        timeless estates · white glove service
+        <i
+          class="fas fa-gem"
+          style="font-size: 0.6rem; margin-left: 5px; color: #dbb45c"
+        ></i>
+      </div> -->
+    </div>
+
+    <!-- Subtle footer with credit (luxury, minimal) -->
+    <!-- <div class="footer-note">
+      <i class="far fa-building" style="margin-right: 4px"></i> Kirti Realty —
+      where vision meets luxury
+      <span style="margin: 0 8px">|</span>
+      <i class="fas fa-crown" style="font-size: 0.6rem"></i> Vrindavan’s finest
+      <br /><span style="font-size: 0.6rem"
+        >Background imagery for ambiance | Iconic design</span
+      >
+    </div> -->
+  </body>
+</html>
+
+<!-- ---------form------ -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Luxury Estates | ClubFest Inquiry — Art of Living</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .body-form {
+        background: white;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 0;
+      }
+
+      /* main luxury card */
+      .luxury-card {
+        max-width: 1545px;
+        width: 100%;
+        background: #ffffff;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+
+      .form-grid {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* LEFT: image stack exactly as original structure (two images stacked vertically) */
+      .visual-side {
+        flex: 1.2;
+        background: #fbf9f6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .shape-image {
+        position: relative;
+        width: 100%;
+        max-width: 630px;
+        margin: 0 auto;
+      }
+
+      .shape-image .main-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .shape-image .frame-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 2;
+
+        filter: sepia(100%) saturate(1000%) hue-rotate(355deg) brightness(1.2)
+          contrast(1.15);
+      }
+
+      @media (max-width: 768px) {
+        .shape-image {
+          max-width: 500px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .shape-image {
+          max-width: 100%;
+        }
+      }
+      /* RIGHT SIDE: form with refined spacing */
+      .form-side {
+        flex: 1;
+        background: #ffebc57d;
+        padding: 2.5rem 2.5rem 2.5rem 1.8rem;
+      }
+
+      .form-container {
+        max-width: 560px;
+        margin-left: 0.5rem;
+      }
+
+      .badge-club {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f3efe8;
+        padding: 0.35rem 1.2rem;
+        border-radius: 60px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #c5850d; /* accent gold */
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+      }
+
+      .badge-club i {
+        font-size: 0.7rem;
+        color: #c5850d;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #1f2c2e;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.6rem;
+        line-height: 1.2;
+      }
+
+      .subhead {
+        color: #5f6c6a;
+        font-size: 0.95rem;
+        font-weight: 400;
+        line-height: 1.45;
+        margin-bottom: 2rem;
+        border-left: 3px solid #c5850d;
+        padding-left: 1rem;
+      }
+
+      /* form elements */
+      .input-group {
+        margin-bottom: 1.3rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: #8b7a66;
+        margin-bottom: 0.45rem;
+      }
+
+      .req-star {
+        color: #c5850d;
+        margin-left: 2px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.9rem 1.1rem;
+        border: 1px solid #e7e2da;
+        border-radius: 1.25rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        background: #fefcf9;
+        transition: all 0.25s ease;
+        outline: none;
+        color: #2b2b28;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #c5850d;
+        box-shadow: 0 0 0 3px rgba(197, 133, 13, 0.2);
+        background: #ffffff;
+      }
+
+      /* phone row */
+      .phone-row {
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+      }
+      .phone-prefix {
+        width: 80px;
+        flex-shrink: 0;
+      }
+      .phone-number {
+        flex: 1;
+      }
+
+      /* TWO COLUMN LAYOUT: select service + service option side by side, and budget + message side by side */
+      .row-duo {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.2rem;
+      }
+      .row-duo .input-group {
+        flex: 1;
+        min-width: 160px;
+        margin-bottom: 1.3rem;
+      }
+
+      select {
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%238b7a66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+        background-repeat: no-repeat;
+        background-position: right 1.2rem center;
+        background-size: 14px;
+      }
+
+      .submit-btn {
+        background: #c5850d;
+        color: white;
+        border: none;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 3rem;
+        width: 100%;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        margin-top: 0.5rem;
+        font-family: "Inter", sans-serif;
+        box-shadow: 0 6px 14px rgba(197, 133, 13, 0.2);
+      }
+
+      .submit-btn:hover {
+        background: #9e6b0b;
+        transform: translateY(-2px);
+        box-shadow: 0 18px 28px -10px rgba(197, 133, 13, 0.4);
+      }
+
+      .footnote {
+        font-size: 0.7rem;
+        text-align: center;
+        margin-top: 1.2rem;
+        color: #b2a48f;
+        letter-spacing: 0.2px;
+      }
+
+      /* toast message */
+      .toast-msg {
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1f2c2e;
+        color: #fef3e4;
+        padding: 0.8rem 2rem;
+        border-radius: 60px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        z-index: 1100;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(6px);
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+
+      /* responsiveness */
+      @media (max-width: 1000px) {
+        .form-side {
+          padding: 2rem 1.8rem;
+        }
+        .form-container {
+          margin-left: 0;
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .form-grid {
+          flex-direction: column;
+        }
+        .visual-side {
+          padding: 2rem 1.8rem;
+        }
+        .row-duo {
+          flex-direction: column;
+          gap: 0;
+        }
+        .row-duo .input-group {
+          margin-bottom: 1.3rem;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        .phone-row {
+          flex-wrap: wrap;
+        }
+        .phone-prefix {
+          width: 100%;
+        }
+        .phone-number {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 550px) {
+        .body-form {
+          padding: 1rem;
+        }
+        .luxury-card {
+          border-radius: 1.5rem;
+        }
+        .form-side {
+          padding: 1.6rem;
+        }
+        .toast-msg {
+          white-space: normal;
+          width: 85%;
+          text-align: center;
+          font-size: 0.75rem;
+          padding: 0.7rem 1.2rem;
+        }
+        .visual-side {
+          padding: 1.5rem;
+        }
+      }
+
+      /* additional luxury touches */
+      .submit-btn i {
+        transition: transform 0.2s;
+      }
+      .submit-btn:hover i {
+        transform: translateX(4px);
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: #cbc2b5;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="body-form">
+      <div class="luxury-card">
+        <div class="form-grid">
+          <!-- LEFT SIDE: shape image (exactly as original) -->
+          <div class="visual-side">
+            <div class="shape-image">
+              <img src="Images/about-1.png" class="main-img" alt="" />
+              <img src="Images/border-shape.png" class="frame-img" alt="" />
+            </div>
+          </div>
+
+          <!-- RIGHT: inquiry form with side-by-side fields + BUDGET DROPDOWN, SERVICE OPTION limited words -->
+          <div class="form-side">
+            <div class="form-container">
+              <div class="badge-club">
+                <i class="fas fa-gem"></i> ClubFest · Elite Estates
+              </div>
+              <h1>Enquire Now</h1>
+              <div class="subhead">
+                Curated real estate experiences — from private villas to
+                landmark investments.
+              </div>
+
+              <form id="luxuryLeadForm">
+                <!-- FULL NAME -->
+                <div class="input-group">
+                  <label>FULL NAME <span class="req-star">*</span></label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Your full name"
+                    required
+                  />
+                </div>
+
+                <!-- PHONE with +91 prefix -->
+                <div class="input-group">
+                  <label>PHONE NUMBER <span class="req-star">*</span></label>
+                  <div class="phone-row">
+                    <div class="phone-prefix">
+                      <input
+                        type="text"
+                        value="+91"
+                        readonly
+                        style="
+                          background: #f2ede7;
+                          color: #4e4b46;
+                          font-weight: 600;
+                          cursor: default;
+                          text-align: center;
+                        "
+                      />
+                    </div>
+                    <div class="phone-number">
+                      <input
+                        type="tel"
+                        id="phoneNumber"
+                        placeholder="98765 43210"
+                        required
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        inputmode="numeric"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      font-size: 0.65rem;
+                      margin-top: 5px;
+                      color: #aa9c88;
+                      text-align: center;
+                    "
+                  >
+                    10-digit mobile number
+                  </div>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="input-group">
+                  <label>EMAIL ADDRESS <span class="req-star">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="name@domain.com"
+                    required
+                  />
+                </div>
+
+                <!-- ROW 1: SELECT SERVICE (optional) + SERVICE OPTION / NOTES side by side -->
+                <div class="row-duo">
+                  <div class="input-group">
+                    <label>SELECT SERVICE</label>
+                    <select id="selectService">
+                      <option value="">— Choose offering —</option>
+                      <option value="Residential Plotting">
+                        Residential Plotting
+                      </option>
+                      <option value="Villas & Estates">Villas & Estates</option>
+                      <option value="Luxury Flats">Luxury Flats</option>
+                      <option value="Big Land Deals">Big Land Deals</option>
+                      <option value="Property Consultation">
+                        Property Consultation
+                      </option>
+                      <option value="Career">Career</option>
+                    </select>
+                  </div>
+                  <div class="input-group">
+                    <label>SERVICE OPTION / NOTES</label>
+                    <input
+                      type="text"
+                      id="serviceOption"
+                      placeholder="e.g., Beachfront villa, ROI projection"
+                      maxlength="30"
+                    />
+                    <div
+                      style="
+                        font-size: 0.6rem;
+                        color: #aa9c88;
+                        margin-top: 4px;
+                        text-align: center;
+                      "
+                    >
+                      Max 30 characters
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ROW 2: BUDGET DROPDOWN (replaces manual) + MESSAGE (optional) side by side -->
+                <div class="row-duo">
+                  <div class="input-group">
+                    <label>BUDGET RANGE</label>
+                    <select id="budgetDropdown">
+                      <option value="">— Select budget —</option>
+                      <option value="30-40 lakh">₹30 – 40 Lakh</option>
+                      <option value="60-70 lakh">₹60 – 70 Lakh</option>
+                      <option value="80-1cr">₹80 Lakh – 1 Cr</option>
+                      <option value="More than 1 Cr">More than 1 Cr</option>
+                    </select>
+                  </div>
+                  <div class="input-group">
+                    <label>MESSAGE</label>
+                    <textarea
+                      id="message"
+                      rows="1"
+                      placeholder="We are here.."
+                    ></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i> Send Inquiry
+                </button>
+                <div class="footnote">
+                  <i class="fas fa-shield-alt"></i> Your information is
+                  confidential. Concierge reply within 24h.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="toastMsg" class="toast-msg" style="opacity: 0; visibility: hidden">
+      ✨
+    </div>
+
+    <script>
+      // Deploy as Web App (execute as "me", access "Anyone").
+      const GOOGLE_SHEET_API_URL =
+        "https://script.google.com/macros/s/AKfycbwHYaBd50944J1X8_kRNgIsr9p0npQdlfVsBXauKkNx1xJYCsLCD7sCWs5Xg5HDzs7M_Q/exec";
+      // ↑ Replace with actual Apps Script Web App URL for live sheet logging.
+
+      function showToast(message, isError = false) {
+        const toast = document.getElementById("toastMsg");
+        toast.style.backgroundColor = isError ? "#ab7b5f" : "#1f2c2e";
+        toast.style.color = "#fff8f0";
+        toast.textContent = message;
+        toast.style.opacity = "1";
+        toast.style.visibility = "visible";
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          setTimeout(() => {
+            toast.style.visibility = "hidden";
+          }, 300);
+        }, 4200);
+      }
+
+      function validatePhone(phoneRaw) {
+        const digits = phoneRaw.replace(/\D/g, "");
+        return digits.length === 10;
+      }
+
+      // local backup for leads
+      function storeInLocalBackup(leadData) {
+        try {
+          let leads = JSON.parse(
+            localStorage.getItem("luxury_estate_leads") || "[]",
+          );
+          leads.push(leadData);
+          localStorage.setItem("luxury_estate_leads", JSON.stringify(leads));
+          console.log("📌 Lead secured (local cache):", leadData);
+        } catch (e) {
+          console.warn(e);
+        }
+      }
+
+      const form = document.getElementById("luxuryLeadForm");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const phoneNumberRaw = document
+          .getElementById("phoneNumber")
+          .value.trim();
+        const email = document.getElementById("email").value.trim();
+        const selectService = document.getElementById("selectService").value;
+        const serviceOption = document
+          .getElementById("serviceOption")
+          .value.trim();
+        const budgetDropdown = document.getElementById("budgetDropdown").value;
+        const message = document.getElementById("message").value.trim();
+
+        if (!fullName) {
+          showToast("Please enter your full name.", true);
+          return;
+        }
+        if (!validatePhone(phoneNumberRaw)) {
+          showToast("Valid 10-digit mobile number required.", true);
+          return;
+        }
+        if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+          showToast("Please provide a valid email address.", true);
+          return;
+        }
+
+        const fullPhone = `+91 ${phoneNumberRaw}`;
+        const payload = {
+          fullName: fullName,
+          phone: fullPhone,
+          email: email,
+          selectService: selectService || "Not selected",
+          serviceOption: serviceOption || "—",
+          budgetRange: budgetDropdown || "Not specified", // now from dropdown
+          message: message || "No additional notes",
+          timestamp: new Date().toISOString(),
+        };
+
+        const isValidSheetURL =
+          GOOGLE_SHEET_API_URL &&
+          GOOGLE_SHEET_API_URL.includes("script.google.com") &&
+          !GOOGLE_SHEET_API_URL.includes("dummyReplaceWithYourOwn");
+
+        const submitBtn = form.querySelector(".submit-btn");
+        const originalBtnHTML = submitBtn.innerHTML;
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-pulse"></i> Submitting...';
+        submitBtn.disabled = true;
+
+        try {
+          if (isValidSheetURL) {
+            await fetch(GOOGLE_SHEET_API_URL, {
+              method: "POST",
+              mode: "no-cors",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+            storeInLocalBackup(payload);
+            showToast("✓ Inquiry sent! A luxury advisor will connect shortly.");
+            form.reset();
+            // ensure optional fields are cleared
+            document.getElementById("serviceOption").value = "";
+            document.getElementById("message").value = "";
+            document.getElementById("budgetDropdown").value = "";
+            document.getElementById("selectService").value = "";
+          } else {
+            // demo mode with local backup — perfect for preview without credentials
+            console.info(
+              "✨ DEMO MODE: Google Sheets URL not configured. Lead saved locally. Replace GOOGLE_SHEET_API_URL for production.",
+            );
+            storeInLocalBackup(payload);
+            showToast(
+              "✨ Demo: inquiry recorded (offline backup). Our team will contact you soon.",
+              false,
+            );
+            form.reset();
+            document.getElementById("serviceOption").value = "";
+            document.getElementById("message").value = "";
+            document.getElementById("budgetDropdown").value = "";
+            document.getElementById("selectService").value = "";
+          }
+        } catch (error) {
+          console.error("Submission error:", error);
+          storeInLocalBackup(payload);
+          showToast(
+            "Network note: request saved locally. We'll be in touch.",
+            true,
+          );
+        } finally {
+          submitBtn.innerHTML = originalBtnHTML;
+          submitBtn.disabled = false;
+        }
+      });
+
+      // phone input sanitizer: only digits, max 10
+      const phoneInput = document.getElementById("phoneNumber");
+      phoneInput.addEventListener("input", function (e) {
+        this.value = this.value.replace(/\D/g, "").slice(0, 10);
+      });
+
+      // interactive highlight for focus based on accent #c5850d
+      const inputs = document.querySelectorAll("input, select, textarea");
+      inputs.forEach((el) => {
+        el.addEventListener("focus", () => {
+          el.style.borderColor = "#c5850d";
+        });
+        el.addEventListener("blur", () => {
+          if (!el.value.trim() && el.tagName !== "SELECT") {
+            el.style.borderColor = "#e7e2da";
+          } else {
+            el.style.borderColor = "#e2dbd0";
+          }
+        });
+      });
+
+      // limit service option to 40 characters
+      const serviceOptionInput = document.getElementById("serviceOption");
+      serviceOptionInput.addEventListener("input", function () {
+        if (this.value.length > 40) {
+          this.value = this.value.slice(0, 40);
+        }
+      });
+
+      // development hint (console only)
+      if (
+        !GOOGLE_SHEET_API_URL.includes("script.google.com") ||
+        GOOGLE_SHEET_API_URL.includes("dummyReplaceWithYourOwn")
+      ) {
+        console.log(
+          "💎 LUXURY FORM READY: Replace GOOGLE_SHEET_API_URL with your Apps Script Web App URL to enable Google Sheets logging. Current mode uses localStorage backup & works flawlessly.",
+        );
+      }
+    </script>
+  </body>
+</html>
+
+<!-- ---------services--------------  -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Kirti Realty | Full-Spectrum Elite Services</title>
+    <!-- Google Fonts: Refined Serif + Modern Sans -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- SwiperJS (modern sliding library) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f9f7f3;
+        font-family: "Inter", sans-serif;
+        color: #1f1b16;
+        overflow-x: hidden;
+      }
+
+      .services-luxury-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+      }
+      .services-luxury-container > h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        background: linear-gradient(
+          135deg,
+          #494646 0%,
+          #554c40 40%,
+          #ff9a00 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .split-layout {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      /* LEFT SIDE: elegant brand block with refined messaging */
+      .left-brand-block {
+        flex: 1.1;
+        min-width: 280px;
+        background: linear-gradient(135deg, #ffffff 0%, #f5d090 100%);
+        border-radius: 2.5rem;
+        padding: 2.8rem 2rem;
+        box-shadow:
+          0 20px 35px -12px rgba(0, 0, 0, 0.05),
+          0 1px 3px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(200, 170, 110, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .krita-badge {
+        display: inline-block;
+        background: rgba(180, 140, 72, 0.12);
+        padding: 0.3rem 1rem;
+        border-radius: 40px;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        font-weight: 600;
+        color: #aa7c48;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+
+      .left-brand-block h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3.4rem;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 1.2rem;
+        color: #2c241a;
+      }
+
+      .left-brand-block h2 .highlight-brand {
+        background: linear-gradient(130deg, #b48c48, #dfb872);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-weight: 700;
+      }
+
+      .tagline {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #5c5548;
+        margin-bottom: 2rem;
+        border-left: 3px solid #dfb872;
+        padding-left: 1.2rem;
+        font-weight: 400;
+      }
+
+      .service-highlight-list {
+        margin-top: 2rem;
+      }
+
+      .service-highlight-list .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        margin-bottom: 1.3rem;
+      }
+
+      .highlight-item i {
+        width: 32px;
+        color: #b48c48;
+        font-size: 1.3rem;
+      }
+
+      .highlight-item span {
+        font-weight: 500;
+        font-size: 1rem;
+        color: #342d24;
+      }
+
+      .gold-separator {
+        width: 60px;
+        height: 2px;
+        background: #e3cda5;
+        margin: 2rem 0 1rem;
+      }
+
+      .luxury-note {
+        font-size: 0.85rem;
+        color: #8f7e68;
+        font-style: italic;
+      }
+
+      /* RIGHT SIDE: slider container — background images fully visible */
+      .right-slider-block {
+        flex: 2;
+        min-width: 0;
+        position: relative;
+      }
+
+      .swiper {
+        width: 100%;
+        overflow: hidden;
+        padding: 0.5rem 0 2rem;
+        border-radius: 2rem;
+      }
+
+      .swiper-slide {
+        height: auto;
+        border-radius: 2rem;
+        transition: transform 0.3s ease;
+      }
+
+      /* SERVICE CARD: BG images made fully visible and richer */
+      .service-card-slide {
+        position: relative;
+        border-radius: 2rem;
+        overflow: hidden;
+        background-color: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 18px 35px -12px rgba(0, 0, 0, 0.12);
+        transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+
+      .service-card-slide:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 28px 40px -14px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Background image with perfect visibility */
+      .card-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.85;
+        transition:
+          opacity 0.5s ease,
+          transform 0.7s ease;
+        z-index: 0;
+        filter: brightness(0.92) contrast(1.05);
+      }
+
+      .service-card-slide:hover .card-bg-img {
+        opacity: 1;
+        transform: scale(1.03);
+      }
+
+      /* Glass-content: dark elegant overlay to make text pop, but background remains vivid */
+      .card-content-inner {
+        position: relative;
+        z-index: 2;
+        padding: 2rem 1.8rem 2rem 1.8rem;
+        background: linear-gradient(
+          145deg,
+          rgba(20, 18, 16, 0.72),
+          rgba(10, 8, 6, 0.68)
+        );
+        backdrop-filter: blur(5px);
+        border-radius: 2rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 380px;
+        transition: background 0.2s;
+      }
+
+      .service-card-slide:hover .card-content-inner {
+        background: linear-gradient(
+          145deg,
+          rgba(0, 0, 0, 0.75),
+          rgba(25, 20, 15, 0.7)
+        );
+      }
+
+      .card-icon-large {
+        font-size: 2.3rem;
+        color: #e9cd9c;
+        margin-bottom: 1.2rem;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .service-card-slide h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.95rem;
+        font-weight: 700;
+        margin-bottom: 0.9rem;
+        color: #fef7e6;
+        letter-spacing: -0.3px;
+      }
+
+      .service-desc-short {
+        font-size: 0.92rem;
+        line-height: 1.48;
+        color: #f0ede8;
+        margin-bottom: 1.8rem;
+        flex: 1;
+        font-weight: 400;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      .know-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 250, 240, 0.15);
+        border: 1.5px solid #e9cd9c;
+        padding: 0.7rem 1.4rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        color: #ffefcf;
+        cursor: pointer;
+        transition: all 0.25s;
+        width: fit-content;
+        backdrop-filter: blur(3px);
+      }
+
+      .know-more-btn i {
+        transition: transform 0.2s;
+        font-size: 0.75rem;
+      }
+
+      .know-more-btn:hover {
+        background: #c6a15b;
+        border-color: #c6a15b;
+        color: #1f1b16;
+        gap: 12px;
+      }
+
+      .know-more-btn:hover i {
+        transform: translateX(4px);
+        color: #1f1b16;
+      }
+
+      /* Swiper navigation refined */
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #e9cd9c;
+        background: rgba(30, 25, 20, 0.7);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s;
+      }
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background: #c6a15b;
+        color: #1f1b16;
+      }
+
+      .swiper-pagination-bullet {
+        background: #e9cd9c;
+        opacity: 0.6;
+      }
+      .swiper-pagination-bullet-active {
+        background: #f5d78c;
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      /* ============================================ */
+      /* RESPONSIVE: DESKTOP LOOK UNCHANGED ABOVE 1100px */
+      /* IMPROVED for small spaces with perfect adaptability */
+      /* ============================================ */
+
+      @media (max-width: 1200px) {
+        .split-layout {
+          gap: 2rem;
+        }
+        .left-brand-block h2 {
+          font-size: 2.8rem;
+        }
+        .card-content-inner {
+          min-height: 360px;
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .services-luxury-container {
+          padding: 4rem 1.8rem;
+        }
+        .split-layout {
+          gap: 2rem;
+        }
+        .left-brand-block {
+          padding: 2.2rem 1.8rem;
+        }
+        .left-brand-block h2 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .split-layout {
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .left-brand-block {
+          text-align: center;
+          width: 100%;
+        }
+        .left-brand-block h2 {
+          font-size: 2.4rem;
+        }
+        .tagline {
+          border-left: none;
+          padding-left: 0;
+          text-align: center;
+        }
+        .service-highlight-list .highlight-item {
+          justify-content: center;
+        }
+        .gold-separator {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .right-slider-block {
+          width: 100%;
+        }
+        .card-content-inner {
+          min-height: 340px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .services-luxury-container {
+          padding: 3rem 1.2rem;
+        }
+        .services-luxury-container > h2 {
+          font-size: 2.2rem;
+          margin-bottom: 2rem;
+        }
+        .left-brand-block {
+          padding: 1.8rem 1.4rem;
+          border-radius: 2rem;
+        }
+        .left-brand-block h2 {
+          font-size: 2rem;
+        }
+        .krita-badge {
+          font-size: 0.65rem;
+          margin-bottom: 1rem;
+        }
+        .tagline {
+          font-size: 0.9rem;
+          margin-bottom: 1.2rem;
+        }
+        .gold-separator {
+          margin: 1.5rem auto 0.5rem;
+        }
+        .card-content-inner {
+          padding: 1.5rem 1.3rem;
+          min-height: 310px;
+        }
+        .service-card-slide h3 {
+          font-size: 1.7rem;
+        }
+        .service-desc-short {
+          font-size: 0.85rem;
+          margin-bottom: 1.2rem;
+        }
+        .know-more-btn {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.75rem;
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+          display: none;
+        }
+        .swiper-pagination {
+          bottom: 0px;
+        }
+        .swiper {
+          padding-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 550px) {
+        .services-luxury-container {
+          padding: 2rem 1rem;
+        }
+        .services-luxury-container > h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+        }
+        .left-brand-block {
+          padding: 1.4rem 1rem;
+          border-radius: 1.5rem;
+        }
+        .left-brand-block h2 {
+          font-size: 1.6rem;
+        }
+        .krita-badge {
+          font-size: 0.6rem;
+          padding: 0.2rem 0.8rem;
+        }
+        .tagline {
+          font-size: 0.85rem;
+        }
+        .card-content-inner {
+          padding: 1.2rem 1rem;
+          min-height: 280px;
+        }
+        .service-card-slide h3 {
+          font-size: 1.5rem;
+        }
+        .card-icon-large {
+          font-size: 1.8rem;
+          margin-bottom: 0.8rem;
+        }
+        .service-desc-short {
+          font-size: 0.8rem;
+          line-height: 1.4;
+        }
+        .know-more-btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.7rem;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .services-luxury-container {
+          padding: 1.8rem 0.8rem;
+        }
+        .services-luxury-container > h2 {
+          font-size: 1.6rem;
+        }
+        .left-brand-block h2 {
+          font-size: 1.4rem;
+        }
+        .card-content-inner {
+          min-height: 260px;
+        }
+        .service-card-slide h3 {
+          font-size: 1.35rem;
+        }
+        .service-desc-short {
+          font-size: 0.75rem;
+        }
+      }
+
+      /* Maintain hover effects only on devices that support hover */
+      @media (hover: hover) {
+        .service-card-slide:hover {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* Touch-friendly adjustments */
+      @media (max-width: 768px) {
+        .know-more-btn {
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .service-card-slide {
+          cursor: pointer;
+        }
+      }
+
+      .bg-accent-leaf {
+        background: #ffebc57d;
+        border-top: 2px solid #e5c165;
+        border-bottom: 2px solid #e5c165;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="services-luxury-container bg-accent-leaf">
+      <h2>Our Premium Services</h2>
+      <div class="split-layout">
+        <!-- LEFT BLOCK: Brand & core services preview -->
+        <div class="left-brand-block">
+          <div class="krita-badge">
+            <i class="fas fa-crown" style="margin-right: 6px"></i> EST. 2025
+          </div>
+          <h2>
+            <span class="highlight-brand">Kirti Realty</span> also offers a wide
+            range of real estate services, including:
+          </h2>
+          <div class="tagline">
+            Beyond conventional — a full‑spectrum real estate powerhouse
+            delivering white-glove execution across asset classes.
+          </div>
+          <div class="gold-separator"></div>
+        </div>
+
+        <!-- RIGHT SLIDER: AUTO SLIDE + STOP ON HOVER -->
+        <div class="right-slider-block">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Service Card 1 - Residential Plotting -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1974&auto=format&quot;);
+                      background-position: center 35%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-draw-polygon"></i>
+                      </div>
+                      <h3>Residential Plotting</h3>
+                      <div class="service-desc-short">
+                        Prime land parcels, smart segmentation and future-value
+                        mapping. Tailored for boutique communities & luxury
+                        compounds.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href = 'Services/Residential.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 2 - Villas -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1524613032530-449a5d94c285?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dnJpbmRhdmFuJTJDJTIwaW5kaWF8ZW58MHx8MHx8fDA%3D&quot;);
+                      background-position: center 25%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-home"></i>
+                      </div>
+                      <h3>Villas</h3>
+                      <div class="service-desc-short">
+                        Architectural sanctuaries, private infinity pools, and
+                        landscape integration. Discover signature estates with
+                        timeless value.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="window.location.href = 'Services/villas.html'"
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 3 - Flats & Apartments -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2069&auto=format&quot;);
+                      background-position: center 40%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-building"></i>
+                      </div>
+                      <h3>Flats & Apartments</h3>
+                      <div class="service-desc-short">
+                        Panoramic penthouses, bespoke interiors & concierge
+                        lifestyle. Live at the apex of urban luxury.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href = 'Services/FlatsApartment.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 4 - Big Land Deals -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&quot;);
+                      background-position: center 28%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-globe-americas"></i>
+                      </div>
+                      <h3>Big Land Deals</h3>
+                      <div class="service-desc-short">
+                        Strategic mega-transactions, institutional portfolios &
+                        legacy acreage. Absolute discretion with unmatched
+                        negotiation power.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="window.location.href = 'Services/bigLand.html'"
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 5 - Real Estate Development -->
+              <!-- <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&quot;);
+                      background-position: center 30%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-hard-hat"></i>
+                      </div>
+                      <h3>Real Estate Development</h3>
+                      <div class="service-desc-short">
+                        End-to-end creation: master planning, permits,
+                        construction to go-to-market. Turning raw land into
+                        iconic addresses.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href = 'Services/Development.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div> -->
+              <!-- Card 6 - Property Investment Solutions -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1974&auto=format&quot;);
+                      background-position: center 22%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-chart-pie"></i>
+                      </div>
+                      <h3>Property Investment Solutions</h3>
+                      <div class="service-desc-short">
+                        Yield-optimized strategies, tax-efficient structures &
+                        portfolio diversification. Maximize alpha with
+                        data-driven decisions.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href =
+                          'Services/PropertyInvestment.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 7 - Property Consultation -->
+              <!-- <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&quot;);
+                      background-position: center 35%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-user-tie"></i>
+                      </div>
+                      <h3>Property Consultation</h3>
+                      <div class="service-desc-short">
+                        Private office advisory: due diligence, negotiation,
+                        bespoke sourcing & legacy planning. Your real estate
+                        counsel.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href = 'Services/Consultation.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <!-- navigation & pagination -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Initialize Swiper with optimal settings for both desktop and mobile
+      const swiperInstance = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        autoplay: {
+          delay: 3200,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          1100: {
+            slidesPerView: 2.4,
+            spaceBetween: 28,
+          },
+          1400: {
+            slidesPerView: 3,
+            spaceBetween: 28,
+          },
+        },
+        grabCursor: true,
+        effect: "slide",
+        speed: 600,
+        autoHeight: false,
+      });
+
+      // Hover stop/start for autoplay
+      const sliderBlock = document.querySelector(".right-slider-block");
+      if (sliderBlock && swiperInstance.autoplay) {
+        sliderBlock.addEventListener("mouseenter", () => {
+          swiperInstance.autoplay.stop();
+        });
+        sliderBlock.addEventListener("mouseleave", () => {
+          swiperInstance.autoplay.start();
+        });
+      }
+
+      // Global function for button alerts
+
+      // Handle window resize to update swiper
+      window.addEventListener("resize", () => {
+        if (swiperInstance && swiperInstance.update) swiperInstance.update();
+      });
+    </script>
+  </body>
+</html>
+
+<!-- -----footer------  -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Kirti Realty | Luxury Real Estate</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* ===== BETTER FOOTER - LOGO, SOCIAL ICONS, PAGES, LEGAL, CREDIT ===== */
+      .footer {
+        background:
+          linear-gradient(#37320d94, #000000f0), url(Images/footer-1.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-top: 1px solid rgba(228, 179, 99, 0.25);
+        padding: 3rem 2rem 2rem;
+        margin-top: auto;
+      }
+      .footer-container {
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .footer-brand {
+        flex: 1.2;
+        min-width: 220px;
+      }
+      .footer-logo-wrap {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 1rem;
+      }
+      .footer-logo-img {
+        height: 54px;
+        width: auto;
+        object-fit: cover;
+      }
+      .footer-logo-text {
+        font-size: 1.6rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #fff6e0, #ebcb8b);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .footer-tagline {
+        color: #aaa;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-top: 0.6rem;
+        max-width: 280px;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.4rem;
+      }
+      .social-icon {
+        color: #e4b363;
+        font-size: 1.4rem;
+        transition: all 0.25s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(228, 179, 99, 0.12);
+        transition: 0.25s;
+        text-decoration: none;
+      }
+      .social-icon:hover {
+        background: #e4b363;
+        color: #0a0c10;
+        transform: translateY(-3px);
+      }
+      .footer-links {
+        flex: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: flex-end;
+      }
+      .link-column {
+        min-width: 140px;
+      }
+      .link-column h4 {
+        color: #f5d78c;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.5px;
+      }
+      .link-column ul {
+        list-style: none;
+      }
+      .link-column ul li {
+        margin-bottom: 0.7rem;
+      }
+      .link-column ul li a {
+        text-decoration: none;
+        color: #bcb7ab;
+        font-size: 0.85rem;
+        transition: 0.2s;
+      }
+      .link-column ul li a:hover {
+        color: #f5d78c;
+        padding-left: 5px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(228, 179, 99, 0.2);
+        padding-top: 1.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.8rem;
+        color: #8e8c86;
+      }
+      .legal-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .legal-links a {
+        text-decoration: none;
+        color: #bcb7ab;
+        transition: 0.2s;
+      }
+      .legal-links a:hover {
+        color: #f5d78c;
+      }
+      .made-with {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.8rem;
+      }
+      .made-with i {
+        color: #e4b363;
+      }
+      .made-with a {
+        color: #e4b363;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px dotted #e4b363;
+      }
+      .made-with a:hover {
+        color: #f5d78c;
+      }
+      @media (max-width: 780px) {
+        .footer-grid {
+          flex-direction: column;
+        }
+        .footer-links {
+          justify-content: flex-start;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+        .legal-links {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NEW BETTER FOOTER: Logo, social icons, pages, legal, made with love -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Left brand area: logo + socials -->
+          <div class="footer-brand">
+            <div class="footer-logo-wrap">
+              <img
+                class="footer-logo-img"
+                src="Images/Kirti-Realty.png"
+                alt="Kirti Realty"
+              />
+              <!-- <span class="footer-logo-text">KIRTI REALTY</span> -->
+            </div>
+            <p class="footer-tagline">
+              Curated estates, bespoke residences & iconic developments with
+              uncompromised excellence.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="X Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Right side: page links columns -->
+          <div class="footer-links">
+            <div class="link-column">
+              <h4>EXPLORE</h4>
+              <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="About.html">ABOUT US</a></li>
+                <li><a href="Services/villas.html">SERVICES</a></li>
+                <li><a href="Contact.html">CONTACT US</a></li>
+              </ul>
+            </div>
+            <div class="link-column">
+              <h4>SERVICES</h4>
+              <ul>
+                <li>
+                  <a href="Services/Residential.html">Residential Plotting</a>
+                </li>
+                <li><a href="Services/villas.html">Villas/Private Home</a></li>
+                <li>
+                  <a href="Services/bigLand.html">Big Land Deals</a>
+                </li>
+                <li>
+                  <a href="Services/PropertyInvestment.html"
+                    >Property Investment</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="link-column">
+              <h4>LEGAL</h4>
+              <ul>
+                <li><a href="Privacy.html">Privacy Policy</a></li>
+                <li><a href="Terms&Conditions.html">Terms of Service</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <!-- <li><a href="#">Legal</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="copyright">© 2026 Kirti Realty. All rights reserved.</div>
+
+          <div class="made-with">
+            Designed & Developed by by
+            <a
+              href="https://skilled-va.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Skilled VA</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Remove .html from URL
+      if (window.location.pathname.endsWith(".html")) {
+        const newPath = window.location.pathname.replace(".html", "");
+        window.history.replaceState({}, "", newPath);
+      }
+    </script>
+  </body>
+</html>
+
+<!-- -----floating button----- -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>Floating WhatsApp Icon · Responsive</title>
+    <!-- Font Awesome 6 (free) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* ----- FLOATING WHATSAPP ICON (desktop first — NO CHANGE) ----- */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #25d366;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+        transition: all 0.25s ease;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        border: none;
+        outline: 2px solid rgba(255, 255, 255, 0.2);
+        outline-offset: 2px;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.07);
+        box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+        background-color: #20b85f;
+      }
+
+      .whatsapp-float i {
+        font-size: 34px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        line-height: 1;
+      }
+
+      /* pulse ring (desktop keeps it) */
+      .whatsapp-float::after {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border-radius: 50%;
+        border: 2px solid rgba(37, 211, 102, 0.2);
+        animation: pulse-ring 2s infinite;
+      }
+
+      @keyframes pulse-ring {
+        0% {
+          transform: scale(1);
+          opacity: 0.6;
+        }
+        70% {
+          transform: scale(1.15);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1.3);
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* desktop look remains: icon 55px, right 50px, bottom 50px */
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 40px;
+          right: 40px;
+        }
+        .whatsapp-float i {
+          font-size: 34px;
+        }
+        .whatsapp-tooltip {
+          bottom: 88px;
+          right: 22px;
+          font-size: 0.8rem;
+          padding: 0.35rem 1rem;
+        }
+      }
+
+      /* --- small screens (phones) : scale down icon & reposition,
+         but keep proportion and no layout break --- */
+      @media (max-width: 480px) {
+        .whatsapp-float {
+          width: 60px; /* slightly larger for easier tap */
+          height: 60px;
+          bottom: 24px;
+          right: 24px;
+          outline-width: 2px; /* keep same style */
+        }
+        .whatsapp-float i {
+          font-size: 34px; /* icon stays legible */
+        }
+        /* tooltip hidden on very small screens (as original) */
+        .whatsapp-tooltip {
+          display: none;
+        }
+      }
+
+      /* --- extra tiny screens (<= 360px) keep it clean --- */
+      @media (max-width: 380px) {
+        .whatsapp-float {
+          width: 56px;
+          height: 56px;
+          bottom: 18px;
+          right: 18px;
+        }
+        .whatsapp-float i {
+          font-size: 30px;
+        }
+      }
+
+      /* --- keep desktop look for large screens (default) --- */
+      @media (min-width: 1024px) {
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 50px;
+          right: 50px;
+        }
+        .whatsapp-float i {
+          font-size: 34px;
+        }
+        .whatsapp-tooltip {
+          display: block; /* tooltip visible on desktop */
+          bottom: 100px;
+          right: 28px;
+        }
+      }
+
+      /* ----- Ensure the tooltip is hidden on devices where we decided ----- */
+      @media (max-width: 500px) {
+        .whatsapp-tooltip {
+          display: none;
+        }
+      }
+
+      /* (optional) keep tooltip visible on tablets between 500px and 768px */
+      @media (min-width: 501px) and (max-width: 768px) {
+        .whatsapp-tooltip {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ========== FLOATING WHATSAPP ICON ========== -->
+    <a
+      href="https://wa.me/917055880050?text=Hello%20I%20need%20assistance"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </body>
+</html>

@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirti Realty · Radhe Radhe</title>
+    <!-- Google Font + Font Awesome (icons) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* ----- RESET & BASE ----- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ----- POPUP OVERLAY (premium glass) ----- */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(20, 15, 10, 0.5);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 20px;
+        transition: opacity 0.3s ease;
+      }
+
+      /* popup card – smaller, more compact */
+      .popup-card {
+        background: #ffffff;
+        max-width: 380px;
+        width: 100%;
+        border-radius: 40px;
+        padding: 1.6rem 1.6rem 1.8rem;
+        box-shadow:
+          0 40px 80px -12px rgba(20, 12, 6, 0.3),
+          0 0 0 1px rgba(220, 163, 65, 0.08) inset;
+        position: relative;
+        text-align: center;
+        animation: popupFloat 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @keyframes popupFloat {
+        0% {
+          opacity: 0;
+          transform: scale(0.94) translateY(18px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      /* ----- CLOSE BUTTON (icon only, premium) ----- */
+      .close-btn {
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        background: #f3ede7;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 36px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: #5a4232;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        padding: 0;
+        z-index: 10;
+      }
+
+      .close-btn i {
+        font-size: 1.3rem;
+        line-height: 1;
+        color: #6f5543;
+      }
+
+      .close-btn:hover {
+        background: #e4d6ca;
+        transform: scale(1.04);
+        box-shadow: 0 4px 12px rgba(80, 50, 30, 0.08);
+      }
+
+      .close-btn:active {
+        transform: scale(0.94);
+      }
+
+      /* ----- POPUP IMAGE (BIG, NO BORDER, FULL WIDTH, COMPACT) ----- */
+      .popup-image-wrapper {
+        margin: 0 0 14px 0;
+        display: flex;
+        justify-content: center;
+        border-radius: 0;
+        overflow: hidden;
+        background: transparent;
+        padding: 0;
+        width: 100%;
+      }
+
+      .popup-image-wrapper img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        transition: transform 0.3s;
+        max-height: 323px;
+      }
+
+      .popup-image-wrapper img:hover {
+        transform: scale(1.01);
+      }
+
+      /* ----- TYPOGRAPHY (text color: #dca341, smaller sizes) ----- */
+      /* .popup-text-radhe {
+        font-size: 3.2rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #dca341;
+        line-height: 1.1;
+        margin-top: 0;
+        margin-bottom: 0.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      } */
+
+      .popup-text-radhe {
+        font-family: "Bickham Script Pro", cursive;
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        background: linear-gradient(
+          to bottom,
+          #fffa66 0%,
+          #d2e900 20%,
+          #b8c78d 50%,
+          #ffffff 75%,
+          #ddd7c8 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #ebff0075;
+        -webkit-text-stroke: 2px #292929;
+        text-shadow:
+          0 1px 0 #fff,
+          0 2px 0 #d8d7bf,
+          0 3px 0 #bcb99a,
+          0 4px 4px rgba(0, 0, 0, 0.35),
+          0 0 8px rgb(207 255 116 / 70%),
+          0 0 16px rgba(116, 180, 255, 0.5);
+      }
+      .popup-text-radhe::before {
+        content: "";
+        position: absolute;
+        inset: -20px;
+        background: radial-gradient(
+          circle,
+          rgba(107, 190, 255, 0.25),
+          transparent 70%
+        );
+        filter: blur(25px);
+        z-index: -1;
+      }
+
+      .popup-text-radhe i {
+        font-size: 2.4rem;
+        color: #dca341;
+        opacity: 0.7;
+      }
+
+      .popup-text-welcome {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #674100;
+        letter-spacing: -0.2px;
+        margin: 16px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .popup-text-welcome i {
+        font-size: 1.1rem;
+        color: #dca341;
+        opacity: 0.8;
+      }
+
+      .popup-text-sub {
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: #dca341;
+        letter-spacing: 0.3px;
+        background: rgba(220, 163, 65, 0.06);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0.2rem 1.2rem;
+        border-radius: 40px;
+        margin-top: 0.2rem;
+        border: 1px solid rgba(220, 163, 65, 0.1);
+      }
+
+      .popup-text-sub i {
+        color: #dca341;
+        font-size: 0.8rem;
+        opacity: 0.8;
+      }
+
+      /* ----- AUTO CLOSE TIMER INDICATOR (premium minimal) ----- */
+      .auto-timer-hint {
+        margin-top: 1rem;
+        font-size: 0.65rem;
+        color: #a48c7a;
+        letter-spacing: 0.4px;
+        background: #f3ede7;
+        padding: 0.15rem 0.8rem;
+        border-radius: 30px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        opacity: 0.7;
+        border: 1px solid rgba(200, 175, 150, 0.1);
+      }
+
+      .auto-timer-hint i {
+        font-size: 0.65rem;
+        color: #dca341;
+        opacity: 0.7;
+      }
+
+      /* hidden state */
+      .popup-hidden {
+        display: none !important;
+      }
+
+      /* ----- RESPONSIVE (mobile first) ----- */
+      @media (max-width: 480px) {
+        .popup-card {
+          padding: 1.2rem 1rem 1.4rem;
+          border-radius: 32px;
+          max-width: 340px;
+        }
+
+        .popup-text-radhe {
+          font-size: 2.6rem;
+          gap: 15px;
+        }
+        .popup-text-radhe i {
+          font-size: 2rem;
+        }
+
+        .popup-text-welcome {
+          font-size: 1.1rem;
+        }
+        .popup-text-welcome i {
+          font-size: 0.9rem;
+        }
+
+        .popup-text-sub {
+          font-size: 0.75rem;
+          padding: 0.15rem 0.8rem;
+        }
+
+        .close-btn {
+          top: 10px;
+          right: 10px;
+          width: 32px;
+          height: 32px;
+        }
+        .close-btn i {
+          font-size: 1.1rem;
+        }
+
+        .popup-image-wrapper img {
+          max-height: 323px;
+          aspect-ratio: 1 / 4;
+        }
+
+        .page-content h1 {
+          font-size: 2.2rem;
+        }
+        .page-content {
+          padding: 1.8rem 1.2rem;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .popup-card {
+          padding: 1rem 0.8rem 1.2rem;
+          max-width: 300px;
+        }
+        .popup-text-radhe {
+          font-size: 2.2rem;
+        }
+        .popup-text-welcome {
+          font-size: 1rem;
+        }
+        .popup-image-wrapper img {
+          max-height: 180px;
+        }
+      }
+
+      @media (min-width: 600px) {
+        .popup-image-wrapper img {
+          max-height: 300px;
+          object-fit: cover;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- POPUP -->
+    <div
+      id="popupOverlay"
+      class="popup-overlay"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="popup-card">
+        <!-- X button with icon -->
+        <button id="closePopupBtn" class="close-btn" aria-label="Close popup">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <!-- BIG IMAGE – NO BORDER, NO RADIUS, FULL WIDTH -->
+        <div class="popup-image-wrapper">
+          <img
+            src="Images/namaste-1-removebg-preview.png"
+            alt="Kirti Realty · divine home"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- TEXT BLOCK (all color #dca341) -->
+        <div class="popup-text-radhe">
+          <i class="fas fa-om"></i>
+          Radhe Radhe
+        </div>
+
+        <div class="popup-text-welcome">Welcome to Kirti Realty</div>
+
+        <!-- <div class="popup-text-sub">
+          <i class="fas fa-home"></i>
+          premium living · divine grace
+          <i class="fas fa-heart"></i>
+        </div> -->
+
+        <!-- timer hint -->
+        <!-- <div class="auto-timer-hint">
+          <i class="far fa-clock"></i>
+          closes in 10s · click
+          <i class="fas fa-times"></i> to dismiss
+        </div> -->
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const popup = document.getElementById("popupOverlay");
+        const closeBtn = document.getElementById("closePopupBtn");
+
+        // 1. AUTO CLOSE after 10 seconds
+        let autoCloseTimer = setTimeout(() => {
+          if (popup && !popup.classList.contains("popup-hidden")) {
+            popup.classList.add("popup-hidden");
+          }
+        }, 10000);
+
+        // 2. MANUAL CLOSE (X button)
+        function closePopup() {
+          if (popup) {
+            popup.classList.add("popup-hidden");
+            clearTimeout(autoCloseTimer);
+          }
+        }
+
+        if (closeBtn) {
+          closeBtn.addEventListener("click", closePopup);
+        }
+
+        // 3. ESC key support
+        document.addEventListener("keydown", function (e) {
+          if (
+            e.key === "Escape" &&
+            popup &&
+            !popup.classList.contains("popup-hidden")
+          ) {
+            closePopup();
+          }
+        });
+
+        // 4. ensure timer is cleared if popup hidden by other means
+        const originalAdd = popup.classList.add.bind(popup.classList);
+        popup.classList.add = function (className) {
+          originalAdd(className);
+          if (className === "popup-hidden") {
+            clearTimeout(autoCloseTimer);
+          }
+        };
+
+        if (popup.classList.contains("popup-hidden")) {
+          clearTimeout(autoCloseTimer);
+        }
+
+        // 5. close on overlay click (not on card)
+        popup.addEventListener("click", function (e) {
+          if (e.target === popup) {
+            closePopup();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

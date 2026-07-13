@@ -1,0 +1,463 @@
+<!-- ------Start Bridge greens----- -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Braj Greens | Kirti Realty</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #ffffff;
+        font-family: system-ui, "Segoe UI", "Helvetica Neue", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .section-start {
+        width: 100%;
+        padding: 40px 50px 120px;
+        position: relative;
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        width: 98%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -68px;
+        z-index: 10;
+        position: relative;
+      }
+
+      .logo img {
+        width: 385px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .gallery-layout {
+        position: relative;
+        width: 100%;
+        min-height: 750px;
+      }
+
+      .img-box {
+        overflow: hidden;
+        position: absolute;
+        background: #eef2f5;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.03);
+        transition: transform 0.2s ease;
+      }
+
+      .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        will-change: transform;
+      }
+
+      .img-box:hover img {
+        transform: scale(1.05);
+      }
+
+      .img1 {
+        width: 67%;
+        height: 490px;
+        left: 0;
+        top: 80px;
+        z-index: 1;
+      }
+
+      .img2 {
+        width: 37%;
+        height: 480px;
+        right: 0;
+        top: 10px;
+        z-index: 2;
+        border: 6px solid #eaeaea;
+        background: #fff;
+      }
+
+      .img3 {
+        width: 42%;
+        height: 270px;
+        left: 18%;
+        bottom: 0;
+        z-index: 3;
+        border: 7px solid #ffffff;
+        background: #fff;
+      }
+
+      .blue-box {
+        width: 38%;
+        height: 320px;
+        background: linear-gradient(
+          135deg,
+          #003b5c 0%,
+          #005f73 35%,
+          #0a9396 70%,
+          #2d6a4f 100%
+        );
+        position: absolute;
+        right: 2%;
+        bottom: 26px;
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid rgba(212, 160, 23, 0.7);
+        flex-direction: column;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 59, 92, 0.35);
+        transition: transform 0.2s;
+      }
+
+      .blue-box h3 {
+        color: #d8f3dc;
+        font-size: 16px;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+        text-align: left;
+        width: 100%;
+        font-weight: 400;
+      }
+
+      .blue-box h2 {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        background: linear-gradient(90deg, #d4a017, #f7e08c);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 58px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        line-height: 1.1;
+        margin-bottom: 12px;
+        width: 100%;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .blue-box p {
+        color: #02283d;
+        font-size: 18px;
+        text-align: right;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 40px;
+        margin-top: 6px;
+        letter-spacing: 0.3px;
+        font-style: italic;
+        margin-left: 66px;
+      }
+
+      @media (max-width: 1100px) {
+        .section-start {
+          padding: 32px 30px 90px;
+        }
+
+        .logo img {
+          width: 300px;
+        }
+
+        .logo {
+          margin-bottom: -50px;
+        }
+
+        .gallery-layout {
+          position: relative;
+          min-height: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .img-box,
+        .blue-box {
+          position: relative;
+          width: 100%;
+          left: auto;
+          right: auto;
+          top: auto;
+          bottom: auto;
+          margin: 0 auto;
+        }
+
+        .img1,
+        .img2,
+        .img3 {
+          height: 380px;
+          width: 100%;
+          border-width: 3px;
+        }
+
+        .img2 {
+          border: 4px solid #eaeaea;
+        }
+        .img3 {
+          border: 4px solid #ffffff;
+        }
+
+        .blue-box {
+          width: 100%;
+          height: auto;
+          min-height: 200px;
+          padding: 32px 28px;
+          border: 4px solid #eaeaea;
+          margin-top: 8px;
+        }
+
+        .blue-box h2 {
+          font-size: 46px;
+        }
+
+        .blue-box p {
+          font-size: 18px;
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section-start {
+          padding: 20px 18px 60px;
+        }
+
+        .logo {
+          margin-bottom: 20px;
+        }
+
+        .logo img {
+          width: 210px;
+        }
+
+        .gallery-layout {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          min-height: auto;
+        }
+
+        .img-box,
+        .blue-box {
+          position: relative;
+          left: auto;
+          right: auto;
+          top: auto;
+          bottom: auto;
+          width: 100%;
+          margin: 0;
+        }
+
+        /* Create a flex row container for the two visible images (img1 & img2) */
+        .gallery-layout {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .gallery-layout {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: space-between;
+        }
+
+        /* Make img1 and img2 each take roughly half width, side by side */
+        .img1,
+        .img2 {
+          position: relative;
+          width: calc(50% - 6px); /* half minus half gap */
+          height: 240px;
+          left: auto;
+          right: auto;
+          top: auto;
+          border-radius: 20px;
+          border: 2px solid #f0f0f0;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hide third image completely in mobile */
+        .img3 {
+          display: none;
+        }
+
+        /* Blue box takes full width, order after images */
+        .blue-box {
+          position: relative;
+          width: 100%;
+          height: auto;
+          min-height: 170px;
+          right: auto;
+          bottom: auto;
+          margin-top: 8px;
+          padding: 24px 20px;
+          border-radius: 28px;
+          border: 3px solid #eaeaea;
+          order: 3;
+        }
+
+        /* Adjust content spacing inside blue box for compact look */
+        .blue-box h3 {
+          font-size: 15px;
+          letter-spacing: 1.5px;
+          margin-bottom: 6px;
+        }
+
+        .blue-box h2 {
+          font-size: 34px;
+          letter-spacing: 1px;
+        }
+
+        .blue-box p {
+          font-size: 15px;
+          padding: 4px 12px;
+          background: rgba(255, 255, 255, 0.25);
+          border-radius: 30px;
+          font-weight: 600;
+          backdrop-filter: blur(2px);
+        }
+
+        /* Additional polish for images inside side-by-side layout */
+        .img-box {
+          overflow: hidden;
+          border-radius: 20px;
+        }
+
+        .img-box img {
+          transition: transform 0.3s ease;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        /* remove any extra margins */
+        .img1,
+        .img2 {
+          margin: 0;
+        }
+
+        /* Fine-tune for very narrow devices (<=480px) */
+        @media (max-width: 480px) {
+          .section-start {
+            padding: 16px 14px 50px;
+          }
+
+          .logo img {
+            width: 160px;
+          }
+
+          .img1,
+          .img2 {
+            height: 190px;
+            border-radius: 18px;
+          }
+
+          .blue-box {
+            padding: 20px 16px;
+            min-height: 150px;
+          }
+
+          .blue-box h2 {
+            font-size: 28px;
+          }
+
+          .blue-box h3 {
+            font-size: 13px;
+          }
+
+          .blue-box p {
+            font-size: 13px;
+            padding: 3px 10px;
+          }
+
+          .gallery-layout {
+            gap: 10px;
+          }
+        }
+      }
+
+      /* For devices between 769px and 1100px, we keep stacking but no side-by-side 
+       because that's tablet layout respecting original stacking. Fine. 
+       However at 768px and below we trigger the two-image row + hide third. */
+
+      /* Ensure that for desktop/larger than 768px, the original absolute layout remains untouched.
+       The critical mobile changes only apply under 768px media query. Also the logo negative margin
+       resets on mobile for better readability. */
+
+      /* Small additional hover safety */
+      @media (hover: hover) {
+        .img-box:hover img {
+          transform: scale(1.05);
+        }
+      }
+
+      img {
+        user-select: none;
+      }
+
+      /* smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section-start">
+      <!-- LOGO — unchanged image path -->
+      <div class="logo">
+        <img src="Images/name.png" alt="Vrindavan Logo | Kirti Realty" />
+      </div>
+
+      <!-- GALLERY LAYOUT (preserves exact desktop composition) -->
+      <div class="gallery-layout">
+        <!-- IMAGE 1 – left big composition (desktop) / becomes left image in mobile side-by-side -->
+        <div class="img-box img1">
+          <img
+            src="Images/virndavan villa.png"
+            alt="Luxury real estate landscape"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- IMAGE 2 – right top image with border (desktop) / becomes right image in mobile side-by-side -->
+        <div class="img-box img2">
+          <img
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop"
+            alt="Modern township view"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- IMAGE 3 – bottom center accent – hidden on mobile (responsive rule) -->
+        <div class="img-box img3">
+          <img
+            src="https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWx0eXxlbnwwfHwwfHx8MA%3D%3D"
+            alt="Green serene community"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- BLUE BOX – content unchanged, will appear right after images on mobile -->
+        <div class="blue-box">
+          <h3>Turn Dreams into Reality with</h3>
+          <h2>Kirti Realty</h2>
+          <p>
+            Premium Plots in the Heart of Vrindavan <br />
+            Building Tomorrow's Landmarks Today
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

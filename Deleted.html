@@ -461,3 +461,1804 @@
     </section>
   </body>
 </html>
+<!-- -----about------ -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Kirti Realty | Integrity & Vision</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fefcf8;
+        color: #1a2c3e;
+        line-height: 1.5;
+      }
+
+      .container-au {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 5rem 40px 2rem;
+      }
+
+      /* --- STATS SECTION (moving numbers, clean cards) --- */
+      .stats-section {
+        margin-bottom: 4rem;
+      }
+
+      .stats-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1.8rem;
+      }
+
+      .stat-card {
+        flex: 1;
+        min-width: 170px;
+        background: white;
+        border-radius: 2rem;
+        padding: 2rem 1rem;
+        text-align: center;
+        box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(194, 123, 46, 0.15);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 25px 40px -16px rgba(194, 123, 46, 0.2);
+        border-color: rgba(194, 123, 46, 0.3);
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #c27b2e;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        gap: 0.2rem;
+        letter-spacing: -0.02em;
+      }
+
+      .stat-number span {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #2c3e4e;
+        letter-spacing: 0.5px;
+      }
+
+      .stat-desc {
+        font-size: 0.8rem;
+        color: #5a6e7c;
+        margin-top: 0.5rem;
+      }
+
+      /* --- SIDE BY SIDE: WELCOME (white card on image) + ABOUT US (right side) --- */
+      .split-hero-about {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 4rem;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      /* LEFT: Background image + white square card */
+      .hero-card-block {
+        flex: 1.7;
+        min-width: 280px;
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+        background-size: cover;
+        background-position: center 35%;
+        border-radius: 2rem 0 0 2rem;
+        overflow: hidden;
+        isolation: isolate;
+        min-height: 480px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2rem;
+        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-card-block::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          115deg,
+          rgba(0, 0, 0, 0.45) 0%,
+          rgba(0, 0, 0, 0.2) 80%
+        );
+        border-radius: 2rem;
+        z-index: 1;
+      }
+
+      /* White Square Card (clean) */
+      .white-square-card {
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(135deg, #ffffff 0%, #f5d090 100%);
+        border-radius: 1.75rem;
+        padding: 3rem 2rem;
+        max-width: 94%;
+        width: 100%;
+        box-shadow: 0 30px 40px -18px rgba(0, 0, 0, 0.25);
+        transition: transform 0.2s;
+      }
+
+      .brand-badge {
+        background: #f2e5d8;
+        color: #c27b2e;
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 0.3rem 1rem;
+        border-radius: 40px;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+      }
+
+      .white-square-card h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #0f2b36;
+        margin-bottom: 1rem;
+      }
+
+      .white-square-card h1 span {
+        color: #c27b2e;
+      }
+
+      .white-square-card p {
+        color: #2c3e4e;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      .highlight-text {
+        font-weight: 500;
+        border-left: 3px solid #c27b2e;
+        padding-left: 0.8rem;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      /* RIGHT: About Us (side heading + details) - modern clean */
+      .about-block {
+        flex: 1.2;
+        min-width: 280px;
+        background: #f9f7f3;
+        padding: 3rem 3.5rem;
+        border-radius: 0 2rem 2rem 0;
+        box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f0e7dc;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .about-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .about-tag {
+        display: inline-block;
+        color: #c27b2e;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .about-block h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #0f2b36;
+        border-left: 5px solid #c27b2e;
+        padding-left: 1.2rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.2;
+      }
+
+      .about-detail-text p {
+        margin-bottom: 1.2rem;
+        color: #2c3e4e;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .mission-badge {
+        background: #fef6ed;
+        padding: 1.2rem;
+        border-radius: 1.2rem;
+        margin-top: 0.5rem;
+        border-left: 4px solid #c27b2e;
+        font-weight: 500;
+        color: #1e3a4a;
+        font-size: 0.9rem;
+      }
+
+      .mission-badge i {
+        color: #c27b2e;
+        margin-right: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .trust-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .trust-item {
+        flex: 1;
+        min-width: 100px;
+        background: #faf7f2;
+        border-radius: 2rem;
+        padding: 0.6rem 0.8rem;
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #2c5a6e;
+      }
+
+      .trust-item i {
+        color: #c27b2e;
+        margin-right: 6px;
+      }
+
+      /* ============================================ */
+      /* RESPONSIVE: IMPROVED FOR SMALL SPACE */
+      /* Desktop look unchanged - only spacing & typography refined for small screens */
+      /* ============================================ */
+
+      @media (max-width: 1100px) {
+        .container-au {
+          padding: 0 30px;
+        }
+
+        .about-block {
+          padding: 2.5rem 2.5rem;
+        }
+
+        .white-square-card {
+          padding: 2.5rem 1.8rem;
+        }
+
+        .white-square-card h1 {
+          font-size: 1.8rem;
+        }
+
+        .about-block h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .container-au {
+          padding: 0 24px;
+        }
+
+        .split-hero-about {
+          flex-direction: column;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .hero-card-block {
+          min-height: 420px;
+          border-radius: 2rem;
+        }
+
+        .hero-card-block::before {
+          border-radius: 2rem;
+        }
+
+        .about-block {
+          border-radius: 2rem;
+          padding: 2rem 2rem;
+        }
+
+        .stats-grid {
+          gap: 1.2rem;
+        }
+
+        .stat-card {
+          min-width: 150px;
+          padding: 1.5rem 0.8rem;
+        }
+
+        .stat-number {
+          font-size: 2.6rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container-au {
+          padding: 0 20px;
+        }
+
+        .split-hero-about {
+          margin-bottom: 2.5rem;
+          gap: 1.2rem;
+        }
+
+        .hero-card-block {
+          min-height: 380px;
+          padding: 1.5rem;
+        }
+
+        .white-square-card {
+          padding: 1.8rem 1.5rem;
+          border-radius: 1.5rem;
+        }
+
+        .white-square-card h1 {
+          font-size: 1.6rem;
+        }
+
+        .white-square-card p {
+          font-size: 0.88rem;
+        }
+
+        .highlight-text {
+          font-size: 0.85rem;
+        }
+
+        .brand-badge {
+          font-size: 0.7rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .about-block {
+          padding: 1.8rem 1.5rem;
+        }
+
+        .about-block h2 {
+          font-size: 1.8rem;
+          padding-left: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .about-detail-text p {
+          font-size: 0.88rem;
+          margin-bottom: 1rem;
+        }
+
+        .mission-badge {
+          padding: 1rem;
+          font-size: 0.85rem;
+        }
+
+        .trust-item {
+          padding: 0.5rem 0.6rem;
+          font-size: 0.75rem;
+          min-width: 85px;
+        }
+
+        .stats-section {
+          margin-bottom: 2.5rem;
+        }
+
+        .stats-grid {
+          gap: 1rem;
+        }
+
+        .stat-card {
+          padding: 1.2rem 0.6rem;
+          min-width: 130px;
+          border-radius: 1.5rem;
+        }
+
+        .stat-number {
+          font-size: 2.2rem;
+        }
+
+        .stat-label {
+          font-size: 0.85rem;
+        }
+
+        .stat-desc {
+          font-size: 0.7rem;
+        }
+      }
+
+      @media (max-width: 550px) {
+        .container-au {
+          padding: 0 16px;
+        }
+
+        .split-hero-about {
+          margin-bottom: 2rem;
+          gap: 1rem;
+        }
+
+        .hero-card-block {
+          min-height: 340px;
+          padding: 1rem;
+        }
+
+        .white-square-card {
+          padding: 1.4rem 1.2rem;
+        }
+
+        .white-square-card h1 {
+          font-size: 1.4rem;
+        }
+
+        .white-square-card p {
+          font-size: 0.82rem;
+        }
+
+        .highlight-text {
+          font-size: 0.78rem;
+          padding-left: 0.6rem;
+        }
+
+        .brand-badge {
+          font-size: 0.65rem;
+          padding: 0.2rem 0.8rem;
+        }
+
+        .about-block {
+          padding: 1.4rem 1.2rem;
+        }
+
+        .about-block h2 {
+          font-size: 1.5rem;
+          padding-left: 0.8rem;
+        }
+
+        .about-tag {
+          font-size: 0.7rem;
+        }
+
+        .about-detail-text p {
+          font-size: 0.82rem;
+          line-height: 1.5;
+        }
+
+        .mission-badge {
+          padding: 0.9rem;
+          font-size: 0.8rem;
+        }
+
+        .trust-list {
+          gap: 0.7rem;
+        }
+
+        .trust-item {
+          padding: 0.4rem 0.5rem;
+          font-size: 0.7rem;
+          min-width: 75px;
+        }
+
+        .stats-grid {
+          gap: 0.8rem;
+        }
+
+        .stat-card {
+          padding: 1rem 0.4rem;
+          min-width: 110px;
+        }
+
+        .stat-number {
+          font-size: 1.8rem;
+        }
+
+        .stat-label {
+          font-size: 0.75rem;
+          letter-spacing: 0.3px;
+        }
+
+        .stat-desc {
+          font-size: 0.65rem;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .container-au {
+          padding: 0 12px;
+        }
+
+        .white-square-card h1 {
+          font-size: 1.3rem;
+        }
+
+        .about-block h2 {
+          font-size: 1.3rem;
+        }
+
+        .stats-grid {
+          gap: 0.6rem;
+        }
+
+        .stat-card {
+          min-width: 95px;
+          padding: 0.9rem 0.3rem;
+        }
+
+        .stat-number {
+          font-size: 1.6rem;
+        }
+
+        .stat-label {
+          font-size: 0.7rem;
+        }
+
+        .trust-item {
+          min-width: 70px;
+          font-size: 0.65rem;
+        }
+      }
+
+      /* Maintain hover effects only on devices that support hover */
+      @media (hover: hover) {
+        .stat-card:hover {
+          transform: translateY(-6px);
+        }
+      }
+
+      /* Touch-friendly adjustments for mobile */
+      @media (max-width: 768px) {
+        .stat-card {
+          cursor: pointer;
+        }
+
+        .trust-item {
+          cursor: default;
+        }
+
+        .white-square-card {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-au">
+      <!-- SIDE BY SIDE: LEFT (welcome + white card on image) | RIGHT (about us with heading left/details right style) -->
+      <div class="split-hero-about">
+        <!-- LEFT: White square card over background image (Welcome to Kirti Realty) -->
+        <div class="hero-card-block">
+          <div class="white-square-card">
+            <div class="brand-badge">
+              <i class="fas fa-home"></i> built on trust & excellence
+            </div>
+            <h1>Welcome to <span>Kirti Realty</span></h1>
+            <p>
+              A name built on trust, commitment, and excellence in real estate
+              development. We believe real estate is more than just buildings —
+              it is about creating spaces where families grow, businesses
+              thrive, and dreams become reality.
+            </p>
+            <p class="highlight-text">
+              <i
+                class="fas fa-check-circle"
+                style="color: #c27b2e; margin-right: 6px"
+              ></i>
+              Transparency • Quality Construction • Timely Delivery
+            </p>
+            <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #4a6272">
+              Long-term value & reliability in every project.
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: About Us section (side heading + details / left & right style) -->
+        <div class="about-block">
+          <div class="about-inner">
+            <span class="about-tag"
+              ><i class="fas fa-building"></i> about kirti realty</span
+            >
+            <h2>About Us</h2>
+            <div class="about-detail-text">
+              <p>
+                From residential plotting to premium villas and large land
+                deals, we deliver modern developments designed for comfort,
+                investment growth, and future opportunities. Our mission is to
+                build lasting relationships through honesty, professionalism,
+                and trust — helping every client make confident property
+                decisions.
+              </p>
+              <p>
+                With a strong focus on transparency, quality construction,
+                customer satisfaction, and timely delivery, we are committed to
+                developing projects that provide long-term value and
+                reliability. Each milestone reflects our unwavering dedication
+                to excellence.
+              </p>
+            </div>
+            <div class="mission-badge">
+              <i class="fas fa-handshake"></i> "Building lasting relationships
+              through honesty & trust — because your property journey is our
+              priority."
+            </div>
+            <!-- <div class="trust-list">
+              <div class="trust-item">
+                <i class="fas fa-chart-line"></i> Investment Growth
+              </div>
+              <div class="trust-item">
+                <i class="fas fa-shield-alt"></i> 100% Transparency
+              </div>
+              <div class="trust-item">
+                <i class="fas fa-clock"></i> On-Time Delivery
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- STATS SECTION: Moving numbers with counters -->
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">
+              <span class="counter" data-target="142">0</span><span>+</span>
+            </div>
+            <div class="stat-label">Projects Delivered</div>
+            <div class="stat-desc">Residential & Commercial</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">
+              <span class="counter" data-target="2780">0</span><span>+</span>
+            </div>
+            <div class="stat-label">Happy Families</div>
+            <div class="stat-desc">Satisfied homeowners</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">
+              <span class="counter" data-target="210">0</span><span>+</span>
+            </div>
+            <div class="stat-label">Acres Developed</div>
+            <div class="stat-desc">Prime plots & villas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">
+              <span class="counter" data-target="19">0</span><span>+</span>
+            </div>
+            <div class="stat-label">Years of Trust</div>
+            <div class="stat-desc">Since 2005</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated Counter Script (moving numbers with scroll trigger & visibility) -->
+    <script>
+      (function () {
+        const counters = document.querySelectorAll(".counter");
+        let animationTriggered = false;
+        let countActive = false;
+
+        function animateNumbers() {
+          if (countActive) return;
+          countActive = true;
+          counters.forEach((counter) => {
+            const target = parseInt(counter.getAttribute("data-target"), 10);
+            let current = 0;
+            const step = Math.max(1, Math.ceil(target / 55)); // smooth increment, min 1
+            const update = () => {
+              let currentVal = parseInt(counter.innerText, 10);
+              if (isNaN(currentVal)) currentVal = 0;
+              let nextVal = currentVal + step;
+              if (nextVal >= target) {
+                counter.innerText = target;
+                return;
+              }
+              counter.innerText = nextVal;
+              requestAnimationFrame(update);
+            };
+            update();
+          });
+        }
+
+        // Intersection Observer for stats section
+        const statsSection = document.querySelector(".stats-section");
+        if (statsSection && "IntersectionObserver" in window) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && !animationTriggered) {
+                  animationTriggered = true;
+                  animateNumbers();
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.2 }, // Slightly lower threshold for better mobile trigger
+          );
+          observer.observe(statsSection);
+        } else {
+          // fallback: start after a delay if no observer support
+          window.addEventListener("load", () => {
+            setTimeout(() => {
+              if (!animationTriggered) {
+                animationTriggered = true;
+                animateNumbers();
+              }
+            }, 400);
+          });
+        }
+
+        // If stats already visible on load (just in case)
+        window.addEventListener("load", function () {
+          if (statsSection && !animationTriggered) {
+            const rect = statsSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) {
+              animationTriggered = true;
+              animateNumbers();
+            }
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
+
+<!-- ---------services--------------  -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Kirti Realty | Full-Spectrum Elite Services</title>
+    <!-- Google Fonts: Refined Serif + Modern Sans -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- SwiperJS (modern sliding library) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f9f7f3;
+        font-family: "Inter", sans-serif;
+        color: #1f1b16;
+        overflow-x: hidden;
+      }
+
+      .services-luxury-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+      }
+      .services-luxury-container > h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        background: linear-gradient(
+          135deg,
+          #494646 0%,
+          #554c40 40%,
+          #ff9a00 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .split-layout {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      /* LEFT SIDE: elegant brand block with refined messaging */
+      .left-brand-block {
+        flex: 1.1;
+        min-width: 280px;
+        background: linear-gradient(135deg, #ffffff 0%, #f5d090 100%);
+        border-radius: 2.5rem;
+        padding: 2.8rem 2rem;
+        box-shadow:
+          0 20px 35px -12px rgba(0, 0, 0, 0.05),
+          0 1px 3px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(200, 170, 110, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .krita-badge {
+        display: inline-block;
+        background: rgba(180, 140, 72, 0.12);
+        padding: 0.3rem 1rem;
+        border-radius: 40px;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        font-weight: 600;
+        color: #aa7c48;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+
+      .left-brand-block h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3.4rem;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 1.2rem;
+        color: #2c241a;
+      }
+
+      .left-brand-block h2 .highlight-brand {
+        background: linear-gradient(130deg, #b48c48, #dfb872);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-weight: 700;
+      }
+
+      .tagline {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #5c5548;
+        margin-bottom: 2rem;
+        border-left: 3px solid #dfb872;
+        padding-left: 1.2rem;
+        font-weight: 400;
+      }
+
+      .service-highlight-list {
+        margin-top: 2rem;
+      }
+
+      .service-highlight-list .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        margin-bottom: 1.3rem;
+      }
+
+      .highlight-item i {
+        width: 32px;
+        color: #b48c48;
+        font-size: 1.3rem;
+      }
+
+      .highlight-item span {
+        font-weight: 500;
+        font-size: 1rem;
+        color: #342d24;
+      }
+
+      .gold-separator {
+        width: 60px;
+        height: 2px;
+        background: #e3cda5;
+        margin: 2rem 0 1rem;
+      }
+
+      .luxury-note {
+        font-size: 0.85rem;
+        color: #8f7e68;
+        font-style: italic;
+      }
+
+      /* RIGHT SIDE: slider container — background images fully visible */
+      .right-slider-block {
+        flex: 2;
+        min-width: 0;
+        position: relative;
+      }
+
+      .swiper {
+        width: 100%;
+        overflow: hidden;
+        padding: 0.5rem 0 2rem;
+        border-radius: 2rem;
+      }
+
+      .swiper-slide {
+        height: auto;
+        border-radius: 2rem;
+        transition: transform 0.3s ease;
+      }
+
+      /* SERVICE CARD: BG images made fully visible and richer */
+      .service-card-slide {
+        position: relative;
+        border-radius: 2rem;
+        overflow: hidden;
+        background-color: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 18px 35px -12px rgba(0, 0, 0, 0.12);
+        transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+
+      .service-card-slide:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 28px 40px -14px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Background image with perfect visibility */
+      .card-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.85;
+        transition:
+          opacity 0.5s ease,
+          transform 0.7s ease;
+        z-index: 0;
+        filter: brightness(0.92) contrast(1.05);
+      }
+
+      .service-card-slide:hover .card-bg-img {
+        opacity: 1;
+        transform: scale(1.03);
+      }
+
+      /* Glass-content: dark elegant overlay to make text pop, but background remains vivid */
+      .card-content-inner {
+        position: relative;
+        z-index: 2;
+        padding: 2rem 1.8rem 2rem 1.8rem;
+        background: linear-gradient(
+          145deg,
+          rgba(20, 18, 16, 0.72),
+          rgba(10, 8, 6, 0.68)
+        );
+        backdrop-filter: blur(5px);
+        border-radius: 2rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 380px;
+        transition: background 0.2s;
+      }
+
+      .service-card-slide:hover .card-content-inner {
+        background: linear-gradient(
+          145deg,
+          rgba(0, 0, 0, 0.75),
+          rgba(25, 20, 15, 0.7)
+        );
+      }
+
+      .card-icon-large {
+        font-size: 2.3rem;
+        color: #e9cd9c;
+        margin-bottom: 1.2rem;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .service-card-slide h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.95rem;
+        font-weight: 700;
+        margin-bottom: 0.9rem;
+        color: #fef7e6;
+        letter-spacing: -0.3px;
+      }
+
+      .service-desc-short {
+        font-size: 0.92rem;
+        line-height: 1.48;
+        color: #f0ede8;
+        margin-bottom: 1.8rem;
+        flex: 1;
+        font-weight: 400;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      .know-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 250, 240, 0.15);
+        border: 1.5px solid #e9cd9c;
+        padding: 0.7rem 1.4rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        color: #ffefcf;
+        cursor: pointer;
+        transition: all 0.25s;
+        width: fit-content;
+        backdrop-filter: blur(3px);
+      }
+
+      .know-more-btn i {
+        transition: transform 0.2s;
+        font-size: 0.75rem;
+      }
+
+      .know-more-btn:hover {
+        background: #c6a15b;
+        border-color: #c6a15b;
+        color: #1f1b16;
+        gap: 12px;
+      }
+
+      .know-more-btn:hover i {
+        transform: translateX(4px);
+        color: #1f1b16;
+      }
+
+      /* Swiper navigation refined */
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #e9cd9c;
+        background: rgba(30, 25, 20, 0.7);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s;
+      }
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background: #c6a15b;
+        color: #1f1b16;
+      }
+
+      .swiper-pagination-bullet {
+        background: #e9cd9c;
+        opacity: 0.6;
+      }
+      .swiper-pagination-bullet-active {
+        background: #f5d78c;
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      /* ============================================ */
+      /* RESPONSIVE: DESKTOP LOOK UNCHANGED ABOVE 1100px */
+      /* IMPROVED for small spaces with perfect adaptability */
+      /* ============================================ */
+
+      @media (max-width: 1200px) {
+        .split-layout {
+          gap: 2rem;
+        }
+        .left-brand-block h2 {
+          font-size: 2.8rem;
+        }
+        .card-content-inner {
+          min-height: 360px;
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .services-luxury-container {
+          padding: 4rem 1.8rem;
+        }
+        .split-layout {
+          gap: 2rem;
+        }
+        .left-brand-block {
+          padding: 2.2rem 1.8rem;
+        }
+        .left-brand-block h2 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .split-layout {
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .left-brand-block {
+          text-align: center;
+          width: 100%;
+        }
+        .left-brand-block h2 {
+          font-size: 2.4rem;
+        }
+        .tagline {
+          border-left: none;
+          padding-left: 0;
+          text-align: center;
+        }
+        .service-highlight-list .highlight-item {
+          justify-content: center;
+        }
+        .gold-separator {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .right-slider-block {
+          width: 100%;
+        }
+        .card-content-inner {
+          min-height: 340px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .services-luxury-container {
+          padding: 3rem 1.2rem;
+        }
+        .services-luxury-container > h2 {
+          font-size: 2.2rem;
+          margin-bottom: 2rem;
+        }
+        .left-brand-block {
+          padding: 1.8rem 1.4rem;
+          border-radius: 2rem;
+        }
+        .left-brand-block h2 {
+          font-size: 2rem;
+        }
+        .krita-badge {
+          font-size: 0.65rem;
+          margin-bottom: 1rem;
+        }
+        .tagline {
+          font-size: 0.9rem;
+          margin-bottom: 1.2rem;
+        }
+        .gold-separator {
+          margin: 1.5rem auto 0.5rem;
+        }
+        .card-content-inner {
+          padding: 1.5rem 1.3rem;
+          min-height: 310px;
+        }
+        .service-card-slide h3 {
+          font-size: 1.7rem;
+        }
+        .service-desc-short {
+          font-size: 0.85rem;
+          margin-bottom: 1.2rem;
+        }
+        .know-more-btn {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.75rem;
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+          display: none;
+        }
+        .swiper-pagination {
+          bottom: 0px;
+        }
+        .swiper {
+          padding-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 550px) {
+        .services-luxury-container {
+          padding: 2rem 1rem;
+        }
+        .services-luxury-container > h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+        }
+        .left-brand-block {
+          padding: 1.4rem 1rem;
+          border-radius: 1.5rem;
+        }
+        .left-brand-block h2 {
+          font-size: 1.6rem;
+        }
+        .krita-badge {
+          font-size: 0.6rem;
+          padding: 0.2rem 0.8rem;
+        }
+        .tagline {
+          font-size: 0.85rem;
+        }
+        .card-content-inner {
+          padding: 1.2rem 1rem;
+          min-height: 280px;
+        }
+        .service-card-slide h3 {
+          font-size: 1.5rem;
+        }
+        .card-icon-large {
+          font-size: 1.8rem;
+          margin-bottom: 0.8rem;
+        }
+        .service-desc-short {
+          font-size: 0.8rem;
+          line-height: 1.4;
+        }
+        .know-more-btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.7rem;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .services-luxury-container {
+          padding: 1.8rem 0.8rem;
+        }
+        .services-luxury-container > h2 {
+          font-size: 1.6rem;
+        }
+        .left-brand-block h2 {
+          font-size: 1.4rem;
+        }
+        .card-content-inner {
+          min-height: 260px;
+        }
+        .service-card-slide h3 {
+          font-size: 1.35rem;
+        }
+        .service-desc-short {
+          font-size: 0.75rem;
+        }
+      }
+
+      /* Maintain hover effects only on devices that support hover */
+      @media (hover: hover) {
+        .service-card-slide:hover {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* Touch-friendly adjustments */
+      @media (max-width: 768px) {
+        .know-more-btn {
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .service-card-slide {
+          cursor: pointer;
+        }
+      }
+
+      .bg-accent-leaf {
+        background: #ffebc57d;
+        border-top: 2px solid #e5c165;
+        border-bottom: 2px solid #e5c165;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="services-luxury-container bg-accent-leaf">
+      <h2>Our Premium Services</h2>
+      <div class="split-layout">
+        <!-- LEFT BLOCK: Brand & core services preview -->
+        <div class="left-brand-block">
+          <div class="krita-badge">
+            <i class="fas fa-crown" style="margin-right: 6px"></i> EST. 2025
+          </div>
+          <h2>
+            <span class="highlight-brand">Kirti Realty</span> also offers a wide
+            range of real estate services, including:
+          </h2>
+          <div class="tagline">
+            Beyond conventional — a full‑spectrum real estate powerhouse
+            delivering white-glove execution across asset classes.
+          </div>
+          <div class="gold-separator"></div>
+        </div>
+
+        <!-- RIGHT SLIDER: AUTO SLIDE + STOP ON HOVER -->
+        <div class="right-slider-block">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Service Card 1 - Residential Plotting -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1974&auto=format&quot;);
+                      background-position: center 35%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-draw-polygon"></i>
+                      </div>
+                      <h3>Residential Plotting</h3>
+                      <div class="service-desc-short">
+                        Prime land parcels, smart segmentation and future-value
+                        mapping. Tailored for boutique communities & luxury
+                        compounds.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href = 'Services/Residential.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 2 - Villas -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1524613032530-449a5d94c285?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dnJpbmRhdmFuJTJDJTIwaW5kaWF8ZW58MHx8MHx8fDA%3D&quot;);
+                      background-position: center 25%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-home"></i>
+                      </div>
+                      <h3>Villas</h3>
+                      <div class="service-desc-short">
+                        Architectural sanctuaries, private infinity pools, and
+                        landscape integration. Discover signature estates with
+                        timeless value.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="window.location.href = 'Services/villas.html'"
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 3 - Flats & Apartments -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2069&auto=format&quot;);
+                      background-position: center 40%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-building"></i>
+                      </div>
+                      <h3>Flats & Apartments</h3>
+                      <div class="service-desc-short">
+                        Panoramic penthouses, bespoke interiors & concierge
+                        lifestyle. Live at the apex of urban luxury.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href = 'Services/FlatsApartment.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 4 - Big Land Deals -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&quot;);
+                      background-position: center 28%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-globe-americas"></i>
+                      </div>
+                      <h3>Big Land Deals</h3>
+                      <div class="service-desc-short">
+                        Strategic mega-transactions, institutional portfolios &
+                        legacy acreage. Absolute discretion with unmatched
+                        negotiation power.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="window.location.href = 'Services/bigLand.html'"
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 5 - Real Estate Development -->
+              <!-- <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&quot;);
+                      background-position: center 30%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-hard-hat"></i>
+                      </div>
+                      <h3>Real Estate Development</h3>
+                      <div class="service-desc-short">
+                        End-to-end creation: master planning, permits,
+                        construction to go-to-market. Turning raw land into
+                        iconic addresses.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href = 'Services/Development.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div> -->
+              <!-- Card 6 - Property Investment Solutions -->
+              <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1974&auto=format&quot;);
+                      background-position: center 22%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-chart-pie"></i>
+                      </div>
+                      <h3>Property Investment Solutions</h3>
+                      <div class="service-desc-short">
+                        Yield-optimized strategies, tax-efficient structures &
+                        portfolio diversification. Maximize alpha with
+                        data-driven decisions.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href =
+                          'Services/PropertyInvestment.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 7 - Property Consultation -->
+              <!-- <div class="swiper-slide">
+                <div class="service-card-slide">
+                  <div
+                    class="card-bg-img"
+                    style="
+                      background-image: url(&quot;https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&quot;);
+                      background-position: center 35%;
+                    "
+                  ></div>
+                  <div class="card-content-inner">
+                    <div>
+                      <div class="card-icon-large">
+                        <i class="fas fa-user-tie"></i>
+                      </div>
+                      <h3>Property Consultation</h3>
+                      <div class="service-desc-short">
+                        Private office advisory: due diligence, negotiation,
+                        bespoke sourcing & legacy planning. Your real estate
+                        counsel.
+                      </div>
+                    </div>
+                    <button
+                      class="know-more-btn"
+                      onclick="
+                        window.location.href = 'Services/Consultation.html'
+                      "
+                    >
+                      KNOW MORE <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <!-- navigation & pagination -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Initialize Swiper with optimal settings for both desktop and mobile
+      const swiperInstance = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        autoplay: {
+          delay: 3200,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          1100: {
+            slidesPerView: 2.4,
+            spaceBetween: 28,
+          },
+          1400: {
+            slidesPerView: 3,
+            spaceBetween: 28,
+          },
+        },
+        grabCursor: true,
+        effect: "slide",
+        speed: 600,
+        autoHeight: false,
+      });
+
+      // Hover stop/start for autoplay
+      const sliderBlock = document.querySelector(".right-slider-block");
+      if (sliderBlock && swiperInstance.autoplay) {
+        sliderBlock.addEventListener("mouseenter", () => {
+          swiperInstance.autoplay.stop();
+        });
+        sliderBlock.addEventListener("mouseleave", () => {
+          swiperInstance.autoplay.start();
+        });
+      }
+
+      // Global function for button alerts
+
+      // Handle window resize to update swiper
+      window.addEventListener("resize", () => {
+        if (swiperInstance && swiperInstance.update) swiperInstance.update();
+      });
+    </script>
+  </body>
+</html>
+
+<!-- ------villa --- -->
+const track = document.getElementById("galleryTrack"); const slides =
+Array.from(document.querySelectorAll(".gallery-slide")); const prevBtn =
+document.getElementById("prevBtn"); const nextBtn =
+document.getElementById("nextBtn"); const dotsContainer =
+document.getElementById("carouselDots"); let currentIndex = 0; let slidesToShow
+= 3; let autoInterval; const autoDelay = 5000; function getSlidesToShow() { if
+(window.innerWidth <= 680) return 1; if (window.innerWidth <= 920) return 2;
+return 3; } let totalSlides = slides.length; // 7 let maxIndex = Math.max(0,
+totalSlides - slidesToShow); function updateMaxIndex() { slidesToShow =
+getSlidesToShow(); maxIndex = Math.max(0, totalSlides - slidesToShow); if
+(currentIndex > maxIndex) currentIndex = maxIndex; if (currentIndex < 0)
+currentIndex = 0; updatePosition(); generateDots(); updateActiveDot(); }
+function updatePosition() { const gap = 24; // matches gap in .carousel-track
+const containerWidth = track.parentElement.clientWidth; if (!containerWidth)
+return; let slideWidthPercent; if (slidesToShow === 3) slideWidthPercent =
+33.3333; else if (slidesToShow === 2) slideWidthPercent = 50; else
+slideWidthPercent = 100; const slideWidthPx = (containerWidth *
+slideWidthPercent) / 100; const translateValue = -(currentIndex * (slideWidthPx
++ gap)); track.style.transform = `translateX(${translateValue}px)`; } function
+generateDots() { dotsContainer.innerHTML = ""; const dotCount = maxIndex + 1;
+for (let i = 0; i < dotCount; i++) { const dot = document.createElement("div");
+dot.classList.add("dot"); if (i === currentIndex) dot.classList.add("active");
+dot.addEventListener("click", () => { currentIndex = i; updatePosition();
+updateActiveDot(); resetAutoPlay(); }); dotsContainer.appendChild(dot); } }
+function updateActiveDot() { const dots = document.querySelectorAll(".dot");
+dots.forEach((dot, idx) => { if (idx === currentIndex)
+dot.classList.add("active"); else dot.classList.remove("active"); }); } function
+goToSlide(delta) { let newIndex = currentIndex + delta; if (newIndex < 0)
+newIndex = 0; if (newIndex > maxIndex) newIndex = maxIndex; if (newIndex ===
+currentIndex) return; currentIndex = newIndex; updatePosition();
+updateActiveDot(); resetAutoPlay(); } function nextSlide() { goToSlide(1); }
+function prevSlide() { goToSlide(-1); } function resetAutoPlay() { if
+(autoInterval) clearInterval(autoInterval); startAutoPlay(); } function
+startAutoPlay() { autoInterval = setInterval(() => { if (currentIndex <
+maxIndex) nextSlide(); else { currentIndex = 0; updatePosition();
+updateActiveDot(); } }, autoDelay); } prevBtn.addEventListener("click", () => {
+prevSlide(); resetAutoPlay(); }); nextBtn.addEventListener("click", () => {
+nextSlide(); resetAutoPlay(); }); window.addEventListener("resize", () => {
+updateMaxIndex(); updatePosition(); }); window.addEventListener("load", () => {
+updateMaxIndex(); updatePosition(); startAutoPlay(); }); const carouselWrap =
+document.querySelector(".carousel-luxury");
+carouselWrap.addEventListener("mouseenter", () => { if (autoInterval)
+clearInterval(autoInterval); }); carouselWrap.addEventListener("mouseleave",
+startAutoPlay); // Lightbox for gallery (click on any slide) const lightbox =
+document.createElement("div"); lightbox.className = "lightbox-modal";
+lightbox.innerHTML = `<button class="close-lightbox">
+  <i class="fas fa-times"></i></button
+><img class="lightbox-img" src="" alt="Full view" />`;
+document.body.appendChild(lightbox); const lightboxImg =
+lightbox.querySelector(".lightbox-img"); const closeLight =
+lightbox.querySelector(".close-lightbox"); slides.forEach((slide) => {
+slide.addEventListener("click", (e) => { const largeSrc =
+slide.getAttribute("data-src") || slide.querySelector("img")?.src; if (largeSrc)
+{ lightboxImg.src = largeSrc; lightbox.classList.add("active"); } }); });
+closeLight.addEventListener("click", () => lightbox.classList.remove("active"),
+); lightbox.addEventListener("click", (e) => { if (e.target === lightbox)
+lightbox.classList.remove("active"); }); document.addEventListener("keydown",
+(e) => { if (e.key === "Escape" && lightbox.classList.contains("active"))
+lightbox.classList.remove("active"); });
+
+<!-- ESTATE GALLERY: 3 IMAGES VISIBLE, 1 SLIDE AT A TIME, AUTO-SLIDE + PREMIUM TOUCHES -->
+<!-- <section class="gallery-master">
+      <div class="villa-container">
+        <div class="section-header fade-up">
+          <h2>Estate Gallery</h2>
+          <div class="luxury-divider"></div>
+          <p>
+            A visual journey through timeless architecture and curated
+            landscapes
+          </p>
+        </div>
+        <div class="carousel-luxury">
+          <div class="carousel-container">
+            <div class="carousel-track" id="galleryTrack">
+              <div
+                class="gallery-slide"
+                data-src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&auto=format"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&auto=format"
+                  alt="Modern Villa Facade"
+                />
+                <div class="slide-caption">
+                  Iconic Facade • Private Entrance
+                </div>
+              </div>
+              <div
+                class="gallery-slide"
+                data-src="https://images.pexels.com/photos/7515855/pexels-photo-7515855.png"
+              >
+                <img
+                  src="https://images.pexels.com/photos/7515855/pexels-photo-7515855.png"
+                  alt="Infinity Pool"
+                />
+                <div class="slide-caption">Mordern Kitchen</div>
+              </div>
+              <div
+                class="gallery-slide"
+                data-src="https://images.pexels.com/photos/37433082/pexels-photo-37433082.jpeg"
+              >
+                <img
+                  src="https://images.pexels.com/photos/37433082/pexels-photo-37433082.jpeg"
+                  alt="Botanical Gardens"
+                />
+                <div class="slide-caption">Botanical Haven • Parking</div>
+              </div>
+              <div
+                class="gallery-slide"
+                data-src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1400&auto=format"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=900&auto=format"
+                  alt="Clubhouse Interior"
+                />
+                <div class="slide-caption">Dream Kitchen</div>
+              </div>
+              <div
+                class="gallery-slide"
+                data-src="https://images.pexels.com/photos/32031505/pexels-photo-32031505.jpeg"
+              >
+                <img
+                  src="https://images.pexels.com/photos/32031505/pexels-photo-32031505.jpeg"
+                  alt="Night Estate"
+                />
+                <div class="slide-caption">Own a Duplex House</div>
+              </div>
+              <div
+                class="gallery-slide"
+                data-src="https://images.pexels.com/photos/4870581/pexels-photo-4870581.jpeg"
+              >
+                <img
+                  src="https://images.pexels.com/photos/4870581/pexels-photo-4870581.jpeg"
+                  alt="Spacious Living"
+                />
+                <div class="slide-caption">Luxury Private Pool</div>
+              </div>
+              <div
+                class="gallery-slide"
+                data-src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&auto=format"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&auto=format"
+                  alt="Architecture"
+                />
+                <div class="slide-caption">Architectural Masterpiece</div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-btn btn-prev" id="prevBtn">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="carousel-btn btn-next" id="nextBtn">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+      </div>
+    </section> -->

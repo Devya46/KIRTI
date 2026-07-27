@@ -13,368 +13,6 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="Images/Favicon.jpg" type="image/x-icon" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        overflow-x: hidden;
-        background-color: #f8f5ef;
-      }
-
-      /* Hero Section - Full viewport with refined overlay to let images shine */
-      .hero {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        min-height: 760px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        isolation: isolate;
-      }
-
-      /* ---- LUXURY BACKGROUND SLIDER (cinematic quality) ---- */
-      .swiper-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-
-      .slides-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
-
-      .slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center 30%;
-        background-repeat: no-repeat;
-        opacity: 0;
-        transition: opacity 1.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        z-index: 1;
-        transform: scale(1);
-      }
-
-      /* subtle ken burns effect on active slide for luxury feel */
-      .slide.active {
-        opacity: 1;
-        z-index: 2;
-        animation: kenBurnsSlow 12s ease-out infinite alternate;
-      }
-
-      @keyframes kenBurnsSlow {
-        0% {
-          transform: scale(1);
-        }
-        100% {
-          transform: scale(1.08);
-        }
-      }
-
-      /* elegant gradient overlay that enhances image depth - more sophisticated for luxury */
-      .hero::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          rgba(10, 10, 20, 0.55) 0%,
-          rgba(0, 0, 0, 0.35) 40%,
-          rgba(0, 0, 0, 0.65) 100%
-        );
-        z-index: 2;
-        pointer-events: none;
-      }
-
-      /* additional soft shadow overlay to make images pop */
-      .hero .gradient-accent {
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          circle at 20% 30%,
-          rgba(255, 215, 150, 0.08) 0%,
-          rgba(0, 0, 0, 0.3) 100%
-        );
-        z-index: 2;
-        pointer-events: none;
-      }
-
-      /* ---- CONTENT (luxury typography + premium spacing) ---- */
-      .hero-content {
-        position: relative;
-        z-index: 15;
-        max-width: 1300px;
-        width: 88%;
-        margin: 0 auto;
-        padding: 2rem 2rem;
-        text-align: center;
-        backdrop-filter: blur(0px);
-        animation: fadeUpLuxury 1s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
-      }
-
-      /* main heading - elegant serif with golden touch */
-      .hero-heading {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(3rem, 9vw, 6rem);
-        font-weight: 700;
-        letter-spacing: 0;
-        line-height: 1.05;
-        margin-bottom: 1.2rem;
-        position: relative;
-        display: inline-block;
-        background: linear-gradient(
-          180deg,
-          #fff9df 0%,
-          #f1c84b 35%,
-          #c9951f 70%,
-          #6b4300 100%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: #00000000;
-        -webkit-text-stroke: 1px rgb(225 108 0 / 18%);
-        text-shadow:
-          0 2px 10px rgba(0, 0, 0, 0.15),
-          0 8px 30px rgba(0, 0, 0, 0.25),
-          0 15px 50px rgba(0, 0, 0, 0.2);
-      }
-
-      /* elegant decorative underline */
-      .hero-heading::after {
-        content: "";
-        position: absolute;
-        bottom: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 110px;
-        height: 2px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          #d4af37,
-          #f9e0a0,
-          #d4af37,
-          transparent
-        );
-        border-radius: 2px;
-      }
-
-      /* subheading with refined spacing */
-      .hero-subheading {
-        font-family: "Inter", sans-serif;
-        font-size: clamp(1rem, 4.5vw, 1.6rem);
-        font-weight: 400;
-        line-height: 1.5;
-        margin-top: 2rem;
-        margin-bottom: 2.8rem;
-        max-width: 780px;
-        margin-left: auto;
-        margin-right: auto;
-        color: rgba(255, 250, 240, 0.92);
-        letter-spacing: 0.3px;
-        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(2px);
-      }
-
-      /* premium button group */
-      .button-group {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.8rem;
-        row-gap: 1.2rem;
-        margin-top: 0.5rem;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 1rem 2.6rem;
-        font-weight: 500;
-        font-size: 1rem;
-        letter-spacing: 1px;
-        text-decoration: none;
-        border-radius: 0px;
-        transition: all 0.4s ease;
-        cursor: pointer;
-        text-align: center;
-        font-family: "Inter", sans-serif;
-        text-transform: uppercase;
-        backdrop-filter: blur(0px);
-      }
-
-      .btn-primary {
-        background: #dca341;
-        color: #0a0a0a;
-        border: 2px solid #dca341;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-        font-weight: 600;
-        letter-spacing: 1.5px;
-      }
-
-      .btn-primary:hover {
-        background: #e5c16500;
-        color: #dca341;
-        border: 2px solid #dca341;
-        /* transform: translateY(-4px); */
-        box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.4);
-        letter-spacing: 1.8px;
-      }
-
-      .btn-secondary {
-        background: transparent;
-        color: #f5f0e6;
-        border: 1.5px solid rgba(212, 175, 55, 0.8);
-        backdrop-filter: blur(6px);
-      }
-
-      .btn-secondary:hover {
-        background: rgba(212, 175, 55, 0.18);
-        border-color: #d4af37;
-        /* transform: translateY(-4px); */
-        backdrop-filter: blur(10px);
-        color: #ffffff;
-      }
-
-      /* elegant slider dots — minimal gold */
-      .slider-controls {
-        position: absolute;
-        bottom: 32px;
-        left: 0;
-        right: 0;
-        z-index: 18;
-        display: flex;
-        justify-content: center;
-        gap: 14px;
-        pointer-events: none;
-      }
-
-      .dot {
-        pointer-events: auto;
-        width: 10px;
-        height: 10px;
-        background-color: rgba(245, 240, 230, 0.5);
-        border-radius: 50%;
-        display: inline-block;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      }
-
-      .dot.active-dot {
-        background-color: #d4af37;
-        width: 28px;
-        border-radius: 14px;
-        transform: scale(1);
-        box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
-      }
-
-      .dot:hover {
-        background-color: #e5c165;
-        transform: scale(1.2);
-      }
-
-      /* minimal slide counter (luxury accent) */
-      .slide-counter {
-        position: absolute;
-        bottom: 32px;
-        right: 40px;
-        z-index: 18;
-        font-family: "Inter", monospace;
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        color: rgba(255, 250, 210, 0.8);
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(5px);
-        padding: 6px 14px;
-        border-radius: 30px;
-        font-weight: 300;
-        pointer-events: none;
-      }
-
-      /* Animation for content */
-      @keyframes fadeUpLuxury {
-        0% {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Responsive refinements */
-      @media (max-width: 768px) {
-        .hero-content {
-          width: 92%;
-          padding: 1.5rem 1rem;
-        }
-        .btn {
-          padding: 0.8rem 1.8rem;
-          font-size: 0.85rem;
-        }
-        .button-group {
-          gap: 1rem;
-        }
-        .hero-heading::after {
-          width: 70px;
-          bottom: -8px;
-        }
-        .slide-counter {
-          bottom: 22px;
-          right: 18px;
-          font-size: 0.7rem;
-        }
-        .slider-controls {
-          bottom: 22px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero {
-          min-height: 640px;
-        }
-        .hero-heading::after {
-          width: 55px;
-        }
-        .btn-primary,
-        .btn-secondary {
-          padding: 0.7rem 1.6rem;
-        }
-      }
-
-      /* ensure images pop: background-position fine tuned */
-      .slide:nth-child(1) {
-        background-position: center 25%;
-      }
-      .slide:nth-child(2) {
-        background-position: center 35%;
-      }
-      .slide:nth-child(3) {
-        background-position: center 30%;
-      }
-      .slide:nth-child(4) {
-        background-position: center 40%;
-      }
-    </style>
   </head>
   <body>
     <!-- -----header--------- -->
@@ -1802,265 +1440,356 @@
     </html>
 
     <!-- ---hero---- -->
-    <section class="hero">
-      <!-- Background Swiper Luxury Images (4 high-res unsplash) -->
-      <div class="swiper-bg">
-        <div class="slides-container" id="slidesContainer">
-          <!-- Using the exact images but with higher quality perception, they will shine because of overlay and ken burns -->
-          <div
-            class="slide"
-            style="background-image: url(&quot;Images/vindavan-1.jpg&quot;)"
-          ></div>
-          <div
-            class="slide"
-            style="background-image: url(&quot;Images/virndavan-2.png&quot;)"
-          ></div>
-          <div
-            class="slide"
-            style="background-image: url(&quot;Images/virndavan.jpg&quot;)"
-          ></div>
-          <div
-            class="slide"
-            style="background-image: url(&quot;Images/virndavan-3.png&quot;)"
-          ></div>
-        </div>
-      </div>
-      <!-- additional soft gradient accent for depth -->
-      <div class="gradient-accent"></div>
-
-      <!-- elegant slide counter and dots -->
-      <div class="slider-controls" id="sliderDots"></div>
-      <div class="slide-counter" id="slideCounter">01 / 04</div>
-
-      <!-- Hero text & premium call to action -->
-      <div class="hero-content">
-        <h1 class="hero-heading">Because Everyone Deserves the Best</h1>
-        <p class="hero-subheading">
-          Premium Real Estate Solutions for Modern Living & Smart Investments
-        </p>
-        <div class="button-group">
-          <a href="#Residences" class="btn btn-primary" id="exploreBtn"
-            >Explore Projects</a
-          >
-          <a href="Contact.html" class="btn btn-secondary" id="contactBtn"
-            >Contact Us</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <script>
-      (function () {
-        // --- LUXURY IMAGE SLIDER with auto transition, touch & mouse swipe, golden dots
-        const slides = document.querySelectorAll(".slide");
-        const dotsContainer = document.getElementById("sliderDots");
-        const counterSpan = document.getElementById("slideCounter");
-        let currentIndex = 0;
-        let slideInterval;
-        const intervalTime = 6000; // 6 seconds for luxury feel
-        let userInteracted = false;
-        let autoSlideTimeoutReset = null;
-
-        // Helper: update slide & dots + counter
-        function showSlide(index) {
-          if (index >= slides.length) index = 0;
-          if (index < 0) index = slides.length - 1;
-
-          slides.forEach((slide, i) => {
-            slide.classList.remove("active");
-            // reset animation by re-adding? we keep class, but need to force reflow to re-trigger ken burns? no needed, continuous
-          });
-          slides[index].classList.add("active");
-
-          // update dots
-          if (dotsContainer) {
-            const dots = dotsContainer.querySelectorAll(".dot");
-            dots.forEach((dot, i) => {
-              if (i === index) dot.classList.add("active-dot");
-              else dot.classList.remove("active-dot");
-            });
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Luxury Hero – Cinematic Video</title>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+          rel="stylesheet"
+        />
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
           }
-          // update counter (01/04 style)
-          if (counterSpan) {
-            let currentNumber = (index + 1).toString().padStart(2, "0");
-            let total = slides.length.toString().padStart(2, "0");
-            counterSpan.innerText = `${currentNumber} / ${total}`;
+
+          body {
+            font-family: "Inter", sans-serif;
+            overflow-x: hidden;
+            background-color: #0b0a08;
           }
-          currentIndex = index;
-        }
 
-        function nextSlide() {
-          let newIndex = currentIndex + 1;
-          if (newIndex >= slides.length) newIndex = 0;
-          showSlide(newIndex);
-        }
+          .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            isolation: isolate;
+          }
 
-        function prevSlide() {
-          let newIndex = currentIndex - 1;
-          if (newIndex < 0) newIndex = slides.length - 1;
-          showSlide(newIndex);
-        }
+          .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            object-fit: cover;
+            object-position: center 30%;
+            pointer-events: none;
+          }
 
-        function startAutoSlide() {
-          if (slideInterval) clearInterval(slideInterval);
-          slideInterval = setInterval(() => {
-            if (!userInteracted) {
-              nextSlide();
+          .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+              135deg,
+              rgba(8, 6, 12, 0.6) 0%,
+              rgba(0, 0, 0, 0.4) 40%,
+              rgba(0, 0, 0, 0.7) 100%
+            );
+            z-index: 2;
+            pointer-events: none;
+          }
+
+          /* .hero .gradient-accent {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+              circle at 30% 40%,
+              rgba(255, 215, 140, 0.1) 0%,
+              rgba(0, 0, 0, 0.4) 90%
+            );
+            z-index: 2;
+            pointer-events: none;
+          } */
+
+          .hero-content {
+            position: relative;
+            z-index: 15;
+            max-width: 1300px;
+            width: 88%;
+            margin: 0 auto;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            animation: fadeUpLuxury 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+
+          .hero-heading {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(3.2rem, 10vw, 6.2rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 1.4rem;
+            display: inline-block;
+            background: #fff396;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow:
+              0 2px 18px rgba(0, 0, 0, 0.3),
+              0 8px 40px rgba(0, 0, 0, 0.45),
+              0 20px 60px rgba(0, 0, 0, 0.25);
+            letter-spacing: -0.02em;
+            position: relative;
+          }
+
+          .hero-heading::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2.5px;
+            background: linear-gradient(
+              90deg,
+              transparent,
+              #d4af37,
+              #f7e3a0,
+              #d4af37,
+              transparent
+            );
+            border-radius: 4px;
+          }
+
+          .hero-subheading {
+            font-family: "Inter", sans-serif;
+            font-size: clamp(1.1rem, 4.2vw, 1.7rem);
+            font-weight: 400;
+            line-height: 1.6;
+            margin-top: 2rem;
+            margin-bottom: 2.8rem;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 250, 235, 0.95);
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(1px);
+          }
+
+          .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem;
+            row-gap: 1.2rem;
+            margin-top: 0.4rem;
+          }
+
+          .btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1.2px;
+            text-decoration: none;
+            border-radius: 0px;
+            transition: all 0.35s ease;
+            cursor: pointer;
+            text-align: center;
+            font-family: "Inter", sans-serif;
+            text-transform: uppercase;
+            backdrop-filter: blur(2px);
+          }
+
+          .btn-primary {
+            background: #dca341;
+            color: #0a0a0a;
+            border: 2px solid #dca341;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+            font-weight: 600;
+          }
+
+          .btn-primary:hover {
+            background: transparent;
+            color: #dca341;
+            border: 2px solid #dca341;
+            box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.6);
+            letter-spacing: 1.8px;
+            backdrop-filter: blur(6px);
+          }
+
+          .btn-secondary {
+            background: rgba(20, 18, 16, 0.25);
+            color: #f5f0e6;
+            border: 1.5px solid rgba(212, 175, 55, 0.8);
+            backdrop-filter: blur(8px);
+          }
+
+          .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            backdrop-filter: blur(12px);
+            color: #ffffff;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+          }
+
+          .slide-counter {
+            position: absolute;
+            bottom: 32px;
+            right: 40px;
+            z-index: 18;
+            font-family: "Inter", monospace;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            color: rgba(255, 250, 210, 0.75);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(6px);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-weight: 300;
+            pointer-events: none;
+            border: 0.5px solid rgba(212, 175, 55, 0.2);
+          }
+
+          @keyframes fadeUpLuxury {
+            0% {
+              opacity: 0;
+              transform: translateY(36px);
             }
-          }, intervalTime);
-        }
-
-        function resetAutoSlide() {
-          if (slideInterval) {
-            clearInterval(slideInterval);
-            startAutoSlide();
-          }
-          // reset userInteracted flag after delay (so slideshow continues)
-          if (autoSlideTimeoutReset) clearTimeout(autoSlideTimeoutReset);
-          autoSlideTimeoutReset = setTimeout(() => {
-            userInteracted = false;
-          }, 4000);
-        }
-
-        // create elegant gold dots
-        function createDots() {
-          if (!dotsContainer) return;
-          dotsContainer.innerHTML = "";
-          for (let i = 0; i < slides.length; i++) {
-            const dot = document.createElement("span");
-            dot.classList.add("dot");
-            if (i === currentIndex) dot.classList.add("active-dot");
-            dot.setAttribute("data-index", i);
-            dot.addEventListener("click", (e) => {
-              e.stopPropagation();
-              const idx = parseInt(dot.getAttribute("data-index"), 10);
-              if (!isNaN(idx)) {
-                userInteracted = true;
-                showSlide(idx);
-                resetAutoSlide();
-              }
-            });
-            dotsContainer.appendChild(dot);
-          }
-        }
-
-        // --- TOUCH SWIPE + MOUSE DRAG for premium background interaction
-        const heroSection = document.querySelector(".hero");
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        function onTouchStart(e) {
-          touchStartX = e.changedTouches[0].screenX;
-          userInteracted = true;
-          resetAutoSlide();
-        }
-
-        function onTouchEnd(e) {
-          touchEndX = e.changedTouches[0].screenX;
-          const delta = touchEndX - touchStartX;
-          const threshold = 45;
-          if (delta > threshold) {
-            prevSlide();
-            resetAutoSlide();
-          } else if (delta < -threshold) {
-            nextSlide();
-            resetAutoSlide();
-          }
-          touchStartX = 0;
-          touchEndX = 0;
-        }
-
-        // mouse drag for desktop (like swiping luxury gallery)
-        let mouseDownX = 0;
-        let isDragging = false;
-        function onMouseDown(e) {
-          if (e.button === 0) {
-            isDragging = true;
-            mouseDownX = e.clientX;
-            userInteracted = true;
-            resetAutoSlide();
-            e.preventDefault();
-            heroSection.style.cursor = "grabbing";
-          }
-        }
-
-        function onMouseUp(e) {
-          if (!isDragging) return;
-          isDragging = false;
-          heroSection.style.cursor = "";
-          const mouseUpX = e.clientX;
-          const diff = mouseUpX - mouseDownX;
-          if (Math.abs(diff) > 40) {
-            if (diff > 0) {
-              prevSlide();
-            } else {
-              nextSlide();
+            100% {
+              opacity: 1;
+              transform: translateY(0);
             }
-            resetAutoSlide();
           }
-          mouseDownX = 0;
-        }
 
-        // optional prevent body scroll when touching inside hero for better UX
-        heroSection.addEventListener("touchstart", onTouchStart, {
-          passive: false,
-        });
-        heroSection.addEventListener("touchend", onTouchEnd);
-        heroSection.addEventListener("mousedown", onMouseDown);
-        window.addEventListener("mouseup", onMouseUp);
-
-        // keyboard arrows luxury support
-        window.addEventListener("keydown", (e) => {
-          if (e.key === "ArrowLeft") {
-            e.preventDefault();
-            userInteracted = true;
-            prevSlide();
-            resetAutoSlide();
-          } else if (e.key === "ArrowRight") {
-            e.preventDefault();
-            userInteracted = true;
-            nextSlide();
-            resetAutoSlide();
+          @media (max-width: 768px) {
+            .hero-content {
+              width: 94%;
+              padding: 1.5rem 0.8rem;
+            }
+            .btn {
+              padding: 0.8rem 1.8rem;
+              font-size: 0.85rem;
+            }
+            .button-group {
+              gap: 1rem;
+            }
+            .hero-heading::after {
+              width: 80px;
+              bottom: -6px;
+            }
+            .slide-counter {
+              bottom: 22px;
+              right: 16px;
+              font-size: 0.7rem;
+              padding: 4px 14px;
+            }
           }
-        });
 
-        // initialize first slide and all states
-        if (slides.length) {
-          slides.forEach((slide, idx) => {
-            if (idx === 0) slide.classList.add("active");
-            else slide.classList.remove("active");
-          });
-          currentIndex = 0;
-          createDots();
-          if (counterSpan)
-            counterSpan.innerText = `01 / ${slides.length.toString().padStart(2, "0")}`;
-        }
+          @media (max-width: 480px) {
+            .hero {
+              min-height: 640px;
+            }
+            .hero-heading::after {
+              width: 60px;
+            }
+            .btn-primary,
+            .btn-secondary {
+              padding: 0.7rem 1.6rem;
+              font-size: 0.8rem;
+            }
+            .slide-counter {
+              bottom: 18px;
+              right: 12px;
+              font-size: 0.65rem;
+              padding: 4px 12px;
+            }
+          }
 
-        startAutoSlide();
+          .hero-video {
+            object-fit: cover;
+            object-position: center 30%;
+          }
 
-        // Pause auto slide when hovering content (premium user comfort)
-        const heroContent = document.querySelector(".hero-content");
-        if (heroContent) {
-          heroContent.addEventListener("mouseenter", () => {
-            if (slideInterval) clearInterval(slideInterval);
-          });
-          heroContent.addEventListener("mouseleave", () => {
-            if (!userInteracted) {
-              if (slideInterval) clearInterval(slideInterval);
-              startAutoSlide();
-            } else {
-              // if user interacted but left, start again after short delay
-              setTimeout(() => {
-                if (!userInteracted) {
-                  if (slideInterval) clearInterval(slideInterval);
-                  startAutoSlide();
+          @media (min-aspect-ratio: 16/9) {
+            .hero-video {
+              object-position: center 25%;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <section class="hero">
+          <!-- Using a reliable, publicly accessible video -->
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+            <source src="Images/lotus.mp4" type="video/mp4" />
+            <!-- Fallback: if the above fails, try this alternative -->
+            <source
+              src="https://cdn.pixabay.com/video/2022/10/03/132244-758987405_large.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div class="gradient-accent"></div>
+          <div class="slide-counter">✦ 01 / 01</div>
+          <div class="hero-content">
+            <h1 class="hero-heading">Because Everyone Deserves the Best</h1>
+            <p class="hero-subheading">
+              Premium Real Estate Solutions for Modern Living & Smart
+              Investments
+            </p>
+            <div class="button-group">
+              <a href="#Residences" class="btn btn-primary" id="exploreBtn"
+                >Explore Projects</a
+              >
+              <a href="Contact.html" class="btn btn-secondary" id="contactBtn"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <script>
+          (function () {
+            const video = document.querySelector(".hero-video");
+            if (video) {
+              const playVideo = () => {
+                if (video.paused) {
+                  video.play().catch(() => {});
                 }
-              }, 500);
+              };
+              setTimeout(playVideo, 300);
+              document.querySelector(".hero")?.addEventListener(
+                "click",
+                (e) => {
+                  if (!e.target.closest("a")) {
+                    playVideo();
+                  }
+                },
+                { passive: true },
+              );
+              document.addEventListener("visibilitychange", () => {
+                if (!document.hidden) {
+                  playVideo();
+                }
+              });
             }
-          });
-        }
-      })();
-    </script>
+          })();
+        </script>
+      </body>
+    </html>
   </body>
 </html>
 
@@ -2073,7 +1802,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
-    <title>Kirti Realty | Integrity & Vision</title>
+    <title>Kirti Realty · About Us</title>
     <!-- Google Fonts + Font Awesome -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
@@ -2092,402 +1821,151 @@
 
       body {
         font-family: "Inter", sans-serif;
-        background-color: #fefcf8;
-        color: #1a2c3e;
+        background: #ffffff;
+        color: #1e2c3a;
         line-height: 1.5;
       }
 
       .container-au {
-        max-width: 1600px;
+        max-width: 1020px;
         margin: 0 auto;
-        padding: 5rem 40px 2rem;
+        padding: 4rem 2rem 3rem;
       }
 
-      /* --- STATS SECTION (moving numbers, clean cards) --- */
+      /* ----- SINGLE COLUMN, CENTERED, PLAIN WHITE ----- */
+      .about-single {
+        text-align: center;
+        margin-bottom: 3.5rem;
+      }
+
+      .about-tag {
+        display: inline-block;
+        color: #b5792b;
+        font-weight: 600;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        background: #f6f2ec;
+        padding: 0.3rem 1.2rem;
+        border-radius: 40px;
+      }
+
+      .about-single h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #0e2532;
+        margin-bottom: 0.8rem;
+        letter-spacing: -0.02em;
+      }
+
+      .about-single h1 span {
+        color: #b5792b;
+      }
+
+      .about-divider {
+        width: 60px;
+        height: 3px;
+        background: #b5792b;
+        margin: 0 auto 1.8rem auto;
+        border-radius: 4px;
+      }
+
+      .about-single p {
+        font-size: 18px;
+        color: #2a4050;
+        max-width: 920px;
+        margin: 0 auto 1.2rem auto;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+
+      .about-single p:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .about-single .highlight {
+        font-weight: 500;
+        color: #0e2a38;
+      }
+
+      /* ----- STATS (clean cards, centered) ----- */
       .stats-section {
-        margin-bottom: 4rem;
+        max-width: 900px;
+        margin: 0 auto;
       }
 
       .stats-grid {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         gap: 1.8rem;
       }
 
       .stat-card {
-        flex: 1;
-        min-width: 170px;
-        background: white;
+        flex: 1 0 150px;
+        max-width: 250px;
+        background: #fcfaf8;
         border-radius: 2rem;
-        padding: 2rem 1rem;
+        padding: 2rem 0.8rem;
         text-align: center;
-        box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-        border: 1px solid rgba(194, 123, 46, 0.15);
+        border: 1px solid #efebe7;
+        transition: all 0.2s;
       }
 
       .stat-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 25px 40px -16px rgba(194, 123, 46, 0.2);
-        border-color: rgba(194, 123, 46, 0.3);
+        border-color: #d6c3b0;
+        background: #fffcf9;
       }
 
       .stat-number {
-        font-size: 3rem;
+        font-size: 2.8rem;
         font-weight: 800;
-        color: #c27b2e;
-        margin-bottom: 0.5rem;
+        color: #b5792b;
+        margin-bottom: 0.3rem;
         display: flex;
         justify-content: center;
         align-items: baseline;
-        gap: 0.2rem;
+        gap: 0.1rem;
         letter-spacing: -0.02em;
       }
 
       .stat-number span {
         font-size: inherit;
-        font-weight: inherit;
+        font-weight: 800;
       }
 
       .stat-label {
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 600;
         text-transform: uppercase;
-        color: #2c3e4e;
-        letter-spacing: 0.5px;
+        color: #1f3b4a;
+        letter-spacing: 0.4px;
       }
 
       .stat-desc {
-        font-size: 0.8rem;
-        color: #5a6e7c;
-        margin-top: 0.5rem;
-      }
-
-      /* --- SIDE BY SIDE: WELCOME (white card on image) + ABOUT US (right side) --- */
-      .split-hero-about {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 4rem;
-        align-items: stretch;
-        gap: 0;
-      }
-
-      /* LEFT: Background image + white square card */
-      .hero-card-block {
-        flex: 1.7;
-        min-width: 280px;
-        position: relative;
-        background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
-        background-size: cover;
-        background-position: center 35%;
-        border-radius: 2rem 0 0 2rem;
-        overflow: hidden;
-        isolation: isolate;
-        min-height: 480px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 2rem;
-        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
-      }
-
-      .hero-card-block::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          115deg,
-          rgba(0, 0, 0, 0.45) 0%,
-          rgba(0, 0, 0, 0.2) 80%
-        );
-        border-radius: 2rem;
-        z-index: 1;
-      }
-
-      /* White Square Card (clean) */
-      .white-square-card {
-        position: relative;
-        z-index: 2;
-        background: linear-gradient(135deg, #ffffff 0%, #f5d090 100%);
-        border-radius: 1.75rem;
-        padding: 3rem 2rem;
-        max-width: 94%;
-        width: 100%;
-        box-shadow: 0 30px 40px -18px rgba(0, 0, 0, 0.25);
-        transition: transform 0.2s;
-      }
-
-      .brand-badge {
-        background: #f2e5d8;
-        color: #c27b2e;
-        display: inline-block;
         font-size: 0.75rem;
-        font-weight: 700;
-        padding: 0.3rem 1rem;
-        border-radius: 40px;
-        letter-spacing: 0.5px;
-        margin-bottom: 1rem;
+        color: #60778a;
+        margin-top: 0.4rem;
       }
 
-      .white-square-card h1 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2rem;
-        font-weight: 800;
-        line-height: 1.2;
-        color: #0f2b36;
-        margin-bottom: 1rem;
-      }
-
-      .white-square-card h1 span {
-        color: #c27b2e;
-      }
-
-      .white-square-card p {
-        color: #2c3e4e;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 1rem;
-      }
-
-      .highlight-text {
-        font-weight: 500;
-        border-left: 3px solid #c27b2e;
-        padding-left: 0.8rem;
-        margin-top: 0.5rem;
-        font-size: 0.9rem;
-      }
-
-      /* RIGHT: About Us (side heading + details) - modern clean */
-      .about-block {
-        flex: 1.2;
-        min-width: 280px;
-        background: #f9f7f3;
-        padding: 3rem 3.5rem;
-        border-radius: 0 2rem 2rem 0;
-        box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
-        border: 1px solid #f0e7dc;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .about-inner {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .about-tag {
-        display: inline-block;
-        color: #c27b2e;
-        font-weight: 600;
-        font-size: 0.8rem;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        margin-bottom: 0.5rem;
-      }
-
-      .about-block h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #0f2b36;
-        border-left: 5px solid #c27b2e;
-        padding-left: 1.2rem;
-        margin-bottom: 1.2rem;
-        line-height: 1.2;
-      }
-
-      .about-detail-text p {
-        margin-bottom: 1.2rem;
-        color: #2c3e4e;
-        line-height: 1.6;
-        font-size: 0.95rem;
-      }
-
-      .mission-badge {
-        background: #fef6ed;
-        padding: 1.2rem;
-        border-radius: 1.2rem;
-        margin-top: 0.5rem;
-        border-left: 4px solid #c27b2e;
-        font-weight: 500;
-        color: #1e3a4a;
-        font-size: 0.9rem;
-      }
-
-      .mission-badge i {
-        color: #c27b2e;
-        margin-right: 0.5rem;
-        font-size: 1.1rem;
-      }
-
-      .trust-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .trust-item {
-        flex: 1;
-        min-width: 100px;
-        background: #faf7f2;
-        border-radius: 2rem;
-        padding: 0.6rem 0.8rem;
-        text-align: center;
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: #2c5a6e;
-      }
-
-      .trust-item i {
-        color: #c27b2e;
-        margin-right: 6px;
-      }
-
-      /* ============================================ */
-      /* RESPONSIVE: IMPROVED FOR SMALL SPACE */
-      /* Desktop look unchanged - only spacing & typography refined for small screens */
-      /* ============================================ */
-
-      @media (max-width: 1100px) {
-        .container-au {
-          padding: 0 30px;
-        }
-
-        .about-block {
-          padding: 2.5rem 2.5rem;
-        }
-
-        .white-square-card {
-          padding: 2.5rem 1.8rem;
-        }
-
-        .white-square-card h1 {
-          font-size: 1.8rem;
-        }
-
-        .about-block h2 {
-          font-size: 2rem;
-        }
-      }
-
-      @media (max-width: 900px) {
-        .container-au {
-          padding: 0 24px;
-        }
-
-        .split-hero-about {
-          flex-direction: column;
-          gap: 1.5rem;
-          margin-bottom: 3rem;
-        }
-
-        .hero-card-block {
-          min-height: 420px;
-          border-radius: 2rem;
-        }
-
-        .hero-card-block::before {
-          border-radius: 2rem;
-        }
-
-        .about-block {
-          border-radius: 2rem;
-          padding: 2rem 2rem;
-        }
-
-        .stats-grid {
-          gap: 1.2rem;
-        }
-
-        .stat-card {
-          min-width: 150px;
-          padding: 1.5rem 0.8rem;
-        }
-
-        .stat-number {
-          font-size: 2.6rem;
-        }
-      }
-
+      /* ---------- RESPONSIVE ---------- */
       @media (max-width: 768px) {
         .container-au {
-          padding: 0 20px;
+          padding: 2.5rem 1.2rem;
         }
 
-        .split-hero-about {
-          margin-bottom: 2.5rem;
-          gap: 1.2rem;
+        .about-single h1 {
+          font-size: 2.2rem;
         }
 
-        .hero-card-block {
-          min-height: 380px;
-          padding: 1.5rem;
-        }
-
-        .white-square-card {
-          padding: 1.8rem 1.5rem;
-          border-radius: 1.5rem;
-        }
-
-        .white-square-card h1 {
-          font-size: 1.6rem;
-        }
-
-        .white-square-card p {
-          font-size: 0.88rem;
-        }
-
-        .highlight-text {
-          font-size: 0.85rem;
-        }
-
-        .brand-badge {
-          font-size: 0.7rem;
-          margin-bottom: 0.8rem;
-        }
-
-        .about-block {
-          padding: 1.8rem 1.5rem;
-        }
-
-        .about-block h2 {
-          font-size: 1.8rem;
-          padding-left: 1rem;
-          margin-bottom: 1rem;
-        }
-
-        .about-detail-text p {
-          font-size: 0.88rem;
-          margin-bottom: 1rem;
-        }
-
-        .mission-badge {
-          padding: 1rem;
-          font-size: 0.85rem;
-        }
-
-        .trust-item {
-          padding: 0.5rem 0.6rem;
-          font-size: 0.75rem;
-          min-width: 85px;
-        }
-
-        .stats-section {
-          margin-bottom: 2.5rem;
-        }
-
-        .stats-grid {
-          gap: 1rem;
+        .about-single p {
+          font-size: 0.98rem;
         }
 
         .stat-card {
-          padding: 1.2rem 0.6rem;
-          min-width: 130px;
-          border-radius: 1.5rem;
+          flex: 1 0 120px;
+          padding: 1.5rem 0.5rem;
         }
 
         .stat-number {
@@ -2495,248 +1973,84 @@
         }
 
         .stat-label {
-          font-size: 0.85rem;
-        }
-
-        .stat-desc {
-          font-size: 0.7rem;
-        }
-      }
-
-      @media (max-width: 550px) {
-        .container-au {
-          padding: 0 16px;
-        }
-
-        .split-hero-about {
-          margin-bottom: 2rem;
-          gap: 1rem;
-        }
-
-        .hero-card-block {
-          min-height: 340px;
-          padding: 1rem;
-        }
-
-        .white-square-card {
-          padding: 1.4rem 1.2rem;
-        }
-
-        .white-square-card h1 {
-          font-size: 1.4rem;
-        }
-
-        .white-square-card p {
-          font-size: 0.82rem;
-        }
-
-        .highlight-text {
-          font-size: 0.78rem;
-          padding-left: 0.6rem;
-        }
-
-        .brand-badge {
-          font-size: 0.65rem;
-          padding: 0.2rem 0.8rem;
-        }
-
-        .about-block {
-          padding: 1.4rem 1.2rem;
-        }
-
-        .about-block h2 {
-          font-size: 1.5rem;
-          padding-left: 0.8rem;
-        }
-
-        .about-tag {
-          font-size: 0.7rem;
-        }
-
-        .about-detail-text p {
-          font-size: 0.82rem;
-          line-height: 1.5;
-        }
-
-        .mission-badge {
-          padding: 0.9rem;
           font-size: 0.8rem;
         }
+      }
 
-        .trust-list {
-          gap: 0.7rem;
+      @media (max-width: 480px) {
+        .container-au {
+          padding: 1.8rem 0.8rem;
         }
 
-        .trust-item {
-          padding: 0.4rem 0.5rem;
-          font-size: 0.7rem;
-          min-width: 75px;
+        .about-single h1 {
+          font-size: 1.9rem;
         }
 
-        .stats-grid {
-          gap: 0.8rem;
+        .about-single p {
+          font-size: 0.92rem;
         }
 
         .stat-card {
-          padding: 1rem 0.4rem;
-          min-width: 110px;
+          flex: 1 0 100px;
+          min-width: 100px;
+          padding: 1.2rem 0.3rem;
         }
 
         .stat-number {
-          font-size: 1.8rem;
+          font-size: 1.9rem;
         }
 
         .stat-label {
-          font-size: 0.75rem;
-          letter-spacing: 0.3px;
+          font-size: 0.7rem;
         }
 
         .stat-desc {
           font-size: 0.65rem;
-        }
-      }
-
-      @media (max-width: 400px) {
-        .container-au {
-          padding: 0 12px;
-        }
-
-        .white-square-card h1 {
-          font-size: 1.3rem;
-        }
-
-        .about-block h2 {
-          font-size: 1.3rem;
-        }
-
-        .stats-grid {
-          gap: 0.6rem;
-        }
-
-        .stat-card {
-          min-width: 95px;
-          padding: 0.9rem 0.3rem;
-        }
-
-        .stat-number {
-          font-size: 1.6rem;
-        }
-
-        .stat-label {
-          font-size: 0.7rem;
-        }
-
-        .trust-item {
-          min-width: 70px;
-          font-size: 0.65rem;
-        }
-      }
-
-      /* Maintain hover effects only on devices that support hover */
-      @media (hover: hover) {
-        .stat-card:hover {
-          transform: translateY(-6px);
-        }
-      }
-
-      /* Touch-friendly adjustments for mobile */
-      @media (max-width: 768px) {
-        .stat-card {
-          cursor: pointer;
-        }
-
-        .trust-item {
-          cursor: default;
-        }
-
-        .white-square-card {
-          transition: none;
         }
       }
     </style>
   </head>
   <body>
     <div class="container-au">
-      <!-- SIDE BY SIDE: LEFT (welcome + white card on image) | RIGHT (about us with heading left/details right style) -->
-      <div class="split-hero-about">
-        <!-- LEFT: White square card over background image (Welcome to Kirti Realty) -->
-        <div class="hero-card-block">
-          <div class="white-square-card">
-            <div class="brand-badge">
-              <i class="fas fa-home"></i> built on trust & excellence
-            </div>
-            <h1>Welcome to <span>Kirti Realty</span></h1>
-            <p>
-              A name built on trust, commitment, and excellence in real estate
-              development. We believe real estate is more than just buildings —
-              it is about creating spaces where families grow, businesses
-              thrive, and dreams become reality.
-            </p>
-            <p class="highlight-text">
-              <i
-                class="fas fa-check-circle"
-                style="color: #c27b2e; margin-right: 6px"
-              ></i>
-              Transparency • Quality Construction • Timely Delivery
-            </p>
-            <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #4a6272">
-              Long-term value & reliability in every project.
-            </div>
-          </div>
+      <!-- ABOUT US – SINGLE COLUMN, PLAIN WHITE, NO IMAGE, NO EXTRA BADGES -->
+      <div class="about-single">
+        <div class="about-tag">
+          <i class="fas fa-building"></i> about kirti realty
         </div>
+        <h1>About <span>Kirti Realty</span></h1>
+        <div class="about-divider"></div>
 
-        <!-- RIGHT: About Us section (side heading + details / left & right style) -->
-        <div class="about-block">
-          <div class="about-inner">
-            <span class="about-tag"
-              ><i class="fas fa-building"></i> about kirti realty</span
-            >
-            <h2>About Us</h2>
-            <div class="about-detail-text">
-              <p>
-                From residential plotting to premium villas and large land
-                deals, we deliver modern developments designed for comfort,
-                investment growth, and future opportunities. Our mission is to
-                build lasting relationships through honesty, professionalism,
-                and trust — helping every client make confident property
-                decisions.
-              </p>
-              <p>
-                With a strong focus on transparency, quality construction,
-                customer satisfaction, and timely delivery, we are committed to
-                developing projects that provide long-term value and
-                reliability. Each milestone reflects our unwavering dedication
-                to excellence.
-              </p>
-            </div>
-            <div class="mission-badge">
-              <i class="fas fa-handshake"></i> "Building lasting relationships
-              through honesty & trust — because your property journey is our
-              priority."
-            </div>
-            <!-- <div class="trust-list">
-              <div class="trust-item">
-                <i class="fas fa-chart-line"></i> Investment Growth
-              </div>
-              <div class="trust-item">
-                <i class="fas fa-shield-alt"></i> 100% Transparency
-              </div>
-              <div class="trust-item">
-                <i class="fas fa-clock"></i> On-Time Delivery
-              </div>
-            </div> -->
-          </div>
-        </div>
+        <p>
+          <span class="highlight">Integrity · Vision · Excellence</span><br />
+          We create more than buildings — we build lasting communities,
+          investment value, and relationships rooted in trust.
+        </p>
+
+        <p>
+          From residential plots and premium villas to large-scale land deals,
+          Kirti Realty brings modern design, structural integrity, and long-term
+          value to every project. Transparency, quality construction, and
+          on-time delivery are the cornerstones of our work.
+        </p>
+
+        <p>
+          With <span class="highlight">19+ years</span> of experience, we have
+          delivered <span class="highlight">142+ projects</span> and created
+          more than <span class="highlight">2,780 happy families</span>. Every
+          milestone reflects our dedication to excellence and customer-first
+          ethos.
+        </p>
       </div>
-      <!-- STATS SECTION: Moving numbers with counters -->
+
+      <!-- STATS SECTION (clean counters, centered) -->
       <div class="stats-section">
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-number">
               <span class="counter" data-target="142">0</span><span>+</span>
             </div>
-            <div class="stat-label">Projects Delivered</div>
-            <div class="stat-desc">Residential & Commercial</div>
+            <div class="stat-label">Projects</div>
+            <div class="stat-desc">Residential &amp; commercial</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">
@@ -2750,7 +2064,7 @@
               <span class="counter" data-target="210">0</span><span>+</span>
             </div>
             <div class="stat-label">Acres Developed</div>
-            <div class="stat-desc">Prime plots & villas</div>
+            <div class="stat-desc">Prime plots &amp; villas</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">
@@ -2763,7 +2077,7 @@
       </div>
     </div>
 
-    <!-- Animated Counter Script (moving numbers with scroll trigger & visibility) -->
+    <!-- Animated Counter (scroll-triggered) -->
     <script>
       (function () {
         const counters = document.querySelectorAll(".counter");
@@ -2776,7 +2090,7 @@
           counters.forEach((counter) => {
             const target = parseInt(counter.getAttribute("data-target"), 10);
             let current = 0;
-            const step = Math.max(1, Math.ceil(target / 55)); // smooth increment, min 1
+            const step = Math.max(1, Math.ceil(target / 55));
             const update = () => {
               let currentVal = parseInt(counter.innerText, 10);
               if (isNaN(currentVal)) currentVal = 0;
@@ -2792,7 +2106,6 @@
           });
         }
 
-        // Intersection Observer for stats section
         const statsSection = document.querySelector(".stats-section");
         if (statsSection && "IntersectionObserver" in window) {
           const observer = new IntersectionObserver(
@@ -2805,22 +2118,22 @@
                 }
               });
             },
-            { threshold: 0.2 }, // Slightly lower threshold for better mobile trigger
+            { threshold: 0.2 },
           );
           observer.observe(statsSection);
         } else {
-          // fallback: start after a delay if no observer support
+          // fallback
           window.addEventListener("load", () => {
             setTimeout(() => {
               if (!animationTriggered) {
                 animationTriggered = true;
                 animateNumbers();
               }
-            }, 400);
+            }, 300);
           });
         }
 
-        // If stats already visible on load (just in case)
+        // if stats visible on load
         window.addEventListener("load", function () {
           if (statsSection && !animationTriggered) {
             const rect = statsSection.getBoundingClientRect();
@@ -2858,7 +2171,7 @@
 
       body {
         background: #fff;
-        font-family: "Cormorant Garamond", serif;
+        /* font-family: "Cormorant Garamond", serif; */
         padding: 0;
         margin: 0;
       }
@@ -3076,7 +2389,7 @@
       }
 
       .bg-soft {
-        background: #fdf9f4;
+        background: white;
       }
 
       .containerioous {
@@ -3593,7 +2906,7 @@
             </div>
             <div class="card-content">
               <div class="badge-status status-upcoming">
-                <i class="fas fa-calendar-plus"></i> Upcoming · Launching Soon
+                <i class="fas fa-calendar-plus"></i> Ongoing · In Progress
               </div>
               <div class="project-title">Girdhar Valley</div>
               <div class="location">
@@ -3681,877 +2994,6 @@
   </body>
 </html>
 
-<!-- ---------services--------------  -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-    <title>Kirti Realty | Full-Spectrum Elite Services</title>
-    <!-- Google Fonts: Refined Serif + Modern Sans -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome 6 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <!-- SwiperJS (modern sliding library) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background: #f9f7f3;
-        font-family: "Inter", sans-serif;
-        color: #1f1b16;
-        overflow-x: hidden;
-      }
-
-      .services-luxury-container {
-        max-width: 1600px;
-        margin: 0 auto;
-        padding: 5rem 2rem;
-      }
-      .services-luxury-container > h2 {
-        font-size: 2.8rem;
-        font-weight: 700;
-        background: linear-gradient(
-          135deg,
-          #494646 0%,
-          #554c40 40%,
-          #ff9a00 100%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .split-layout {
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-      }
-
-      /* LEFT SIDE: elegant brand block with refined messaging */
-      .left-brand-block {
-        flex: 1.1;
-        min-width: 280px;
-        background: linear-gradient(135deg, #ffffff 0%, #f5d090 100%);
-        border-radius: 2.5rem;
-        padding: 2.8rem 2rem;
-        box-shadow:
-          0 20px 35px -12px rgba(0, 0, 0, 0.05),
-          0 1px 3px rgba(0, 0, 0, 0.02);
-        border: 1px solid rgba(200, 170, 110, 0.3);
-        transition: all 0.3s ease;
-      }
-
-      .krita-badge {
-        display: inline-block;
-        background: rgba(180, 140, 72, 0.12);
-        padding: 0.3rem 1rem;
-        border-radius: 40px;
-        font-size: 0.7rem;
-        letter-spacing: 0.2em;
-        font-weight: 600;
-        color: #aa7c48;
-        text-transform: uppercase;
-        margin-bottom: 1.5rem;
-      }
-
-      .left-brand-block h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 3.4rem;
-        font-weight: 600;
-        line-height: 1.2;
-        margin-bottom: 1.2rem;
-        color: #2c241a;
-      }
-
-      .left-brand-block h2 .highlight-brand {
-        background: linear-gradient(130deg, #b48c48, #dfb872);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        font-weight: 700;
-      }
-
-      .tagline {
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #5c5548;
-        margin-bottom: 2rem;
-        border-left: 3px solid #dfb872;
-        padding-left: 1.2rem;
-        font-weight: 400;
-      }
-
-      .service-highlight-list {
-        margin-top: 2rem;
-      }
-
-      .service-highlight-list .highlight-item {
-        display: flex;
-        align-items: center;
-        gap: 0.9rem;
-        margin-bottom: 1.3rem;
-      }
-
-      .highlight-item i {
-        width: 32px;
-        color: #b48c48;
-        font-size: 1.3rem;
-      }
-
-      .highlight-item span {
-        font-weight: 500;
-        font-size: 1rem;
-        color: #342d24;
-      }
-
-      .gold-separator {
-        width: 60px;
-        height: 2px;
-        background: #e3cda5;
-        margin: 2rem 0 1rem;
-      }
-
-      .luxury-note {
-        font-size: 0.85rem;
-        color: #8f7e68;
-        font-style: italic;
-      }
-
-      /* RIGHT SIDE: slider container — background images fully visible */
-      .right-slider-block {
-        flex: 2;
-        min-width: 0;
-        position: relative;
-      }
-
-      .swiper {
-        width: 100%;
-        overflow: hidden;
-        padding: 0.5rem 0 2rem;
-        border-radius: 2rem;
-      }
-
-      .swiper-slide {
-        height: auto;
-        border-radius: 2rem;
-        transition: transform 0.3s ease;
-      }
-
-      /* SERVICE CARD: BG images made fully visible and richer */
-      .service-card-slide {
-        position: relative;
-        border-radius: 2rem;
-        overflow: hidden;
-        background-color: #fff;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 18px 35px -12px rgba(0, 0, 0, 0.12);
-        transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      }
-
-      .service-card-slide:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 28px 40px -14px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Background image with perfect visibility */
-      .card-bg-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0.85;
-        transition:
-          opacity 0.5s ease,
-          transform 0.7s ease;
-        z-index: 0;
-        filter: brightness(0.92) contrast(1.05);
-      }
-
-      .service-card-slide:hover .card-bg-img {
-        opacity: 1;
-        transform: scale(1.03);
-      }
-
-      /* Glass-content: dark elegant overlay to make text pop, but background remains vivid */
-      .card-content-inner {
-        position: relative;
-        z-index: 2;
-        padding: 2rem 1.8rem 2rem 1.8rem;
-        background: linear-gradient(
-          145deg,
-          rgba(20, 18, 16, 0.72),
-          rgba(10, 8, 6, 0.68)
-        );
-        backdrop-filter: blur(5px);
-        border-radius: 2rem;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 380px;
-        transition: background 0.2s;
-      }
-
-      .service-card-slide:hover .card-content-inner {
-        background: linear-gradient(
-          145deg,
-          rgba(0, 0, 0, 0.75),
-          rgba(25, 20, 15, 0.7)
-        );
-      }
-
-      .card-icon-large {
-        font-size: 2.3rem;
-        color: #e9cd9c;
-        margin-bottom: 1.2rem;
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      }
-
-      .service-card-slide h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.95rem;
-        font-weight: 700;
-        margin-bottom: 0.9rem;
-        color: #fef7e6;
-        letter-spacing: -0.3px;
-      }
-
-      .service-desc-short {
-        font-size: 0.92rem;
-        line-height: 1.48;
-        color: #f0ede8;
-        margin-bottom: 1.8rem;
-        flex: 1;
-        font-weight: 400;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-      }
-
-      .know-more-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(255, 250, 240, 0.15);
-        border: 1.5px solid #e9cd9c;
-        padding: 0.7rem 1.4rem;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.8rem;
-        letter-spacing: 0.5px;
-        color: #ffefcf;
-        cursor: pointer;
-        transition: all 0.25s;
-        width: fit-content;
-        backdrop-filter: blur(3px);
-      }
-
-      .know-more-btn i {
-        transition: transform 0.2s;
-        font-size: 0.75rem;
-      }
-
-      .know-more-btn:hover {
-        background: #c6a15b;
-        border-color: #c6a15b;
-        color: #1f1b16;
-        gap: 12px;
-      }
-
-      .know-more-btn:hover i {
-        transform: translateX(4px);
-        color: #1f1b16;
-      }
-
-      /* Swiper navigation refined */
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: #e9cd9c;
-        background: rgba(30, 25, 20, 0.7);
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        backdrop-filter: blur(8px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition: all 0.2s;
-      }
-      .swiper-button-next:after,
-      .swiper-button-prev:after {
-        font-size: 1.2rem;
-        font-weight: bold;
-      }
-      .swiper-button-next:hover,
-      .swiper-button-prev:hover {
-        background: #c6a15b;
-        color: #1f1b16;
-      }
-
-      .swiper-pagination-bullet {
-        background: #e9cd9c;
-        opacity: 0.6;
-      }
-      .swiper-pagination-bullet-active {
-        background: #f5d78c;
-        opacity: 1;
-        transform: scale(1.2);
-      }
-
-      /* ============================================ */
-      /* RESPONSIVE: DESKTOP LOOK UNCHANGED ABOVE 1100px */
-      /* IMPROVED for small spaces with perfect adaptability */
-      /* ============================================ */
-
-      @media (max-width: 1200px) {
-        .split-layout {
-          gap: 2rem;
-        }
-        .left-brand-block h2 {
-          font-size: 2.8rem;
-        }
-        .card-content-inner {
-          min-height: 360px;
-        }
-      }
-
-      @media (max-width: 1100px) {
-        .services-luxury-container {
-          padding: 4rem 1.8rem;
-        }
-        .split-layout {
-          gap: 2rem;
-        }
-        .left-brand-block {
-          padding: 2.2rem 1.8rem;
-        }
-        .left-brand-block h2 {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media (max-width: 992px) {
-        .split-layout {
-          flex-direction: column;
-          gap: 2rem;
-        }
-        .left-brand-block {
-          text-align: center;
-          width: 100%;
-        }
-        .left-brand-block h2 {
-          font-size: 2.4rem;
-        }
-        .tagline {
-          border-left: none;
-          padding-left: 0;
-          text-align: center;
-        }
-        .service-highlight-list .highlight-item {
-          justify-content: center;
-        }
-        .gold-separator {
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .right-slider-block {
-          width: 100%;
-        }
-        .card-content-inner {
-          min-height: 340px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .services-luxury-container {
-          padding: 3rem 1.2rem;
-        }
-        .services-luxury-container > h2 {
-          font-size: 2.2rem;
-          margin-bottom: 2rem;
-        }
-        .left-brand-block {
-          padding: 1.8rem 1.4rem;
-          border-radius: 2rem;
-        }
-        .left-brand-block h2 {
-          font-size: 2rem;
-        }
-        .krita-badge {
-          font-size: 0.65rem;
-          margin-bottom: 1rem;
-        }
-        .tagline {
-          font-size: 0.9rem;
-          margin-bottom: 1.2rem;
-        }
-        .gold-separator {
-          margin: 1.5rem auto 0.5rem;
-        }
-        .card-content-inner {
-          padding: 1.5rem 1.3rem;
-          min-height: 310px;
-        }
-        .service-card-slide h3 {
-          font-size: 1.7rem;
-        }
-        .service-desc-short {
-          font-size: 0.85rem;
-          margin-bottom: 1.2rem;
-        }
-        .know-more-btn {
-          padding: 0.6rem 1.2rem;
-          font-size: 0.75rem;
-        }
-        .swiper-button-next,
-        .swiper-button-prev {
-          display: none;
-        }
-        .swiper-pagination {
-          bottom: 0px;
-        }
-        .swiper {
-          padding-bottom: 2rem;
-        }
-      }
-
-      @media (max-width: 550px) {
-        .services-luxury-container {
-          padding: 2rem 1rem;
-        }
-        .services-luxury-container > h2 {
-          font-size: 1.8rem;
-          margin-bottom: 1.5rem;
-        }
-        .left-brand-block {
-          padding: 1.4rem 1rem;
-          border-radius: 1.5rem;
-        }
-        .left-brand-block h2 {
-          font-size: 1.6rem;
-        }
-        .krita-badge {
-          font-size: 0.6rem;
-          padding: 0.2rem 0.8rem;
-        }
-        .tagline {
-          font-size: 0.85rem;
-        }
-        .card-content-inner {
-          padding: 1.2rem 1rem;
-          min-height: 280px;
-        }
-        .service-card-slide h3 {
-          font-size: 1.5rem;
-        }
-        .card-icon-large {
-          font-size: 1.8rem;
-          margin-bottom: 0.8rem;
-        }
-        .service-desc-short {
-          font-size: 0.8rem;
-          line-height: 1.4;
-        }
-        .know-more-btn {
-          padding: 0.5rem 1rem;
-          font-size: 0.7rem;
-        }
-      }
-
-      @media (max-width: 400px) {
-        .services-luxury-container {
-          padding: 1.8rem 0.8rem;
-        }
-        .services-luxury-container > h2 {
-          font-size: 1.6rem;
-        }
-        .left-brand-block h2 {
-          font-size: 1.4rem;
-        }
-        .card-content-inner {
-          min-height: 260px;
-        }
-        .service-card-slide h3 {
-          font-size: 1.35rem;
-        }
-        .service-desc-short {
-          font-size: 0.75rem;
-        }
-      }
-
-      /* Maintain hover effects only on devices that support hover */
-      @media (hover: hover) {
-        .service-card-slide:hover {
-          transform: translateY(-8px);
-        }
-      }
-
-      /* Touch-friendly adjustments */
-      @media (max-width: 768px) {
-        .know-more-btn {
-          cursor: pointer;
-          -webkit-tap-highlight-color: transparent;
-        }
-        .service-card-slide {
-          cursor: pointer;
-        }
-      }
-
-      .bg-accent-leaf {
-        background: #ffebc57d;
-        border-top: 2px solid #e5c165;
-        border-bottom: 2px solid #e5c165;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="services-luxury-container bg-accent-leaf">
-      <h2>Our Premium Services</h2>
-      <div class="split-layout">
-        <!-- LEFT BLOCK: Brand & core services preview -->
-        <div class="left-brand-block">
-          <div class="krita-badge">
-            <i class="fas fa-crown" style="margin-right: 6px"></i> EST. 2025
-          </div>
-          <h2>
-            <span class="highlight-brand">Kirti Realty</span> also offers a wide
-            range of real estate services, including:
-          </h2>
-          <div class="tagline">
-            Beyond conventional — a full‑spectrum real estate powerhouse
-            delivering white-glove execution across asset classes.
-          </div>
-          <div class="gold-separator"></div>
-        </div>
-
-        <!-- RIGHT SLIDER: AUTO SLIDE + STOP ON HOVER -->
-        <div class="right-slider-block">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <!-- Service Card 1 - Residential Plotting -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1974&auto=format&quot;);
-                      background-position: center 35%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-draw-polygon"></i>
-                      </div>
-                      <h3>Residential Plotting</h3>
-                      <div class="service-desc-short">
-                        Prime land parcels, smart segmentation and future-value
-                        mapping. Tailored for boutique communities & luxury
-                        compounds.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="
-                        window.location.href = 'Services/Residential.html'
-                      "
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 2 - Villas -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1524613032530-449a5d94c285?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dnJpbmRhdmFuJTJDJTIwaW5kaWF8ZW58MHx8MHx8fDA%3D&quot;);
-                      background-position: center 25%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-home"></i>
-                      </div>
-                      <h3>Villas</h3>
-                      <div class="service-desc-short">
-                        Architectural sanctuaries, private infinity pools, and
-                        landscape integration. Discover signature estates with
-                        timeless value.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="window.location.href = 'Services/villas.html'"
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 3 - Flats & Apartments -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2069&auto=format&quot;);
-                      background-position: center 40%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-building"></i>
-                      </div>
-                      <h3>Flats & Apartments</h3>
-                      <div class="service-desc-short">
-                        Panoramic penthouses, bespoke interiors & concierge
-                        lifestyle. Live at the apex of urban luxury.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="
-                        window.location.href = 'Services/FlatsApartment.html'
-                      "
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 4 - Big Land Deals -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&quot;);
-                      background-position: center 28%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-globe-americas"></i>
-                      </div>
-                      <h3>Big Land Deals</h3>
-                      <div class="service-desc-short">
-                        Strategic mega-transactions, institutional portfolios &
-                        legacy acreage. Absolute discretion with unmatched
-                        negotiation power.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="window.location.href = 'Services/bigLand.html'"
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 5 - Real Estate Development -->
-              <!-- <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&quot;);
-                      background-position: center 30%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-hard-hat"></i>
-                      </div>
-                      <h3>Real Estate Development</h3>
-                      <div class="service-desc-short">
-                        End-to-end creation: master planning, permits,
-                        construction to go-to-market. Turning raw land into
-                        iconic addresses.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="
-                        window.location.href = 'Services/Development.html'
-                      "
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div> -->
-              <!-- Card 6 - Property Investment Solutions -->
-              <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1974&auto=format&quot;);
-                      background-position: center 22%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-chart-pie"></i>
-                      </div>
-                      <h3>Property Investment Solutions</h3>
-                      <div class="service-desc-short">
-                        Yield-optimized strategies, tax-efficient structures &
-                        portfolio diversification. Maximize alpha with
-                        data-driven decisions.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="
-                        window.location.href =
-                          'Services/PropertyInvestment.html'
-                      "
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 7 - Property Consultation -->
-              <!-- <div class="swiper-slide">
-                <div class="service-card-slide">
-                  <div
-                    class="card-bg-img"
-                    style="
-                      background-image: url(&quot;https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&quot;);
-                      background-position: center 35%;
-                    "
-                  ></div>
-                  <div class="card-content-inner">
-                    <div>
-                      <div class="card-icon-large">
-                        <i class="fas fa-user-tie"></i>
-                      </div>
-                      <h3>Property Consultation</h3>
-                      <div class="service-desc-short">
-                        Private office advisory: due diligence, negotiation,
-                        bespoke sourcing & legacy planning. Your real estate
-                        counsel.
-                      </div>
-                    </div>
-                    <button
-                      class="know-more-btn"
-                      onclick="
-                        window.location.href = 'Services/Consultation.html'
-                      "
-                    >
-                      KNOW MORE <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-            <!-- navigation & pagination -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      // Initialize Swiper with optimal settings for both desktop and mobile
-      const swiperInstance = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 24,
-        loop: true,
-        autoplay: {
-          delay: 3200,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          dynamicBullets: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1.2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 24,
-          },
-          1100: {
-            slidesPerView: 2.4,
-            spaceBetween: 28,
-          },
-          1400: {
-            slidesPerView: 3,
-            spaceBetween: 28,
-          },
-        },
-        grabCursor: true,
-        effect: "slide",
-        speed: 600,
-        autoHeight: false,
-      });
-
-      // Hover stop/start for autoplay
-      const sliderBlock = document.querySelector(".right-slider-block");
-      if (sliderBlock && swiperInstance.autoplay) {
-        sliderBlock.addEventListener("mouseenter", () => {
-          swiperInstance.autoplay.stop();
-        });
-        sliderBlock.addEventListener("mouseleave", () => {
-          swiperInstance.autoplay.start();
-        });
-      }
-
-      // Global function for button alerts
-
-      // Handle window resize to update swiper
-      window.addEventListener("resize", () => {
-        if (swiperInstance && swiperInstance.update) swiperInstance.update();
-      });
-    </script>
-  </body>
-</html>
-
 <!-- -------why choose us-----  -->
 <!doctype html>
 <html lang="en">
@@ -4561,10 +3003,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
-    <title>Kirti Realty | Why Choose Us — Premium Slidable Cards</title>
+    <title>Kirti Realty · Why Choose</title>
+    <!-- Google Fonts + Font Awesome -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <style>
       * {
@@ -4573,676 +3020,572 @@
         box-sizing: border-box;
       }
 
-      /* FULL WIDTH SECTION with VIDEO BACKGROUND */
-      .kirti-hero-video {
+      .body-wcu {
+        font-family: "Nunito", sans-serif;
+        background: white;
+        /* min-height: 100vh; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ---------- main container with background image ---------- */
+      .kirti-premium {
         position: relative;
         width: 100%;
+        /* max-width: 1510px; */
+        margin: 0px auto;
+        /* border-radius: 32px; */
         overflow: hidden;
+        background: rgba(245, 222, 179, 0.493);
+        /* box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8); */
       }
 
-      /* Background video element */
-      .bg-video {
+      /* background image layer */
+      .bg-image-layer {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        inset: 0;
+        background: url(Images/KR-1.png) center center / cover no-repeat;
+        opacity: 0.9;
         z-index: 0;
+        filter: brightness(0.6) saturate(0.7);
       }
 
-      /* semi-transparent overlay for better text contrast */
-      .video-overlay {
+      /* dark overlay for readability */
+      /* .overlay-dark {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          circle at 20% 30%,
-          rgba(20, 18, 15, 0),
-          rgba(0, 0, 0, 0)
-        );
+        inset: 0;
+        background: rgba(8, 8, 8, 0.65);
         z-index: 1;
-        pointer-events: none;
-      }
+        backdrop-filter: blur(1px);
+      } */
 
-      /* content wrapper (relative) */
-      .content-wrapper {
+      .inner {
         position: relative;
         z-index: 2;
-        width: 100%;
-        padding: 4rem 2rem;
-      }
-
-      .fullwidth-inner {
-        max-width: 1400px;
+        max-width: 1280px;
         margin: 0 auto;
-        width: 100%;
+        padding: 55px 1rem 50px;
       }
 
-      /* header styles */
+      /* ----- HEADER (exactly as image) ----- */
       .section-head {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 42px;
       }
 
-      .section-head h2 {
-        font-size: 3rem;
-        letter-spacing: -0.02em;
-        background: linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #edb76b 40%,
-          #ff9a00 100%
-        );
+      .mini-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        font:
+          500 12px "Inter",
+          sans-serif;
+        letter-spacing: 7px;
+        color: #ffeab7;
+        text-transform: uppercase;
+      }
+
+      .mini-title span {
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: #d4af37;
+      }
+
+      .luxury-title {
+        font:
+          700 64px "Cormorant Garamond",
+          serif;
+        letter-spacing: 4px;
+        margin: 6px 0 4px;
+        background: white;
         -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         background-clip: text;
-        color: transparent;
+        line-height: 1.1;
       }
 
-      .section-head .tagline {
-        font-size: 1.1rem;
-        color: #ffffff;
-        background: #f5f5dc24;
-        margin-top: 0.7rem;
-        font-weight: 500;
-        border-bottom: 1.5px solid rgba(255, 170, 50, 0.7);
-        display: inline-block;
-        padding-bottom: 0.5rem;
-        backdrop-filter: blur(2px);
+      .gold-divider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        margin: 10px 0 6px;
       }
 
-      /* DESKTOP: 4x2 GRID — exactly 2 rows, 4 columns (no change) */
-      .grid-4x2 {
+      .gold-divider span {
+        width: 70px;
+        height: 2px;
+        background: #d4af37;
+      }
+
+      .gold-divider i {
+        color: #d4af37;
+        font-size: 13px;
+      }
+
+      .tagline {
+        font:
+          500 12px "Inter",
+          sans-serif;
+        letter-spacing: 5px;
+        color: #b8b0a0;
+      }
+
+      .tagline span {
+        color: #d4af37;
+        margin: 0 8px;
+      }
+
+      /* ----- GRID — 3 columns, SMALLER CARDS ----- */
+      .grid-3col {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.8rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 8px;
       }
 
-      /* Modern card design – glassmorphism */
       .feature-card {
-        background: rgb(18 16 14 / 93%);
+        background: rgb(18 18 18 / 81%);
         backdrop-filter: blur(8px);
-        border-radius: 1.75rem;
-        padding: 1.6rem 1.3rem;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 180, 80, 0.35);
-        box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.4);
-        height: 100%;
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 24px;
+        padding: 31px 27px;
+        transition: 0.3s ease;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
       }
 
       .feature-card:hover {
-        background: rgba(30, 26, 22, 0.8);
-        border-color: #ff9a00;
-        transform: translateY(-5px);
-        box-shadow: 0 22px 28px -14px black;
+        border-color: #d4af37;
+        transform: translateY(-4px);
+        box-shadow: 0 20px 48px rgba(212, 175, 55, 0.1);
+        background: rgba(24, 24, 24, 0.8);
       }
 
-      /* SVG icons styling - clean vector icons (no emojis) */
-      .feature-icon {
-        width: 54px;
-        height: 54px;
-        margin-bottom: 1.2rem;
-        display: block;
-        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
-        transition: transform 0.2s;
+      /* icon + title side by side — smaller */
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 10px;
       }
 
-      .feature-card:hover .feature-icon {
+      .icon-wrap {
+        flex-shrink: 0;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 43px;
+        color: #d4af37;
+        border: 1.5px solid rgba(212, 175, 55, 0.5);
+        background: rgba(255, 255, 255, 0.02);
+        transition: 0.3s;
+      }
+
+      .feature-card:hover .icon-wrap {
+        border-color: #d4af37;
+        box-shadow: 0 0 24px rgba(212, 175, 55, 0.15);
         transform: scale(1.02);
       }
 
-      .feature-title {
-        font-size: 1.35rem;
-        font-weight: 700;
-        color: #ffe1b0;
-        margin-bottom: 0.65rem;
-        letter-spacing: -0.2px;
-      }
-
-      .feature-desc {
-        font-size: 0.88rem;
-        line-height: 1.45;
-        color: rgba(252, 242, 220, 0.85);
-        font-weight: 400;
-      }
-
-      .feature-desc strong {
-        color: #ffbc5e;
-        font-weight: 600;
-      }
-
-      /* trust-building footer with SVG icons instead of emojis */
-      .trust-footer {
-        margin-top: 3.2rem;
-        text-align: center;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(255, 154, 0, 0.5);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        font-size: 0.85rem;
-        font-weight: 500;
-        color: #fae9ce;
-        backdrop-filter: blur(2px);
-      }
-
-      .trust-item {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        background: rgba(0, 0, 0, 0.5);
-        color: #ffbf28;
-        padding: 0.3rem 0.9rem;
-        border-radius: 40px;
+      .feature-card h3 {
+        font:
+          600 28px "Cormorant Garamond",
+          serif;
+        color: #f5df9d;
+        line-height: 1.2;
         letter-spacing: 0.2px;
       }
 
-      .trust-icon-svg {
-        width: 20px;
-        height: 20px;
-        filter: brightness(0) invert(0.9);
-        color: #ffbf28;
+      .gold-line {
+        width: 72px;
+        height: 2px;
+        background: #d4af37;
+        margin: 0 0 10px 6rem;
       }
 
-      @media (max-width: 1100px) and (min-width: 681px) {
-        /* tablet: standard 2-column grid, no slidable, just responsive grid */
-        .grid-4x2 {
+      .feature-card p {
+        font:
+          400 13.5px/1.65 "Inter",
+          sans-serif;
+        color: #d6d0c4;
+        opacity: 0.9;
+        flex: 1;
+      }
+
+      /* ----- BOTTOM STATS (exactly as image) ----- */
+      .bottom-stats {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px 24px;
+        margin-top: 44px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .stat-item i {
+        font-size: 28px;
+        color: #d4af37;
+        opacity: 0.85;
+      }
+
+      .stat-item .num {
+        font:
+          700 34px "Cormorant Garamond",
+          serif;
+        color: #f4d47a;
+        line-height: 1;
+      }
+
+      .stat-item .label {
+        font:
+          500 12px "Inter",
+          sans-serif;
+        color: #b8b0a0;
+        letter-spacing: 0.5px;
+        margin-top: 2px;
+      }
+
+      .explore-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 30px;
+        border: 1px solid #d4af37;
+        border-radius: 40px;
+        color: #f4d47a;
+        font:
+          600 12px "Inter",
+          sans-serif;
+        letter-spacing: 1.8px;
+        text-decoration: none;
+        transition: 0.3s;
+        background: rgba(212, 175, 55, 0.04);
+        backdrop-filter: blur(4px);
+      }
+
+      .explore-btn i {
+        transition: 0.3s;
+        font-size: 12px;
+      }
+
+      .explore-btn:hover {
+        background: #d4af37;
+        color: #0c0b0a;
+        box-shadow: 0 0 36px rgba(212, 175, 55, 0.25);
+      }
+
+      .explore-btn:hover i {
+        transform: translateX(6px);
+      }
+
+      /* ----- RESPONSIVE ----- */
+      @media (max-width: 1024px) {
+        .luxury-title {
+          font-size: 52px;
+        }
+        .grid-3col {
+          gap: 16px;
+        }
+        .feature-card h3 {
+          font-size: 20px;
+        }
+        .feature-card {
+          padding: 20px 18px 22px;
+        }
+      }
+
+      @media (max-width: 820px) {
+        .grid-3col {
           grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem;
+          gap: 16px;
         }
-        .content-wrapper {
-          padding: 3rem 1.8rem;
+        .luxury-title {
+          font-size: 44px;
         }
-        .section-head h2 {
-          font-size: 2.5rem;
+        .bottom-stats {
+          justify-content: center;
         }
-      }
-
-      /* MOBILE: cards become slidable (horizontal swipe) NOT in column */
-      @media (max-width: 680px) {
-        /* Override grid behaviour: use flex overflow for horizontal scroll */
-        .grid-4x2 {
-          display: flex;
-          flex-flow: row nowrap;
-          overflow-x: auto;
-          overflow-y: hidden;
-          gap: 1.2rem;
-          scroll-snap-type: x mandatory;
-          padding-bottom: 1rem;
-          /* hide scrollbar but keep functionality on most browsers for cleaner look, but still scrollable */
-          scrollbar-width: thin;
-          scrollbar-color: #ff9a00 #2a2a2a;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .grid-4x2::-webkit-scrollbar {
-          height: 5px;
-        }
-        .grid-4x2::-webkit-scrollbar-track {
-          background: #1e1e1e;
-          border-radius: 10px;
-        }
-        .grid-4x2::-webkit-scrollbar-thumb {
-          background: #ff9a00;
-          border-radius: 10px;
-        }
-
-        .feature-card {
-          flex: 0 0 85%;
-          scroll-snap-align: start;
-          min-width: 260px;
-          max-width: 320px;
-          margin-right: 0;
-        }
-
-        .content-wrapper {
-          padding: 2.2rem 1.2rem;
-        }
-
-        .feature-title {
-          font-size: 1.25rem;
-        }
-
-        .feature-icon {
-          width: 46px;
-          height: 46px;
-        }
-
-        .section-head h2 {
-          font-size: 2rem;
-        }
-
-        /* trust footer adjust spacing */
-        .trust-footer {
-          gap: 0.9rem;
-          flex-wrap: wrap;
-          display: none;
-        }
-        .trust-item {
-          font-size: 0.7rem;
-          padding: 0.2rem 0.7rem;
-        }
-        .trust-icon-svg {
-          width: 16px;
-          height: 16px;
+        .explore-btn {
+          width: 100%;
+          justify-content: center;
+          padding: 14px 20px;
         }
       }
 
-      @media (min-width: 1400px) {
-        .grid-4x2 {
-          gap: 2rem;
+      @media (max-width: 580px) {
+        .inner {
+          padding: 30px 16px 28px;
+        }
+        .grid-3col {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .luxury-title {
+          font-size: 36px;
+        }
+        .mini-title {
+          font-size: 10px;
+          letter-spacing: 4px;
+          gap: 10px;
+        }
+        .mini-title span {
+          width: 34px;
+        }
+        .gold-divider span {
+          width: 40px;
         }
         .feature-card {
-          padding: 1.8rem 1.5rem;
+          padding: 18px 16px 20px;
         }
-        .feature-title {
-          font-size: 1.45rem;
+        .feature-card h3 {
+          font-size: 20px;
         }
+        .icon-wrap {
+          width: 42px;
+          height: 42px;
+          font-size: 17px;
+        }
+        .stat-item .num {
+          font-size: 28px;
+        }
+        .stat-item i {
+          font-size: 24px;
+        }
+        .bottom-stats {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 14px;
+        }
+        .stat-item {
+          justify-content: flex-start;
+        }
+        .explore-btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .bg-image-layer {
+          opacity: 0.15;
+        }
+      }
+
+      /* card animation */
+      .feature-card {
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease,
+          border 0.3s,
+          box-shadow 0.3s;
+      }
+      .feature-card.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
   <body>
-    <div class="kirti-hero-video">
-      <!-- Background video element: cinematic neutral aerial cityscape (placeholder) -->
-      <video
-        class="bg-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        disablePictureInPicture
-      >
-        <source src="Images/298800.mp4" type="video/mp4" />
-        <!-- fallback message only if needed -->
-      </video>
-      <div class="video-overlay"></div>
+    <section class="body-wcu">
+      <div class="kirti-premium">
+        <!-- background image + overlay -->
+        <div class="bg-image-layer"></div>
+        <div class="overlay-dark"></div>
 
-      <div class="content-wrapper">
-        <div class="fullwidth-inner">
+        <div class="inner">
+          <!-- HEADER : exactly as image -->
           <div class="section-head">
-            <h2>Why Choose Kirti Realty</h2>
+            <div class="mini-title"><span></span> WHY CHOOSE <span></span></div>
+            <h2 class="luxury-title">KIRTI REALTY</h2>
+            <div class="gold-divider">
+              <span></span>
+              <i class="fas fa-star"></i>
+              <span></span>
+            </div>
             <div class="tagline">
-              Vision · Integrity · Excellence — Built for Generations
+              VISION <span>•</span> INTEGRITY <span>•</span> EXCELLENCE
             </div>
           </div>
 
-          <!-- 4x2 GRID / but on mobile transforms into HORIZONTAL SLIDABLE container -->
-          <div class="grid-4x2">
-            <!-- Card 1: Trusted & Transparent Deals -->
+          <!-- 3 COLUMN GRID : SMALLER CARDS -->
+          <div class="grid-3col" id="cardGrid">
+            <!-- card 1 -->
             <div class="feature-card">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                  fill="#FFB347"
-                  stroke="#FFD966"
-                  stroke-width="1.2"
-                />
-                <path
-                  d="M12 6V12L15 15"
-                  stroke="#FFE5A3"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <circle cx="12" cy="12" r="2" fill="#FFE5A3" />
-              </svg>
-              <div class="feature-title">Trusted & Transparent Deals</div>
-              <div class="feature-desc">
-                MVDA-registered projects, clear documentation, and
-                <strong>zero hidden charges</strong>. 2500+ families trust our
-                integrity.
+              <div class="card-header">
+                <div class="icon-wrap"><i class="fas fa-shield-alt"></i></div>
+                <h3>Trusted &amp; Transparent Deals</h3>
               </div>
+              <div class="gold-line"></div>
+              <p>
+                Clear documentation, MVDA-approved projects, and zero hidden
+                charges. Trusted by 2,500+ happy families.
+              </p>
             </div>
 
-            <!-- Card 2: Prime Locations -->
+            <!-- card 2 -->
             <div class="feature-card">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
-                  fill="#E67E22"
-                  stroke="#FFB347"
-                  stroke-width="1.2"
-                />
-                <circle
-                  cx="12"
-                  cy="9"
-                  r="3"
-                  fill="#FFE0A3"
-                  stroke="#D35400"
-                  stroke-width="1"
-                />
-                <path
-                  d="M12 6L12 9L14 11"
-                  stroke="#FFF6E5"
-                  stroke-width="1.2"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <div class="feature-title">Prime Locations</div>
-              <div class="feature-desc">
-                Strategic land parcels near metro stations, IT hubs & schools.
-                <strong>High growth corridors</strong> with excellent social
-                infra.
+              <div class="card-header">
+                <div class="icon-wrap">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Prime Locations</h3>
               </div>
+              <div class="gold-line"></div>
+              <p>
+                Strategically located projects near major roads, schools,
+                hospitals, and future growth corridors.
+              </p>
             </div>
 
-            <!-- Card 3: Modern Infrastructure -->
+            <!-- card 3 -->
             <div class="feature-card">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="4"
-                  y="8"
-                  width="16"
-                  height="12"
-                  rx="1"
-                  fill="#F39C12"
-                  stroke="#FFC857"
-                  stroke-width="1.2"
-                />
-                <path
-                  d="M8 5L12 2L16 5"
-                  stroke="#FFD966"
-                  stroke-width="1.5"
-                  fill="none"
-                />
-                <circle cx="12" cy="14" r="2" fill="#FFE5A3" />
-                <path
-                  d="M8 14H10M14 14H16"
-                  stroke="#FFB347"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <div class="feature-title">Modern Infrastructure</div>
-              <div class="feature-desc">
-                Smart-home ready, energy-efficient designs, EV charging,
-                clubhouse, gym & <strong>world-class amenities</strong>.
+              <div class="card-header">
+                <div class="icon-wrap"><i class="fas fa-building"></i></div>
+                <h3>Superior Construction Quality</h3>
               </div>
+              <div class="gold-line"></div>
+              <p>
+                Premium materials, earthquake-resistant RCC structure, and
+                lasting craftsmanship for generations.
+              </p>
             </div>
 
-            <!-- Card 4: Timely Project Delivery -->
+            <!-- card 4 -->
             <div class="feature-card">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="9"
-                  stroke="#FFBC5E"
-                  stroke-width="1.5"
-                  fill="#2C3E2F"
-                  fill-opacity="0.9"
-                />
-                <path
-                  d="M12 7V12L15 15"
-                  stroke="#FFD966"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M5 3L8 6M19 3L16 6"
-                  stroke="#FFB347"
-                  stroke-width="1.5"
-                />
-                <circle cx="12" cy="12" r="2" fill="#FFE5A3" />
-              </svg>
-              <div class="feature-title">Timely Project Delivery</div>
-              <div class="feature-desc">
-                Strict MVDA compliance, milestone tracking &
-                <strong>98% on-time possession</strong>. Zero delay guarantee.
+              <div class="card-header">
+                <div class="icon-wrap">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3>Timely Project Delivery</h3>
               </div>
+              <div class="gold-line"></div>
+              <p>
+                Committed to on-time possession with transparent project
+                tracking and milestone-based execution.
+              </p>
             </div>
 
-            <!-- Card 5: Investment Growth Potential -->
+            <!-- card 5 -->
             <div class="feature-card">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3 17L9 11L13 15L21 6"
-                  stroke="#FFC266"
-                  stroke-width="1.8"
-                  fill="none"
-                />
-                <path d="M17 6H21V10" stroke="#FFB84D" stroke-width="1.8" />
-                <rect
-                  x="3"
-                  y="17"
-                  width="4"
-                  height="4"
-                  fill="#FFA500"
-                  opacity="0.9"
-                  rx="1"
-                />
-                <rect
-                  x="9"
-                  y="11"
-                  width="4"
-                  height="10"
-                  fill="#E67E22"
-                  rx="1"
-                />
-              </svg>
-              <div class="feature-title">Investment Growth Potential</div>
-              <div class="feature-desc">
-                High appreciation zones & strategic planning.
-                <strong>YOY returns up to 18%</strong> – ideal wealth creation.
+              <div class="card-header">
+                <div class="icon-wrap"><i class="fas fa-chart-line"></i></div>
+                <h3>High Investment Potential</h3>
               </div>
+              <div class="gold-line"></div>
+              <p>
+                Carefully selected locations designed for strong appreciation
+                and long-term value creation.
+              </p>
             </div>
 
-            <!-- Card 6: Customer-Centric Approach -->
+            <!-- card 6 -->
             <div class="feature-card">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20 21V19C20 16.8 18.2 15 16 15H8C5.8 15 4 16.8 4 19V21"
-                  stroke="#FFBC5E"
-                  stroke-width="1.5"
-                  fill="none"
-                />
-                <circle
-                  cx="12"
-                  cy="7"
-                  r="4"
-                  fill="#FFB347"
-                  stroke="#FFD966"
-                  stroke-width="1.2"
-                />
-                <path
-                  d="M15 11L17 13L21 8"
-                  stroke="#FFD966"
-                  stroke-width="1.8"
-                  fill="none"
-                />
-              </svg>
-              <div class="feature-title">Customer-Centric Approach</div>
-              <div class="feature-desc">
-                24/7 support, real-time project dashboards & dedicated
-                relationship managers for
-                <strong>complete satisfaction</strong>.
+              <div class="card-header">
+                <div class="icon-wrap"><i class="fas fa-headset"></i></div>
+                <h3>End-to-End Customer Support</h3>
               </div>
-            </div>
-
-            <!-- Card 7: Professional Guidance -->
-            <div class="feature-card">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2C7 2 4 5 4 9C4 14 9 21 12 21C15 21 20 14 20 9C20 5 17 2 12 2Z"
-                  fill="#E67E22"
-                  stroke="#FFBC5E"
-                  stroke-width="1.2"
-                />
-                <path
-                  d="M9 9L11 11L15 7"
-                  stroke="#FFE5A3"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                />
-                <circle cx="12" cy="9" r="1.5" fill="#FFFFFF" />
-              </svg>
-              <div class="feature-title">Professional Guidance</div>
-              <div class="feature-desc">
-                Legal experts, home loan assistance & end-to-end advisory from
-                site visit to <strong>smooth registration</strong>.
-              </div>
-            </div>
-
-            <!-- Card 8: Quality Construction -->
-            <div class="feature-card">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="4"
-                  y="11"
-                  width="16"
-                  height="9"
-                  fill="#F39C12"
-                  stroke="#FFC857"
-                  stroke-width="1.2"
-                  rx="1"
-                />
-                <path
-                  d="M8 4L12 2L16 4V11H8V4Z"
-                  fill="#E67E22"
-                  stroke="#FFBC5E"
-                  stroke-width="1.2"
-                />
-                <line
-                  x1="8"
-                  y1="16"
-                  x2="16"
-                  y2="16"
-                  stroke="#FFE5A3"
-                  stroke-width="1.5"
-                />
-                <line
-                  x1="12"
-                  y1="14"
-                  x2="12"
-                  y2="18"
-                  stroke="#FFE5A3"
-                  stroke-width="1.5"
-                />
-              </svg>
-              <div class="feature-title">Quality Construction</div>
-              <div class="feature-desc">
-                Earthquake-resistant RCC, premium materials, waterproofing &
-                <strong>5-year structural warranty</strong>.
-              </div>
+              <div class="gold-line"></div>
+              <p>
+                From site visits and legal assistance to home loans and
+                registration — we're with you at every step.
+              </p>
             </div>
           </div>
 
-          <!-- trust badges with SVG icons (no emojis) -->
-          <div class="trust-footer">
-            <div class="trust-item">
-              <svg
-                class="trust-icon-svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                  fill="#FFB347"
-                />
-              </svg>
-              <span>15+ Years of Real Estate Excellence</span>
+          <!-- BOTTOM STATS + CTA : exactly as image -->
+          <div class="bottom-stats">
+            <div class="stat-item">
+              <i class="fas fa-users"></i>
+              <div>
+                <div class="num">2,500+</div>
+                <div class="label">Happy Families</div>
+              </div>
             </div>
-            <div class="trust-item">
-              <svg
-                class="trust-icon-svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 6L13.5 9.5L17 10L14.5 12.5L15 16L12 14L9 16L9.5 12.5L7 10L10.5 9.5L12 6Z"
-                  fill="#FFB347"
-                />
-              </svg>
-              <span>5000+ Happy Households</span>
+            <div class="stat-item">
+              <i class="fas fa-shield-alt"></i>
+              <div>
+                <div class="num">MVDA</div>
+                <div class="label">Approved Projects</div>
+              </div>
             </div>
-            <div class="trust-item">
-              <svg
-                class="trust-icon-svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="4"
-                  y="4"
-                  width="16"
-                  height="16"
-                  rx="2"
-                  stroke="#FFBC5E"
-                  stroke-width="1.2"
-                  fill="none"
-                />
-                <path
-                  d="M8 12H16M12 8V16"
-                  stroke="#FFBC5E"
-                  stroke-width="1.2"
-                />
-              </svg>
-              <span>MVDA Registered | IGBC Pre-Certified</span>
+            <div class="stat-item">
+              <i class="fas fa-award"></i>
+              <div>
+                <div class="num">98%</div>
+                <div class="label">On-Time Delivery</div>
+              </div>
             </div>
-            <div class="trust-item">
-              <svg
-                class="trust-icon-svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.54L12 21.35Z"
-                  fill="#FFB347"
-                />
-              </svg>
-              <span>94% Customer Referral Rate</span>
-            </div>
+            <!-- <a href="#" class="explore-btn">
+              EXPLORE OUR PROJECTS <i class="fas fa-arrow-right"></i>
+            </a> -->
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // reveal cards on scroll
+        const cards = document.querySelectorAll(".feature-card");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+        cards.forEach((c) => observer.observe(c));
+
+        // counter animation
+        const counters = document.querySelectorAll(".stat-item .num");
+        counters.forEach((el) => {
+          const raw = el.innerText;
+          const num = parseInt(raw.replace(/\D/g, ""));
+          if (isNaN(num) || raw.includes("MVDA")) return;
+          let start = 0;
+          const step = Math.max(1, Math.floor(num / 60));
+          const update = () => {
+            start += step;
+            if (start < num) {
+              el.innerText = start + "+";
+              requestAnimationFrame(update);
+            } else {
+              el.innerText = raw;
+            }
+          };
+          update();
+        });
+
+        // CTA smooth demo
+        const btn = document.querySelector(".explore-btn");
+        if (btn) {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            this.style.transform = "scale(0.96)";
+            setTimeout(() => (this.style.transform = ""), 150);
+          });
+        }
+      });
+    </script>
   </body>
 </html>
 
@@ -5272,7 +3615,7 @@
       /* All styles are scoped to parent class ".Kirti-trust-module" to avoid collisions */
       .Kirti-trust-module {
         font-family: "Inter", sans-serif;
-        background: #fefaf3;
+        background: #fefefe;
         color: #1e1b1a;
         scroll-behavior: smooth;
         position: relative;
@@ -5287,19 +3630,7 @@
         width: 100%;
         height: 100%;
         pointer-events: none;
-        background:
-          radial-gradient(
-            ellipse at 30% 40%,
-            rgba(212, 175, 55, 0.05),
-            transparent 70%
-          ),
-          repeating-linear-gradient(
-            45deg,
-            rgba(230, 210, 140, 0.02) 0px,
-            rgba(230, 210, 140, 0.02) 2px,
-            transparent 2px,
-            transparent 8px
-          );
+        background: white;
         z-index: 0;
       }
 
@@ -6179,7 +4510,7 @@
       .flag-image {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: fill;
         transition: transform 1.1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         will-change: transform;
       }
@@ -6401,7 +4732,7 @@
       .stat-number {
         font-size: 2.4rem;
         font-weight: 800;
-        color: #f4d58c;
+        color: #e5b543;
         line-height: 1.2;
         letter-spacing: -0.5px;
         font-family: "Inter", sans-serif;
@@ -6619,7 +4950,7 @@
         <!-- Premium imagery (high-end real estate) -->
         <img
           class="flag-image"
-          src="https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
+          src="Images/KR-7.png"
           alt="Luxury real estate investment property"
           loading="eager"
         />

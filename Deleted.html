@@ -2262,3 +2262,630 @@ lightbox.classList.remove("active"); });
         </div>
       </div>
     </section> -->
+
+    <!-- --------new----- -->
+     <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Braj Greens | Kirti Realty – Luxury Estate Plots Vrindavan</title>
+    <!-- Google Fonts & Font Awesome for refined luxury icons (no emojis) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        /* background: #faf9f6; */
+        /* font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          sans-serif; */
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .section-start {
+        width: 100%;
+        padding: 0px 50px 120px;
+        position: relative;
+        max-width: 1600px;
+        margin: 0 auto;
+            background: white;
+      }
+
+      /* LOGO refined */
+      .logo {
+        width: 98%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -68px;
+        z-index: 10;
+        position: relative;
+      }
+
+      .logo img {
+        width: 320px;
+        object-fit: contain;
+        display: block;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.05));
+      }
+
+      /* GALLERY CONTAINER */
+      .gallery-layout {
+        position: relative;
+        width: 100%;
+        min-height: 750px;
+      }
+
+      /* IMAGE BOXES luxury refined */
+      .img-box {
+        overflow: hidden;
+        position: absolute;
+        background: #eef2f0;
+        box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.12);
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+      .img-box:hover {
+        box-shadow: 0 32px 48px -15px rgba(0, 0, 0, 0.2);
+        transform: translateY(-3px);
+      }
+      .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.65s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        will-change: transform;
+      }
+      .img-box:hover img {
+        transform: scale(1.05);
+      }
+
+      /* overlay – sophisticated glassmorphism */
+      .img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 25, 35, 0.85) 0%,
+          rgba(10, 25, 35, 0.2) 70%,
+          transparent 100%
+        );
+        padding: 24px 20px 18px 24px;
+        color: #fff;
+        backdrop-filter: blur(2px);
+        text-align: left;
+      }
+      .img-overlay p {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.4px;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 4px;
+      }
+      .img-overlay strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      .luxury-badge {
+        background: rgba(212, 175, 55, 0.9);
+        color: #1e2a2f;
+        padding: 4px 14px;
+        border-radius: 40px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        backdrop-filter: blur(2px);
+        font-family: "Inter", sans-serif;
+      }
+      .overlay-icon {
+        font-size: 16px;
+        margin-right: 6px;
+        color: #d4af37;
+      }
+
+      /* DESKTOP LAYOUT (EXACT ORIGINAL DIMENSIONS) */
+      .img1 {
+        width: 67%;
+        height: 490px;
+        left: 0;
+        top: 80px;
+        z-index: 1;
+      }
+      .img2 {
+        width: 37%;
+        height: 480px;
+        right: 0;
+        top: 10px;
+        z-index: 2;
+        border: 6px solid #f4efe5;
+        background: #fff;
+      }
+      .img3 {
+           width: 42%;
+    height: 308px;
+    left: 18%;
+    bottom: -27px;
+    z-index: 3;
+    border: 7px solid #ffffff;
+    background: #fff;
+      }
+
+      /* BLUE BOX – LUXURY VERSION with elegant spacing, icons, no emojis */
+      .blue-box {
+        width: 38%;
+        background: linear-gradient(125deg, #0a2f3e 0%, #022438 100%);
+        position: absolute;
+       right: 3%;
+    bottom: -72px;
+        z-index: 4;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        border: 5px solid white;
+        flex-direction: column;
+        padding: 34px 36px;
+        box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(0px);
+        border-radius: 2px;
+        transition: transform 0.2s;
+      }
+
+      .blue-box h3 {
+        color: #e9d6aa;
+        font-size: 16px;
+        letter-spacing: 3.5px;
+        margin-bottom: 8px;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-family: "Inter", sans-serif;
+      }
+
+      .blue-box h2 {
+        font-family: "Cormorant Garamond", serif;
+        color: #ffffff;
+        font-size: 58px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        line-height: 1.05;
+        margin-bottom: 22px;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* GRID INFO with font awesome icons */
+      .highlights-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 20px;
+        margin: 14px 0 16px 0;
+        width: 100%;
+      }
+      .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #fef7e8;
+        font-size: 15px;
+        font-weight: 500;
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(2px);
+        padding: 8px 16px;
+        border-radius: 60px;
+        letter-spacing: 0.2px;
+        border: 0.5px solid rgba(212, 175, 55, 0.25);
+        transition: all 0.2s;
+      }
+      .highlight-item i {
+        width: 24px;
+        font-size: 18px;
+        color: #d4af37;
+      }
+      .flex-pay {
+        background: linear-gradient(95deg, #d4af37, #c6a129);
+        color: #0a2f3e;
+        font-weight: 800;
+        padding: 8px 22px;
+        border-radius: 60px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        width: auto;
+        font-size: 13px;
+        margin-top: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        font-family: "Inter", sans-serif;
+      }
+      .flex-pay i {
+        font-size: 16px;
+      }
+      .amenities-sub {
+        font-size: 12px;
+        color: #e9ddbc;
+        margin-top: 16px;
+        border-top: 1px solid rgba(212, 175, 55, 0.3);
+        padding-top: 16px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .amenities-sub span {
+        background: rgba(2, 36, 56, 0.7);
+        backdrop-filter: blur(2px);
+        padding: 5px 14px;
+        border-radius: 40px;
+        font-size: 11px;
+        letter-spacing: 0.4px;
+        color: #f5efde;
+        font-weight: 500;
+        border: 0.3px solid rgba(212, 175, 55, 0.4);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .amenities-sub span i {
+        font-size: 11px;
+        color: #d4af37;
+      }
+      .mvda-badge {
+        background: rgba(212, 175, 55, 0.1);
+        border-left: 4px solid #d4af37;
+        padding: 10px 14px;
+        border-radius: 10px;
+        margin-top: 16px;
+        font-size: 12px;
+        color: #f2e5ca;
+        width: 100%;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .mvda-badge i {
+        font-size: 16px;
+        color: #d4af37;
+      }
+
+      /* RESPONSIVE (Tablet) */
+      @media (max-width: 1100px) {
+        .section-start {
+          padding: 32px 30px 90px;
+        }
+        .logo img {
+          width: 300px;
+        }
+        .logo {
+          margin-bottom: -50px;
+        }
+        .gallery-layout {
+          position: relative;
+          min-height: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .img-box,
+        .blue-box {
+          position: relative;
+          width: 100%;
+          left: auto;
+          right: auto;
+          top: auto;
+          bottom: auto;
+          margin: 0 auto;
+        }
+        .img1,
+        .img2,
+        .img3 {
+          height: 380px;
+          width: 100%;
+          border-width: 3px;
+        }
+        .img2 {
+          border: 4px solid #f4efe5;
+        }
+        .img3 {
+          border: 4px solid #ffffff;
+        }
+        .blue-box {
+          width: 100%;
+          height: auto;
+          padding: 32px 28px;
+          margin-top: 12px;
+        }
+        .blue-box h2 {
+          font-size: 48px;
+        }
+        .highlights-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* MOBILE ( ≤768px ) – two images row, hide third, full blue box */
+      @media (max-width: 768px) {
+        .section-start {
+          padding: 20px 18px 60px;
+        }
+        .logo {
+          margin-bottom: 20px;
+        }
+        .logo img {
+          width: 210px;
+        }
+        .gallery-layout {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: space-between;
+        }
+        .img-box,
+        .blue-box {
+          position: relative;
+          width: 100%;
+          margin: 0;
+        }
+        .img1,
+        .img2 {
+          width: calc(50% - 6px);
+          height: 240px;
+          border-radius: 20px;
+          border: 2px solid #ece7dd;
+          box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+        }
+        .img3 {
+          display: none;
+        }
+        .blue-box {
+          width: 100%;
+          margin-top: 12px;
+          padding: 24px 22px;
+          border-radius: 24px;
+          order: 3;
+        }
+        .blue-box h3 {
+          font-size: 13px;
+          letter-spacing: 2px;
+        }
+        .blue-box h2 {
+          font-size: 32px;
+        }
+        .highlights-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .highlight-item {
+          font-size: 13px;
+          padding: 6px 14px;
+        }
+        .amenities-sub span {
+          font-size: 10px;
+          padding: 4px 12px;
+        }
+        .mvda-badge {
+          font-size: 10px;
+        }
+        .flex-pay {
+          font-size: 11px;
+          padding: 6px 16px;
+        }
+        .img-overlay strong {
+          font-size: 16px;
+        }
+        .img-overlay p {
+          font-size: 10px;
+          gap: 6px;
+        }
+        .luxury-badge {
+          font-size: 9px;
+          padding: 3px 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .img1,
+        .img2 {
+          height: 170px;
+        }
+        .blue-box h2 {
+          font-size: 27px;
+        }
+        .blue-box {
+          padding: 20px 18px;
+        }
+        .highlight-item {
+          font-size: 12px;
+        }
+      }
+
+      /* Additional fine touches */
+      html {
+        scroll-behavior: smooth;
+      }
+      .blue-box,
+      .img-box {
+        will-change: transform;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section-start">
+      <div class="logo">
+        <img
+          src="../Images/name.png"
+          alt="Kirti Realty | Braj Greens Logo"
+        />
+      </div>
+
+      <div class="gallery-layout">
+        <!-- IMAGE 1 – Lush 5 acres, ultra luxury narrative -->
+        <div class="img-box img1">
+          <img
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
+            alt="Expansive luxury greens"
+            loading="lazy"
+          />
+          <div class="img-overlay">
+            <p>
+              <strong
+                ><i class="fas fa-leaf overlay-icon"></i> 5 Acres of Serene
+                Landscape</strong
+              >
+              <span class="luxury-badge"
+                ><i class="fas fa-diamond"></i> Only 70 Plots</span
+              >
+            </p>
+            <p>
+              <i class="fas fa-ruler-combined overlay-icon"></i> 120–160 Sq.
+              Yrds | Gated Enclave
+            </p>
+          </div>
+        </div>
+
+        <!-- IMAGE 2 – Modern clubhouse + elite security and wellness hub -->
+        <div class="img-box img2">
+          <img
+            src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=2070&auto=format&fit=crop"
+            alt="Clubhouse luxury amenity"
+            loading="lazy"
+          />
+          <div class="img-overlay" style="top:0;>
+            <p>
+              <strong
+                ><i class="fas fa-building overlay-icon"></i> Modern Clubhouse &
+                Social Hub</strong
+              >
+              <span class="luxury-badge"
+                ><i class="fas fa-shield-alt"></i> 24x7 Elite Security</span
+              >
+            </p>
+            <p>
+              <i class="fas fa-video overlay-icon"></i> CCTV 360° Surveillance |
+              Wellness Sanctuary
+            </p>
+          </div>
+        </div>
+
+        <!-- IMAGE 3 – Lush park, botanical landscape & MVDA nuance (desktop only) -->
+        <div class="img-box img3">
+          <img
+            src="https://images.unsplash.com/photo-1572085313466-6710de8d7ba3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGdhcmRlbnxlbnwwfHwwfHx8MA%3D%3D"
+            alt="Botanical garden design"
+            loading="lazy"
+          />
+          <div class="img-overlay">
+            <p>
+              <strong
+                ><i class="fas fa-tree overlay-icon"></i> Lush Green Park |
+                Curated Botanical Design</strong
+              >
+            </p>
+            <p>
+              <i class="fas fa-check-circle overlay-icon"></i> Breathing
+              Greenspace · MVDA Approval In Progress
+            </p>
+          </div>
+        </div>
+
+        <!-- BLUE BOX – complete premium Braj Greens data, icons only, no emojis -->
+        <div class="blue-box">
+          <h3>KIRTI REAlTY PRESENTS</h3>
+          <h2>BRAJ GREENS</h2>
+
+          <!-- key highlights with font awesome icons -->
+          <div class="highlights-grid">
+            <div class="highlight-item">
+              <i class="fas fa-expand-alt"></i> 5 Acres Land
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-chart-line"></i> 70 Plots Only
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-vector-square"></i> 120–160 Sq. Yrds
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-calendar-alt"></i> Flexible Payment Plan
+            </div>
+          </div>
+
+          <!-- luxury amenities row icons only -->
+          <!-- <div class="amenities-sub">
+            <span><i class="fas fa-dumbbell"></i> Modern Clubhouse</span>
+            <span
+              ><i class="fas fa-hand-holding-heart"></i> Social & Wellness
+              Hub</span
+            >
+            <span><i class="fas fa-lock"></i> 24x7 Elite Security</span>
+            <span><i class="fas fa-camera"></i> CCTV 360° Monitoring</span>
+            <span><i class="fas fa-leaf"></i> Lush Green Park</span>
+            <span
+              ><i class="fas fa-draw-polygon"></i> Well Planned Landscape</span
+            >
+            <span
+              ><i class="fas fa-seedling"></i> Curated Botanical Design</span
+            >
+          </div> -->
+
+          <!-- MVDA approval status icon + compliance -->
+          <div class="mvda-badge">
+            <i class="fas fa-gavel"></i> MVDA Approval: In progress · Elite
+            compliance approval underway
+          </div>
+
+          <!-- flexible payment plan badge with elegant icon -->
+          <div class="flex-pay">
+            <i class="fas fa-coins"></i> Flexible Payment Plans | Customized
+            Installments
+          </div>
+          <div
+            style="
+              font-size: 11px;
+              color: #c9bc94;
+              margin-top: 14px;
+              letter-spacing: 0.5px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <i class="fas fa-chart-simple" style="font-size: 12px"></i> India's
+            fastest-growing investment hub · Vrindavan
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+<!-- ------must try--- -->
+ position:absolute;inset:0;clip-path:polygon(0.000% 2.735%, 1.639% 3.049%, 3.279% 3.144%, 4.918% 3.310%, 6.557% 2.845%, 8.197% 2.931%, 9.836% 3.456%, 11.475% 3.282%, 13.115% 1.862%, 14.754% 2.687%, 16.393% 2.518%, 18.033% 1.881%, 19.672% 2.709%, 21.311% 1.832%, 22.951% 1.296%, 24.590% 1.725%, 26.230% 2.526%, 27.869% 3.814%, 29.508% 3.739%, 31.148% 4.326%, 32.787% 3.960%, 34.426% 3.387%, 36.066% 4.559%, 37.705% 3.496%, 39.344% 3.551%, 40.984% 2.789%, 42.623% 1.168%, 44.262% 2.321%, 45.902% 1.599%, 47.541% 1.970%, 49.180% 1.741%, 50.820% 1.437%, 52.459% 2.193%, 54.098% 2.367%, 55.738% 3.341%, 57.377% 3.185%, 59.016% 2.785%, 60.656% 2.923%, 62.295% 3.185%, 63.934% 3.697%, 65.574% 3.424%, 67.213% 2.189%, 68.852% 2.645%, 70.492% 1.969%, 72.131% 2.627%, 73.770% 2.117%, 75.410% 1.448%, 77.049% 1.570%, 78.689% 1.840%, 80.328% 2.728%, 81.967% 3.375%, 83.607% 3.503%, 85.246% 3.027%, 86.885% 2.959%, 88.525% 3.782%, 90.164% 3.962%, 91.803% 2.877%, 93.443% 2.861%, 95.082% 2.846%, 96.721% 2.340%, 98.361% 2.801%, 100.000% 2.613%, 100.000% 96.322%, 98.361% 96.737%, 96.721% 96.940%, 95.082% 97.137%, 93.443% 96.916%, 91.803% 95.585%, 90.164% 95.842%, 88.525% 95.829%, 86.885% 95.862%, 85.246% 95.930%, 83.607% 96.389%, 81.967% 96.126%, 80.328% 95.988%, 78.689% 96.640%, 77.049% 98.462%, 75.410% 98.456%, 73.770% 98.114%, 72.131% 97.037%, 70.492% 96.653%, 68.852% 98.073%, 67.213% 96.657%, 65.574% 94.933%, 63.934% 95.427%, 62.295% 94.591%, 60.656% 95.363%, 59.016% 96.330%, 57.377% 95.439%, 55.738% 95.185%, 54.098% 96.894%, 52.459% 96.977%, 50.820% 98.255%, 49.180% 98.088%, 47.541% 97.864%, 45.902% 96.503%, 44.262% 97.009%, 42.623% 97.893%, 40.984% 96.403%, 39.344% 96.036%, 37.705% 94.351%, 36.066% 95.155%, 34.426% 95.962%, 32.787% 95.950%, 31.148% 95.688%, 29.508% 95.914%, 27.869% 96.180%, 26.230% 96.844%, 24.590% 98.042%, 22.951% 97.142%, 21.311% 98.064%, 19.672% 97.205%, 18.033% 96.919%, 16.393% 97.231%, 14.754% 96.759%, 13.115% 97.191%, 11.475% 95.633%, 9.836% 95.711%, 8.197% 95.173%, 6.557% 97.052%, 4.918% 95.542%, 3.279% 95.526%, 1.639% 95.849%, 0.000% 96.320%);-webkit-clip-path:polygon(0.000% 2.735%, 1.639% 3.049%, 3.279% 3.144%, 4.918% 3.310%, 6.557% 2.845%, 8.197% 2.931%, 9.836% 3.456%, 11.475% 3.282%, 13.115% 1.862%, 14.754% 2.687%, 16.393% 2.518%, 18.033% 1.881%, 19.672% 2.709%, 21.311% 1.832%, 22.951% 1.296%, 24.590% 1.725%, 26.230% 2.526%, 27.869% 3.814%, 29.508% 3.739%, 31.148% 4.326%, 32.787% 3.960%, 34.426% 3.387%, 36.066% 4.559%, 37.705% 3.496%, 39.344% 3.551%, 40.984% 2.789%, 42.623% 1.168%, 44.262% 2.321%, 45.902% 1.599%, 47.541% 1.970%, 49.180% 1.741%, 50.820% 1.437%, 52.459% 2.193%, 54.098% 2.367%, 55.738% 3.341%, 57.377% 3.185%, 59.016% 2.785%, 60.656% 2.923%, 62.295% 3.185%, 63.934% 3.697%, 65.574% 3.424%, 67.213% 2.189%, 68.852% 2.645%, 70.492% 1.969%, 72.131% 2.627%, 73.770% 2.117%, 75.410% 1.448%, 77.049% 1.570%, 78.689% 1.840%, 80.328% 2.728%, 81.967% 3.375%, 83.607% 3.503%, 85.246% 3.027%, 86.885% 2.959%, 88.525% 3.782%, 90.164% 3.962%, 91.803% 2.877%, 93.443% 2.861%, 95.082% 2.846%, 96.721% 2.340%, 98.361% 2.801%, 100.000% 2.613%, 100.000% 96.322%, 98.361% 96.737%, 96.721% 96.940%, 95.082% 97.137%, 93.443% 96.916%, 91.803% 95.585%, 90.164% 95.842%, 88.525% 95.829%, 86.885% 95.862%, 85.246% 95.930%, 83.607% 96.389%, 81.967% 96.126%, 80.328% 95.988%, 78.689% 96.640%, 77.049% 98.462%, 75.410% 98.456%, 73.770% 98.114%, 72.131% 97.037%, 70.492% 96.653%, 68.852% 98.073%, 67.213% 96.657%, 65.574% 94.933%, 63.934% 95.427%, 62.295% 94.591%, 60.656% 95.363%, 59.016% 96.330%, 57.377% 95.439%, 55.738% 95.185%, 54.098% 96.894%, 52.459% 96.977%, 50.820% 98.255%, 49.180% 98.088%, 47.541% 97.864%, 45.902% 96.503%, 44.262% 97.009%, 42.623% 97.893%, 40.984% 96.403%, 39.344% 96.036%, 37.705% 94.351%, 36.066% 95.155%, 34.426% 95.962%, 32.787% 95.950%, 31.148% 95.688%, 29.508% 95.914%, 27.869% 96.180%, 26.230% 96.844%, 24.590% 98.042%, 22.951% 97.142%, 21.311% 98.064%, 19.672% 97.205%, 18.033% 96.919%, 16.393% 97.231%, 14.754% 96.759%, 13.115% 97.191%, 11.475% 95.633%, 9.836% 95.711%, 8.197% 95.173%, 6.557% 97.052%, 4.918% 95.542%, 3.279% 95.526%, 1.639% 95.849%, 0.000% 96.320%);overflow:hidden;background:rgb(248, 231, 201);box-shadow:none;transform:translateZ(0)
+<!-- -------end--- -->
+ 

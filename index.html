@@ -70,7 +70,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: #f8f5ef;
+            background: #f8f5ef4d;
             color: white;
             backdrop-filter: blur(2px);
             z-index: 1000;
@@ -81,9 +81,9 @@
           /* Compact on scroll */
           .header.compact {
             padding-block: 0px;
-            background: #fff6e4;
+            background: #fff6e4b8;
             color: white;
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(3px);
             box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
             border-bottom-color: var(--gold-light);
           }
@@ -1348,8 +1348,8 @@
 
           @media (min-width: 600px) {
             .popup-image-wrapper img {
-              max-height: 300px;
-              object-fit: cover;
+              max-height: 320px;
+              object-fit: contain;
             }
           }
         </style>
@@ -1375,7 +1375,7 @@
             <!-- BIG IMAGE – NO BORDER, NO RADIUS, FULL WIDTH -->
             <div class="popup-image-wrapper">
               <img
-                src="Images/namaste-12.png"
+                src="Images/n-4.png"
                 alt="Kirti Realty · divine home"
                 loading="lazy"
               />
@@ -1445,287 +1445,105 @@
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Luxury Hero – Cinematic Video</title>
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
-          rel="stylesheet"
-        />
+        <title>Full Frame Video – No Crop</title>
         <style>
+          /* --- RESET & BASE --- */
           * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
           }
 
-          body {
-            font-family: "Inter", sans-serif;
-            overflow-x: hidden;
-            background-color: #0b0a08;
-          }
+          /* body {
+        background-color: #0b0a08;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+      } */
 
+          /* --- HERO — FULL FRAME --- */
           .hero {
             position: relative;
-            width: 100%;
+            width: 100vw;
             height: 100vh;
-            min-height: 720px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            isolation: isolate;
+            background: #fdfdfd;
+            filter: brightness(1.2) contrast(1.15) saturate(0.9);
           }
 
+          /* --- VIDEO: CONTAIN mode — shows entire video without cropping --- */
           .hero-video {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
             object-fit: cover;
-            object-position: center 30%;
+            object-position: center;
+            z-index: 0;
             pointer-events: none;
+            display: block;
           }
 
-          .hero::after {
+          /* Mobile */
+          @media (max-width: 768px) {
+            .hero-video {
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+          @media (max-width: 768px) {
+            .hero {
+              height: auto;
+              aspect-ratio: 16 / 9;
+              margin-top: 68px;
+            }
+
+            .hero-video {
+              object-fit: contain;
+            }
+          }
+
+          /* --- Overlay (optional, adds depth) --- */
+          /* .hero::after {
             content: "";
             position: absolute;
             inset: 0;
             background: linear-gradient(
               135deg,
-              rgba(8, 6, 12, 0.6) 0%,
-              rgba(0, 0, 0, 0.4) 40%,
-              rgba(0, 0, 0, 0.7) 100%
+              rgba(8, 6, 12, 0.2) 0%,
+              rgba(0, 0, 0, 0.1) 50%,
+              rgba(0, 0, 0, 0.3) 100%
             );
             z-index: 2;
             pointer-events: none;
           }
 
-          /* .hero .gradient-accent {
+          .gradient-accent {
             position: absolute;
             inset: 0;
             background: radial-gradient(
               circle at 30% 40%,
-              rgba(255, 215, 140, 0.1) 0%,
-              rgba(0, 0, 0, 0.4) 90%
+              rgba(255, 215, 140, 0.05) 0%,
+              rgba(0, 0, 0, 0.15) 90%
             );
             z-index: 2;
             pointer-events: none;
           } */
 
-          .hero-content {
-            position: relative;
-            z-index: 15;
-            max-width: 1300px;
-            width: 88%;
-            margin: 0 auto;
-            padding: 2rem 1.8rem;
-            text-align: center;
-            animation: fadeUpLuxury 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-          }
+          /* --- RESPONSIVE: ensure video always fully visible --- */
+          /* For very wide screens, contain handles it automatically */
+          /* No extra cropping needed — object-fit: contain does the job */
 
-          .hero-heading {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(3.2rem, 10vw, 6.2rem);
-            font-weight: 700;
-            line-height: 1.05;
-            margin-bottom: 1.4rem;
-            display: inline-block;
-            background: #fff396;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            text-shadow:
-              0 2px 18px rgba(0, 0, 0, 0.3),
-              0 8px 40px rgba(0, 0, 0, 0.45),
-              0 20px 60px rgba(0, 0, 0, 0.25);
-            letter-spacing: -0.02em;
-            position: relative;
-          }
-
-          .hero-heading::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 2.5px;
-            background: linear-gradient(
-              90deg,
-              transparent,
-              #d4af37,
-              #f7e3a0,
-              #d4af37,
-              transparent
-            );
-            border-radius: 4px;
-          }
-
-          .hero-subheading {
-            font-family: "Inter", sans-serif;
-            font-size: clamp(1.1rem, 4.2vw, 1.7rem);
-            font-weight: 400;
-            line-height: 1.6;
-            margin-top: 2rem;
-            margin-bottom: 2.8rem;
-            max-width: 760px;
-            margin-left: auto;
-            margin-right: auto;
-            color: rgba(255, 250, 235, 0.95);
-            letter-spacing: 0.3px;
-            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(1px);
-          }
-
-          .button-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.8rem;
-            row-gap: 1.2rem;
-            margin-top: 0.4rem;
-          }
-
-          .btn {
-            display: inline-block;
-            padding: 1rem 2.8rem;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 1.2px;
-            text-decoration: none;
-            border-radius: 0px;
-            transition: all 0.35s ease;
-            cursor: pointer;
-            text-align: center;
-            font-family: "Inter", sans-serif;
-            text-transform: uppercase;
-            backdrop-filter: blur(2px);
-          }
-
-          .btn-primary {
-            background: #dca341;
-            color: #0a0a0a;
-            border: 2px solid #dca341;
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
-            font-weight: 600;
-          }
-
-          .btn-primary:hover {
-            background: transparent;
-            color: #dca341;
-            border: 2px solid #dca341;
-            box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.6);
-            letter-spacing: 1.8px;
-            backdrop-filter: blur(6px);
-          }
-
-          .btn-secondary {
-            background: rgba(20, 18, 16, 0.25);
-            color: #f5f0e6;
-            border: 1.5px solid rgba(212, 175, 55, 0.8);
-            backdrop-filter: blur(8px);
-          }
-
-          .btn-secondary:hover {
-            background: rgba(212, 175, 55, 0.2);
-            border-color: #d4af37;
-            backdrop-filter: blur(12px);
-            color: #ffffff;
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
-          }
-
-          .slide-counter {
-            position: absolute;
-            bottom: 32px;
-            right: 40px;
-            z-index: 18;
-            font-family: "Inter", monospace;
-            font-size: 0.8rem;
-            letter-spacing: 1.5px;
-            color: rgba(255, 250, 210, 0.75);
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(6px);
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-weight: 300;
-            pointer-events: none;
-            border: 0.5px solid rgba(212, 175, 55, 0.2);
-          }
-
-          @keyframes fadeUpLuxury {
-            0% {
-              opacity: 0;
-              transform: translateY(36px);
-            }
-            100% {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @media (max-width: 768px) {
-            .hero-content {
-              width: 94%;
-              padding: 1.5rem 0.8rem;
-            }
-            .btn {
-              padding: 0.8rem 1.8rem;
-              font-size: 0.85rem;
-            }
-            .button-group {
-              gap: 1rem;
-            }
-            .hero-heading::after {
-              width: 80px;
-              bottom: -6px;
-            }
-            .slide-counter {
-              bottom: 22px;
-              right: 16px;
-              font-size: 0.7rem;
-              padding: 4px 14px;
-            }
-          }
-
-          @media (max-width: 480px) {
-            .hero {
-              min-height: 640px;
-            }
-            .hero-heading::after {
-              width: 60px;
-            }
-            .btn-primary,
-            .btn-secondary {
-              padding: 0.7rem 1.6rem;
-              font-size: 0.8rem;
-            }
-            .slide-counter {
-              bottom: 18px;
-              right: 12px;
-              font-size: 0.65rem;
-              padding: 4px 12px;
-            }
-          }
-
-          .hero-video {
-            object-fit: cover;
-            object-position: center 30%;
-          }
-
-          @media (min-aspect-ratio: 16/9) {
-            .hero-video {
-              object-position: center 25%;
-            }
-          }
+          /* Optional: for portrait screens, video will be letterboxed top/bottom */
+          /* which is exactly what "without getting cut" means */
         </style>
       </head>
       <body>
         <section class="hero">
-          <!-- Using a reliable, publicly accessible video -->
+          <!-- Video: full frame, responsive, NO CROP (contain) -->
           <video
             class="hero-video"
             autoplay
@@ -1734,31 +1552,20 @@
             playsinline
             preload="auto"
           >
-            <source src="Images/lotus.mp4" type="video/mp4" />
-            <!-- Fallback: if the above fails, try this alternative -->
+            <source
+              src="Images/KIRTI REALTY LOGO ANIMATION.01.mp4"
+              type="video/mp4"
+            />
+            <!-- fallback video -->
             <source
               src="https://cdn.pixabay.com/video/2022/10/03/132244-758987405_large.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
           </video>
+
           <div class="gradient-accent"></div>
-          <div class="slide-counter">✦ 01 / 01</div>
-          <div class="hero-content">
-            <h1 class="hero-heading">Because Everyone Deserves the Best</h1>
-            <p class="hero-subheading">
-              Premium Real Estate Solutions for Modern Living & Smart
-              Investments
-            </p>
-            <div class="button-group">
-              <a href="#Residences" class="btn btn-primary" id="exploreBtn"
-                >Explore Projects</a
-              >
-              <a href="Contact.html" class="btn btn-secondary" id="contactBtn"
-                >Contact Us</a
-              >
-            </div>
-          </div>
+          <!-- No text, just pure video -->
         </section>
 
         <script>
@@ -1770,16 +1577,17 @@
                   video.play().catch(() => {});
                 }
               };
+
               setTimeout(playVideo, 300);
+
               document.querySelector(".hero")?.addEventListener(
                 "click",
-                (e) => {
-                  if (!e.target.closest("a")) {
-                    playVideo();
-                  }
+                () => {
+                  playVideo();
                 },
                 { passive: true },
               );
+
               document.addEventListener("visibilitychange", () => {
                 if (!document.hidden) {
                   playVideo();
@@ -2338,7 +2146,7 @@
           that works as a legacy backdrop.
         -->
         <img
-          src="Images/Full-width-4.png"
+          src="Images/fullwidth-12345.png "
           alt="Kirti Vrindavan – legacy for generations"
           loading="lazy"
         />
@@ -5019,6 +4827,7 @@
         border-top: 1px solid rgba(228, 179, 99, 0.25);
         padding: 3rem 2rem 2rem;
         margin-top: auto;
+        color: white !important;
       }
       .footer-container {
         max-width: 1300px;
@@ -5055,7 +4864,7 @@
         color: transparent;
       }
       .footer-tagline {
-        color: #aaa;
+        color: #ffffff;
         font-size: 0.85rem;
         line-height: 1.5;
         margin-top: 0.6rem;
@@ -5110,7 +4919,7 @@
       }
       .link-column ul li a {
         text-decoration: none;
-        color: #bcb7ab;
+        color: #fffbf2;
         font-size: 0.85rem;
         transition: 0.2s;
       }
@@ -5271,13 +5080,13 @@
       </div>
     </footer>
 
-    <script>
+    <!-- <script>
       // Remove .html from URL
       if (window.location.pathname.endsWith(".html")) {
         const newPath = window.location.pathname.replace(".html", "");
         window.history.replaceState({}, "", newPath);
       }
-    </script>
+    </script> -->
   </body>
 </html>
 

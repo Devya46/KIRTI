@@ -1,3 +1,4 @@
+<!-- HERO -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
-    <title>KIRTI REALTY — Private Estates | Luxury Villas</title>
+    <title>KR REALTY — Smart Investments | Property for Wealth</title>
     <!-- Google Fonts + Font Awesome 6 -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap"
@@ -26,7 +27,7 @@
 
       body {
         font-family: "Inter", sans-serif;
-        background: #0b0f13;
+        background: white;
       }
 
       /* ----- hero: image with subtle overlay & glass card behind text (premium) ----- */
@@ -37,7 +38,7 @@
         align-items: center;
         justify-content: center;
         /* background image – same as before (KR-2.png) */
-        background-image: url("../Images/KR-2.png");
+        background-image: url("../Images/KR-9.png");
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -106,7 +107,7 @@
         animation: fadeUp 0.7s ease-out forwards;
       }
 
-      /* ----- luxury badge (gold accent) – updated text: KIRTI REALTY ----- */
+      /* ----- luxury badge (gold accent) – updated: KR REALTY — SMART INVESTMENTS ----- */
       .luxury-badge {
         display: inline-flex;
         align-items: center;
@@ -132,7 +133,7 @@
         margin-right: 2px;
       }
 
-      /* ----- main heading: bold, gold accent — updated to match new content ----- */
+      /* ----- main heading: bold, gold accent — updated for Smart Investments ----- */
       .hero-headline h1 {
         font-family: "Cormorant Garamond", serif;
         font-weight: 700;
@@ -170,7 +171,7 @@
         border-radius: 4px;
       }
 
-      /* ----- description: updated to match villa/luxury narrative ----- */
+      /* ----- description: updated for investment narrative ----- */
       .hero-description {
         font-size: 18px;
         line-height: 1.7;
@@ -182,7 +183,7 @@
         letter-spacing: 0.2px;
       }
 
-      /* ----- CTA buttons: centered, gold primary + outline secondary (no feature grid) ----- */
+      /* ----- CTA: single button (gold) – "Discover Opportunities" ----- */
       .button-group {
         display: flex;
         flex-wrap: wrap;
@@ -225,38 +226,7 @@
         transform: translateX(5px);
       }
 
-      .btn-outline-premium {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(6px);
-        border: 1.5px solid rgba(247, 183, 51, 0.85);
-        color: #ffffff;
-        padding: 14px 40px;
-        border-radius: 60px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.05rem;
-        transition: all 0.25s ease;
-        cursor: pointer;
-      }
-
-      .btn-outline-premium i {
-        color: #f7b733;
-      }
-
-      .btn-outline-premium:hover {
-        background: #f7b733;
-        border-color: #f7b733;
-        color: #0a1a24;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      }
-
-      .btn-outline-premium:hover i {
-        color: #0a1a24;
-      }
+      /* No secondary button – only one CTA */
 
       /* ----- responsiveness: keep centered and glass card adapts ----- */
       @media (max-width: 992px) {
@@ -305,8 +275,7 @@
           width: 100%;
           gap: 14px;
         }
-        .btn-gold,
-        .btn-outline-premium {
+        .btn-gold {
           width: 100%;
           justify-content: center;
           padding: 14px 20px;
@@ -338,8 +307,7 @@
           font-size: 13px;
           line-height: 1.6;
         }
-        .btn-gold,
-        .btn-outline-premium {
+        .btn-gold {
           font-size: 0.85rem;
           padding: 12px 16px;
         }
@@ -368,36 +336,32 @@
       <!-- glass card behind text (centered) -->
       <div class="container-premium">
         <div class="hero-headline">
-          <!-- premium badge updated: KIRTI REALTY — PRIVATE ESTATES -->
+          <!-- premium badge updated: KR REALTY — SMART INVESTMENTS -->
           <div class="luxury-badge">
-            <i class="fas fa-crown"></i> KIRTI REALTY — PRIVATE ESTATES
+            <i class="fas fa-crown"></i> KR REALTY — SMART INVESTMENTS
           </div>
 
-          <!-- heading with gold accent — new message: Luxury Villas & Private Home -->
+          <!-- heading with gold accent — new message: Smart Property Investments / Long-Term Wealth -->
           <h1>
-            <span class="gold-accent">Luxury Villas</span><br />
-            &amp; Private Home
+            <span class="gold-accent">Smart Property</span><br />
+            Investments
           </h1>
 
-          <!-- description fully updated to match the new narrative -->
+          <!-- description fully updated for investment focus -->
           <p class="hero-description">
-            Experience the perfect blend of elegance, comfort, and privacy with
-            our thoughtfully designed villa projects. Nestled in prime
-            locations, our villas offer spacious living, modern architecture,
-            premium amenities, and a serene environment—creating the ideal
-            setting for your dream lifestyle. Inspired by the growing demand for
-            luxury villa communities and premium residential living, the focus
-            is on space, exclusivity, and long-term value.
+            Real estate remains one of the most reliable and rewarding
+            investment avenues. Whether you're a first-time investor or
+            diversifying your portfolio, KR Realty identifies high-potential
+            properties offering strong appreciation, rental income, and
+            long-term financial security.
           </p>
 
-          <!-- CTA buttons only (no feature grid) — updated labels to match villa context -->
+          <!-- SINGLE CTA: "Discover Opportunities" (gold) – no secondary button -->
           <div class="button-group">
-            <a href="#" class="btn-gold">
-              <i class="fas fa-building"></i> Explore Estates
+            <a href="../Contact.html" class="btn-gold">
+              <i class="fas fa-chart-line"></i> Discover Opportunities
             </a>
-            <a href="#" class="btn-outline-premium">
-              <i class="far fa-calendar-alt"></i> Schedule Private Visit
-            </a>
+            <!-- No secondary button – only one CTA as requested -->
           </div>
         </div>
       </div>

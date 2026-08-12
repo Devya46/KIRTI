@@ -8,7 +8,11 @@
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
     <title>Investment | Kirti Realty</title>
-    <link rel="shortcut icon" href="../Images/Favicon.jpg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../Images/Favicon.jpg"
+      type="image/x-icon"
+    />
     <!-- Google Fonts for Elegance & Luxury Typography -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
@@ -1016,20 +1020,20 @@
         scroll-behavior: smooth;
       }
 
-      .container {
+      .container-all {
         width: 88%;
         max-width: 1280px;
         margin: 0 auto;
       }
 
       @media (max-width: 1024px) {
-        .container {
+        .container-all {
           width: 92%;
         }
       }
 
       @media (max-width: 680px) {
-        .container {
+        .container-all {
           width: 90%;
         }
       }
@@ -1631,379 +1635,385 @@
   </head>
   <body>
     <!-- HERO -->
-   <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
-    />
-    <title>KR REALTY — Smart Investments | Property for Wealth</title>
-    <!-- Google Fonts + Font Awesome 6 -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <style>
-      /* ----- reset & base ----- */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+        <title>KR REALTY — Smart Investments | Property for Wealth</title>
+        <!-- Google Fonts + Font Awesome 6 -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <style>
+          /* ----- reset & base ----- */
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
 
-      body {
-        font-family: "Inter", sans-serif;
-        background: white;
-      }
+          body {
+            font-family: "Inter", sans-serif;
+            background: white;
+          }
 
-      /* ----- hero: image with subtle overlay & glass card behind text (premium) ----- */
-      .residential-luxury {
-        position: relative;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* background image – same as before (KR-2.png) */
-        background-image: url("../Images/KR-9.png");
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        isolation: isolate;
-      }
+          /* ----- hero: image with subtle overlay & glass card behind text (premium) ----- */
+          .residential-luxury {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background image – same as before (KR-2.png) */
+            background-image: url("../Images/KR-9.png");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            isolation: isolate;
+          }
 
-      /* premium overlay: warm dark gradient with gold shimmer */
-      .residential-luxury::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(
-            ellipse at 30% 40%,
-            rgba(247, 183, 51, 0.12) 0%,
-            rgba(0, 0, 0, 0) 70%
-          ),
-          linear-gradient(
-            135deg,
-            rgba(10, 15, 20, 0.7) 0%,
-            rgba(10, 15, 20, 0.45) 50%,
-            rgba(10, 15, 20, 0.7) 100%
-          );
-        z-index: 2;
-        pointer-events: none;
-      }
+          /* premium overlay: warm dark gradient with gold shimmer */
+          .residential-luxury::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+              radial-gradient(
+                ellipse at 30% 40%,
+                rgba(247, 183, 51, 0.12) 0%,
+                rgba(0, 0, 0, 0) 70%
+              ),
+              linear-gradient(
+                135deg,
+                rgba(10, 15, 20, 0.7) 0%,
+                rgba(10, 15, 20, 0.45) 50%,
+                rgba(10, 15, 20, 0.7) 100%
+              );
+            z-index: 2;
+            pointer-events: none;
+          }
 
-      /* bottom gold signature line */
-      .residential-luxury::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, #e6b12e, #f7b733, #f9d976, #e6b12e);
-        z-index: 6;
-      }
+          /* bottom gold signature line */
+          .residential-luxury::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(
+              90deg,
+              #e6b12e,
+              #f7b733,
+              #f9d976,
+              #e6b12e
+            );
+            z-index: 6;
+          }
 
-      /* ----- container: centered, glass card behind text (premium blur + border) ----- */
-      .container-premium {
-        width: 92%;
-        max-width: 1100px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 5;
-        padding: 40px 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background: rgb(255 255 255 / 0%);
-        backdrop-filter: blur(2px) saturate(1.1);
-        -webkit-backdrop-filter: blur(16px) saturate(1.1);
-        border-radius: 48px;
-        box-shadow:
-          0 30px 60px -20px rgba(0, 0, 0, 0.7),
-          0 0 0 1px rgba(247, 183, 51, 0.08) inset;
-        transition: all 0.2s ease;
-      }
+          /* ----- container: centered, glass card behind text (premium blur + border) ----- */
+          .container-premium {
+            width: 92%;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgb(255 255 255 / 0%);
+            backdrop-filter: blur(2px) saturate(1.1);
+            -webkit-backdrop-filter: blur(16px) saturate(1.1);
+            border-radius: 48px;
+            box-shadow:
+              0 30px 60px -20px rgba(0, 0, 0, 0.7),
+              0 0 0 1px rgba(247, 183, 51, 0.08) inset;
+            transition: all 0.2s ease;
+          }
 
-      /* ----- main content block ----- */
-      .hero-headline {
-        max-width: 820px;
-        width: 100%;
-        animation: fadeUp 0.7s ease-out forwards;
-      }
+          /* ----- main content block ----- */
+          .hero-headline {
+            max-width: 820px;
+            width: 100%;
+            animation: fadeUp 0.7s ease-out forwards;
+          }
 
-      /* ----- luxury badge (gold accent) – updated: KR REALTY — SMART INVESTMENTS ----- */
-      .luxury-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(0, 0, 0, 0.45);
-        backdrop-filter: blur(4px);
-        border-left: 4px solid #f7b733;
-        padding: 8px 24px 8px 20px;
-        border-radius: 0 40px 40px 0;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 2.8px;
-        text-transform: uppercase;
-        margin-bottom: 22px;
-        color: #fceeca;
-        font-family: "Inter", sans-serif;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
+          /* ----- luxury badge (gold accent) – updated: KR REALTY — SMART INVESTMENTS ----- */
+          .luxury-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(4px);
+            border-left: 4px solid #f7b733;
+            padding: 8px 24px 8px 20px;
+            border-radius: 0 40px 40px 0;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            color: #fceeca;
+            font-family: "Inter", sans-serif;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          }
 
-      .luxury-badge i {
-        color: #f7b733;
-        font-size: 13px;
-        margin-right: 2px;
-      }
+          .luxury-badge i {
+            color: #f7b733;
+            font-size: 13px;
+            margin-right: 2px;
+          }
 
-      /* ----- main heading: bold, gold accent — updated for Smart Investments ----- */
-      .hero-headline h1 {
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 700;
-        font-size: 64px;
-        line-height: 1.05;
-        letter-spacing: -0.01em;
-        color: #ffffff;
-        text-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
-        margin-bottom: 20px;
-      }
+          /* ----- main heading: bold, gold accent — updated for Smart Investments ----- */
+          .hero-headline h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            color: #ffffff;
+            text-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
+            margin-bottom: 20px;
+          }
 
-      .hero-headline h1 .gold-accent {
-        color: #f7b733;
-        display: inline-block;
-        position: relative;
-      }
+          .hero-headline h1 .gold-accent {
+            color: #f7b733;
+            display: inline-block;
+            position: relative;
+          }
 
-      .hero-headline h1 .gold-accent::after {
-        content: "";
-        position: absolute;
-        bottom: 6px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        max-width: 350px;
-        height: 3px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          #d4af37,
-          #f9e0a0,
-          #d4af37,
-          transparent
-        );
-        border-radius: 4px;
-      }
+          .hero-headline h1 .gold-accent::after {
+            content: "";
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 350px;
+            height: 3px;
+            background: linear-gradient(
+              90deg,
+              transparent,
+              #d4af37,
+              #f9e0a0,
+              #d4af37,
+              transparent
+            );
+            border-radius: 4px;
+          }
 
-      /* ----- description: updated for investment narrative ----- */
-      .hero-description {
-        font-size: 18px;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.92);
-        margin: 0 auto 34px;
-        max-width: 640px;
-        font-weight: 400;
-        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-        letter-spacing: 0.2px;
-      }
+          /* ----- description: updated for investment narrative ----- */
+          .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.92);
+            margin: 0 auto 34px;
+            max-width: 640px;
+            font-weight: 400;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+            letter-spacing: 0.2px;
+          }
 
-      /* ----- CTA: single button (gold) – "Discover Opportunities" ----- */
-      .button-group {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        align-items: center;
-        margin-top: 4px;
-      }
+          /* ----- CTA: single button (gold) – "Discover Opportunities" ----- */
+          .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            margin-top: 4px;
+          }
 
-      .btn-gold {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        background: linear-gradient(105deg, #f7b733 0%, #fcb045 100%);
-        color: #0a1a24;
-        padding: 15px 44px;
-        border-radius: 60px;
-        text-decoration: none;
-        font-weight: 800;
-        font-size: 1.05rem;
-        letter-spacing: 0.4px;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 28px -6px rgba(247, 183, 51, 0.5);
-        border: none;
-        cursor: pointer;
-      }
+          .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(105deg, #f7b733 0%, #fcb045 100%);
+            color: #0a1a24;
+            padding: 15px 44px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: 0.4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 28px -6px rgba(247, 183, 51, 0.5);
+            border: none;
+            cursor: pointer;
+          }
 
-      .btn-gold i {
-        font-size: 14px;
-        transition: transform 0.2s;
-      }
+          .btn-gold i {
+            font-size: 14px;
+            transition: transform 0.2s;
+          }
 
-      .btn-gold:hover {
-        transform: translateY(-3px);
-        background: linear-gradient(105deg, #fcb045, #f7b733);
-        box-shadow: 0 14px 36px -8px rgba(247, 183, 51, 0.7);
-      }
+          .btn-gold:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(105deg, #fcb045, #f7b733);
+            box-shadow: 0 14px 36px -8px rgba(247, 183, 51, 0.7);
+          }
 
-      .btn-gold:hover i {
-        transform: translateX(5px);
-      }
+          .btn-gold:hover i {
+            transform: translateX(5px);
+          }
 
-      /* No secondary button – only one CTA */
+          /* No secondary button – only one CTA */
 
-      /* ----- responsiveness: keep centered and glass card adapts ----- */
-      @media (max-width: 992px) {
-        .container-premium {
-          padding: 34px 24px;
-          border-radius: 36px;
-        }
-        .hero-headline h1 {
-          font-size: 52px;
-        }
-        .hero-headline h1 .gold-accent::after {
-          height: 3px;
-          bottom: 4px;
-          width: 70%;
-        }
-        .hero-description {
-          font-size: 16px;
-          max-width: 520px;
-        }
-      }
+          /* ----- responsiveness: keep centered and glass card adapts ----- */
+          @media (max-width: 992px) {
+            .container-premium {
+              padding: 34px 24px;
+              border-radius: 36px;
+            }
+            .hero-headline h1 {
+              font-size: 52px;
+            }
+            .hero-headline h1 .gold-accent::after {
+              height: 3px;
+              bottom: 4px;
+              width: 70%;
+            }
+            .hero-description {
+              font-size: 16px;
+              max-width: 520px;
+            }
+          }
 
-      @media (max-width: 768px) {
-        .container-premium {
-          padding: 28px 18px;
-          border-radius: 28px;
-          backdrop-filter: blur(14px) saturate(1.1);
-          -webkit-backdrop-filter: blur(14px) saturate(1.1);
-          width: 94%;
-        }
-        .hero-headline h1 {
-          font-size: 40px;
-          line-height: 1.15;
-          margin-bottom: 16px;
-        }
-        .hero-headline h1 .gold-accent::after {
-          height: 2px;
-          bottom: 2px;
-        }
-        .hero-description {
-          font-size: 14px;
-          margin-bottom: 28px;
-          padding: 0 4px;
-        }
-        .button-group {
-          flex-direction: column;
-          width: 100%;
-          gap: 14px;
-        }
-        .btn-gold {
-          width: 100%;
-          justify-content: center;
-          padding: 14px 20px;
-          font-size: 0.95rem;
-        }
-        .luxury-badge {
-          font-size: 10px;
-          padding: 5px 16px;
-          letter-spacing: 2.2px;
-          margin-bottom: 16px;
-        }
-        .residential-luxury {
-          min-height: 100vh;
-          background-position: center center;
-        }
-      }
+          @media (max-width: 768px) {
+            .container-premium {
+              padding: 28px 18px;
+              border-radius: 28px;
+              backdrop-filter: blur(14px) saturate(1.1);
+              -webkit-backdrop-filter: blur(14px) saturate(1.1);
+              width: 94%;
+            }
+            .hero-headline h1 {
+              font-size: 40px;
+              line-height: 1.15;
+              margin-bottom: 16px;
+            }
+            .hero-headline h1 .gold-accent::after {
+              height: 2px;
+              bottom: 2px;
+            }
+            .hero-description {
+              font-size: 14px;
+              margin-bottom: 28px;
+              padding: 0 4px;
+            }
+            .button-group {
+              flex-direction: column;
+              width: 100%;
+              gap: 14px;
+            }
+            .btn-gold {
+              width: 100%;
+              justify-content: center;
+              padding: 14px 20px;
+              font-size: 0.95rem;
+            }
+            .luxury-badge {
+              font-size: 10px;
+              padding: 5px 16px;
+              letter-spacing: 2.2px;
+              margin-bottom: 16px;
+            }
+            .residential-luxury {
+              min-height: 100vh;
+              background-position: center center;
+            }
+          }
 
-      @media (max-width: 480px) {
-        .container-premium {
-          padding: 20px 14px;
-          border-radius: 20px;
-          backdrop-filter: blur(12px) saturate(1.1);
-          -webkit-backdrop-filter: blur(12px) saturate(1.1);
-        }
-        .hero-headline h1 {
-          font-size: 32px;
-        }
-        .hero-description {
-          font-size: 13px;
-          line-height: 1.6;
-        }
-        .btn-gold {
-          font-size: 0.85rem;
-          padding: 12px 16px;
-        }
-        .luxury-badge {
-          font-size: 9px;
-          letter-spacing: 1.8px;
-          padding: 4px 14px;
-        }
-      }
+          @media (max-width: 480px) {
+            .container-premium {
+              padding: 20px 14px;
+              border-radius: 20px;
+              backdrop-filter: blur(12px) saturate(1.1);
+              -webkit-backdrop-filter: blur(12px) saturate(1.1);
+            }
+            .hero-headline h1 {
+              font-size: 32px;
+            }
+            .hero-description {
+              font-size: 13px;
+              line-height: 1.6;
+            }
+            .btn-gold {
+              font-size: 0.85rem;
+              padding: 12px 16px;
+            }
+            .luxury-badge {
+              font-size: 9px;
+              letter-spacing: 1.8px;
+              padding: 4px 14px;
+            }
+          }
 
-      /* ----- fade animation ----- */
-      @keyframes fadeUp {
-        0% {
-          opacity: 0;
-          transform: translateY(28px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <section class="residential-luxury">
-      <!-- glass card behind text (centered) -->
-      <div class="container-premium">
-        <div class="hero-headline">
-          <!-- premium badge updated: KR REALTY — SMART INVESTMENTS -->
-          <div class="luxury-badge">
-            <i class="fas fa-crown"></i> KR REALTY — SMART INVESTMENTS
+          /* ----- fade animation ----- */
+          @keyframes fadeUp {
+            0% {
+              opacity: 0;
+              transform: translateY(28px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <section class="residential-luxury">
+          <!-- glass card behind text (centered) -->
+          <div class="container-premium">
+            <div class="hero-headline">
+              <!-- premium badge updated: KR REALTY — SMART INVESTMENTS -->
+              <div class="luxury-badge">
+                <i class="fas fa-crown"></i> KR REALTY — SMART INVESTMENTS
+              </div>
+
+              <!-- heading with gold accent — new message: Smart Property Investments / Long-Term Wealth -->
+              <h1>
+                <span class="gold-accent">Smart Property</span><br />
+                Investments
+              </h1>
+
+              <!-- description fully updated for investment focus -->
+              <p class="hero-description">
+                Real estate remains one of the most reliable and rewarding
+                investment avenues. Whether you're a first-time investor or
+                diversifying your portfolio, KR Realty identifies high-potential
+                properties offering strong appreciation, rental income, and
+                long-term financial security.
+              </p>
+
+              <!-- SINGLE CTA: "Discover Opportunities" (gold) – no secondary button -->
+              <div class="button-group">
+                <a href="../Contact.html" class="btn-gold">
+                  <i class="fas fa-chart-line"></i> Discover Opportunities
+                </a>
+                <!-- No secondary button – only one CTA as requested -->
+              </div>
+            </div>
           </div>
-
-          <!-- heading with gold accent — new message: Smart Property Investments / Long-Term Wealth -->
-          <h1>
-            <span class="gold-accent">Smart Property</span><br />
-            Investments
-          </h1>
-
-          <!-- description fully updated for investment focus -->
-          <p class="hero-description">
-            Real estate remains one of the most reliable and rewarding
-            investment avenues. Whether you're a first-time investor or
-            diversifying your portfolio, KR Realty identifies high-potential
-            properties offering strong appreciation, rental income, and
-            long-term financial security.
-          </p>
-
-          <!-- SINGLE CTA: "Discover Opportunities" (gold) – no secondary button -->
-          <div class="button-group">
-            <a href="../Contact.html" class="btn-gold">
-              <i class="fas fa-chart-line"></i> Discover Opportunities
-            </a>
-            <!-- No secondary button – only one CTA as requested -->
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
-</html>
+        </section>
+      </body>
+    </html>
 
     <!-- Why Real Estate + Benefits Section -->
     <section>
-      <div class="container">
+      <div class="container-all">
         <div class="section-header fade-up">
           <h2>Why Invest in <span class="gold">Real Estate?</span></h2>
           <div class="luxury-divider"></div>
@@ -2065,11 +2075,52 @@
           </p>
         </div>
       </div>
+
+      <!-- Stats Section -->
+      <div class="stats-section" style="padding: 40px 0 80px">
+        <div class="container-all">
+          <div class="section-header fade-up">
+            <h2>Building <span class="gold">Generational Wealth</span></h2>
+            <div class="luxury-divider"></div>
+            <p>Creating lasting value for thousands of investors</p>
+          </div>
+          <div class="stats-grid-modern">
+            <div class="stat-card-modern">
+              <div class="stat-number">
+                <span class="counter" data-target="15">0</span>+
+              </div>
+              <div>Years of Excellence</div>
+              <small>Trusted partner</small>
+            </div>
+            <div class="stat-card-modern">
+              <div class="stat-number">
+                <span class="counter" data-target="7200">0</span>+
+              </div>
+              <div>Acres Under Advisory</div>
+              <small>Prime land footprint</small>
+            </div>
+            <div class="stat-card-modern">
+              <div class="stat-number">
+                <span class="counter" data-target="2450">0</span>+
+              </div>
+              <div>Investor Families</div>
+              <small>Wealth journeys</small>
+            </div>
+            <div class="stat-card-modern">
+              <div class="stat-number">
+                <span class="counter" data-target="99">0</span>%
+              </div>
+              <div>Client Confidence</div>
+              <small>Satisfaction & trust</small>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Investment Solutions Grid (8 cards) -->
     <section style="background: #fef9f0" id="opp">
-      <div class="container">
+      <div class="container-all">
         <div class="section-header fade-up">
           <h2>Our Property <span class="gold">Investment Solutions</span></h2>
           <div class="luxury-divider"></div>
@@ -2125,7 +2176,7 @@
     <!-- Auto Gallery Landscape (image references img-1... as per original but using high-quality unsplash replacement for demonstration, but we keep local images names for consistency. In real-world replace with actual assets) 
     For demonstration we use unsplash equivalents but keep the class same for responsive-->
     <div class="gallery-luxe">
-      <div class="container">
+      <div class="container-all">
         <div class="section-header fade-up">
           <h2>Real Assets. <span class="gold">Real Growth.</span></h2>
           <div class="luxury-divider"></div>
@@ -2137,29 +2188,20 @@
       <div class="slider-container-modern" id="autoSliderModern">
         <div class="slider-track" id="sliderTrackModern">
           <div class="slider-slide">
-            <img
-              src="../Images/KR-8.png"
-              alt="modern township"
-            />
+            <img src="../Images/KR-8.png" alt="modern township" />
             <div class="slide-caption">
               <i class="fas fa-hard-hat"></i> Future-Ready Infrastructure
             </div>
           </div>
           <div class="slider-slide">
-            <img
-              src="../Images/KR-3.png"
-              alt="premium plotted development"
-            />
+            <img src="../Images/KR-3.png" alt="premium plotted development" />
             <div class="slide-caption">
               <i class="fas fa-chart-line gold"></i> High Appreciation Corridor
             </div>
           </div>
-          
+
           <div class="slider-slide">
-            <img
-              src="../Images/KR-5.png"
-              alt="green enclave"
-            />
+            <img src="../Images/KR-5.png" alt="green enclave" />
             <div class="slide-caption">
               <i class="fas fa-tree"></i> Sustainable & Livable Enclaves
             </div>
@@ -2186,49 +2228,8 @@
       </div>
     </div>
 
-    <!-- Stats Section -->
-    <div class="stats-section" style="padding: 40px 0 80px">
-      <div class="container">
-        <div class="section-header fade-up">
-          <h2>Building <span class="gold">Generational Wealth</span></h2>
-          <div class="luxury-divider"></div>
-          <p>Creating lasting value for thousands of investors</p>
-        </div>
-        <div class="stats-grid-modern">
-          <div class="stat-card-modern">
-            <div class="stat-number">
-              <span class="counter" data-target="15">0</span>+
-            </div>
-            <div>Years of Excellence</div>
-            <small>Trusted partner</small>
-          </div>
-          <div class="stat-card-modern">
-            <div class="stat-number">
-              <span class="counter" data-target="7200">0</span>+
-            </div>
-            <div>Acres Under Advisory</div>
-            <small>Prime land footprint</small>
-          </div>
-          <div class="stat-card-modern">
-            <div class="stat-number">
-              <span class="counter" data-target="2450">0</span>+
-            </div>
-            <div>Investor Families</div>
-            <small>Wealth journeys</small>
-          </div>
-          <div class="stat-card-modern">
-            <div class="stat-number">
-              <span class="counter" data-target="99">0</span>%
-            </div>
-            <div>Client Confidence</div>
-            <small>Satisfaction & trust</small>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Visionary / Invest Today -->
-    <div class="container">
+    <!-- <div class="container">
       <div class="visionary-container fade-up">
         <div style="text-align: center">
           <span class="badge-crown" style="background: #f2e9de; color: #ba8d2c"
@@ -2317,67 +2318,67 @@
           security.
         </p>
       </div>
-    </div>
+    </div> -->
 
     <!-- -------why choose us-----  -->
     <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
-    />
-    <title>Kirti Realty · Why Choose</title>
-    <!-- Google Fonts + Font Awesome -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+        <title>Kirti Realty · Why Choose</title>
+        <!-- Google Fonts + Font Awesome -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        />
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
 
-      .body-wcu {
-        font-family: "Nunito", sans-serif;
-        background: white;
-        /* min-height: 100vh; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+          .body-wcu {
+            font-family: "Nunito", sans-serif;
+            background: white;
+            /* min-height: 100vh; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
 
-      /* ---------- main container with background image ---------- */
-      .kirti-premium {
-        position: relative;
-        width: 100%;
-        /* max-width: 1510px; */
-        margin: 0px auto;
-        /* border-radius: 32px; */
-        overflow: hidden;
-        background: rgba(245, 222, 179, 0.493);
-        /* box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8); */
-      }
+          /* ---------- main container with background image ---------- */
+          .kirti-premium {
+            position: relative;
+            width: 100%;
+            /* max-width: 1510px; */
+            margin: 0px auto;
+            /* border-radius: 32px; */
+            overflow: hidden;
+            background: rgba(245, 222, 179, 0.493);
+            /* box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8); */
+          }
 
-      /* background image layer */
-      .bg-image-layer {
-        position: absolute;
-        inset: 0;
-        background: url(../Images/KR-1.png) center center / cover no-repeat;
-        opacity: 0.9;
-        z-index: 0;
-        filter: brightness(0.6) saturate(0.7);
-      }
+          /* background image layer */
+          .bg-image-layer {
+            position: absolute;
+            inset: 0;
+            background: url(../Images/KR-1.png) center center / cover no-repeat;
+            opacity: 0.9;
+            z-index: 0;
+            filter: brightness(0.6) saturate(0.7);
+          }
 
-      /* dark overlay for readability */
-      /* .overlay-dark {
+          /* dark overlay for readability */
+          /* .overlay-dark {
         position: absolute;
         inset: 0;
         background: rgba(8, 8, 8, 0.65);
@@ -2385,537 +2386,543 @@
         backdrop-filter: blur(1px);
       } */
 
-      .inner {
-        position: relative;
-        z-index: 2;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 55px 1rem 50px;
-      }
+          .inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 55px 1rem 50px;
+          }
 
-      /* ----- HEADER (exactly as image) ----- */
-      .section-head {
-        text-align: center;
-        margin-bottom: 42px;
-      }
+          /* ----- HEADER (exactly as image) ----- */
+          .section-head {
+            text-align: center;
+            margin-bottom: 42px;
+          }
 
-      .mini-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 18px;
-        font:
-          500 12px "Inter",
-          sans-serif;
-        letter-spacing: 7px;
-        color: #ffeab7;
-        text-transform: uppercase;
-      }
+          .mini-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            font:
+              500 12px "Inter",
+              sans-serif;
+            letter-spacing: 7px;
+            color: #ffeab7;
+            text-transform: uppercase;
+          }
 
-      .mini-title span {
-        display: block;
-        width: 50px;
-        height: 2px;
-        background: #d4af37;
-      }
+          .mini-title span {
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: #d4af37;
+          }
 
-      .luxury-title {
-        font:
-          700 64px "Cormorant Garamond",
-          serif;
-        letter-spacing: 4px;
-        margin: 6px 0 4px;
-        background: white;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1.1;
-      }
+          .luxury-title {
+            font:
+              700 64px "Cormorant Garamond",
+              serif;
+            letter-spacing: 4px;
+            margin: 6px 0 4px;
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+          }
 
-      .gold-divider {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 14px;
-        margin: 10px 0 6px;
-      }
+          .gold-divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            margin: 10px 0 6px;
+          }
 
-      .gold-divider span {
-        width: 70px;
-        height: 2px;
-        background: #d4af37;
-      }
+          .gold-divider span {
+            width: 70px;
+            height: 2px;
+            background: #d4af37;
+          }
 
-      .gold-divider i {
-        color: #d4af37;
-        font-size: 13px;
-      }
+          .gold-divider i {
+            color: #d4af37;
+            font-size: 13px;
+          }
 
-      .tagline {
-        font:
-          500 12px "Inter",
-          sans-serif;
-        letter-spacing: 5px;
-        color: #b8b0a0;
-      }
+          .tagline {
+            font:
+              500 12px "Inter",
+              sans-serif;
+            letter-spacing: 5px;
+            color: #b8b0a0;
+          }
 
-      .tagline span {
-        color: #d4af37;
-        margin: 0 8px;
-      }
+          .tagline span {
+            color: #d4af37;
+            margin: 0 8px;
+          }
 
-      /* ----- GRID — 3 columns, SMALLER CARDS ----- */
-      .grid-3col {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-        margin-top: 8px;
-      }
+          /* ----- GRID — 3 columns, SMALLER CARDS ----- */
+          .grid-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 8px;
+          }
 
-      .feature-card {
-        background: rgb(18 18 18 / 81%);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(212, 175, 55, 0.2);
-        border-radius: 24px;
-        padding: 31px 27px;
-        transition: 0.3s ease;
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-      }
+          .feature-card {
+            background: rgb(18 18 18 / 81%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 24px;
+            padding: 31px 27px;
+            transition: 0.3s ease;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+          }
 
-      .feature-card:hover {
-        border-color: #d4af37;
-        transform: translateY(-4px);
-        box-shadow: 0 20px 48px rgba(212, 175, 55, 0.1);
-        background: rgba(24, 24, 24, 0.8);
-      }
+          .feature-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px rgba(212, 175, 55, 0.1);
+            background: rgba(24, 24, 24, 0.8);
+          }
 
-      /* icon + title side by side — smaller */
-      .card-header {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        margin-bottom: 10px;
-      }
+          /* icon + title side by side — smaller */
+          .card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 10px;
+          }
 
-      .icon-wrap {
-        flex-shrink: 0;
-        width: 85px;
-        height: 85px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 43px;
-        color: #d4af37;
-        border: 1.5px solid rgba(212, 175, 55, 0.5);
-        background: rgba(255, 255, 255, 0.02);
-        transition: 0.3s;
-      }
+          .icon-wrap {
+            flex-shrink: 0;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 43px;
+            color: #d4af37;
+            border: 1.5px solid rgba(212, 175, 55, 0.5);
+            background: rgba(255, 255, 255, 0.02);
+            transition: 0.3s;
+          }
 
-      .feature-card:hover .icon-wrap {
-        border-color: #d4af37;
-        box-shadow: 0 0 24px rgba(212, 175, 55, 0.15);
-        transform: scale(1.02);
-      }
+          .feature-card:hover .icon-wrap {
+            border-color: #d4af37;
+            box-shadow: 0 0 24px rgba(212, 175, 55, 0.15);
+            transform: scale(1.02);
+          }
 
-      .feature-card h3 {
-        font:
-          600 28px "Cormorant Garamond",
-          serif;
-        color: #f5df9d;
-        line-height: 1.2;
-        letter-spacing: 0.2px;
-      }
+          .feature-card h3 {
+            font:
+              600 28px "Cormorant Garamond",
+              serif;
+            color: #f5df9d;
+            line-height: 1.2;
+            letter-spacing: 0.2px;
+          }
 
-      .gold-line {
-        width: 72px;
-        height: 2px;
-        background: #d4af37;
-        margin: 0 0 10px 6rem;
-      }
+          .gold-line {
+            width: 72px;
+            height: 2px;
+            background: #d4af37;
+            margin: 0 0 10px 6rem;
+          }
 
-      .feature-card p {
-        font:
-          400 13.5px/1.65 "Inter",
-          sans-serif;
-        color: #d6d0c4;
-        opacity: 0.9;
-        flex: 1;
-      }
+          .feature-card p {
+            font:
+              400 13.5px/1.65 "Inter",
+              sans-serif;
+            color: #d6d0c4;
+            opacity: 0.9;
+            flex: 1;
+          }
 
-      /* ----- BOTTOM STATS (exactly as image) ----- */
-      .bottom-stats {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 16px 24px;
-        margin-top: 44px;
-        padding-top: 30px;
-        border-top: 1px solid rgba(212, 175, 55, 0.2);
-      }
+          /* ----- BOTTOM STATS (exactly as image) ----- */
+          .bottom-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px 24px;
+            margin-top: 44px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+          }
 
-      .stat-item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
+          .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          }
 
-      .stat-item i {
-        font-size: 28px;
-        color: #d4af37;
-        opacity: 0.85;
-      }
+          .stat-item i {
+            font-size: 28px;
+            color: #d4af37;
+            opacity: 0.85;
+          }
 
-      .stat-item .num {
-        font:
-          700 34px "Cormorant Garamond",
-          serif;
-        color: #f4d47a;
-        line-height: 1;
-      }
+          .stat-item .num {
+            font:
+              700 34px "Cormorant Garamond",
+              serif;
+            color: #f4d47a;
+            line-height: 1;
+          }
 
-      .stat-item .label {
-        font:
-          500 12px "Inter",
-          sans-serif;
-        color: #b8b0a0;
-        letter-spacing: 0.5px;
-        margin-top: 2px;
-      }
+          .stat-item .label {
+            font:
+              500 12px "Inter",
+              sans-serif;
+            color: #b8b0a0;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+          }
 
-      .explore-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        padding: 13px 30px;
-        border: 1px solid #d4af37;
-        border-radius: 40px;
-        color: #f4d47a;
-        font:
-          600 12px "Inter",
-          sans-serif;
-        letter-spacing: 1.8px;
-        text-decoration: none;
-        transition: 0.3s;
-        background: rgba(212, 175, 55, 0.04);
-        backdrop-filter: blur(4px);
-      }
+          .explore-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px 30px;
+            border: 1px solid #d4af37;
+            border-radius: 40px;
+            color: #f4d47a;
+            font:
+              600 12px "Inter",
+              sans-serif;
+            letter-spacing: 1.8px;
+            text-decoration: none;
+            transition: 0.3s;
+            background: rgba(212, 175, 55, 0.04);
+            backdrop-filter: blur(4px);
+          }
 
-      .explore-btn i {
-        transition: 0.3s;
-        font-size: 12px;
-      }
+          .explore-btn i {
+            transition: 0.3s;
+            font-size: 12px;
+          }
 
-      .explore-btn:hover {
-        background: #d4af37;
-        color: #0c0b0a;
-        box-shadow: 0 0 36px rgba(212, 175, 55, 0.25);
-      }
+          .explore-btn:hover {
+            background: #d4af37;
+            color: #0c0b0a;
+            box-shadow: 0 0 36px rgba(212, 175, 55, 0.25);
+          }
 
-      .explore-btn:hover i {
-        transform: translateX(6px);
-      }
+          .explore-btn:hover i {
+            transform: translateX(6px);
+          }
 
-      /* ----- RESPONSIVE ----- */
-      @media (max-width: 1024px) {
-        .luxury-title {
-          font-size: 52px;
-        }
-        .grid-3col {
-          gap: 16px;
-        }
-        .feature-card h3 {
-          font-size: 20px;
-        }
-        .feature-card {
-          padding: 20px 18px 22px;
-        }
-      }
+          /* ----- RESPONSIVE ----- */
+          @media (max-width: 1024px) {
+            .luxury-title {
+              font-size: 52px;
+            }
+            .grid-3col {
+              gap: 16px;
+            }
+            .feature-card h3 {
+              font-size: 20px;
+            }
+            .feature-card {
+              padding: 20px 18px 22px;
+            }
+          }
 
-      @media (max-width: 820px) {
-        .grid-3col {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 16px;
-        }
-        .luxury-title {
-          font-size: 44px;
-        }
-        .bottom-stats {
-          justify-content: center;
-        }
-        .explore-btn {
-          width: 100%;
-          justify-content: center;
-          padding: 14px 20px;
-        }
-      }
+          @media (max-width: 820px) {
+            .grid-3col {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 16px;
+            }
+            .luxury-title {
+              font-size: 44px;
+            }
+            .bottom-stats {
+              justify-content: center;
+            }
+            .explore-btn {
+              width: 100%;
+              justify-content: center;
+              padding: 14px 20px;
+            }
+          }
 
-      @media (max-width: 580px) {
-        .inner {
-          padding: 30px 16px 28px;
-        }
-        .grid-3col {
-          grid-template-columns: 1fr;
-          gap: 14px;
-        }
-        .luxury-title {
-          font-size: 36px;
-        }
-        .mini-title {
-          font-size: 10px;
-          letter-spacing: 4px;
-          gap: 10px;
-        }
-        .mini-title span {
-          width: 34px;
-        }
-        .gold-divider span {
-          width: 40px;
-        }
-        .feature-card {
-          padding: 18px 16px 20px;
-        }
-        .feature-card h3 {
-          font-size: 20px;
-        }
-        .icon-wrap {
-          width: 42px;
-          height: 42px;
-          font-size: 17px;
-        }
-        .stat-item .num {
-          font-size: 28px;
-        }
-        .stat-item i {
-          font-size: 24px;
-        }
-        .bottom-stats {
-          flex-direction: column;
-          align-items: stretch;
-          gap: 14px;
-        }
-        .stat-item {
-          justify-content: flex-start;
-        }
-        .explore-btn {
-          width: 100%;
-          justify-content: center;
-        }
-        .bg-image-layer {
-          opacity: 0.15;
-        }
-      }
+          @media (max-width: 580px) {
+            .inner {
+              padding: 30px 16px 28px;
+            }
+            .grid-3col {
+              grid-template-columns: 1fr;
+              gap: 14px;
+            }
+            .luxury-title {
+              font-size: 36px;
+            }
+            .mini-title {
+              font-size: 10px;
+              letter-spacing: 4px;
+              gap: 10px;
+            }
+            .mini-title span {
+              width: 34px;
+            }
+            .gold-divider span {
+              width: 40px;
+            }
+            .feature-card {
+              padding: 18px 16px 20px;
+            }
+            .feature-card h3 {
+              font-size: 20px;
+            }
+            .icon-wrap {
+              width: 42px;
+              height: 42px;
+              font-size: 17px;
+            }
+            .stat-item .num {
+              font-size: 28px;
+            }
+            .stat-item i {
+              font-size: 24px;
+            }
+            .bottom-stats {
+              flex-direction: column;
+              align-items: stretch;
+              gap: 14px;
+            }
+            .stat-item {
+              justify-content: flex-start;
+            }
+            .explore-btn {
+              width: 100%;
+              justify-content: center;
+            }
+            .bg-image-layer {
+              opacity: 0.15;
+            }
+          }
 
-      /* card animation */
-      .feature-card {
-        opacity: 0;
-        transform: translateY(16px);
-        transition:
-          opacity 0.5s ease,
-          transform 0.5s ease,
-          border 0.3s,
-          box-shadow 0.3s;
-      }
-      .feature-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
-  </head>
-  <body>
-    <section class="body-wcu">
-      <div class="kirti-premium">
-        <!-- background image + overlay -->
-        <div class="bg-image-layer"></div>
-        <div class="overlay-dark"></div>
+          /* card animation */
+          .feature-card {
+            opacity: 0;
+            transform: translateY(16px);
+            transition:
+              opacity 0.5s ease,
+              transform 0.5s ease,
+              border 0.3s,
+              box-shadow 0.3s;
+          }
+          .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        </style>
+      </head>
+      <body>
+        <section class="body-wcu">
+          <div class="kirti-premium">
+            <!-- background image + overlay -->
+            <div class="bg-image-layer"></div>
+            <div class="overlay-dark"></div>
 
-        <div class="inner">
-          <!-- HEADER : exactly as image -->
-          <div class="section-head">
-            <div class="mini-title"><span></span> WHY CHOOSE <span></span></div>
-            <h2 class="luxury-title">KIRTI REALTY</h2>
-            <div class="gold-divider">
-              <span></span>
-              <i class="fas fa-star"></i>
-              <span></span>
-            </div>
-            <div class="tagline">
-              VISION <span>•</span> INTEGRITY <span>•</span> EXCELLENCE
-            </div>
-          </div>
-
-          <!-- 3 COLUMN GRID : SMALLER CARDS -->
-          <div class="grid-3col" id="cardGrid">
-            <!-- card 1 -->
-            <div class="feature-card">
-              <div class="card-header">
-                <div class="icon-wrap"><i class="fas fa-shield-alt"></i></div>
-                <h3>Trusted &amp; Transparent Deals</h3>
-              </div>
-              <div class="gold-line"></div>
-              <p>
-                Clear documentation, MVDA-approved projects, and zero hidden
-                charges. Trusted by 2,500+ happy families.
-              </p>
-            </div>
-
-            <!-- card 2 -->
-            <div class="feature-card">
-              <div class="card-header">
-                <div class="icon-wrap">
-                  <i class="fas fa-map-marker-alt"></i>
+            <div class="inner">
+              <!-- HEADER : exactly as image -->
+              <div class="section-head">
+                <div class="mini-title">
+                  <span></span> WHY CHOOSE <span></span>
                 </div>
-                <h3>Prime Locations</h3>
-              </div>
-              <div class="gold-line"></div>
-              <p>
-                Strategically located projects near major roads, schools,
-                hospitals, and future growth corridors.
-              </p>
-            </div>
-
-            <!-- card 3 -->
-            <div class="feature-card">
-              <div class="card-header">
-                <div class="icon-wrap"><i class="fas fa-building"></i></div>
-                <h3>Superior Construction Quality</h3>
-              </div>
-              <div class="gold-line"></div>
-              <p>
-                Premium materials, earthquake-resistant RCC structure, and
-                lasting craftsmanship for generations.
-              </p>
-            </div>
-
-            <!-- card 4 -->
-            <div class="feature-card">
-              <div class="card-header">
-                <div class="icon-wrap">
-                  <i class="fas fa-calendar-check"></i>
+                <h2 class="luxury-title">KIRTI REALTY</h2>
+                <div class="gold-divider">
+                  <span></span>
+                  <i class="fas fa-star"></i>
+                  <span></span>
                 </div>
-                <h3>Timely Project Delivery</h3>
+                <div class="tagline">
+                  VISION <span>•</span> INTEGRITY <span>•</span> EXCELLENCE
+                </div>
               </div>
-              <div class="gold-line"></div>
-              <p>
-                Committed to on-time possession with transparent project
-                tracking and milestone-based execution.
-              </p>
-            </div>
 
-            <!-- card 5 -->
-            <div class="feature-card">
-              <div class="card-header">
-                <div class="icon-wrap"><i class="fas fa-chart-line"></i></div>
-                <h3>High Investment Potential</h3>
-              </div>
-              <div class="gold-line"></div>
-              <p>
-                Carefully selected locations designed for strong appreciation
-                and long-term value creation.
-              </p>
-            </div>
+              <!-- 3 COLUMN GRID : SMALLER CARDS -->
+              <div class="grid-3col" id="cardGrid">
+                <!-- card 1 -->
+                <div class="feature-card">
+                  <div class="card-header">
+                    <div class="icon-wrap">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Trusted &amp; Transparent Deals</h3>
+                  </div>
+                  <div class="gold-line"></div>
+                  <p>
+                    Clear documentation, MVDA-approved projects, and zero hidden
+                    charges. Trusted by 2,500+ happy families.
+                  </p>
+                </div>
 
-            <!-- card 6 -->
-            <div class="feature-card">
-              <div class="card-header">
-                <div class="icon-wrap"><i class="fas fa-headset"></i></div>
-                <h3>End-to-End Customer Support</h3>
-              </div>
-              <div class="gold-line"></div>
-              <p>
-                From site visits and legal assistance to home loans and
-                registration — we're with you at every step.
-              </p>
-            </div>
-          </div>
+                <!-- card 2 -->
+                <div class="feature-card">
+                  <div class="card-header">
+                    <div class="icon-wrap">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Prime Locations</h3>
+                  </div>
+                  <div class="gold-line"></div>
+                  <p>
+                    Strategically located projects near major roads, schools,
+                    hospitals, and future growth corridors.
+                  </p>
+                </div>
 
-          <!-- BOTTOM STATS + CTA : exactly as image -->
-          <div class="bottom-stats">
-            <div class="stat-item">
-              <i class="fas fa-users"></i>
-              <div>
-                <div class="num">2,500+</div>
-                <div class="label">Happy Families</div>
+                <!-- card 3 -->
+                <div class="feature-card">
+                  <div class="card-header">
+                    <div class="icon-wrap"><i class="fas fa-building"></i></div>
+                    <h3>Superior Construction Quality</h3>
+                  </div>
+                  <div class="gold-line"></div>
+                  <p>
+                    Premium materials, earthquake-resistant RCC structure, and
+                    lasting craftsmanship for generations.
+                  </p>
+                </div>
+
+                <!-- card 4 -->
+                <div class="feature-card">
+                  <div class="card-header">
+                    <div class="icon-wrap">
+                      <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Timely Project Delivery</h3>
+                  </div>
+                  <div class="gold-line"></div>
+                  <p>
+                    Committed to on-time possession with transparent project
+                    tracking and milestone-based execution.
+                  </p>
+                </div>
+
+                <!-- card 5 -->
+                <div class="feature-card">
+                  <div class="card-header">
+                    <div class="icon-wrap">
+                      <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>High Investment Potential</h3>
+                  </div>
+                  <div class="gold-line"></div>
+                  <p>
+                    Carefully selected locations designed for strong
+                    appreciation and long-term value creation.
+                  </p>
+                </div>
+
+                <!-- card 6 -->
+                <div class="feature-card">
+                  <div class="card-header">
+                    <div class="icon-wrap"><i class="fas fa-headset"></i></div>
+                    <h3>End-to-End Customer Support</h3>
+                  </div>
+                  <div class="gold-line"></div>
+                  <p>
+                    From site visits and legal assistance to home loans and
+                    registration — we're with you at every step.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="stat-item">
-              <i class="fas fa-shield-alt"></i>
-              <div>
-                <div class="num">MVDA</div>
-                <div class="label">Approved Projects</div>
-              </div>
-            </div>
-            <div class="stat-item">
-              <i class="fas fa-award"></i>
-              <div>
-                <div class="num">98%</div>
-                <div class="label">On-Time Delivery</div>
-              </div>
-            </div>
-            <!-- <a href="#" class="explore-btn">
+
+              <!-- BOTTOM STATS + CTA : exactly as image -->
+              <div class="bottom-stats">
+                <div class="stat-item">
+                  <i class="fas fa-users"></i>
+                  <div>
+                    <div class="num">2,500+</div>
+                    <div class="label">Happy Families</div>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-shield-alt"></i>
+                  <div>
+                    <div class="num">MVDA</div>
+                    <div class="label">Approved Projects</div>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-award"></i>
+                  <div>
+                    <div class="num">98%</div>
+                    <div class="label">On-Time Delivery</div>
+                  </div>
+                </div>
+                <!-- <a href="#" class="explore-btn">
               EXPLORE OUR PROJECTS <i class="fas fa-arrow-right"></i>
             </a> -->
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // reveal cards on scroll
-        const cards = document.querySelectorAll(".feature-card");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-              }
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            // reveal cards on scroll
+            const cards = document.querySelectorAll(".feature-card");
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                  }
+                });
+              },
+              { threshold: 0.1 },
+            );
+            cards.forEach((c) => observer.observe(c));
+
+            // counter animation
+            const counters = document.querySelectorAll(".stat-item .num");
+            counters.forEach((el) => {
+              const raw = el.innerText;
+              const num = parseInt(raw.replace(/\D/g, ""));
+              if (isNaN(num) || raw.includes("MVDA")) return;
+              let start = 0;
+              const step = Math.max(1, Math.floor(num / 60));
+              const update = () => {
+                start += step;
+                if (start < num) {
+                  el.innerText = start + "+";
+                  requestAnimationFrame(update);
+                } else {
+                  el.innerText = raw;
+                }
+              };
+              update();
             });
-          },
-          { threshold: 0.1 },
-        );
-        cards.forEach((c) => observer.observe(c));
 
-        // counter animation
-        const counters = document.querySelectorAll(".stat-item .num");
-        counters.forEach((el) => {
-          const raw = el.innerText;
-          const num = parseInt(raw.replace(/\D/g, ""));
-          if (isNaN(num) || raw.includes("MVDA")) return;
-          let start = 0;
-          const step = Math.max(1, Math.floor(num / 60));
-          const update = () => {
-            start += step;
-            if (start < num) {
-              el.innerText = start + "+";
-              requestAnimationFrame(update);
-            } else {
-              el.innerText = raw;
+            // CTA smooth demo
+            const btn = document.querySelector(".explore-btn");
+            if (btn) {
+              btn.addEventListener("click", function (e) {
+                e.preventDefault();
+                this.style.transform = "scale(0.96)";
+                setTimeout(() => (this.style.transform = ""), 150);
+              });
             }
-          };
-          update();
-        });
-
-        // CTA smooth demo
-        const btn = document.querySelector(".explore-btn");
-        if (btn) {
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            this.style.transform = "scale(0.96)";
-            setTimeout(() => (this.style.transform = ""), 150);
           });
-        }
-      });
-    </script>
-  </body>
-</html>
+        </script>
+      </body>
+    </html>
 
     <!-- CTA final section -->
-    <div class="container">
+    <div class="container-all">
       <div class="cta-block fade-up">
         <h3
           style="
@@ -2947,16 +2954,17 @@
             ><i class="fas fa-map-marked-alt"></i> Explore High-Growth Assets</a
           >
         </div> -->
-        <p
-          style="
-            margin-top: 28px;
-            letter-spacing: 1.5px;
-            font-size: 13px;
-            color: #e7cf9c;
-          "
-        >
-          Build Wealth Through Smart Real Estate Investments — ✦ KR REALTY ✦
-        </p>
+          <!-- <p
+            style="
+              margin-top: 28px;
+              letter-spacing: 1.5px;
+              font-size: 13px;
+              color: #e7cf9c;
+            "
+          >
+            Build Wealth Through Smart Real Estate Investments — ✦ KR REALTY ✦
+          </p> -->
+        </div>
       </div>
     </div>
 
@@ -3072,273 +3080,301 @@
 
 <!-- -----footer------  -->
 
-    <style>
-      /* ===== BETTER FOOTER - LOGO, SOCIAL ICONS, PAGES, LEGAL, CREDIT ===== */
-      .footer {
-        background:
-          linear-gradient(#37320d94, #000000f0), url(../Images/footer-1.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-top: 1px solid rgba(228, 179, 99, 0.25);
-        padding: 3rem 2rem 2rem;
-        margin-top: auto;
-        max-width: 1600px !important;
-      }
-      .footerrcontainerr {
-        max-width: 1300px !important;
-        margin: 0 auto;
-      }
-      .footer-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 2.5rem;
-        margin-bottom: 2.5rem;
-      }
-      .footer-brand {
-        flex: 1.2;
-        min-width: 220px;
-      }
-      .footer-logo-wrap {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 1rem;
-      }
-      .footer-logo-img {
-        height: 54px;
-        width: auto;
-        object-fit: cover;
-      }
-      .footer-logo-text {
-        font-size: 1.6rem;
-        font-weight: 800;
-        background: linear-gradient(135deg, #fff6e0, #ebcb8b);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-      }
-      .footer-tagline {
-        color: #aaa;
-        font-size: 0.85rem;
-        line-height: 1.5;
-        margin-top: 0.6rem;
-        max-width: 280px;
-      }
-      .social-icons {
-        display: flex;
-        gap: 1.2rem;
-        margin-top: 1.4rem;
-      }
-      .social-icon {
-        color: #e4b363;
-        font-size: 1.4rem;
-        transition: all 0.25s;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: rgba(228, 179, 99, 0.12);
-        transition: 0.25s;
-        text-decoration: none;
-      }
-      .social-icon:hover {
-        background: #e4b363;
-        color: #0a0c10;
-        transform: translateY(-3px);
-      }
-      .footer-links {
-        flex: 2;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: flex-end;
-      }
-      .link-column {
-        min-width: 140px;
-      }
-      .link-column h4 {
-        color: #f5d78c;
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 1.2rem;
-        letter-spacing: 0.5px;
-      }
-      .link-column ul {
-        list-style: none;
-      }
-      .link-column ul li {
-        margin-bottom: 0.7rem;
-      }
-      .link-column ul li a {
-        text-decoration: none;
-        color: #bcb7ab;
-        font-size: 0.85rem;
-        transition: 0.2s;
-      }
-      .link-column ul li a:hover {
-        color: #f5d78c;
-        padding-left: 5px;
-      }
-      .footer-bottom {
-        border-top: 1px solid rgba(228, 179, 99, 0.2);
-        padding-top: 1.8rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-        font-size: 0.8rem;
-        color: #8e8c86;
-      }
-      .legal-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-      }
-      .legal-links a {
-        text-decoration: none;
-        color: #bcb7ab;
-        transition: 0.2s;
-      }
-      .legal-links a:hover {
-        color: #f5d78c;
-      }
-      .made-with {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 0.8rem;
-      }
-      .made-with i {
-        color: #e4b363;
-      }
-      .made-with a {
-        color: #e4b363;
-        text-decoration: none;
-        font-weight: 500;
-        border-bottom: 1px dotted #e4b363;
-      }
-      .made-with a:hover {
-        color: #f5d78c;
-      }
-      @media (max-width: 780px) {
-        .footer-grid {
-          flex-direction: column;
-        }
-        .footer-links {
-          justify-content: flex-start;
-        }
-        .footer-bottom {
-          flex-direction: column;
-          text-align: center;
-        }
-        .legal-links {
-          justify-content: center;
-        }
-      }
-    </style>
-  
-    <!-- NEW BETTER FOOTER: Logo, social icons, pages, legal, made with love -->
-    <footer class="footer">
-      <div class="footerrcontainerr">
-        <div class="footer-grid">
-          <!-- Left brand area: logo + socials -->
-          <div class="footer-brand">
-            <div class="footer-logo-wrap">
-              <img
-                class="footer-logo-img"
-                src="../Images/Kirti-Realty.png"
-                alt="Kirti Realty"
-              />
-              <!-- <span class="footer-logo-text">KIRTI REALTY</span> -->
-            </div>
-            <p class="footer-tagline">
-              Curated estates, bespoke residences & iconic developments with
-              uncompromised excellence.
-            </p>
-            <div class="social-icons">
-              <a href="#" class="social-icon" aria-label="Facebook"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="social-icon" aria-label="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" class="social-icon" aria-label="LinkedIn"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a href="#" class="social-icon" aria-label="X Twitter"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#" class="social-icon" aria-label="YouTube"
-                ><i class="fab fa-youtube"></i
-              ></a>
-            </div>
-          </div>
+<style>
+  /* ===== OVERRIDE-FREE, FULL-WIDTH FOOTER ===== */
+  /* Use high-specificity selectors and !important to resist overrides */
+  footer.footer {
+    background:
+      linear-gradient(#37320ddb, #000000e3, #000000),
+      url(../Images/footer-1.png) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-top: 1px solid rgba(228, 179, 99, 0.25) !important;
+    padding: 3rem 2rem 2rem !important;
+    margin-top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
 
-          <!-- Right side: page links columns -->
-          <div class="footer-links">
-            <div class="link-column">
-              <h4>EXPLORE</h4>
-              <ul>
-                <li><a href="../index.html">HOME</a></li>
-                <li><a href="../About.html">ABOUT US</a></li>
-                <li><a href="../Services/villas.html">SERVICES</a></li>
-                <li><a href="../Contact.html">CONTACT US</a></li>
-              </ul>
-            </div>
-            <div class="link-column">
-              <h4>SERVICES</h4>
-              <ul>
-                <li>
-                  <a href="Residential.html">Residential Plotting</a>
-                </li>
-                <li><a href="villas.html">Villas/Private Home</a></li>
-                <li>
-                  <a href="bigLand.html">Big Land Deals</a>
-                </li>
-                <li>
-                  <a href="PropertyInvestment.html">Property Investment</a>
-                </li>
-              </ul>
-            </div>
-            <div class="link-column">
-              <h4>LEGAL</h4>
-              <ul>
-                <li><a href="../Privacy.html">Privacy Policy</a></li>
-                <li><a href="../Terms&Conditions.html">Terms of Service</a></li>
-                <li><a href="../career.html">Careers</a></li>
-                <!-- <li><a href="#">Legal</a></li> -->
-              </ul>
-            </div>
-          </div>
+  footer.footer .footerrcontainerr {
+    max-width: 1300px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  footer.footer .footer-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 2.5rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  footer.footer .footer-brand {
+    flex: 1.2 !important;
+    min-width: 220px !important;
+  }
+
+  footer.footer .footer-logo-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  footer.footer .footer-logo-img {
+    height: 54px !important;
+    width: auto !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+  }
+
+  footer.footer .footer-logo-text {
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #fff6e0, #ebcb8b) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+  }
+
+  footer.footer .footer-tagline {
+    color: #fff9eb !important;
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    margin-top: 0.6rem !important;
+    max-width: 280px !important;
+  }
+
+  footer.footer .social-icons {
+    display: flex !important;
+    gap: 1.2rem !important;
+    margin-top: 1.4rem !important;
+  }
+
+  footer.footer .social-icon {
+    color: #e4b363 !important;
+    font-size: 1.4rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: rgba(228, 179, 99, 0.12) !important;
+    transition: 0.25s !important;
+    text-decoration: none !important;
+  }
+
+  footer.footer .social-icon:hover {
+    background: #e4b363 !important;
+    color: #0a0c10 !important;
+    transform: translateY(-3px) !important;
+  }
+
+  footer.footer .footer-links {
+    flex: 2 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 2rem !important;
+    justify-content: flex-end !important;
+  }
+
+  footer.footer .link-column {
+    min-width: 140px !important;
+  }
+
+  footer.footer .link-column h4 {
+    color: #f5d78c !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.2rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  footer.footer .link-column ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  footer.footer .link-column ul li {
+    margin-bottom: 0.7rem !important;
+  }
+
+  footer.footer .link-column ul li a {
+    text-decoration: none !important;
+    color: #fff9eb !important;
+    font-size: 0.85rem !important;
+    transition: 0.2s !important;
+  }
+
+  footer.footer .link-column ul li a:hover {
+    color: #f5d78c !important;
+    padding-left: 5px !important;
+  }
+
+  footer.footer .footer-bottom {
+    border-top: 1px solid rgba(228, 179, 99, 0.2) !important;
+    padding-top: 1.8rem !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    font-size: 0.8rem !important;
+    color: #8e8c86 !important;
+  }
+
+  footer.footer .legal-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1.5rem !important;
+  }
+
+  footer.footer .legal-links a {
+    text-decoration: none !important;
+    color: #bcb7ab !important;
+    transition: 0.2s !important;
+  }
+
+  footer.footer .legal-links a:hover {
+    color: #f5d78c !important;
+  }
+
+  footer.footer .made-with {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 0.8rem !important;
+  }
+
+  footer.footer .made-with i {
+    color: #e4b363 !important;
+  }
+
+  footer.footer .made-with a {
+    color: #e4b363 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    border-bottom: 1px dotted #e4b363 !important;
+  }
+
+  footer.footer .made-with a:hover {
+    color: #f5d78c !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 780px) {
+    footer.footer .footer-grid {
+      flex-direction: column !important;
+    }
+    footer.footer .footer-links {
+      justify-content: flex-start !important;
+    }
+    footer.footer .footer-bottom {
+      flex-direction: column !important;
+      text-align: center !important;
+    }
+    footer.footer .legal-links {
+      justify-content: center !important;
+    }
+  }
+</style>
+
+<!-- ===== FOOTER HTML (full width, override-proof) ===== -->
+<footer class="footer">
+  <div class="footerrcontainerr">
+    <div class="footer-grid">
+      <!-- Brand + Social -->
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img
+            class="footer-logo-img"
+            src="../Images/Kirti-Realty-Logo-black-bg.png"
+            alt="KR Realty"
+          />
+          <!-- <span class="footer-logo-text">KR REALTY</span> -->
         </div>
-
-        <div class="footer-bottom">
-          <div class="copyright">© 2026 Kirti Realty. All rights reserved.</div>
-
-          <div class="made-with">
-            Designed & Developed by by
-            <a
-              href="https://skilled-va.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Skilled VA</a
-            >
-          </div>
+        <p class="footer-tagline">
+          Curated estates, bespoke residences & iconic developments with
+          uncompromised excellence.
+        </p>
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" class="social-icon" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="social-icon" aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="#" class="social-icon" aria-label="X Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" class="social-icon" aria-label="YouTube"
+            ><i class="fab fa-youtube"></i
+          ></a>
         </div>
       </div>
-    </footer>
-    <script>
-  // Remove .html from URL
-  if (window.location.pathname.endsWith('.html')) {
-    const newPath = window.location.pathname.replace('.html', '');
-    window.history.replaceState({}, '', newPath);
-  }
-</script>
+
+      <!-- Links -->
+      <div class="footer-links">
+        <div class="link-column">
+          <h4>EXPLORE</h4>
+          <ul>
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../About.html">ABOUT US</a></li>
+            <li><a href="bigLand.html">SERVICES</a></li>
+            <li><a href="../Contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>SERVICES</h4>
+          <ul>
+            <li><a href="Residential.html">Residential Plotting</a></li>
+            <li><a href="villas.html">Villas/Private Home</a></li>
+            <li><a href="bigLand.html">Big Land Deals</a></li>
+            <li><a href="PropertyInvestment.html">Property Investment</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>LEGAL</h4>
+          <ul>
+            <li><a href="../Privacy.html">Privacy Policy</a></li>
+            <li><a href="../Terms&Conditions.html">Terms of Service</a></li>
+            <li><a href="../career.html">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <div class="copyright">© 2026 Kirti Realty. All rights reserved.</div>
+      <div class="made-with">
+        Designed & Developed by
+        <a
+          href="https://skilled-va.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Skilled VA</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Font Awesome icons (required) -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 
 <!-- -----floating button----- -->
 <!doctype html>
@@ -3516,4 +3552,3 @@
     </a>
   </body>
 </html>
- 

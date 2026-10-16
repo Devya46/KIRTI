@@ -4,1617 +4,4658 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Kirti Realty | Careers — Iconic Luxury</title>
-    <!-- Google Fonts & Icons -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+    <title>Kirti Realty - Anandam Eleganza 3D Aerial View</title>
+
+    <link rel="icon" href="https://kirtirealty.in/Images/Kirti-Realty.png" />
+
     <style>
-      /* ----- GLOBAL RESET & BASE ----- */
       * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        overflow: hidden;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        background: #000;
+        overscroll-behavior: none;
+        touch-action: manipulation;
       }
-      body {
-        background: #fcf9f5;
-        font-family: "Poppins", sans-serif;
-        scroll-behavior: smooth;
-        overflow-x: hidden;
-      }
-
-      /* ----- ANIMATIONS ----- */
-      @keyframes fadeSlideUp {
-        0% {
-          opacity: 0;
-          transform: translateY(45px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes scaleIn {
-        0% {
-          opacity: 0;
-          transform: scale(0.96);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-      @keyframes shimmer {
-        0% {
-          background-position: -200% 0;
-        }
-        100% {
-          background-position: 200% 0;
-        }
-      }
-      @keyframes floatGlow {
-        0% {
-          transform: translateY(0px);
-          opacity: 0.6;
-        }
-        100% {
-          transform: translateY(-8px);
-          opacity: 1;
-        }
-      }
-      @keyframes gentlePulse {
-        0% {
-          opacity: 0.7;
-          transform: scale(0.9);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1.2);
-        }
-      }
-      @keyframes luxurySheen {
-        0% {
-          transform: translateX(-90%) rotate(18deg);
-        }
-        50% {
-          transform: translateX(15%) rotate(18deg);
-        }
-        100% {
-          transform: translateX(150%) rotate(18deg);
-        }
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .luxury-texture {
+      #app {
         position: relative;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+        background: #000;
       }
-      .luxury-texture::after {
-        content: "";
+      #map3d {
         position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      /* ============================================================
+   TOP BRAND BAR
+============================================================ */
+      .top-bar {
+        position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        background: radial-gradient(
-          circle at 20% 30%,
-          rgba(198, 162, 122, 0.02) 0%,
-          transparent 70%
-        );
-      }
-
-      /* ========== HERO ========== */
-      .career-section {
-        width: 100%;
-        overflow: hidden;
-        background: #fcf9f5;
-      }
-      .career-content {
+        right: 0;
+        z-index: 900;
         display: flex;
         align-items: center;
-        min-height: 580px;
-        position: relative;
-      }
-      .career-left {
-        width: 48%;
-        padding: 70px 60px 70px 8%;
-        z-index: 4;
-        animation: fadeSlideUp 1s ease-out;
-      }
-      .career-left h1 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 65px;
-        font-weight: 600;
-        line-height: 1.05;
-        color: #c97e2a;
-        margin-bottom: 16px;
-        letter-spacing: -0.01em;
-      }
-      .career-left p {
-        color: #5a5a5a;
-        font-size: 18px;
-        line-height: 1.85;
-        max-width: 520px;
-        margin-bottom: 38px;
-        font-weight: 400;
-      }
-      .career-btn {
-        display: inline-block;
-        background: #c97e2a;
-        color: #fff;
-        text-decoration: none;
-        padding: 14px 46px;
-        font-size: 15px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        border-radius: 50px;
-        transition: all 0.4s;
-        box-shadow: 0 12px 22px rgba(182, 125, 70, 0.2);
-        border: none;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-      }
-      .career-btn::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
+        gap: 10px;
+        padding: 8px 14px;
         background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 245, 0.3),
+          180deg,
+          rgba(0, 0, 0, 0.85),
+          rgba(0, 0, 0, 0.4),
           transparent
         );
-        transition: left 0.5s;
-        z-index: -1;
-      }
-      .career-btn:hover::before {
-        left: 100%;
-      }
-      .career-btn:hover {
-        background: #a47e58;
-        transform: translateY(-4px);
-        box-shadow: 0 20px 32px rgba(128, 88, 48, 0.3);
-      }
-      .career-right {
-        width: 52%;
-        position: relative;
-      }
-      .career-right img {
-        width: 100%;
-        height: 580px;
-        object-fit: cover;
-        filter: brightness(0.97) contrast(1.03);
-      }
-      .career-right::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -254px;
-        width: 335px;
-        height: 100%;
-        background: linear-gradient(
-          to right,
-          #fcf9f5 0%,
-          rgb(252 249 245) 30%,
-          rgb(252 249 245) 80%,
-          #ffffff0a 100%
-        );
-        pointer-events: none;
-        z-index: 2;
-      }
-
-      /* stats */
-      .career-stats {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        background: #ffffff;
-        border-top: 1px solid #f0e7de;
-        border-bottom: 1px solid #f0e7de;
-      }
-      .stat-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        padding: 36px 20px;
-        transition: all 0.3s;
-        border-right: 1px solid #f0e7de;
-      }
-      .stat-item:last-child {
-        border-right: none;
-      }
-      .stat-item i {
-        color: #c97e2a;
-        font-size: 40px;
-        transition: transform 0.3s;
-      }
-      .stat-item:hover i {
-        transform: scale(1.08);
-      }
-      .stat-item h3 {
-        color: #c97e2a;
-        font-size: 26px;
-        font-weight: 600;
-        line-height: 1;
-      }
-      .stat-item p {
-        color: #6c6c6c;
-        font-size: 15px;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        margin-top: 6px;
-      }
-
-      /* workplace */
-      .workplace-section {
-        background: #fcf9f5;
-        padding: 20px 0 0px;
-        margin: 73px 51px;
-      }
-      .workplace-container {
-        width: 88%;
-        max-width: 1450px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        gap: 70px;
-      }
-      .workplace-image {
-        flex: 0 0 50%;
-        border-radius: 27px;
-        overflow: hidden;
-        box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.2);
-        transition: 0.5s;
-      }
-      .workplace-image img {
-        width: 100%;
-        display: block;
-        transition: 0.6s;
-      }
-      .workplace-image:hover img {
-        transform: scale(1.02);
-      }
-      .workplace-content h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 56px;
-        font-weight: 600;
-        color: #c97e2a;
-        line-height: 1.08;
-        margin-bottom: 14px;
-      }
-      .workplace-content p {
-        font-size: 17px;
-        font-weight: 300;
-        color: #6f6f6f;
-        line-height: 1.65;
-        border-left: 3px solid #c6a27a;
-        padding-left: 25px;
-      }
-
-      /* why work */
-      .why-work-section {
-        max-width: 1400px;
-        margin: 73px 120px;
-        padding: 20px 30px;
-      }
-      .section-subtitle {
-        color: #c6a27a;
-        font-size: 14px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        margin-bottom: 12px;
-      }
-      .section-title {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 62px;
-        color: #c97e2a;
-        font-weight: 600;
-        margin-bottom: 70px;
-      }
-      .work-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 35px;
-      }
-      .work-card {
-        background: #ffffff;
-        padding: 48px 28px;
-        border-radius: 36px;
-        transition: all 0.4s;
-        border: 1px solid #f0e8df;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
-        position: relative;
-        overflow: hidden;
-      }
-      .work-card::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: #c97e2a;
-        transform: scaleX(0);
-        transition: transform 0.4s;
-        transform-origin: left;
-      }
-      .work-card:hover::after {
-        transform: scaleX(1);
-      }
-      .work-card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 35px 50px -20px rgba(102, 64, 35, 0.25);
-        border-color: #e9d8ca;
-      }
-      .icon-box {
-        width: 85px;
-        height: 85px;
-        margin: 0 auto 28px;
-        border-radius: 50%;
-        background: #f5ede5;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s;
-      }
-      .work-card:hover .icon-box {
-        background: #c97e2a;
-      }
-      .icon-box i {
-        font-size: 36px;
-        color: #cc7b21;
-        transition: 0.2s;
-      }
-      .work-card:hover .icon-box i {
-        color: #fff;
-        transform: scale(1.02);
-      }
-      .work-card h3 {
-        color: #3e3a35;
-        font-size: 24px;
-        margin-bottom: 18px;
-        font-weight: 700;
-        text-align: center;
-      }
-      .work-card p {
-        text-align: center;
-      }
-
-      /* look for */
-      .look-for-section {
-        padding: 60px 0 100px;
-        background: #fcf9f5;
-      }
-      .container {
-        width: 100%;
-        max-width: 1400px;
-        margin: auto;
-      }
-      .look-top {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-        margin-bottom: 60px;
-        padding: 0rem 12rem;
-      }
-      .look-content h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 56px;
-        color: #c97e2a;
-        margin-bottom: 36px;
-      }
-      .look-list li {
-        margin-bottom: 18px;
-        color: #4f4a44;
-        font-size: 16px;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .look-list i {
-        color: #c97e2a;
-        font-size: 22px;
-      }
-      .look-list span {
-            font-size: 14px;
-    font-weight: 900;
-    color: #5f3501;
-    letter-spacing: 0.3px;
-    display: inline-block;
-    transition: color 0.3s ease;
-      }
-      .look-image img {
-        width: 100%;
-        height: 420px;
-        object-fit: cover;
-        border-radius: 36px;
-        box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.12);
-        transition: 0.5s;
-      }
-      .look-image img:hover {
-        transform: scale(1.01);
-      }
-
-      /* life + gallery */
-      .life-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-top: 100px;
-        background: #fff;
-        border-radius: 40px;
-        overflow: hidden;
-        box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.1);
-      }
-      .life-content {
-        background: linear-gradient(125deg, #2f1900, #c97e2a);
-        color: #fff;
-        padding: 72px 40px;
-        display: flex;
-        gap: 30px;
-        align-items: flex-start;
-      }
-      .life-icon {
-        min-width: 85px;
-        height: 85px;
-        border: 1.5px solid rgba(255, 245, 220, 0.6);
-        border-radius: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .life-icon i {
-        font-size: 38px;
-      }
-      .life-content h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 49px;
-        margin-bottom: 10px;
-      }
-      .life-content p {
-        font-size: 21px;
-      }
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5px;
-        background: #fff;
-      }
-      .gallery-grid img {
-        width: 100%;
-        min-height: 100%;
-        max-height: 260px;
-        object-fit: cover;
-        transition: 0.4s;
-      }
-      .gallery-grid img:hover {
-        transform: scale(1.03);
-        filter: brightness(1.02);
-      }
-
-      /* benefits */
-      .benefits-section {
-        background: #f7f3ee;
-        padding: 110px 0;
-      }
-      .benefits-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 1fr;
-        gap: 55px;
-        align-items: start;
-        padding: 0rem 9rem;
-      }
-      .section-tag {
-        color: #c97e2a;
-        font-weight: 700;
-        letter-spacing: 3px;
-        font-size: 13px;
-      }
-      .benefits-left h2 {
-        font-size: 67px;
-        font-weight: 500;
-        font-family: "Cormorant Garamond", serif;
-        color: #c97e2a;
-        line-height: 1.08;
-        margin-bottom: 10px;
-      }
-      .benefits-right {
-        margin: auto;
-      }
-      .intro-text {
-        font-size: 19px;
-        color: #6f6a64;
-        line-height: 1.7;
-        margin-bottom: 20px;
-      }
-      .benefit-image img {
-        width: 100%;
-        height: 520px;
-        object-fit: cover;
-        border-radius: 40px;
-        box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.12);
-        transition: 0.5s;
-      }
-      .benefit-image img:hover {
-        transform: scale(1.01);
-      }
-      .benefit-item {
-        margin-bottom: 20px;
-        border-bottom: 1px solid #e9dfd2;
-        padding-bottom: 24px;
-      }
-      .benefit-item h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 43px;
-        font-weight: 500;
-        color: #c97e2a;
-        margin-bottom: 5px;
-        transition: 0.2s;
-      }
-      .benefit-item p {
-        color: #6a655f;
-        font-size: 15px;
-        line-height: 1.7;
-      }
-
-      /* FLAG BANNER */
-      .body-banner {
-        background: #faf9f7;
-        min-height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.2rem;
-      }
-      .flag-invest-card {
-        position: relative;
-        width: 100%;
-        max-width: 1280px;
-        height: 320px;
-        /* clip-path: path(
-          "M 0 32 C 75 14, 160 6, 255 22 C 370 44, 490 68, 615 44 C 745 20, 865 12, 1005 30 C 1100 46, 1170 58, 1280 34 L 1280 286 C 1175 316, 1085 336, 975 318 C 845 294, 715 272, 585 296 C 455 320, 325 344, 190 328 C 100 315, 42 302, 0 286 Z"
-        ); */
-        border-radius: 24px 24px 28px 28px;
-        box-shadow:
-          0 20px 40px -14px rgba(0, 0, 0, 0.5),
-          0 0 0 1px rgba(230, 195, 110, 0.25) inset;
-        transition:
-          box-shadow 0.35s ease,
-          transform 0.2s ease;
-        overflow: hidden;
-        isolation: isolate;
-      }
-      .flag-invest-card:hover {
-        box-shadow:
-          0 28px 48px -16px rgba(0, 0, 0, 0.65),
-          0 0 0 1.5px rgba(240, 200, 100, 0.45) inset;
-      }
-      .flag-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 1.1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        will-change: transform;
-      }
-      .flag-invest-card:hover .flag-image {
-        transform: scale(1.05);
-      }
-      .flag-overlay-gradient {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          97deg,
-          rgba(0, 0, 0, 0.78) 0%,
-          rgba(0, 0, 0, 0.52) 38%,
-          rgba(0, 0, 0, 0.32) 68%,
-          rgba(0, 0, 0, 0.48) 100%
-        );
-        z-index: 2;
-        pointer-events: none;
-        border-radius: inherit;
-      }
-      .gold-shimmer {
-        position: absolute;
-        inset: 0;
-        z-index: 3;
-        overflow: hidden;
-        border-radius: inherit;
         pointer-events: none;
       }
-      .gold-shimmer::before {
-        content: "";
-        position: absolute;
-        top: -30%;
-        left: -50%;
-        width: 200%;
-        height: 150%;
-        background: linear-gradient(
-          125deg,
-          rgba(255, 240, 170, 0) 5%,
-          rgba(230, 200, 95, 0.07) 28%,
-          rgba(250, 225, 130, 0.14) 48%,
-          rgba(255, 245, 190, 0.04) 70%,
-          transparent 88%
-        );
-        transform: rotate(18deg);
-        animation: luxurySheen 10s linear infinite;
-        filter: blur(4px);
-      }
-      .heroo-content {
-        position: absolute;
-        z-index: 12;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        max-width: 720px;
-        text-align: center;
-        color: #ffffff;
-        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+      .top-bar .top-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 14px 6px 6px;
+        border-radius: 30px;
+        background: rgba(10, 14, 20, 0.92);
+        border: 1px solid rgba(165, 194, 55, 0.45);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
         pointer-events: auto;
+        display: none;
       }
-      .micro-badge {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        background: rgba(20, 20, 30, 0.5);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(230, 190, 105, 0.55);
-        padding: 0.35rem 1.2rem;
-        border-radius: 40px;
-        font-size: 0.65rem;
-        letter-spacing: 1px;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-bottom: 0.9rem;
-        color: #f8e5bf;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .micro-badge::before {
-        content: "";
-        width: 7px;
-        height: 7px;
-        background: #eac477;
+      .top-bar .top-brand img {
+        width: 34px;
+        height: 34px;
         border-radius: 50%;
-        box-shadow: 0 0 6px #f5cf8a;
-        animation: gentlePulse 1.8s infinite;
+        background: #fff;
+        object-fit: contain;
+        padding: 3px;
       }
-      .main-headline {
-        font-size: clamp(1.6rem, 5vw, 2.8rem);
-        font-weight: 600;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-        margin-bottom: 0.6rem;
-        text-align: center;
-      }
-      .gold-span {
-        color: #ff9a29;
-        font-style: italic;
-        font-weight: 600;
-      }
-      .property-desc {
-        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-        line-height: 1.45;
-        color: rgba(255, 250, 235, 0.92);
-        margin-bottom: 1.2rem;
-        max-width: 560px;
-        margin-left: auto;
-        margin-right: auto;
-        font-weight: 450;
-      }
-      .careers-email {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(6px);
-        padding: 0.45rem 1.2rem;
-        border-radius: 60px;
-        margin-bottom: 1rem;
-        border: 1px solid rgba(230, 195, 110, 0.55);
-        transition: all 0.2s ease;
-        width: fit-content;
-        font-weight: 500;
-        font-size: 0.8rem;
-        letter-spacing: 0.2px;
-        color: #faeecb;
-        text-decoration: none;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .careers-email:hover {
-        background: rgba(0, 0, 0, 0.6);
-        border-color: #e6b84e;
-        transform: translateY(-2px);
-      }
-      .btn-consult {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        background: #ffffff;
-        padding: 0.6rem 1.6rem 0.6rem 1.8rem;
-        border-radius: 60px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 0.85rem;
-        color: #121212;
-        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        box-shadow: 0 8px 14px -10px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(230, 195, 110, 0.8);
-        backdrop-filter: blur(2px);
-        cursor: pointer;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .btn-consult:hover {
-        background: #fffaf0;
-        box-shadow: 0 14px 22px -12px rgba(0, 0, 0, 0.4);
-        border-color: #eac16e;
-      }
-      .btn-icon {
-        background: #101012;
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.2s;
-        color: #eac47c;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-      .btn-consult:hover .btn-icon {
-        background: #eac47c;
-        color: #0f0f12;
-      }
-
-      /* ===== POPUP FORM ===== */
-      .popup-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(8px);
+      .top-bar .top-brand-text {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s ease;
-        padding: 1.5rem;
+        flex-direction: column;
+        line-height: 1.05;
       }
-      .popup-overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
-      .popup-card {
-        background: #fcf9f5;
-        max-width: 520px;
-        width: 100%;
-        border-radius: 40px;
-        padding: 2.8rem 2.5rem 2.5rem;
-        position: relative;
-        box-shadow: 0 40px 60px -20px rgba(0, 0, 0, 0.6);
-        transform: scale(0.95) translateY(20px);
-        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        border: 1px solid rgba(201, 126, 42, 0.2);
-      }
-      .popup-overlay.active .popup-card {
-        transform: scale(1) translateY(0);
-      }
-      .popup-close {
-        position: absolute;
-        top: 18px;
-        right: 22px;
-        font-size: 26px;
-        color: #8b7a6b;
-        cursor: pointer;
-        transition: 0.3s;
-        background: none;
-        border: none;
-        line-height: 1;
-      }
-      .popup-close:hover {
-        color: #c97e2a;
-        transform: rotate(90deg);
-      }
-      .popup-logo {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1rem;
-      }
-      .popup-logo img {
-        height: 60px;
-        width: auto;
-      }
-      .popup-card h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 36px;
-        color: #8b6240;
-        text-align: center;
-        margin-bottom: 0.3rem;
-      }
-      .popup-card p {
-        text-align: center;
-        color: #7a6b5e;
-        font-size: 14px;
-        margin-bottom: 1.8rem;
-      }
-      .popup-card label {
+      .top-bar .top-brand-text .name {
         font-size: 13px;
-        font-weight: 600;
-        color: #4f3f32;
-        display: block;
-        margin-bottom: 5px;
+        font-weight: 800;
+        color: #fff;
         letter-spacing: 0.3px;
       }
-      .popup-card input,
-      .popup-card select,
-      .popup-card textarea {
-        width: 100%;
-        padding: 12px 16px;
-        border: 1px solid #e3d6c8;
-        border-radius: 30px;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        background: #fffdfa;
-        transition: 0.3s;
-        margin-bottom: 1.2rem;
-        outline: none;
-      }
-      .popup-card input:focus,
-      .popup-card select:focus,
-      .popup-card textarea:focus {
-        border-color: #c97e2a;
-        box-shadow: 0 0 0 4px rgba(201, 126, 42, 0.12);
-      }
-      .popup-card textarea {
-        resize: vertical;
-        min-height: 70px;
-        border-radius: 24px;
-      }
-      .popup-card .submit-btn {
-        background: #c97e2a;
-        color: #fff;
-        border: none;
-        padding: 14px 28px;
-        border-radius: 60px;
+      .top-bar .top-brand-text .sub {
+        font-size: 9px;
+        color: #a5c237;
+        letter-spacing: 1.5px;
         font-weight: 700;
-        font-size: 16px;
-        width: 100%;
-        cursor: pointer;
-        transition: 0.3s;
-        box-shadow: 0 10px 18px -8px rgba(201, 126, 42, 0.3);
-        letter-spacing: 0.5px;
+      }
+
+      /* ============================================================
+   DESKTOP SIDEBAR
+============================================================ */
+      .left-sidebar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 320px;
+        z-index: 500;
+        color: #fff;
+        background: linear-gradient(
+          135deg,
+          rgba(8, 14, 26, 0.98),
+          rgba(6, 10, 20, 0.9)
+        );
+        backdrop-filter: blur(10px);
+        border-right: 1px solid rgba(165, 194, 55, 0.18);
+        transition: transform 0.35s ease;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+      }
+      .left-sidebar.closed {
+        transform: translateX(-278px);
+      }
+
+      .brand {
+        padding: 30px 24px 22px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        background: linear-gradient(
+          180deg,
+          rgba(165, 194, 55, 0.06),
+          transparent
+        );
+      }
+      .brand-logo-wrap {
+        width: 104px;
+        height: 104px;
+        margin: 0 auto 14px;
+        border-radius: 50%;
+        background: #fff;
+        padding: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        box-shadow:
+          0 0 0 3px #a5c237,
+          0 0 0 7px rgba(165, 194, 55, 0.18),
+          0 8px 24px rgba(0, 0, 0, 0.55);
       }
-      .popup-card .submit-btn:hover {
-        background: #a47e58;
-        transform: translateY(-3px);
-        box-shadow: 0 16px 28px -10px rgba(128, 88, 48, 0.4);
+      .brand-logo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
       }
-      .form-row {
-        display: flex;
-        gap: 14px;
+      .brand-small {
+        font-size: 14px;
+        letter-spacing: 3px;
+        color: #a5c237;
+        font-weight: 650;
+        text-transform: uppercase;
       }
-      .form-row .field-group {
-        flex: 1;
-      }
-      .toast-message {
-        position: fixed;
-        bottom: 25px;
-        left: 50%;
-        transform: translateX(-50%) scale(0.9);
-        background: #1e1b16e6;
-        backdrop-filter: blur(20px);
-        color: #f3e2b0;
-        padding: 10px 24px;
-        border-radius: 60px;
-        font-size: 0.85rem;
-        font-weight: 500;
-        z-index: 999;
-        border: 1px solid rgba(230, 195, 110, 0.6);
-        box-shadow: 0 10px 20px -8px black;
-        opacity: 0;
-        transition:
-          opacity 0.2s ease,
-          transform 0.2s ease;
-        pointer-events: none;
-        font-family: "Inter", sans-serif;
-        white-space: nowrap;
-      }
-      .toast-message.show {
-        opacity: 1;
-        transform: translateX(-50%) scale(1);
+      .brand-name {
+        font-size: 24px;
+        line-height: 1.15;
+        margin-top: 6px;
+        color: #fff;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+        letter-spacing: 0.3px;
       }
 
-      /* responsive */
-      @media (max-width: 991px) {
-        .work-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .life-section {
-          grid-template-columns: 1fr;
-        }
-        .look-top {
-          grid-template-columns: 1fr;
-        }
-        .benefits-grid {
-          padding: 0 2rem;
-          grid-template-columns: 1fr;
-        }
-        .benefits-left h2 {
-          font-size: 56px;
-        }
-        .flag-invest-card {
-          height: 300px;
-          clip-path: path(
-            "M 0 28 C 75 12, 155 6, 245 20 C 360 40, 485 62, 610 40 C 740 18, 860 10, 995 28 C 1090 42, 1155 52, 1280 30 L 1280 268 C 1170 295, 1080 314, 970 296 C 840 274, 710 252, 580 276 C 450 300, 320 322, 185 306 C 100 294, 42 282, 0 268 Z"
-          );
-        }
-        .heroo-content {
-          width: 92%;
-          max-width: 650px;
-        }
+      .sidebar-menu {
+        flex: 1;
+        width: 100%;
+        padding: 14px 16px 110px;
+        overflow-y: auto;
       }
-      @media (max-width: 880px) {
-        .flag-invest-card {
-          height: auto;
-          min-height: 380px;
-          clip-path: none;
-          border-radius: 28px;
+      .menu-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 13px 14px;
+        margin-bottom: 4px;
+        color: #cfd8e4;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          transform 0.15s ease;
+      }
+      .menu-item .mi-icon {
+        font-size: 18px;
+        width: 26px;
+        text-align: center;
+        flex-shrink: 0;
+        opacity: 0.9;
+      }
+      .menu-item:hover {
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        transform: translateX(3px);
+      }
+      .menu-item.active {
+        background: linear-gradient(90deg, #a5c237, #b7d24a);
+        color: #111;
+        box-shadow: 0 4px 14px rgba(165, 194, 55, 0.35);
+      }
+
+      .sidebar-bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 12px 28px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        z-index: -1;
+      }
+      .bottom-btn {
+        height: 58px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(0, 0, 0, 0.42);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        cursor: pointer;
+        font-size: 18px;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease,
+          transform 0.15s ease;
+        position: relative;
+        min-width: 0;
+      }
+      .bottom-btn .bb-icon {
+        font-size: 18px;
+        line-height: 1;
+      }
+      .bottom-btn .bb-label {
+        font-size: 8.5px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: #9fb0c4;
+        line-height: 1;
+      }
+      .bottom-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .bottom-btn:active {
+        transform: scale(0.95);
+      }
+      .bottom-btn.active {
+        border-color: #a5c237;
+        background: rgba(165, 194, 55, 0.14);
+        color: #a5c237;
+      }
+      .bottom-btn.active .bb-label {
+        color: #a5c237;
+      }
+
+      .volume-wrap {
+        position: absolute;
+        left: 50%;
+        bottom: 96px;
+        transform: translateX(-50%);
+        display: none;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 20px;
+        background: rgba(10, 14, 20, 0.98);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+        z-index: 10;
+      }
+      .volume-wrap.show {
+        display: flex;
+      }
+      .volume-wrap input[type="range"] {
+        width: 100px;
+        accent-color: #a5c237;
+      }
+
+      .sidebar-toggle {
+        position: absolute;
+        top: 50%;
+        right: -22px;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(10, 14, 20, 0.92);
+        color: #fff;
+        font-size: 23px;
+        line-height: 1;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 600;
+      }
+
+      /* ============================================================
+   RIGHT STACK (desktop)
+============================================================ */
+      .right-stack {
+        position: fixed;
+        right: 20px;
+        top: 210px;
+        bottom: 20px;
+        width: 178px;
+        z-index: 700;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(165, 194, 55, 0.4) transparent;
+        padding-right: 4px;
+        padding-top: 2px;
+      }
+      .right-stack::-webkit-scrollbar {
+        width: 4px;
+      }
+      .right-stack::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .right-stack::-webkit-scrollbar-thumb {
+        background: rgba(165, 194, 55, 0.4);
+        border-radius: 4px;
+      }
+
+      .filter-row {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-button {
+        width: 100%;
+        height: 42px;
+        border: 0;
+        border-radius: 21px;
+        background: rgba(10, 14, 22, 0.96);
+        color: #fff;
+        padding: 0 14px;
+        font-size: 12.5px;
+        white-space: nowrap;
+        cursor: pointer;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .filter-button span {
+        margin-left: 6px;
+      }
+      .filter-dropdown {
+        display: none;
+        margin-top: 6px;
+        padding: 6px;
+        border-radius: 12px;
+        background: rgba(10, 14, 20, 0.98);
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .filter-dropdown.show {
+        display: block;
+      }
+      .filter-option {
+        padding: 9px 10px;
+        color: #fff;
+        border-radius: 7px;
+        cursor: pointer;
+        font-size: 12.5px;
+      }
+      .filter-option:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .status-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .status-pill {
+        width: 100%;
+        height: 38px;
+        padding: 0 14px;
+        border-radius: 19px;
+        background: rgba(10, 15, 23, 0.96);
+        color: #fff;
+        font-size: 12.5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.24);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        cursor: pointer;
+        transition:
+          border-color 0.18s ease,
+          background 0.18s ease,
+          transform 0.18s ease;
+        user-select: none;
+      }
+      .status-pill:hover {
+        background: rgba(28, 38, 48, 0.98);
+        transform: translateY(-1px);
+      }
+      .status-pill.active {
+        border-color: rgba(255, 255, 255, 0.75);
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.15),
+          0 4px 15px rgba(0, 0, 0, 0.24);
+      }
+      .status-pill.active .status-left span:last-child {
+        font-weight: 800;
+      }
+      .status-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .status-dot {
+        width: 11px;
+        height: 11px;
+        flex: 0 0 11px;
+        border-radius: 50%;
+      }
+      .available {
+        background: #31d77d;
+      }
+      .reserved {
+        background: #f4c12e;
+      }
+      .sold {
+        background: #e66d64;
+      }
+
+      .tilt-panel {
+        padding: 10px 12px 12px;
+        border-radius: 14px;
+        background: rgba(10, 14, 20, 0.94);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(8px);
+      }
+      .tilt-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      .tilt-head .tilt-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #9fb0c4;
+        text-transform: uppercase;
+      }
+      .tilt-head .tilt-value {
+        font-size: 12px;
+        font-weight: 800;
+        color: #a5c237;
+        font-family: monospace;
+      }
+      .tilt-panel input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(
+          90deg,
+          #a5c237 0%,
+          #a5c237 60%,
+          rgba(255, 255, 255, 0.15) 60%
+        );
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
+      }
+      .tilt-panel input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #a5c237;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+      }
+      .tilt-panel input[type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #a5c237;
+        cursor: pointer;
+      }
+
+      .control-panel {
+        padding: 8px;
+        border-radius: 14px;
+        background: rgba(10, 14, 20, 0.94);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(8px);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .zoom-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+      }
+      .zoom-btn {
+        height: 40px;
+        border-radius: 9px;
+        border: 0;
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.15s ease,
+          transform 0.15s ease;
+        touch-action: manipulation;
+        padding: 0;
+      }
+      .zoom-btn:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+      .zoom-btn:active {
+        transform: scale(0.94);
+        background: #a5c237;
+        color: #111;
+      }
+      .zoom-btn.reset {
+        font-size: 16px;
+      }
+
+      .zoom-level-bar {
+        text-align: center;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: #9fb0c4;
+        padding: 3px 0;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 6px;
+      }
+
+      .action-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+      }
+      .action-btn {
+        height: 42px;
+        border-radius: 9px;
+        border: 0;
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.15s ease,
+          transform 0.15s ease;
+        padding: 0;
+      }
+      .action-btn:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+      .action-btn:active {
+        transform: scale(0.94);
+      }
+      .action-btn.active {
+        color: #e7cf42;
+        border: 1px solid #b8a22c;
+        background: rgba(184, 162, 44, 0.14);
+      }
+
+      /* ============================================================
+   COMPASS
+============================================================ */
+      .compass {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 800;
+        width: 72px;
+        height: 70px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(45, 55, 68, 0.94),
+          rgba(10, 17, 27, 0.86)
+        );
+        border: 2px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+        pointer-events: none;
+      }
+      .compass::before {
+        content: "";
+        position: absolute;
+        inset: 5px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+      }
+      .compass-n,
+      .compass-s,
+      .compass-e,
+      .compass-w {
+        position: absolute;
+        color: #fff;
+        font-size: 9px;
+        font-weight: 700;
+      }
+      .compass-n {
+        top: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ef6a6a;
+      }
+      .compass-s {
+        bottom: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .compass-e {
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .compass-w {
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .compass-arrow {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 2px;
+        height: 36px;
+        transform: translate(-50%, -50%);
+      }
+      .compass-arrow::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-bottom: 16px solid #ef6262;
+        transform: translateX(-2px);
+      }
+      .compass-arrow::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 16px solid #e9edf1;
+        transform: translateX(-2px);
+      }
+
+      /* ============================================================
+   CAMERA STATUS
+============================================================ */
+      .camera-status {
+        position: fixed;
+        left: 50%;
+        top: 62px;
+        transform: translateX(-50%);
+        z-index: 800;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        font-size: 11px;
+        pointer-events: none;
+        max-width: 60vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* ============================================================
+   DRAW / PIN PANEL
+============================================================ */
+      .draw-panel {
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        z-index: 1500;
+        display: none;
+        width: min(760px, 94vw);
+        padding: 14px 18px;
+        border-radius: 14px;
+        background: rgba(10, 14, 20, 0.97);
+        color: #fff;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+        font-size: 12px;
+        border: 1px solid rgba(165, 194, 55, 0.55);
+      }
+      .draw-panel.show {
+        display: block;
+      }
+      .draw-title {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+        color: #a5c237;
+      }
+      .draw-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px 14px;
+      }
+      .draw-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .draw-row label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #9fb0c4;
+      }
+      .draw-row input,
+      .draw-row select {
+        width: 100%;
+        padding: 6px 8px;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(0, 0, 0, 0.45);
+        color: #fff;
+        font-size: 12px;
+        font-family: monospace;
+      }
+      .draw-row input:focus,
+      .draw-row select:focus {
+        outline: none;
+        border-color: #a5c237;
+      }
+      .draw-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+      .draw-btn {
+        flex: 1;
+        padding: 9px 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        transition: background 0.15s ease;
+      }
+      .draw-btn:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .draw-btn.primary {
+        background: #a5c237;
+        color: #111;
+        border-color: #a5c237;
+      }
+      .draw-btn.warn {
+        background: #d19c25;
+        border-color: #d19c25;
+        color: #111;
+      }
+      .draw-btn.danger {
+        background: #b94a4a;
+        border-color: #b94a4a;
+      }
+      .draw-info {
+        margin-top: 10px;
+        font-size: 11px;
+        color: #9fb0c4;
+        font-family: monospace;
+        max-height: 100px;
+        overflow-y: auto;
+        line-height: 1.55;
+        white-space: pre-wrap;
+      }
+      .draw-hint {
+        position: fixed;
+        left: 50%;
+        top: 108px;
+        transform: translateX(-50%);
+        z-index: 1500;
+        padding: 8px 16px;
+        background: #a5c237;
+        color: #111;
+        font-size: 12px;
+        font-weight: 700;
+        border-radius: 20px;
+        display: none;
+        max-width: 80vw;
+        text-align: center;
+      }
+      .draw-hint.show {
+        display: block;
+      }
+
+      /* ============================================================
+   RESIDENTIAL IMAGE SETUP PANEL
+============================================================ */
+      .setup-panel {
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        z-index: 1600;
+        display: none;
+        width: min(720px, 94vw);
+        max-height: 78vh;
+        overflow-y: auto;
+        padding: 16px 20px 18px;
+        border-radius: 16px;
+        background: rgba(8, 12, 20, 0.98);
+        color: #fff;
+        border: 1px solid rgba(165, 194, 55, 0.55);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+        font-size: 12px;
+      }
+      .setup-panel.show {
+        display: block;
+      }
+
+      .setup-title {
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.6px;
+        color: #a5c237;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .setup-subtitle {
+        font-size: 11px;
+        color: #9fb0c4;
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+      .setup-subtitle kbd {
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+        padding: 1px 5px;
+        font-family: monospace;
+        font-size: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .setup-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 18px;
+        margin-bottom: 14px;
+      }
+      .setup-field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .setup-field label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #9fb0c4;
+        display: flex;
+        justify-content: space-between;
+      }
+      .setup-field label .val {
+        color: #a5c237;
+        font-family: monospace;
+        font-weight: 700;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+      .setup-field input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 6px;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.15);
+        outline: none;
+        cursor: pointer;
+      }
+      .setup-field input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #a5c237;
+        cursor: pointer;
+      }
+      .setup-field input[type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #a5c237;
+        cursor: pointer;
+      }
+
+      .setup-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+      }
+      .setup-btn {
+        flex: 1;
+        min-width: 110px;
+        padding: 10px 12px;
+        border-radius: 9px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        transition:
+          background 0.15s ease,
+          transform 0.1s ease;
+      }
+      .setup-btn:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .setup-btn:active {
+        transform: scale(0.97);
+      }
+      .setup-btn.primary {
+        background: #a5c237;
+        color: #111;
+        border-color: #a5c237;
+      }
+      .setup-btn.primary:hover {
+        background: #b7d24a;
+      }
+      .setup-btn.warn {
+        background: #d19c25;
+        color: #111;
+        border-color: #d19c25;
+      }
+      .setup-btn.danger {
+        background: #b94a4a;
+        border-color: #b94a4a;
+      }
+      .setup-btn.ghost {
+        background: transparent;
+      }
+
+      .setup-info {
+        margin-top: 12px;
+        padding: 10px 12px;
+        background: rgba(0, 0, 0, 0.35);
+        border-radius: 8px;
+        font-size: 11px;
+        color: #cfd8e4;
+        line-height: 1.6;
+        font-family: monospace;
+        white-space: pre-wrap;
+        max-height: 130px;
+        overflow-y: auto;
+      }
+
+      /* ============================================================
+   MOUSE TILT HINT
+============================================================ */
+      .tilt-hint {
+        position: fixed;
+        left: 50%;
+        bottom: 22px;
+        transform: translateX(-50%);
+        z-index: 850;
+        padding: 8px 16px;
+        background: rgba(10, 14, 20, 0.92);
+        border: 1px solid rgba(165, 194, 55, 0.55);
+        color: #e9edf1;
+        font-size: 11px;
+        font-weight: 600;
+        border-radius: 20px;
+        pointer-events: none;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        opacity: 0.92;
+        transition: opacity 0.3s ease;
+      }
+      .tilt-hint kbd {
+        background: rgba(165, 194, 55, 0.22);
+        border: 1px solid rgba(165, 194, 55, 0.5);
+        color: #a5c237;
+        border-radius: 4px;
+        padding: 1px 6px;
+        font-family: monospace;
+        font-size: 10px;
+        font-weight: 700;
+      }
+      .tilt-hint.fade {
+        opacity: 0.35;
+      }
+
+      /* ============================================================
+   MOBILE APP BOTTOM NAV — 7 buttons
+============================================================ */
+      .app-nav {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 950;
+        padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0));
+        background: linear-gradient(
+          180deg,
+          rgba(8, 12, 20, 0.6),
+          rgba(5, 9, 16, 0.98)
+        );
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .app-nav-inner {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3px;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .app-nav-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        padding: 8px 2px 6px;
+        border: 0;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 8.5px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 10px;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
+        min-height: 52px;
+        min-width: 0;
+      }
+      .app-nav-btn .icon {
+        font-size: 19px;
+        line-height: 1;
+      }
+      .app-nav-btn.active {
+        color: #a5c237;
+        background: rgba(165, 194, 55, 0.12);
+      }
+      .app-nav-btn:active {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* ============================================================
+   MOBILE DRAWER
+============================================================ */
+      .mobile-drawer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 78%;
+        max-width: 320px;
+        z-index: 2000;
+        background: linear-gradient(180deg, #0a1220, #050b15);
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        padding-bottom: 90px;
+        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.6);
+      }
+      .mobile-drawer.open {
+        transform: translateX(0);
+      }
+
+      .drawer-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1990;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        pointer-events: none;
+      }
+      .drawer-backdrop.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .drawer-head {
+        padding: 22px 20px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(
+          135deg,
+          rgba(165, 194, 55, 0.1),
+          transparent
+        );
+      }
+      .drawer-head img {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: #fff;
+        object-fit: contain;
+        padding: 4px;
+        border: 2px solid #a5c237;
+      }
+      .drawer-head .brand-info {
+        flex: 1;
+      }
+      .drawer-head .b-name {
+        font-size: 15px;
+        font-weight: 800;
+        color: #fff;
+      }
+      .drawer-head .b-sub {
+        font-size: 10px;
+        color: #a5c237;
+        letter-spacing: 2px;
+        margin-top: 2px;
+      }
+
+      .drawer-menu {
+        padding: 12px 8px;
+      }
+      .drawer-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 16px;
+        border-radius: 10px;
+        color: #dfe7f2;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
+      }
+      .drawer-item:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .drawer-item.active {
+        background: linear-gradient(
+          90deg,
+          rgba(165, 194, 55, 0.25),
+          transparent
+        );
+        color: #fff;
+        border-left: 3px solid #a5c237;
+      }
+      .drawer-item .d-emoji {
+        width: 28px;
+        text-align: center;
+        font-size: 18px;
+      }
+      .drawer-footer {
+        padding: 18px 20px;
+        font-size: 10px;
+        color: #6b7b92;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        margin-top: 14px;
+      }
+      .drawer-footer a {
+        color: #a5c237;
+        text-decoration: none;
+      }
+
+      /* Control panel fixed at bottom center */
+      .control-panel {
+        position: fixed;
+        /* right: 0; */
+        bottom: 20px;
+        transform: translateX(-50%);
+        width: min(360px, calc(100vw - 24px));
+        z-index: 1200;
+        padding: 8px;
+        border-radius: 14px;
+        background: rgba(10, 14, 20, 0.94);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Keep all six action buttons in one row */
+      .control-panel .action-row {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      /* Compact, evenly sized action buttons */
+      .control-panel .action-btn {
+        width: 100%;
+        min-width: 0;
+        height: 44px;
+        font-size: 18px;
+        border-radius: 9px;
+      }
+
+      /* Keep zoom controls in their existing three-column row */
+      .control-panel .zoom-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      /* Hide the original control panel inside the right sidebar */
+      .right-stack > .control-panel {
+        position: fixed;
+      }
+
+      /* ============================================================
+   MOBILE / TABLET OVERRIDES
+============================================================ */
+      @media (max-width: 900px) {
+        .left-sidebar,
+        .sidebar-toggle,
+        .right-stack,
+        .tilt-hint {
+          display: none !important;
         }
-        .heroo-content {
-          position: relative;
-          left: auto;
-          top: auto;
+        .mobile-drawer,
+        .drawer-backdrop,
+        .app-nav {
+          display: block;
+        }
+
+        .compass {
+          width: 62px;
+          height: 62px;
+          right: 12px;
+          top: 74px;
+        }
+        .compass::before {
+          inset: 5px;
+        }
+        .compass-n,
+        .compass-s,
+        .compass-e,
+        .compass-w {
+          font-size: 10px;
+        }
+        .compass-arrow {
+          height: 38px;
+        }
+
+        .camera-status {
+          top: 60px;
+          font-size: 10px;
+          padding: 5px 10px;
+          max-width: 62vw;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .draw-panel,
+        .setup-panel {
+          left: 8px;
+          right: 8px;
+          width: auto;
           transform: none;
-          margin: 2rem auto;
-          padding: 1.4rem 1.6rem;
-          width: 90%;
-          background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.3)
-          );
-          border-radius: 28px;
-          backdrop-filter: blur(2px);
+          bottom: calc(78px + env(safe-area-inset-bottom, 0));
+          max-height: 62vh;
+          overflow-y: auto;
         }
-        .flag-invest-card {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        .flag-image {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          z-index: 0;
-        }
-        .heroo-content {
-          position: relative;
-          z-index: 15;
-          margin: 1.5rem auto;
-        }
-        .flag-overlay-gradient {
-          background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.8) 20%,
-            rgba(0, 0, 0, 0.35) 75%
-          );
-        }
-        .main-headline {
-          font-size: 2rem;
-        }
-      }
-      @media (max-width: 768px) {
-        .career-left h1 {
-          font-size: 52px;
-        }
-        .career-stats {
+        .draw-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-        .work-grid {
+        .setup-grid {
           grid-template-columns: 1fr;
         }
-        .career-cta-content .career-left h2 {
-          font-size: 32px;
+
+        .top-bar {
+          padding: 6px 10px;
         }
-        .workplace-content h2 {
-          font-size: 58px;
+        .top-bar .top-brand {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 6px 14px 6px 6px;
+          border-radius: 30px;
+          background: rgba(10, 14, 20, 0.92);
+          border: 1px solid rgba(165, 194, 55, 0.45);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+          pointer-events: auto;
+          padding: 5px 10px 5px 5px;
         }
-        .popup-card {
-          padding: 2rem 1.5rem;
+        .top-bar .top-brand img {
+          width: 30px;
+          height: 30px;
         }
-        .form-row {
+        .top-bar .top-brand-text .name {
+          font-size: 12px;
+        }
+        .top-bar .top-brand-text .sub {
+          font-size: 8px;
+        }
+
+        .zoom-controls-mobile {
+          display: flex;
+          position: fixed;
+          right: 12px;
+          bottom: calc(88px + env(safe-area-inset-bottom, 0));
+          z-index: 850;
           flex-direction: column;
-          gap: 0;
+          gap: 5px;
+          padding: 5px;
+          border-radius: 12px;
+          background: rgba(10, 14, 20, 0.94);
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(8px);
         }
-        .workplace-container {
-          flex-direction: column;
-          gap: 30px;
+        .zoom-controls-mobile .zoom-btn {
+          width: 42px;
+          height: 42px;
+          font-size: 20px;
+          border-radius: 9px;
+          border: 0;
+          background: rgba(255, 255, 255, 0.06);
+          color: #fff;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition:
+            background 0.15s ease,
+            transform 0.15s ease;
+          padding: 0;
         }
-        .look-top {
-          padding: 0 1.5rem;
+        .zoom-controls-mobile .zoom-btn.reset {
+          font-size: 14px;
         }
-        .why-work-section {
-          margin: 40px 20px;
-          padding: 10px;
+        .zoom-controls-mobile .zoom-level {
+          font-size: 9px;
+          text-align: center;
+          color: #9fb0c4;
+          padding: 2px 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .benefits-grid {
-          padding: 0 1.5rem;
-        }
-        .workplace-section {
-          margin: 40px 20px;
-        }
-        .career-content {
-          flex-direction: column;
-        }
-        .career-left {
-          width: 100%;
-          padding: 40px 30px;
-        }
-        .career-right {
-          width: 100%;
-        }
-        .career-right img {
-          height: 380px;
-        }
-        .career-right::before {
+      }
+
+      @media (min-width: 901px) {
+        .zoom-controls-mobile {
           display: none;
         }
-        .benefits-left h2 {
-          font-size: 46px;
-        }
-        .benefit-item h3 {
-          font-size: 40px;
-        }
-        .life-content {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 40px 28px;
-        }
-        .life-content h3 {
-          font-size: 40px;
-        }
       }
-      @media (max-width: 600px) {
-        .body-banner {
-          padding: 0.8rem;
-        }
-        .flag-invest-card {
-          min-height: 400px;
-        }
-        .heroo-content {
-          padding: 1.2rem 1.2rem;
-          width: 95%;
-        }
-        .main-headline {
-          font-size: 1.7rem;
-        }
-        .toast-message {
-          white-space: normal;
-          text-align: center;
-          font-size: 0.75rem;
-          padding: 8px 18px;
-          width: 90%;
-        }
-        .career-left h1 {
-          font-size: 42px;
-        }
-      }
+
       @media (max-width: 480px) {
-        .flag-invest-card {
-          min-height: 440px;
+        .compass {
+          width: 56px;
+          height: 56px;
+          right: 10px;
+          top: 72px;
         }
-        .main-headline {
-          font-size: 1.5rem;
+        .compass-arrow {
+          height: 34px;
         }
-        .heroo-content {
-          padding: 1rem 1rem;
+        .compass-n,
+        .compass-s,
+        .compass-e,
+        .compass-w {
+          font-size: 9px;
         }
-        .micro-badge {
-          padding: 0.25rem 1rem;
-          font-size: 0.55rem;
-          margin-bottom: 0.6rem;
+        .camera-status {
+          top: 58px;
+          max-width: 58vw;
+        }
+        .app-nav-btn {
+          font-size: 8px;
+          min-height: 50px;
+          padding: 7px 1px 5px;
+        }
+        .app-nav-btn .icon {
+          font-size: 18px;
+        }
+        .zoom-controls-mobile .zoom-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 18px;
         }
       }
     </style>
   </head>
   <body>
-    <!-- ===== HERO SECTION ===== -->
-    <section class="career-section luxury-texture">
-      <div class="career-content">
-        <div class="career-left reveal">
-          <h1>Build Your Future<br />With Kirti Realty</h1>
-          <p>
-            Join a passionate team shaping the future of real estate through
-            innovation, integrity, and timeless excellence.
-          </p>
-          <a href="#" class="career-btn open-popup-btn">Join Us</a>
-        </div>
-        <div class="career-right">
+    <div id="app">
+      <div
+        id="map3d"
+        aria-label="Kirti Realty - Anandam Eleganza interactive aerial map"
+      ></div>
+
+      <!-- TOP BRAND BAR -->
+      <div class="top-bar">
+        <div class="top-brand">
           <img
-            src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1000&auto=format"
-            alt="Luxury realty team"
+            src="https://kirtirealty.in/Images/Kirti-Realty.png"
+            alt="Kirti Realty"
+            onerror="this.style.display = 'none'"
           />
-        </div>
-      </div>
-      <div class="career-stats">
-        <div class="stat-item">
-          <i class="fas fa-users"></i>
-          <div>
-            <h3>50+</h3>
-            <p>Elite Members</p>
-          </div>
-        </div>
-        <div class="stat-item">
-          <i class="far fa-smile"></i>
-          <div>
-            <h3>500+</h3>
-            <p>Happy Clients</p>
-          </div>
-        </div>
-        <div class="stat-item">
-          <i class="fas fa-award"></i>
-          <div>
-            <h3>5+</h3>
-            <p>Years of Excellence</p>
-          </div>
-        </div>
-        <div class="stat-item">
-          <i class="fa-solid fa-infinity"></i>
-          <div>
-            <h3>Unlimited</h3>
-            <p>Growth Paths</p>
+          <div class="top-brand-text">
+            <span class="name">KIRTI REALTY</span>
+            <span class="sub">ANANDAM ELEGANZA</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ===== WORKPLACE ===== -->
-    <section class="workplace-section reveal">
-      <div class="workplace-container">
-        <div class="workplace-image">
-          <img
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800"
-            alt="modern workplace"
-          />
-        </div>
-        <div class="workplace-content">
-          <h2>Our Workplace</h2>
-          <p>
-            We encourage our employees to achieve their potential by creating
-            opportunities to grow. <br />We cultivate an environment where
-            ambition meets serenity.
-          </p>
-        </div>
+      <!-- CAMERA STATUS -->
+      <div id="cameraStatus" class="camera-status">3D AERIAL VIEW</div>
+
+      <!-- COMPASS -->
+      <div class="compass">
+        <div class="compass-n">N</div>
+        <div class="compass-s">S</div>
+        <div class="compass-e">E</div>
+        <div class="compass-w">W</div>
+        <div id="compassArrow" class="compass-arrow"></div>
       </div>
-    </section>
 
-    <!-- ===== CURRENT OPENINGS ===== -->
-    <section class="look-for-section reveal">
-      <div class="container">
-        <div class="look-top">
-          <div class="look-content">
-            <span class="section-subtitle">The Kirti Blueprint</span>
-            <h2>Current Openings at Our Firm</h2>
-            <ul class="look-list">
-              <li>
-                <i class="fas fa-check-circle"></i> Sales Executives -
-                <span>Currently Hiring</span>
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Marketing & Branding
-                Specialists
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Luxury Property Advisors
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Customer Relations Managers - <span>Currently Hiring</span
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Business Development Leads
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Operations & Strategy
-                Analysts
-              </li>
-            </ul>
-          </div>
-          <div class="look-image">
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"
-              alt="collaboration"
-            />
-          </div>
-        </div>
-        <div class="life-section">
-          <div class="life-content">
-            <div class="life-icon"><i class="fas fa-hand-sparkles"></i></div>
-            <div>
-              <h3>Life at Kirti Realty</h3>
-              <p>
-                At Kirti Realty, we believe great careers are built in an
-                environment where people feel valued, inspired, and empowered to
-                grow. Our culture encourages collaboration, learning,
-                innovation, and meaningful relationships.
-              </p>
-              <p>
-                Together, we create opportunities, celebrate achievements, and
-                shape the future of luxury real estate.
-              </p>
-            </div>
-          </div>
-          <div class="gallery-grid">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600"
-              alt="team"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
-              alt="meeting"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600"
-              alt="collaborative"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600"
-              alt="happy team"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+      <!-- MOUSE TILT HINT (desktop only) -->
+      <!-- <div id="tiltHint" class="tilt-hint">
+        <span
+          >🖱️ Drag to pan · <kbd>Shift</kbd>+Drag ↔ rotate ·
+          <kbd>Shift</kbd>+Drag ↕ tilt</span
+        >
+      </div> -->
 
-    <!-- ===== WHY WORK WITH US ===== -->
-    <section class="why-work-section reveal">
-      <div class="section-subtitle">Join Our Vision</div>
-      <h2 class="section-title">Why Work With Us?</h2>
-      <div class="work-grid">
-        <div class="work-card">
-          <div class="icon-box"><i class="fas fa-chart-line"></i></div>
-          <h3>Growth & Development</h3>
-          <p>
-            Continuous mentorship and premium projects designed to build an
-            extraordinary career.
-          </p>
-        </div>
-        <div class="work-card">
-          <div class="icon-box"><i class="fas fa-users"></i></div>
-          <h3>Collaborative Culture</h3>
-          <p>
-            Inclusive, transparent, and fueled by respect — we rise together.
-          </p>
-        </div>
-        <div class="work-card">
-          <div class="icon-box"><i class="fas fa-city"></i></div>
-          <h3>Meaningful Work</h3>
-          <p>
-            Shape iconic communities & redefine skylines with lasting value.
-          </p>
-        </div>
-        <div class="work-card">
-          <div class="icon-box"><i class="fas fa-award"></i></div>
-          <h3>Performance Recognition</h3>
-          <p>
-            Celebrating dedication with clear rewards and leadership pathways.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== BENEFITS ===== -->
-    <section class="benefits-section reveal">
-      <div class="container">
-        <div class="benefits-grid">
-          <div class="benefits-left">
-            <span class="section-tag">LUXURY PERKS</span>
-            <h2>Live Your Best Life</h2>
-            <p class="intro-text">
-              Discover benefits crafted to elevate your professional journey and
-              personal wellbeing.
-            </p>
-            <div class="benefit-image">
-              <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200"
-                alt="wellness"
-              />
-            </div>
-          </div>
-          <div class="benefits-right">
-            <div class="benefit-item">
-              <h3>Health & Safety</h3>
-              <p>
-                Premium wellness programs, holistic insurance, and a nourishing
-                environment designed for peace of mind.
-              </p>
-            </div>
-            <div class="benefit-item">
-              <h3>Career Growth</h3>
-              <p>
-                World-class training, international exposure, and fast-track
-                leadership tracks.
-              </p>
-            </div>
-            <div class="benefit-item">
-              <h3>Collaborative Culture</h3>
-              <p>
-                Work alongside industry visionaries in an atmosphere of trust,
-                creativity, and mutual excellence.
-              </p>
-            </div>
-            <div class="benefit-item">
-              <h3>Recognition & Rewards</h3>
-              <p>
-                Performance bonuses, luxury retreats, and crystal recognition
-                awards for excellence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FLAG BANNER ===== -->
-    <section class="body-banner">
-      <div class="flag-invest-card">
-        <img
-          class="flag-image"
-          src="https://images.unsplash.com/photo-1618385455730-2571c38966b7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXJjaGl0ZWN0fGVufDB8fDB8fHww"
-          alt="Kirti Realty - Vision & Integrity"
-          loading="eager"
-        />
-        <div class="flag-overlay-gradient"></div>
-        <div class="gold-shimmer"></div>
-        <div class="heroo-content">
-          <div class="micro-badge">CAREERS @ KIRTI</div>
-          <h1 class="main-headline">
-            Ready to Grow <span class="gold-span">With Us?</span>
-          </h1>
-          <p class="property-desc">
-            Take the next step in your professional journey with a team that's
-            transforming the real estate landscape with integrity and vision.
-          </p>
-          <a href="mailto:careers@kirtirealty.in" class="careers-email"
-            ><i class="fas fa-envelope"></i> careers@kirtirealty.in</a
-          >
-          <a href="#" id="shareDetailsBtn" class="btn-consult open-popup-btn"
-            >Share Your Details <i class="fas fa-leaf" aria-hidden="true"></i
-          ></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== POPUP FORM (REPLACED) ===== -->
-    <div id="applyPopup" class="popup-overlay">
-      <div class="popup-card">
-        <button class="popup-close" id="popupClose">&times;</button>
-
-        <div class="popup-logo">
-          <img
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect width='200' height='60' fill='%23c97e2a' rx='12'/%3E%3Ctext x='20' y='40' font-family='Cormorant Garamond, serif' font-size='32' fill='%23fff' font-weight='700'%3EKirti Realty%3C/text%3E%3C/svg%3E"
-            alt="Kirti Realty Logo"
-          />
-        </div>
-
-        <h2>Apply Now</h2>
-        <p>Fill in your details and our talent team will reach out.</p>
-
-        <form id="applyForm">
-          <label for="fullName">Full Name *</label>
-          <input
-            type="text"
-            id="fullName"
-            placeholder="Your full name"
-            required
-          />
-
-          <label for="applyingFor">Applying For *</label>
-          <select id="applyingFor" required>
-            <option value="">Select position</option>
-            <option>Sales Executive</option>
-            <option>Marketing & Branding Specialist</option>
-            <option>Luxury Property Advisor</option>
-            <option>Customer Relations Manager</option>
-            <option>Business Development Lead</option>
-            <option>Operations & Strategy Analyst</option>
-            <option>Other</option>
-          </select>
-
-          <div class="form-row">
-            <div class="field-group">
-              <label for="experience">Experience (years) *</label>
-              <input
-                type="number"
-                id="experience"
-                placeholder="e.g. 3"
-                min="0"
-                required
-              />
-            </div>
-            <div class="field-group">
-              <label for="place">Place / City *</label>
-              <input type="text" id="place" placeholder="Your city" required />
-            </div>
-          </div>
-
-          <label for="cvLink">CV / Resume (link or paste) *</label>
-          <textarea
-            id="cvLink"
-            placeholder="Paste your CV link (Google Drive, Dropbox, etc.)"
-            required
-          ></textarea>
-
-          <button type="submit" class="submit-btn">
-            <i class="fas fa-paper-plane"></i> Submit Application
+      <!-- RIGHT STACK (desktop) -->
+      <div class="right-stack">
+        <!-- Filter -->
+        <div class="filter-row">
+          <button class="filter-button" onclick="toggleFilter()">
+            Filter: <strong id="filterText">All sizes</strong> <span>⌄</span>
           </button>
-        </form>
+          <div id="filterDropdown" class="filter-dropdown">
+            <div class="filter-option" onclick="setFilter('All sizes')">
+              All sizes
+            </div>
+            <div class="filter-option" onclick="setFilter('Small')">Small</div>
+            <div class="filter-option" onclick="setFilter('Medium')">
+              Medium
+            </div>
+            <div class="filter-option" onclick="setFilter('Large')">Large</div>
+          </div>
+        </div>
+
+        <!-- Status pills -->
+        <div class="status-list">
+          <div
+            class="status-pill"
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            data-status="available"
+            onclick="toggleStatusFilter('available')"
+            onkeydown="
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleStatusFilter('available');
+              }
+            "
+          >
+            <div class="status-left">
+              <span class="status-dot available"></span><span>Available</span>
+            </div>
+            <strong id="countAvailable">0</strong>
+          </div>
+          <div
+            class="status-pill"
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            data-status="reserved"
+            onclick="toggleStatusFilter('reserved')"
+            onkeydown="
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleStatusFilter('reserved');
+              }
+            "
+          >
+            <div class="status-left">
+              <span class="status-dot reserved"></span><span>Reserved</span>
+            </div>
+            <strong id="countReserved">0</strong>
+          </div>
+          <div
+            class="status-pill"
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            data-status="sold"
+            onclick="toggleStatusFilter('sold')"
+            onkeydown="
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleStatusFilter('sold');
+              }
+            "
+          >
+            <div class="status-left">
+              <span class="status-dot sold"></span><span>Sold</span>
+            </div>
+            <strong id="countSold">0</strong>
+          </div>
+        </div>
+
+        <!-- Tilt slider -->
+        <div class="tilt-panel">
+          <div class="tilt-head">
+            <span class="tilt-label">Tilt</span>
+            <span id="tiltValue" class="tilt-value">58°</span>
+          </div>
+          <input
+            id="tiltSlider"
+            type="range"
+            min="0"
+            max="67"
+            step="1"
+            value="58"
+          />
+        </div>
+
+        <!-- Zoom + Actions -->
+        <div class="control-panel">
+          <!-- <div class="zoom-row">
+            <button class="zoom-btn" onclick="zoomIn()" title="Zoom In">
+              ＋
+            </button>
+            <button class="zoom-btn reset" onclick="resetMap()" title="Reset">
+              ⟲
+            </button>
+            <button class="zoom-btn" onclick="zoomOut()" title="Zoom Out">
+              －
+            </button>
+          </div>
+          <div id="zoomLevel" class="zoom-level-bar">×4.5</div> -->
+
+          <div class="action-row">
+            <button
+              id="locationBtn"
+              class="action-btn active"
+              onclick="goToLocation()"
+              title="Location"
+            >
+              📍
+            </button>
+            <button
+              id="landmarkBtn"
+              class="action-btn active"
+              onclick="toggleLandmarks()"
+              title="Landmarks"
+            >
+              🏛
+            </button>
+            <button
+              id="plotBtn"
+              class="action-btn active"
+              onclick="togglePlotOverlay()"
+              title="Residential Layout"
+            >
+              🏘️
+            </button>
+            <!-- </div>
+          <div class="action-row"> -->
+            <button
+              id="drawBtn"
+              class="action-btn"
+              onclick="toggleDrawMode()"
+              title="Draw Plots"
+            >
+              ✏️
+            </button>
+            <button
+              id="pinBtn"
+              class="action-btn"
+              onclick="togglePinMode()"
+              title="Add Pins"
+            >
+              📌
+            </button>
+            <button
+              id="setupBtn"
+              class="action-btn"
+              onclick="toggleSetupMode()"
+              title="Residential Image Setup"
+            >
+              🛠️
+            </button>
+          </div>
+        </div>
       </div>
+
+      <!-- MOBILE ZOOM STACK -->
+      <div class="zoom-controls-mobile">
+        <button class="zoom-btn" onclick="zoomIn()" title="Zoom In">＋</button>
+        <div id="zoomLevelMobile" class="zoom-level">×4.5</div>
+        <button class="zoom-btn" onclick="zoomOut()" title="Zoom Out">
+          －
+        </button>
+        <button class="zoom-btn reset" onclick="resetMap()" title="Reset">
+          ⟲
+        </button>
+      </div>
+
+      <!-- DESKTOP SIDEBAR -->
+      <aside id="sidebar" class="left-sidebar">
+        <div class="brand">
+          <div class="brand-logo-wrap">
+            <img
+              src="https://kirtirealty.in/Images/Kirti-Realty.png"
+              alt="Kirti Realty"
+              onerror="this.parentNode.style.display = 'none'"
+            />
+          </div>
+          <div class="brand-small">KIRTI REALTY</div>
+          <div class="brand-name">Anandam Eleganza</div>
+        </div>
+        <nav class="sidebar-menu">
+          <div
+            class="menu-item active"
+            data-section="aerial"
+            onclick="selectMenu('aerial')"
+          >
+            <span class="mi-icon">🌐</span> AERIAL VIEW
+          </div>
+          <div
+            class="menu-item"
+            data-section="landmarks"
+            onclick="selectMenu('landmarks')"
+          >
+            <span class="mi-icon">🏛</span> LANDMARKS
+          </div>
+          <div
+            class="menu-item"
+            data-section="intelligence"
+            onclick="selectMenu('intelligence')"
+          >
+            <span class="mi-icon">📍</span> LOCATION INTELLIGENCE
+          </div>
+          <div
+            class="menu-item"
+            data-section="video"
+            onclick="selectMenu('video')"
+          >
+            <span class="mi-icon">🎬</span> WALKTHROUGH VIDEO
+          </div>
+          <div
+            class="menu-item"
+            data-section="gallery"
+            onclick="selectMenu('gallery')"
+          >
+            <span class="mi-icon">🖼️</span> GALLERY
+          </div>
+          <div
+            class="menu-item"
+            data-section="brochure"
+            onclick="selectMenu('brochure')"
+          >
+            <span class="mi-icon">📄</span> BROCHURE
+          </div>
+          <div
+            class="menu-item"
+            data-section="setup"
+            onclick="selectMenu('setup')"
+          >
+            <span class="mi-icon">🛠️</span> RESIDENTIAL IMAGE SETUP
+          </div>
+          <div
+            class="menu-item"
+            data-section="contact"
+            onclick="selectMenu('contact')"
+          >
+            <span class="mi-icon">📞</span> CONTACT US
+          </div>
+        </nav>
+        <div class="sidebar-bottom">
+          <button
+            id="sidebarFullscreen"
+            class="bottom-btn"
+            onclick="toggleFullscreen()"
+            title="Fullscreen"
+          >
+            <span class="bb-icon">⛶</span>
+            <span class="bb-label">Full</span>
+          </button>
+          <button
+            id="soundBtn"
+            class="bottom-btn"
+            onclick="toggleSound(event)"
+            title="Background Music"
+          >
+            <span id="soundIcon" class="bb-icon">🔇</span>
+            <span class="bb-label">Music</span>
+          </button>
+          <button
+            id="sidebarAutoBtn"
+            class="bottom-btn"
+            onclick="toggleAutoRotate()"
+            title="360 Auto Rotation"
+          >
+            <span class="bb-icon">◉</span>
+            <span class="bb-label">Spin</span>
+          </button>
+          <button
+            id="plotBtn2"
+            class="bottom-btn active"
+            onclick="togglePlotOverlay()"
+            title="Residential Layout"
+          >
+            <span class="bb-icon">🏘️</span>
+            <span class="bb-label">Plot</span>
+          </button>
+        </div>
+        <div id="volumeWrap" class="volume-wrap">
+          <input
+            id="volumeSlider"
+            type="range"
+            min="0"
+            max="1"
+            step="0.05"
+            value="0.4"
+          />
+        </div>
+        <button
+          id="sidebarToggle"
+          class="sidebar-toggle"
+          onclick="toggleSidebar()"
+        >
+          ‹
+        </button>
+      </aside>
+
+      <!-- DRAW / PIN PANEL -->
+      <div id="drawPanel" class="draw-panel">
+        <div class="draw-title" id="panelTitle">✏️ DRAW PLOT MODE</div>
+        <div class="draw-grid">
+          <div class="draw-row">
+            <label id="labelId">Plot ID</label>
+            <input id="drawId" type="text" placeholder="A-101" value="A-101" />
+          </div>
+          <div class="draw-row" id="sizeRow">
+            <label>Size</label>
+            <select id="drawSize">
+              <option value="Small">Small</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Large">Large</option>
+            </select>
+          </div>
+          <div class="draw-row" id="statusRow">
+            <label>Status</label>
+            <select id="drawStatus">
+              <option value="available" selected>Available</option>
+              <option value="reserved">Reserved</option>
+              <option value="sold">Sold</option>
+            </select>
+          </div>
+          <div class="draw-row" id="pinTypeRow" style="display: none">
+            <label>Landmark Type</label>
+            <select id="pinType">
+              <option value="road">🛣️ Road</option>
+              <option value="pool">🏊 Pool</option>
+              <option value="garden">🌳 Garden</option>
+              <option value="clubhouse">🏛️ Clubhouse</option>
+              <option value="entrance">🚪 Entrance</option>
+              <option value="parking">🅿️ Parking</option>
+              <option value="playground">🎠 Playground</option>
+              <option value="temple">🛕 Temple</option>
+              <option value="gym">💪 Gym</option>
+              <option value="school">🏫 School</option>
+              <option value="hospital">🏥 Hospital</option>
+              <option value="metro">🚇 Metro</option>
+              <option value="market">🛒 Market</option>
+              <option value="other">📍 Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="draw-actions">
+          <button
+            class="draw-btn primary"
+            id="finishBtn"
+            onclick="finishCurrent()"
+          >
+            ✓ Finish Plot
+          </button>
+          <button class="draw-btn warn" onclick="undoLastPoint()">
+            ↶ Undo Point
+          </button>
+          <button class="draw-btn" onclick="clearCurrent()">
+            ✗ Clear Current
+          </button>
+          <button class="draw-btn" onclick="exportAll()">
+            📋 Copy All Data
+          </button>
+          <button class="draw-btn danger" onclick="closePanels()">Close</button>
+        </div>
+        <div id="drawInfo" class="draw-info">
+          Click on the map to place polygon corners…
+        </div>
+      </div>
+
+      <div id="drawHint" class="draw-hint">
+        DRAW MODE · Click to place corners · Click "Finish Plot" when done
+      </div>
+
+      <!-- RESIDENTIAL IMAGE SETUP PANEL -->
+      <div id="setupPanel" class="setup-panel">
+        <div class="setup-title">🛠️ RESIDENTIAL IMAGE SETUP</div>
+        <div class="setup-subtitle">
+          Drag the map to position plotfinal.png over the map. Use sliders below
+          to fine-tune. Keyboard: <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd
+          ><kbd>↓</kbd> move · <kbd>[</kbd><kbd>]</kbd> rotate · <kbd>-</kbd
+          ><kbd>+</kbd> scale · <kbd>Esc</kbd> exit
+        </div>
+
+        <div class="setup-grid">
+          <div class="setup-field">
+            <label
+              >Rotation <span class="val" id="setupRotVal">130°</span></label
+            >
+            <input
+              type="range"
+              id="setupRotation"
+              min="0"
+              max="360"
+              step="1"
+              value="130"
+            />
+          </div>
+          <div class="setup-field">
+            <label
+              >Opacity <span class="val" id="setupOpaVal">0.75</span></label
+            >
+            <input
+              type="range"
+              id="setupOpacity"
+              min="0.05"
+              max="1"
+              step="0.01"
+              value="0.75"
+            />
+          </div>
+          <div class="setup-field">
+            <label
+              >Width (East-West)
+              <span class="val" id="setupWVal">1.000×</span></label
+            >
+            <input
+              type="range"
+              id="setupWidth"
+              min="0.3"
+              max="3"
+              step="0.01"
+              value="1"
+            />
+          </div>
+          <div class="setup-field">
+            <label
+              >Height (North-South)
+              <span class="val" id="setupHVal">1.000×</span></label
+            >
+            <input
+              type="range"
+              id="setupHeight"
+              min="0.3"
+              max="3"
+              step="0.01"
+              value="1"
+            />
+          </div>
+          <div class="setup-field">
+            <label
+              >Offset X (East +)
+              <span class="val" id="setupXVal">0.00000</span></label
+            >
+            <input
+              type="range"
+              id="setupOffsetX"
+              min="-0.005"
+              max="0.005"
+              step="0.00001"
+              value="0"
+            />
+          </div>
+          <div class="setup-field">
+            <label
+              >Offset Y (North +)
+              <span class="val" id="setupYVal">0.00000</span></label
+            >
+            <input
+              type="range"
+              id="setupOffsetY"
+              min="-0.005"
+              max="0.005"
+              step="0.00001"
+              value="0"
+            />
+          </div>
+        </div>
+
+        <div class="setup-actions">
+          <button class="setup-btn primary" onclick="saveSetup()">
+            💾 Save
+          </button>
+          <button class="setup-btn warn" onclick="resetSetupToDefault()">
+            ↺ Reset Default
+          </button>
+          <button class="setup-btn" onclick="copySetupConfig()">
+            📋 Copy Config
+          </button>
+          <button class="setup-btn ghost" onclick="closeSetup()">
+            ✕ Close
+          </button>
+        </div>
+
+        <div id="setupInfo" class="setup-info">
+          Adjust and click Save to persist in this browser.
+        </div>
+      </div>
+
+      <!-- MOBILE DRAWER -->
+      <div
+        id="drawerBackdrop"
+        class="drawer-backdrop"
+        onclick="closeDrawer()"
+      ></div>
+      <aside id="mobileDrawer" class="mobile-drawer">
+        <div class="drawer-head">
+          <img
+            src="https://kirtirealty.in/Images/Kirti-Realty.png"
+            alt="Kirti Realty"
+            onerror="this.style.display = 'none'"
+          />
+          <div class="brand-info">
+            <div class="b-name">KIRTI REALTY</div>
+            <div class="b-sub">ANANDAM ELEGANZA</div>
+          </div>
+        </div>
+        <nav class="drawer-menu">
+          <div
+            class="drawer-item active"
+            data-section="aerial"
+            onclick="
+              selectMenu('aerial');
+              closeDrawer();
+            "
+          >
+            <span class="d-emoji">🌐</span> AERIAL VIEW
+          </div>
+          <div
+            class="drawer-item"
+            data-section="landmarks"
+            onclick="
+              selectMenu('landmarks');
+              closeDrawer();
+            "
+          >
+            <span class="d-emoji">🏛</span> LANDMARKS
+          </div>
+          <div
+            class="drawer-item"
+            data-section="intelligence"
+            onclick="
+              selectMenu('intelligence');
+              closeDrawer();
+            "
+          >
+            <span class="d-emoji">📍</span> LOCATION INTELLIGENCE
+          </div>
+          <div
+            class="drawer-item"
+            data-section="video"
+            onclick="
+              selectMenu('video');
+              closeDrawer();
+            "
+          >
+            <span class="d-emoji">🎬</span> WALKTHROUGH VIDEO
+          </div>
+          <div
+            class="drawer-item"
+            data-section="gallery"
+            onclick="
+              selectMenu('gallery');
+              closeDrawer();
+            "
+          >
+            <span class="d-emoji">🖼️</span> GALLERY
+          </div>
+          <div
+            class="drawer-item"
+            data-section="brochure"
+            onclick="
+              selectMenu('brochure');
+              closeDrawer();
+            "
+          >
+            <span class="d-emoji">📄</span> BROCHURE
+          </div>
+          <div
+            class="drawer-item"
+            data-section="setup"
+            onclick="
+              selectMenu('setup');
+              closeDrawer();
+            "
+          >
+            <span class="d-emoji">🛠️</span> RESIDENTIAL IMAGE SETUP
+          </div>
+          <div
+            class="drawer-item"
+            data-section="contact"
+            onclick="
+              selectMenu('contact');
+              closeDrawer();
+            "
+          >
+            <span class="d-emoji">📞</span> CONTACT US
+          </div>
+        </nav>
+        <div class="drawer-footer">
+          © <a href="https://kirtirealty.in/" target="_blank">kirtirealty.in</a>
+        </div>
+      </aside>
+
+      <!-- MOBILE APP BOTTOM NAV (7 buttons) -->
+      <nav class="app-nav">
+        <div class="app-nav-inner">
+          <button class="app-nav-btn" onclick="openDrawer()">
+            <span class="icon">☰</span><span>Menu</span>
+          </button>
+          <button
+            class="app-nav-btn"
+            id="navPlotBtn"
+            onclick="togglePlotOverlay()"
+          >
+            <span class="icon">🏘️</span><span>Plot</span>
+          </button>
+          <button
+            class="app-nav-btn"
+            id="navFilterBtn"
+            onclick="toggleFilter()"
+          >
+            <span class="icon">⚙</span><span>Filter</span>
+          </button>
+          <button
+            class="app-nav-btn"
+            id="navAutoBtn"
+            onclick="toggleAutoRotate()"
+          >
+            <span class="icon">◉</span><span>Spin</span>
+          </button>
+          <button
+            class="app-nav-btn"
+            id="navSoundBtn"
+            onclick="toggleSound(event)"
+          >
+            <span class="icon">🔇</span><span>Music</span>
+          </button>
+          <button class="app-nav-btn" onclick="goToLocation()">
+            <span class="icon">📍</span><span>Locate</span>
+          </button>
+          <button class="app-nav-btn" onclick="toggleSetupMode()">
+            <span class="icon">🛠️</span><span>Setup</span>
+          </button>
+        </div>
+      </nav>
     </div>
 
-    <!-- ===== TOAST ===== -->
-    <div id="detailsToast" class="toast-message">
-      ✨ Application sent! Our team will connect within 24h ✨
-    </div>
+    <audio id="bgMusic" loop preload="auto">
+      <source src="audio/background.mp3" type="audio/mpeg" />
+    </audio>
 
     <script>
-      (function () {
-        "use strict";
+      /* =========================================================
+   CONSTANTS — initial zoom ×4.5
+========================================================= */
 
-        // ----- DOM refs -----
-        const popup = document.getElementById("applyPopup");
-        const closeBtn = document.getElementById("popupClose");
-        const openBtns = document.querySelectorAll(".open-popup-btn");
-        const form = document.getElementById("applyForm");
-        const toast = document.getElementById("detailsToast");
+      const LAT = 27.5962777778;
+      const LNG = 77.6191111111;
 
-        // ----- popup controls -----
-        function openPopup(e) {
-          if (e) e.preventDefault();
-          popup.classList.add("active");
-          document.body.style.overflow = "hidden";
+      /*
+   ×1.0 = INITIAL_RANGE_BASE (950).
+   ×4.5 → INITIAL_RANGE = 950 / 4.5 ≈ 211.11.
+*/
+      const INITIAL_RANGE_BASE = 950;
+      const INITIAL_ZOOM_FACTOR = 10; // Closer starting view (about zoom 18.5) for supported 3D buildings.
+      const INITIAL_RANGE = INITIAL_RANGE_BASE / INITIAL_ZOOM_FACTOR; // ≈ 211.11
+
+      const INITIAL_TILT = 58;
+      const INITIAL_HEADING = 108.94057782079429;
+
+      const MIN_RANGE = 50;
+      const MAX_RANGE = 3500;
+      const MIN_TILT = 0;
+      const MAX_TILT = 67.5;
+
+      /* Extended tilt range for mouse drag — allows the camera to
+   swing through a full 180° sweep (visually) in both directions.
+   Google's vector map clamps actual tilt at 67.5°, so we blend
+   tilt + a "visual roll" value to fake the extra 180° reach. */
+      const MIN_TILT_EXTENDED = 0;
+      const MAX_TILT_EXTENDED = 67.5; // real tilt clamp (Google hard limit)
+
+      const AUTO_ROTATE_STEP = 0.25;
+      const AUTO_ROTATE_INTERVAL = 50;
+      const AUTO_RESUME_DELAY = 3000;
+
+      const ZOOM_IN_STEP = 0.6;
+      const ZOOM_OUT_STEP = 1.55;
+
+      /* =========================================================
+   PLOT CONFIG (defaults)
+========================================================= */
+
+      const PLOT_CONFIG_DEFAULT = {
+        imageUrl: "images/plotfinal.png",
+        imageBounds: {
+          north: 27.597740355,
+          south: 27.595570355,
+          east: 77.62082891,
+          west: 77.61888891,
+        },
+        opacity: 0.9,
+        rotation: 120,
+        scaleW: 2.09,
+        scaleH: 1.7,
+        offsetX: -0.00103,
+        offsetY: -0.0003,
+      };
+
+      // Bump the key so older saved settings cannot override the supplied placement.
+      const PLOT_CONFIG_KEY = "kirti_residential_plot_config_v3";
+
+      let PLOT_CONFIG =
+        loadStoredPlotConfig() ||
+        JSON.parse(JSON.stringify(PLOT_CONFIG_DEFAULT));
+
+      function loadStoredPlotConfig() {
+        try {
+          const raw = localStorage.getItem(PLOT_CONFIG_KEY);
+          if (!raw) return null;
+          const obj = JSON.parse(raw);
+          const merged = JSON.parse(JSON.stringify(PLOT_CONFIG_DEFAULT));
+          if (obj.imageUrl) merged.imageUrl = obj.imageUrl;
+          if (obj.imageBounds)
+            Object.assign(merged.imageBounds, obj.imageBounds);
+          if (typeof obj.opacity === "number") merged.opacity = obj.opacity;
+          if (typeof obj.rotation === "number") merged.rotation = obj.rotation;
+          if (typeof obj.scaleW === "number") merged.scaleW = obj.scaleW;
+          if (typeof obj.scaleH === "number") merged.scaleH = obj.scaleH;
+          if (typeof obj.offsetX === "number") merged.offsetX = obj.offsetX;
+          if (typeof obj.offsetY === "number") merged.offsetY = obj.offsetY;
+          return merged;
+        } catch (e) {
+          console.warn("Could not load stored plot config:", e);
+          return null;
+        }
+      }
+
+      /* =========================================================
+   PLOT DATA
+========================================================= */
+
+      const PLOTS = [
+        {
+          id: "A-101",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5969432, lng: 77.6189989 },
+            { lat: 27.5971, lng: 77.6191911 },
+            { lat: 27.5969967, lng: 77.6193346 },
+            { lat: 27.5968381, lng: 77.6191526 },
+          ],
+        },
+        {
+          id: "A-102",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5969463, lng: 77.6189919 },
+            { lat: 27.5970282, lng: 77.6188802 },
+            { lat: 27.5971914, lng: 77.6190703 },
+            { lat: 27.5971088, lng: 77.6191824 },
+          ],
+        },
+        {
+          id: "A-103",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5972161, lng: 77.6186044 },
+            { lat: 27.5973813, lng: 77.6188081 },
+            { lat: 27.5972866, lng: 77.6189347 },
+            { lat: 27.5971239, lng: 77.6187453 },
+          ],
+        },
+        {
+          id: "A-104",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.597141, lng: 77.6192751 },
+            { lat: 27.5970335, lng: 77.6194202 },
+            { lat: 27.5972051, lng: 77.6196138 },
+            { lat: 27.5973133, lng: 77.6194643 },
+          ],
+        },
+        {
+          id: "A-105",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.597324, lng: 77.6190231 },
+            { lat: 27.5972384, lng: 77.619137 },
+            { lat: 27.5974101, lng: 77.6193321 },
+            { lat: 27.5974933, lng: 77.6192189 },
+          ],
+        },
+        {
+          id: "A-106",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.597419, lng: 77.6188991 },
+            { lat: 27.5975802, lng: 77.6191033 },
+            { lat: 27.5974954, lng: 77.6192171 },
+            { lat: 27.5973278, lng: 77.6190183 },
+          ],
+        },
+        {
+          id: "A-107",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5975118, lng: 77.6187674 },
+            { lat: 27.5976757, lng: 77.6189716 },
+            { lat: 27.5975824, lng: 77.6190985 },
+            { lat: 27.5974201, lng: 77.6188907 },
+          ],
+        },
+        {
+          id: "A-108",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5969815, lng: 77.6187851 },
+            { lat: 27.5968983, lng: 77.6189103 },
+            { lat: 27.5967649, lng: 77.6187598 },
+            { lat: 27.5968545, lng: 77.6186352 },
+          ],
+        },
+        {
+          id: "A-109",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5970288, lng: 77.6183716 },
+            { lat: 27.5971582, lng: 77.6185367 },
+            { lat: 27.5970687, lng: 77.6186596 },
+            { lat: 27.5969405, lng: 77.6184952 },
+          ],
+        },
+        {
+          id: "A-110",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5966208, lng: 77.619866 },
+            { lat: 27.5965248, lng: 77.6200015 },
+            { lat: 27.5963449, lng: 77.6198172 },
+            { lat: 27.5964397, lng: 77.6196829 },
+          ],
+        },
+        {
+          id: "A-111",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5963446, lng: 77.6198226 },
+            { lat: 27.5962516, lng: 77.6199536 },
+            { lat: 27.596435, lng: 77.6201284 },
+            { lat: 27.5965253, lng: 77.6200046 },
+          ],
+        },
+        {
+          id: "A-112",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5963393, lng: 77.6202591 },
+            { lat: 27.5961599, lng: 77.6200827 },
+            { lat: 27.5962531, lng: 77.619957 },
+            { lat: 27.5964367, lng: 77.620132 },
+          ],
+        },
+        {
+          id: "A-113",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5968122, lng: 77.6201437 },
+            { lat: 27.5966334, lng: 77.6203742 },
+            { lat: 27.5964735, lng: 77.6202154 },
+            { lat: 27.596651, lng: 77.6199755 },
+          ],
+        },
+        {
+          id: "A-114",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5961133, lng: 77.6193966 },
+            { lat: 27.5958374, lng: 77.6198111 },
+            { lat: 27.5956684, lng: 77.6196519 },
+            { lat: 27.5959536, lng: 77.6192372 },
+          ],
+        },
+        {
+          id: "A-115",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5958091, lng: 77.6191776 },
+            { lat: 27.5959196, lng: 77.6190158 },
+            { lat: 27.5957105, lng: 77.6187933 },
+            { lat: 27.5956004, lng: 77.6189515 },
+          ],
+        },
+        {
+          id: "A-116",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5955494, lng: 77.6195346 },
+            { lat: 27.5954742, lng: 77.6196606 },
+            { lat: 27.5953271, lng: 77.6195222 },
+            { lat: 27.5954153, lng: 77.6193968 },
+          ],
+        },
+        {
+          id: "A-117",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5953692, lng: 77.6198205 },
+            { lat: 27.5952766, lng: 77.6199504 },
+            { lat: 27.5951071, lng: 77.6198124 },
+            { lat: 27.5952053, lng: 77.6196797 },
+          ],
+        },
+        {
+          id: "A-118",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5957686, lng: 77.6185488 },
+            { lat: 27.5956566, lng: 77.6187238 },
+            { lat: 27.5954674, lng: 77.6185098 },
+            { lat: 27.5955844, lng: 77.6183454 },
+          ],
+        },
+        {
+          id: "A-119",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5955473, lng: 77.6188749 },
+            { lat: 27.595472, lng: 77.6189838 },
+            { lat: 27.5952948, lng: 77.6187699 },
+            { lat: 27.5953625, lng: 77.6186728 },
+          ],
+        },
+        {
+          id: "A-120",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5966036, lng: 77.6180754 },
+            { lat: 27.5965116, lng: 77.6182104 },
+            { lat: 27.5963412, lng: 77.6180053 },
+            { lat: 27.5964383, lng: 77.6178697 },
+          ],
+        },
+        {
+          id: "A-121",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5965972, lng: 77.6174386 },
+            { lat: 27.5961813, lng: 77.6180629 },
+            { lat: 27.595978, lng: 77.6178189 },
+            { lat: 27.5963959, lng: 77.6172035 },
+          ],
+        },
+        {
+          id: "A-122",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5956223, lng: 77.6180745 },
+            { lat: 27.5955246, lng: 77.6179741 },
+            { lat: 27.5956259, lng: 77.6178414 },
+            { lat: 27.595715, lng: 77.6179371 },
+          ],
+        },
+        {
+          id: "A-123",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5959156, lng: 77.6176287 },
+            { lat: 27.5958057, lng: 77.617795 },
+            { lat: 27.5957254, lng: 77.6177093 },
+            { lat: 27.5958434, lng: 77.617551 },
+          ],
+        },
+        {
+          id: "A-124",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5960133, lng: 77.6174824 },
+            { lat: 27.5959226, lng: 77.617624 },
+            { lat: 27.5958474, lng: 77.6175468 },
+            { lat: 27.5959464, lng: 77.6174055 },
+          ],
+        },
+        {
+          id: "A-125",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.596309, lng: 77.6170365 },
+            { lat: 27.5962101, lng: 77.617187 },
+            { lat: 27.5961422, lng: 77.6171209 },
+            { lat: 27.5962448, lng: 77.6169721 },
+          ],
+        },
+        {
+          id: "A-126",
+          size: "Medium",
+          status: "available",
+          path: [
+            { lat: 27.5961904, lng: 77.620333 },
+            { lat: 27.5959719, lng: 77.6206228 },
+            { lat: 27.5958087, lng: 77.620517 },
+            { lat: 27.5960466, lng: 77.6201843 },
+          ],
+        },
+        {
+          id: "A-127",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5961964, lng: 77.6192758 },
+            { lat: 27.5961213, lng: 77.6193967 },
+            { lat: 27.5959486, lng: 77.6192337 },
+            { lat: 27.5960382, lng: 77.6191069 },
+          ],
+        },
+        {
+          id: "A-128",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5958351, lng: 77.619818 },
+            { lat: 27.5955795, lng: 77.6201931 },
+            { lat: 27.5953992, lng: 77.6200433 },
+            { lat: 27.5956704, lng: 77.6196562 },
+          ],
+        },
+        {
+          id: "A-129",
+          size: "Medium",
+          status: "reserved",
+          path: [
+            { lat: 27.5955806, lng: 77.6201965 },
+            { lat: 27.5955219, lng: 77.6202858 },
+            { lat: 27.5954822, lng: 77.6202937 },
+            { lat: 27.5953099, lng: 77.6201745 },
+            { lat: 27.5953973, lng: 77.6200467 },
+          ],
+        },
+        {
+          id: "A-130",
+          size: "Medium",
+          status: "reserved",
+          path: [
+            { lat: 27.5952732, lng: 77.6199545 },
+            { lat: 27.5951897, lng: 77.6200824 },
+            { lat: 27.5951692, lng: 77.6200903 },
+            { lat: 27.5949899, lng: 77.619968 },
+            { lat: 27.5951058, lng: 77.6198158 },
+          ],
+        },
+        {
+          id: "A-131",
+          size: "Medium",
+          status: "reserved",
+          path: [
+            { lat: 27.5954703, lng: 77.6196624 },
+            { lat: 27.595369, lng: 77.6198153 },
+            { lat: 27.5952068, lng: 77.619676 },
+            { lat: 27.5953217, lng: 77.6195189 },
+          ],
+        },
+        {
+          id: "A-132",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5956268, lng: 77.619431 },
+            { lat: 27.5955562, lng: 77.6195324 },
+            { lat: 27.5954173, lng: 77.6193925 },
+            { lat: 27.5955087, lng: 77.6192772 },
+          ],
+        },
+        {
+          id: "A-133",
+          size: "Medium",
+          status: "reserved",
+          path: [
+            { lat: 27.5962245, lng: 77.6190442 },
+            { lat: 27.596143, lng: 77.6189566 },
+            { lat: 27.5960413, lng: 77.6191015 },
+            { lat: 27.5961984, lng: 77.6192717 },
+            { lat: 27.5962365, lng: 77.6192112 },
+          ],
+        },
+        {
+          id: "A-134",
+          size: "Medium",
+          status: "reserved",
+          path: [
+            { lat: 27.5958074, lng: 77.6191812 },
+            { lat: 27.5957364, lng: 77.6192793 },
+            { lat: 27.5957144, lng: 77.61928 },
+            { lat: 27.5955309, lng: 77.6190555 },
+            { lat: 27.5955995, lng: 77.6189557 },
+          ],
+        },
+        {
+          id: "A-135",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5960274, lng: 77.6188415 },
+            { lat: 27.5959187, lng: 77.6190086 },
+            { lat: 27.5957103, lng: 77.6187832 },
+            { lat: 27.5958321, lng: 77.6186144 },
+          ],
+        },
+        {
+          id: "A-136",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5967714, lng: 77.6178207 },
+            { lat: 27.596601, lng: 77.6180659 },
+            { lat: 27.5964322, lng: 77.6178614 },
+            { lat: 27.5966091, lng: 77.6176142 },
+          ],
+        },
+        {
+          id: "A-137",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5968996, lng: 77.6182321 },
+            { lat: 27.5967256, lng: 77.6184939 },
+            { lat: 27.5965646, lng: 77.6182988 },
+            { lat: 27.5967414, lng: 77.6180426 },
+          ],
+        },
+        {
+          id: "A-138",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5964673, lng: 77.6194968 },
+            { lat: 27.5962848, lng: 77.6197485 },
+            { lat: 27.5961563, lng: 77.6196355 },
+            { lat: 27.5963427, lng: 77.6193645 },
+          ],
+        },
+        {
+          id: "A-139",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5971982, lng: 77.6196146 },
+            { lat: 27.5971092, lng: 77.6197333 },
+            { lat: 27.5970862, lng: 77.6197312 },
+            { lat: 27.5969354, lng: 77.6195491 },
+            { lat: 27.5970293, lng: 77.6194207 },
+          ],
+        },
+        {
+          id: "A-140",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5974077, lng: 77.6193332 },
+            { lat: 27.5973144, lng: 77.6194555 },
+            { lat: 27.5971475, lng: 77.6192685 },
+            { lat: 27.5972404, lng: 77.6191454 },
+          ],
+        },
+        {
+          id: "A-141",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5969932, lng: 77.6198988 },
+            { lat: 27.5969134, lng: 77.6200064 },
+            { lat: 27.596749, lng: 77.6198309 },
+            { lat: 27.5968364, lng: 77.6197231 },
+          ],
+        },
+        {
+          id: "A-142",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5969102, lng: 77.6200078 },
+            { lat: 27.5968123, lng: 77.6201378 },
+            { lat: 27.5966508, lng: 77.619969 },
+            { lat: 27.5967453, lng: 77.6198348 },
+          ],
+        },
+        {
+          id: "A-143",
+          size: "Medium",
+          status: "sold",
+          path: [
+            { lat: 27.5966308, lng: 77.620381 },
+            { lat: 27.5965554, lng: 77.6204757 },
+            { lat: 27.5963898, lng: 77.6203163 },
+            { lat: 27.5964724, lng: 77.6202141 },
+          ],
+        },
+      ];
+
+      /* =========================================================
+   LANDMARKS
+========================================================= */
+
+      const LANDMARKS = [
+        {
+          id: "L-1",
+          type: "road",
+          label: "Road",
+          lat: 27.5960647,
+          lng: 77.6189322,
+        },
+        {
+          id: "L-6",
+          type: "road",
+          label: "Road",
+          lat: 27.5968604,
+          lng: 77.6196041,
+        },
+        {
+          id: "L-10",
+          type: "road",
+          label: "Road",
+          lat: 27.596574,
+          lng: 77.6205474,
+        },
+        {
+          id: "L-20",
+          type: "pool",
+          label: "Pool",
+          lat: 27.5960838,
+          lng: 77.6183682,
+        },
+        {
+          id: "L-21",
+          type: "temple",
+          label: "Temple",
+          lat: 27.5959576,
+          lng: 77.6184316,
+        },
+        {
+          id: "L-22",
+          type: "playground",
+          label: "Playground",
+          lat: 27.5959472,
+          lng: 77.6182188,
+        },
+        {
+          id: "L-23",
+          type: "playground",
+          label: "Playground",
+          lat: 27.5963148,
+          lng: 77.6186489,
+        },
+      ];
+
+      const PIN_STYLES = {
+        road: { color: "#607080", emoji: "🛣️", label: "Road" },
+        pool: { color: "#4aa6d9", emoji: "🏊", label: "Pool" },
+        garden: { color: "#31d77d", emoji: "🌳", label: "Garden" },
+        clubhouse: { color: "#c9882e", emoji: "🏛️", label: "Clubhouse" },
+        entrance: { color: "#e7cf42", emoji: "🚪", label: "Entrance" },
+        parking: { color: "#9aa6b2", emoji: "🅿️", label: "Parking" },
+        playground: { color: "#ff8fb1", emoji: "🎠", label: "Playground" },
+        temple: { color: "#e07b39", emoji: "🛕", label: "Temple" },
+        gym: { color: "#c2374a", emoji: "💪", label: "Gym" },
+        school: { color: "#6b7fd9", emoji: "🏫", label: "School" },
+        hospital: { color: "#d94a4a", emoji: "🏥", label: "Hospital" },
+        metro: { color: "#a5c237", emoji: "🚇", label: "Metro" },
+        market: { color: "#d9a24a", emoji: "🛒", label: "Market" },
+        other: { color: "#ffffff", emoji: "📍", label: "Other" },
+      };
+
+      const STATUS_COLORS = {
+        available: "#31d77d",
+        reserved: "#f4c12e",
+        sold: "#e66d64",
+      };
+
+      /* =========================================================
+   STATE
+========================================================= */
+
+      let googleMap = null;
+      let virtualRange = INITIAL_RANGE;
+
+      let projectMarker = null;
+      let plotGroundOverlay = null;
+      let plotOverlayDataUrl = null;
+      let plotOverlayImageSize = null;
+      let plotOverlayBuildToken = 0;
+      const plotPolygons = [];
+      const landmarkMarkers = [];
+      const landmarkLabelOverlays = [];
+
+      let plotVisible = true;
+      let landmarksVisible = true;
+      // Plot polygons stay hidden until a status is selected.
+      let activeStatusFilter = null;
+
+      let activeMode = null;
+      let currentPath = [];
+      let currentShape = null;
+      let currentMarkers = [];
+      let _mapClickListener = null;
+
+      let setupModeActive = false;
+      let setupDragState = null;
+      let _setupDragListeners = [];
+
+      const newPlots = [];
+      const newLandmarks = [];
+
+      let autoRotate = false;
+      let rotationTimer = null;
+      let autoResumeTimer = null;
+      let soundEnabled = false;
+      let musicUserMuted = false;
+      let musicStarted = false;
+
+      /* Mouse shift-drag tilt/rotate state */
+      let shiftDragActive = false;
+      let shiftDragStart = null;
+      let shiftDragLocked = null; // "tilt" | "rotate" | null
+      let _shiftDragListeners = [];
+
+      /* Extra tilt beyond Google's 67.5° clamp — simulated via CSS perspective
+   on the map container so the user can "over-tilt" visually up to 180°
+   in both directions. */
+      let visualTiltExtra = 0; // degrees, range -90 .. +90 beyond Google tilt
+      const MAX_VISUAL_TILT_EXTRA = 90;
+
+      /* =========================================================
+   RANGE / ZOOM
+========================================================= */
+
+      function rangeToZoom(range) {
+        const m = 40075016.686 * Math.cos((LAT * Math.PI) / 180);
+        return Math.max(2, Math.min(22, Math.log2(m / Math.max(1, range))));
+      }
+      function zoomToRange(zoom) {
+        const m = 40075016.686 * Math.cos((LAT * Math.PI) / 180);
+        return m / Math.pow(2, Number(zoom) || 14);
+      }
+
+      /* =========================================================
+   MAP WRAPPER
+========================================================= */
+
+      const map = {
+        getAttribute(name) {
+          if (!googleMap) return null;
+          if (name === "range") return String(virtualRange);
+          if (name === "tilt") return String(googleMap.getTilt() || 0);
+          if (name === "heading") return String(googleMap.getHeading() || 0);
+          if (name === "mode") return "hybrid";
+          return null;
+        },
+        setAttribute(name, value) {
+          if (!googleMap) return;
+          if (name === "range") {
+            let r = Number(value) || INITIAL_RANGE;
+            if (r < MIN_RANGE) r = MIN_RANGE;
+            if (r > MAX_RANGE) r = MAX_RANGE;
+            virtualRange = r;
+            googleMap.setZoom(rangeToZoom(virtualRange));
+            updateZoomLevelUI();
+            return;
+          }
+          if (name === "tilt") {
+            const t = Number(value);
+            googleMap.setTilt(
+              Math.max(0, Math.min(MAX_TILT_EXTENDED, isFinite(t) ? t : 0)),
+            );
+            return;
+          }
+          if (name === "heading") {
+            googleMap.setHeading(normalizeHeading(Number(value) || 0));
+            return;
+          }
+        },
+      };
+
+      /* =========================================================
+   INIT GOOGLE MAP
+========================================================= */
+
+      function initGoogleMap() {
+        if (googleMap) return;
+        if (!window.google || !window.google.maps) {
+          console.error("Google Maps API not available.");
+          return;
+        }
+        const mapElement = document.getElementById("map3d");
+        if (!mapElement) {
+          console.error("Map container #map3d missing.");
+          return;
         }
 
-        function closePopup() {
-          popup.classList.remove("active");
-          document.body.style.overflow = "";
-        }
+        try {
+          googleMap = new google.maps.Map(mapElement, {
+            center: { lat: LAT, lng: LNG },
+            zoom: rangeToZoom(INITIAL_RANGE),
+            minZoom: rangeToZoom(MAX_RANGE),
+            maxZoom: 22,
+            mapTypeId: "hybrid",
+            // Real 3D building geometry is provided by Google only where imagery/coverage supports it.
+            // Vector rendering is required for the tilted 3D map experience.
+            renderingType: google.maps.RenderingType.VECTOR,
+            isFractionalZoomEnabled: true,
+            tilt: INITIAL_TILT,
+            heading: INITIAL_HEADING,
+            gestureHandling: "greedy",
+            disableDefaultUI: true,
+            disableDoubleClickZoom: false,
+            clickableIcons: false,
+            tiltInteractionEnabled: true,
+            headingInteractionEnabled: true,
+            zoomControl: false,
+            panControl: false,
+            rotateControl: false,
+            scaleControl: false,
+            streetViewControl: false,
+            fullscreenControl: false,
+            mapTypeControl: false,
+          });
 
-        openBtns.forEach((btn) => btn.addEventListener("click", openPopup));
-        closeBtn.addEventListener("click", closePopup);
-        popup.addEventListener("click", function (e) {
-          if (e.target === popup) closePopup();
+          googleMap.addListener("zoom_changed", () => {
+            const minZ = rangeToZoom(MAX_RANGE);
+            if (googleMap.getZoom() < minZ) googleMap.setZoom(minZ);
+            virtualRange = zoomToRange(googleMap.getZoom());
+            updateCompass();
+            updateZoomLevelUI();
+          });
+
+          googleMap.addListener("dragstart", () => {
+            pauseAutoRotate();
+          });
+          googleMap.addListener("dragend", () => {
+            scheduleAutoResume();
+          });
+          googleMap.addListener("mousedown", () => {
+            pauseAutoRotate();
+          });
+          googleMap.addListener("touchstart", () => {
+            pauseAutoRotate();
+          });
+
+          google.maps.event.addListenerOnce(googleMap, "idle", () => {
+            apply3DCamera(INITIAL_TILT, INITIAL_HEADING);
+            syncTiltSlider();
+          });
+
+          projectMarker = new google.maps.Marker({
+            map: googleMap,
+            position: { lat: LAT, lng: LNG },
+            title: "Anandam Eleganza Project Location",
+          });
+
+          buildPlotImageOverlay();
+          buildPlotPolygons();
+          buildLandmarkMarkers();
+          updateStatusCounts();
+          updateZoomLevelUI();
+          syncTiltSlider();
+
+          googleMap.addListener("heading_changed", updateCompass);
+          googleMap.addListener("tilt_changed", () => {
+            updateCompass();
+            syncTiltSlider();
+          });
+          googleMap.addListener("idle", updateCompass);
+
+          updateCompass();
+
+          google.maps.event.addListenerOnce(googleMap, "idle", () => {
+            setTimeout(() => {
+              apply3DCamera(INITIAL_TILT, INITIAL_HEADING);
+              startAutoRotate();
+              bindTiltSlider();
+              bindShiftDragTilt();
+              tryStartMusic();
+            }, 600);
+          });
+
+          const status = document.getElementById("cameraStatus");
+          if (status)
+            status.textContent =
+              "MAP READY · VECTOR 3D · Buildings appear where Google coverage supports them";
+        } catch (error) {
+          googleMap = null;
+          console.error("Google Maps init failed:", error);
+          const status = document.getElementById("cameraStatus");
+          if (status)
+            status.textContent = "Map initialization failed — open console.";
+        }
+      }
+
+      window.initGoogleMap = initGoogleMap;
+
+      window.gm_authFailure = function () {
+        const status = document.getElementById("cameraStatus");
+        if (status) status.textContent = "Google Maps authentication failed.";
+        console.error("Google Maps auth failed.");
+      };
+
+      /* =========================================================
+   APPLY 3D CAMERA
+========================================================= */
+
+      function apply3DCamera(tilt, heading) {
+        if (!googleMap) return;
+        const t = Math.max(
+          0,
+          Math.min(MAX_TILT_EXTENDED, Number(tilt) || INITIAL_TILT),
+        );
+        googleMap.setTilt(t);
+        googleMap.setHeading(normalizeHeading(Number(heading) || 0));
+        updateCompass();
+        syncTiltSlider();
+      }
+
+      /* =========================================================
+   TILT SLIDER
+========================================================= */
+
+      let _tiltBinding = false;
+
+      function bindTiltSlider() {
+        if (_tiltBinding) return;
+        const slider = document.getElementById("tiltSlider");
+        if (!slider) return;
+
+        slider.addEventListener("input", function () {
+          if (!googleMap) return;
+          pauseAutoRotate();
+          const t = Number(this.value);
+          googleMap.setTilt(t);
+          const el = document.getElementById("tiltValue");
+          if (el) el.textContent = t + "°";
+          updateTiltSliderFill(t);
         });
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && popup.classList.contains("active"))
-            closePopup();
+        slider.addEventListener("change", function () {
+          scheduleAutoResume();
         });
+        _tiltBinding = true;
+        updateTiltSliderFill(Number(slider.value) || INITIAL_TILT);
+      }
 
-        // ----- toast -----
-        let toastTimer = null;
-        function showToast(message) {
-          toast.textContent = message;
-          toast.classList.add("show");
-          if (toastTimer) clearTimeout(toastTimer);
-          toastTimer = setTimeout(() => {
-            toast.classList.remove("show");
-          }, 5000);
+      function updateTiltSliderFill(val) {
+        const slider = document.getElementById("tiltSlider");
+        if (!slider) return;
+        const pct = Math.max(0, Math.min(100, (val / 67) * 100));
+        slider.style.background = `linear-gradient(90deg, #a5c237 0%, #a5c237 ${pct}%, rgba(255,255,255,.15) ${pct}%, rgba(255,255,255,.15) 100%)`;
+      }
+
+      function syncTiltSlider() {
+        if (!googleMap) return;
+        const slider = document.getElementById("tiltSlider");
+        const label = document.getElementById("tiltValue");
+        const t = Math.round(googleMap.getTilt() || 0);
+        if (slider && document.activeElement !== slider) {
+          slider.value = t;
+          updateTiltSliderFill(t);
         }
+        if (label) label.textContent = t + "°";
+      }
 
-        // ----- form submit : send all data to your email via FormSubmit -----
-        form.addEventListener("submit", async function (e) {
+      /* =========================================================
+   ⭐ SHIFT + DRAG MOUSE TILT & ROTATE (desktop)
+   — Hold Shift and drag anywhere on the map:
+     • Horizontal drag  → rotate heading (360°)
+     • Vertical drag    → tilt up / down (Google clamps at 67.5°;
+                          we add extra CSS perspective to simulate
+                          a full 180° swing in both directions)
+========================================================= */
+
+      function bindShiftDragTilt() {
+        if (!googleMap || _shiftDragListeners.length) return;
+
+        const container = document.getElementById("map3d");
+
+        // Key state trackers
+        const onKeyDown = (e) => {
+          if (e.key === "Shift" && !shiftDragActive) {
+            container.style.cursor = "grab";
+            fadeTiltHint(false);
+          }
+        };
+        const onKeyUp = (e) => {
+          if (e.key === "Shift") {
+            container.style.cursor = "";
+            if (!shiftDragActive) fadeTiltHint(true);
+          }
+        };
+        document.addEventListener("keydown", onKeyDown);
+        document.addEventListener("keyup", onKeyUp);
+
+        // Mouse down on map — arm shift drag
+        const onMouseDown = (e) => {
+          if (!e.shiftKey) return;
+          if (setupModeActive || activeMode) return;
+          if (
+            e.target.closest &&
+            e.target.closest(
+              ".left-sidebar, .right-stack, .draw-panel, .setup-panel, .top-bar, .app-nav, .drawer, .zoom-controls-mobile",
+            )
+          )
+            return;
+
+          e.preventDefault();
+          e.stopPropagation();
+
+          shiftDragActive = true;
+          shiftDragLocked = null;
+          shiftDragStart = {
+            x: e.clientX,
+            y: e.clientY,
+            heading: googleMap.getHeading() || 0,
+            tilt: googleMap.getTilt() || 0,
+            visualExtra: visualTiltExtra,
+          };
+          pauseAutoRotate();
+          container.style.cursor = "grabbing";
+          document.body.style.userSelect = "none";
+        };
+
+        const onMouseMove = (e) => {
+          if (!shiftDragActive || !shiftDragStart) return;
           e.preventDefault();
 
-          const fullName = document.getElementById("fullName").value.trim();
-          const applyingFor = document.getElementById("applyingFor").value;
-          const experience = document.getElementById("experience").value.trim();
-          const place = document.getElementById("place").value.trim();
-          const cvLink = document.getElementById("cvLink").value.trim();
+          const dx = e.clientX - shiftDragStart.x;
+          const dy = e.clientY - shiftDragStart.y;
 
-          if (!fullName || !applyingFor || !experience || !place || !cvLink) {
-            showToast("⚠️ Please fill all fields before submitting.");
+          // Lock direction on first significant movement
+          if (!shiftDragLocked) {
+            if (Math.abs(dx) > 4 || Math.abs(dy) > 4) {
+              shiftDragLocked = Math.abs(dx) > Math.abs(dy) ? "rotate" : "tilt";
+            } else {
+              return;
+            }
+          }
+
+          if (shiftDragLocked === "rotate") {
+            // Horizontal drag → heading
+            const newHeading = normalizeHeading(
+              shiftDragStart.heading - dx * 0.4,
+            );
+            googleMap.setHeading(newHeading);
+            updateCompass();
+          } else {
+            // Vertical drag → tilt (real tilt + visual CSS extra)
+            const deltaTilt = -dy * 0.4; // drag up = tilt up
+            let newTilt = shiftDragStart.tilt + deltaTilt;
+
+            if (newTilt > MAX_TILT_EXTENDED) {
+              // Beyond Google's clamp — add visual CSS perspective
+              const extra = newTilt - MAX_TILT_EXTENDED;
+              visualTiltExtra = Math.min(MAX_VISUAL_TILT_EXTRA, extra);
+              newTilt = MAX_TILT_EXTENDED;
+            } else if (newTilt < 0) {
+              const extra = newTilt; // negative
+              visualTiltExtra = Math.max(-MAX_VISUAL_TILT_EXTRA, extra);
+              newTilt = 0;
+            } else {
+              visualTiltExtra = shiftDragStart.visualExtra * 0.4;
+            }
+
+            googleMap.setTilt(newTilt);
+            applyVisualTilt(visualTiltExtra);
+            syncTiltSlider();
+
+            // Reflect extended value in status
+            const total = Math.round(newTilt + visualTiltExtra);
+            const s = document.getElementById("cameraStatus");
+            if (s)
+              s.textContent = `Tilt ${total > 0 ? "+" : ""}${total}° (extended)`;
+          }
+        };
+
+        const onMouseUp = () => {
+          if (!shiftDragActive) return;
+          shiftDragActive = false;
+          shiftDragLocked = null;
+          shiftDragStart = null;
+          container.style.cursor = "";
+          document.body.style.userSelect = "";
+          scheduleAutoResume();
+        };
+
+        // Attach — mousedown on container so it fires before map's own handler
+        container.addEventListener("mousedown", onMouseDown, true);
+        document.addEventListener("mousemove", onMouseMove, true);
+        document.addEventListener("mouseup", onMouseUp, true);
+
+        // Block map from receiving shift-drag events
+        googleMap.addListener("dragstart", (e) => {
+          if (shiftDragActive) {
+            // Cancel: can't easily, so we rely on preventDefault above
+          }
+        });
+
+        _shiftDragListeners = [
+          { el: document, type: "keydown", fn: onKeyDown },
+          { el: document, type: "keyup", fn: onKeyUp },
+          { el: container, type: "mousedown", fn: onMouseDown, capture: true },
+          { el: document, type: "mousemove", fn: onMouseMove, capture: true },
+          { el: document, type: "mouseup", fn: onMouseUp, capture: true },
+        ];
+      }
+
+      function applyVisualTilt(extraDeg) {
+        const container = document.getElementById("map3d");
+        if (!container) return;
+        if (Math.abs(extraDeg) < 0.5) {
+          container.style.transform = "";
+          container.style.perspective = "";
+          return;
+        }
+        // Slight perspective + rotateX on the map container for a "look beyond"
+        // tilt feel. Kept subtle so map tiles don't warp badly.
+        const clamped = Math.max(
+          -MAX_VISUAL_TILT_EXTRA,
+          Math.min(MAX_VISUAL_TILT_EXTRA, extraDeg),
+        );
+        container.style.perspective = "1400px";
+        container.style.transformOrigin = "center 60%";
+        container.style.transform = `perspective(1400px) rotateX(${clamped * 0.5}deg)`;
+      }
+
+      function fadeTiltHint(fade) {
+        const h = document.getElementById("tiltHint");
+        if (!h) return;
+        if (fade) h.classList.add("fade");
+        else h.classList.remove("fade");
+      }
+
+      /* =========================================================
+   COMPUTE EFFECTIVE BOUNDS
+========================================================= */
+
+      function computeEffectiveBounds() {
+        const b = PLOT_CONFIG.imageBounds;
+        const cx = (b.north + b.south) / 2;
+        const cy = (b.east + b.west) / 2;
+
+        const halfLat = ((b.north - b.south) / 2) * (PLOT_CONFIG.scaleH || 1);
+        const halfLng = ((b.east - b.west) / 2) * (PLOT_CONFIG.scaleW || 1);
+
+        const oy = PLOT_CONFIG.offsetY || 0;
+        const ox = PLOT_CONFIG.offsetX || 0;
+
+        return {
+          north: cx + halfLat + oy,
+          south: cx - halfLat + oy,
+          east: cy + halfLng + ox,
+          west: cy - halfLng + ox,
+        };
+      }
+
+      /* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+      function getRotatedOverlayGeometry(imageWidth, imageHeight) {
+        const b = computeEffectiveBounds();
+        const centerLat = (b.north + b.south) / 2;
+        const centerLng = (b.east + b.west) / 2;
+
+        // Convert the unrotated geographic bounds to approximate ground metres.
+        // This avoids stretching the rotated image into the old, unrotated rectangle.
+        const metersPerDegreeLat = 111320;
+        const metersPerDegreeLng =
+          111320 * Math.max(0.01, Math.cos((centerLat * Math.PI) / 180));
+        const widthM = Math.abs(b.east - b.west) * metersPerDegreeLng;
+        const heightM = Math.abs(b.north - b.south) * metersPerDegreeLat;
+        const angle =
+          (((Number(PLOT_CONFIG.rotation) || 0) % 360) * Math.PI) / 180;
+        const c = Math.abs(Math.cos(angle));
+        const sn = Math.abs(Math.sin(angle));
+        const rotatedWidthM = widthM * c + heightM * sn;
+        const rotatedHeightM = widthM * sn + heightM * c;
+
+        return {
+          bounds: {
+            north: centerLat + rotatedHeightM / metersPerDegreeLat / 2,
+            south: centerLat - rotatedHeightM / metersPerDegreeLat / 2,
+            east: centerLng + rotatedWidthM / metersPerDegreeLng / 2,
+            west: centerLng - rotatedWidthM / metersPerDegreeLng / 2,
+          },
+          widthM,
+          heightM,
+          rotatedWidthM,
+          rotatedHeightM,
+          angle,
+          imageWidth: imageWidth || 1,
+          imageHeight: imageHeight || 1,
+        };
+      }
+
+      function buildPlotImageOverlay() {
+        const buildToken = ++plotOverlayBuildToken;
+        if (!googleMap) return;
+
+        if (plotGroundOverlay) {
+          plotGroundOverlay.setMap(null);
+          plotGroundOverlay = null;
+        }
+
+        const url = PLOT_CONFIG.imageUrl;
+        const opacity = Number(PLOT_CONFIG.opacity);
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+
+        img.onload = () => {
+          // Ignore stale image loads after a newer rotation/scale request.
+          if (buildToken !== plotOverlayBuildToken) return;
+          const geometry = getRotatedOverlayGeometry(
+            img.naturalWidth,
+            img.naturalHeight,
+          );
+
+          // Use the same pixel-per-metre ratio for both axes. The canvas aspect
+          // ratio therefore matches the rotated geographic footprint exactly.
+          const pixelsPerMetre = Math.max(
+            img.naturalWidth / Math.max(1, geometry.widthM),
+            img.naturalHeight / Math.max(1, geometry.heightM),
+            1,
+          );
+          const canvas = document.createElement("canvas");
+          canvas.width = Math.max(
+            1,
+            Math.ceil(geometry.rotatedWidthM * pixelsPerMetre),
+          );
+          canvas.height = Math.max(
+            1,
+            Math.ceil(geometry.rotatedHeightM * pixelsPerMetre),
+          );
+
+          const ctx = canvas.getContext("2d");
+          if (!ctx) {
+            console.error("[Overlay] Could not create 2D canvas context.");
             return;
           }
 
-          const submitBtn = form.querySelector(".submit-btn");
-          const originalHTML = submitBtn.innerHTML;
-          submitBtn.innerHTML =
-            '<i class="fas fa-spinner fa-spin"></i> Sending...';
-          submitBtn.disabled = true;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.translate(canvas.width / 2, canvas.height / 2);
+          ctx.rotate(geometry.angle);
 
-          try {
-            const formData = new FormData();
-            formData.append("_subject", "New Job Application - Kirti Realty");
-            formData.append("_captcha", "false");
-            formData.append("Full Name", fullName);
-            formData.append("Applying For", applyingFor);
-            formData.append("Experience (years)", experience);
-            formData.append("Place / City", place);
-            formData.append("CV / Resume Link", cvLink);
+          const sourceDrawWidth = geometry.widthM * pixelsPerMetre;
+          const sourceDrawHeight = geometry.heightM * pixelsPerMetre;
+          ctx.drawImage(
+            img,
+            -sourceDrawWidth / 2,
+            -sourceDrawHeight / 2,
+            sourceDrawWidth,
+            sourceDrawHeight,
+          );
 
-            const response = await fetch(
-              "https://formsubmit.co/ajax/deviyani097@gmail.com",
-              {
-                method: "POST",
-                headers: { Accept: "application/json" },
-                body: formData,
-              },
-            );
+          plotOverlayDataUrl = canvas.toDataURL("image/png");
+          plotOverlayImageSize = { width: canvas.width, height: canvas.height };
 
-            const result = await response.json();
+          plotGroundOverlay = new google.maps.GroundOverlay(
+            plotOverlayDataUrl,
+            geometry.bounds,
+            { map: plotVisible ? googleMap : null, opacity, clickable: false },
+          );
+        };
 
-            if (response.ok) {
-              showToast(
-                "✨ Application sent! Our team will connect within 24h ✨",
-              );
-              form.reset();
-              setTimeout(closePopup, 1800);
-            } else {
-              throw new Error(result.message || "Server error");
-            }
-          } catch (error) {
-            console.error("Submission error:", error);
-            showToast(
-              "❌ Submission failed. Please try again or email us directly.",
-            );
-          } finally {
-            submitBtn.innerHTML = originalHTML;
-            submitBtn.disabled = false;
-          }
-        });
+        img.onerror = () => {
+          if (buildToken === plotOverlayBuildToken)
+            console.error("[Overlay] Image load failed:", url);
+        };
+        img.src = url;
+      }
 
-        // ----- scroll reveal -----
-        const reveals = document.querySelectorAll(".reveal");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-              }
-            });
-          },
-          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+      function refreshOverlayBoundsOnly() {
+        if (!googleMap || !plotOverlayDataUrl || !plotOverlayImageSize) {
+          buildPlotImageOverlay();
+          return;
+        }
+
+        const geometry = getRotatedOverlayGeometry(
+          plotOverlayImageSize.width,
+          plotOverlayImageSize.height,
         );
-        reveals.forEach((el) => observer.observe(el));
-      })();
+
+        if (plotGroundOverlay) plotGroundOverlay.setMap(null);
+        plotGroundOverlay = new google.maps.GroundOverlay(
+          plotOverlayDataUrl,
+          geometry.bounds,
+          {
+            map: plotVisible ? googleMap : null,
+            opacity: Number(PLOT_CONFIG.opacity),
+            clickable: false,
+          },
+        );
+      }
+
+      /* =========================================================
+   GOOGLE POLYGONS
+========================================================= */
+
+      function filterMatches(plot) {
+        const sizeFilter = document.getElementById("filterText").textContent;
+        const sizeMatches =
+          sizeFilter === "All sizes" || plot.size === sizeFilter;
+        // Show only the selected status; no selection means no individual plot polygons.
+        const statusMatches =
+          activeStatusFilter !== null && plot.status === activeStatusFilter;
+        return sizeMatches && statusMatches;
+      }
+
+      function toggleStatusFilter(status) {
+        activeStatusFilter = activeStatusFilter === status ? null : status;
+        document
+          .querySelectorAll(".status-pill[data-status]")
+          .forEach((pill) => {
+            const selected = pill.dataset.status === activeStatusFilter;
+            pill.classList.toggle("active", selected);
+            pill.setAttribute("aria-pressed", selected ? "true" : "false");
+          });
+        buildPlotPolygons();
+        const statusLabel = activeStatusFilter
+          ? activeStatusFilter.toUpperCase()
+          : "HIDDEN";
+        const cameraStatus = document.getElementById("cameraStatus");
+        if (cameraStatus)
+          cameraStatus.textContent = activeStatusFilter
+            ? `${statusLabel} PLOTS · Select a plot for details`
+            : "PLOT STATUS FILTER CLEARED · Select Available, Reserved, or Sold to show plots";
+      }
+
+      function buildPlotPolygons() {
+        if (!googleMap) return;
+        plotPolygons.forEach((p) => p.setMap(null));
+        plotPolygons.length = 0;
+
+        PLOTS.forEach((plot) => {
+          const color = STATUS_COLORS[plot.status] || "#888";
+          const poly = new google.maps.Polygon({
+            paths: plot.path,
+            strokeColor: color,
+            strokeOpacity: 1,
+            strokeWeight: 2.5,
+            fillColor: color,
+            fillOpacity: 0.45,
+            map: filterMatches(plot) && plotVisible ? googleMap : null,
+            zIndex: 50,
+          });
+
+          poly.addListener("mouseover", () => {
+            poly.setOptions({ fillOpacity: 0.75, strokeWeight: 4 });
+            const s = document.getElementById("cameraStatus");
+            if (s)
+              s.textContent = `${plot.id} · ${plot.size} · ${plot.status.toUpperCase()}`;
+          });
+          poly.addListener("mouseout", () => {
+            poly.setOptions({ fillOpacity: 0.45, strokeWeight: 2.5 });
+            const s = document.getElementById("cameraStatus");
+            if (s)
+              s.textContent = autoRotate
+                ? "RESIDENTIAL VIEW · Add your plot data using Draw Plot"
+                : "RESIDENTIAL VIEW · Ready for new plot data";
+          });
+          poly.addListener("click", () => {
+            pauseAutoRotate();
+            googleMap.panTo(plot.path[0]);
+            const s = document.getElementById("cameraStatus");
+            if (s)
+              s.textContent = `SELECTED · ${plot.id} · ${plot.size} · ${plot.status.toUpperCase()}`;
+            scheduleAutoResume();
+          });
+
+          plotPolygons.push(poly);
+        });
+      }
+
+      /* =========================================================
+   LANDMARK MARKERS
+========================================================= */
+
+      function buildLandmarkMarkers() {
+        if (!googleMap) return;
+
+        // Clear previous pins and any legacy text overlays.
+        landmarkMarkers.forEach((marker) => marker.setMap(null));
+        landmarkMarkers.length = 0;
+        landmarkLabelOverlays.forEach((label) => label.setMap(null));
+        landmarkLabelOverlays.length = 0;
+
+        if (!landmarksVisible) return;
+
+        // Minimal, stylish location dots: no map text labels, just compact colored points.
+        LANDMARKS.forEach((lm) => {
+          const style = PIN_STYLES[lm.type] || PIN_STYLES.other;
+          const position = { lat: Number(lm.lat), lng: Number(lm.lng) };
+          const marker = new google.maps.Marker({
+            map: googleMap,
+            position,
+            title: lm.label || style.label, // Name appears only on hover, not on the map.
+            optimized: true,
+            icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              scale: 4,
+              fillColor: style.color,
+              fillOpacity: 1,
+              strokeColor: "#ffffff",
+              strokeOpacity: 0.95,
+              strokeWeight: 1.4,
+              anchor: new google.maps.Point(0, 0),
+            },
+            zIndex: 8000,
+          });
+          landmarkMarkers.push(marker);
+        });
+      }
+
+      function updateStatusCounts() {
+        const counts = { available: 0, reserved: 0, sold: 0 };
+        PLOTS.forEach((p) => {
+          counts[p.status] = (counts[p.status] || 0) + 1;
+        });
+        const a = document.getElementById("countAvailable");
+        const r = document.getElementById("countReserved");
+        const s = document.getElementById("countSold");
+        if (a) a.textContent = counts.available;
+        if (r) r.textContent = counts.reserved;
+        if (s) s.textContent = counts.sold;
+      }
+
+      /* =========================================================
+   TOGGLE OVERLAYS
+========================================================= */
+
+      function togglePlotOverlay() {
+        plotVisible = !plotVisible;
+        const btn = document.getElementById("plotBtn");
+        if (btn) btn.classList.toggle("active", plotVisible);
+        const nav = document.getElementById("navPlotBtn");
+        if (nav) nav.classList.toggle("active", plotVisible);
+        const btn2 = document.getElementById("plotBtn2");
+        if (btn2) btn2.classList.toggle("active", plotVisible);
+        if (plotGroundOverlay) {
+          plotGroundOverlay.setMap(plotVisible ? googleMap : null);
+        }
+        buildPlotPolygons();
+        pauseAutoRotate();
+        scheduleAutoResume();
+      }
+
+      function toggleLandmarks() {
+        landmarksVisible = !landmarksVisible;
+        const b = document.getElementById("landmarkBtn");
+        if (b) b.classList.toggle("active", landmarksVisible);
+        buildLandmarkMarkers();
+      }
+
+      /* =========================================================
+   RESIDENTIAL IMAGE SETUP MODE
+========================================================= */
+
+      function toggleSetupMode() {
+        if (setupModeActive) {
+          closeSetup();
+          return;
+        }
+        openSetup();
+      }
+
+      function openSetup() {
+        closePanels();
+        setupModeActive = true;
+        document.getElementById("setupPanel").classList.add("show");
+        const sb = document.getElementById("setupBtn");
+        if (sb) sb.classList.add("active");
+
+        document.getElementById("setupRotation").value = PLOT_CONFIG.rotation;
+        document.getElementById("setupOpacity").value = PLOT_CONFIG.opacity;
+        document.getElementById("setupWidth").value = PLOT_CONFIG.scaleW;
+        document.getElementById("setupHeight").value = PLOT_CONFIG.scaleH;
+        document.getElementById("setupOffsetX").value = PLOT_CONFIG.offsetX;
+        document.getElementById("setupOffsetY").value = PLOT_CONFIG.offsetY;
+        updateSetupLabels();
+
+        if (!plotVisible) {
+          plotVisible = true;
+          const b1 = document.getElementById("plotBtn");
+          if (b1) b1.classList.add("active");
+          const b2 = document.getElementById("plotBtn2");
+          if (b2) b2.classList.add("active");
+          if (plotGroundOverlay) plotGroundOverlay.setMap(googleMap);
+          buildPlotPolygons();
+        }
+
+        pauseAutoRotate();
+        bindSetupUI();
+        bindSetupDrag();
+
+        updateSetupInfo();
+        const s = document.getElementById("cameraStatus");
+        if (s) s.textContent = "🛠️ SETUP MODE · Drag map to move plot image";
+      }
+
+      function closeSetup() {
+        setupModeActive = false;
+        document.getElementById("setupPanel").classList.remove("show");
+        const sb = document.getElementById("setupBtn");
+        if (sb) sb.classList.remove("active");
+        unbindSetupDrag();
+        scheduleAutoResume();
+      }
+
+      function bindSetupUI() {
+        if (bindSetupUI._done) return;
+        bindSetupUI._done = true;
+
+        const rot = document.getElementById("setupRotation");
+        const opa = document.getElementById("setupOpacity");
+        const w = document.getElementById("setupWidth");
+        const h = document.getElementById("setupHeight");
+        const ox = document.getElementById("setupOffsetX");
+        const oy = document.getElementById("setupOffsetY");
+
+        rot.addEventListener("input", () => {
+          PLOT_CONFIG.rotation = Number(rot.value);
+          updateSetupLabels();
+          buildPlotImageOverlay();
+          updateSetupInfo();
+        });
+        opa.addEventListener("input", () => {
+          PLOT_CONFIG.opacity = Number(opa.value);
+          updateSetupLabels();
+          if (plotGroundOverlay)
+            plotGroundOverlay.setOptions({ opacity: PLOT_CONFIG.opacity });
+          updateSetupInfo();
+        });
+        w.addEventListener("input", () => {
+          PLOT_CONFIG.scaleW = Number(w.value);
+          updateSetupLabels();
+          buildPlotImageOverlay();
+          updateSetupInfo();
+        });
+        h.addEventListener("input", () => {
+          PLOT_CONFIG.scaleH = Number(h.value);
+          updateSetupLabels();
+          buildPlotImageOverlay();
+          updateSetupInfo();
+        });
+        ox.addEventListener("input", () => {
+          PLOT_CONFIG.offsetX = Number(ox.value);
+          updateSetupLabels();
+          refreshOverlayBoundsOnly();
+          updateSetupInfo();
+        });
+        oy.addEventListener("input", () => {
+          PLOT_CONFIG.offsetY = Number(oy.value);
+          updateSetupLabels();
+          refreshOverlayBoundsOnly();
+          updateSetupInfo();
+        });
+      }
+
+      function updateSetupLabels() {
+        document.getElementById("setupRotVal").textContent =
+          PLOT_CONFIG.rotation + "°";
+        document.getElementById("setupOpaVal").textContent = Number(
+          PLOT_CONFIG.opacity,
+        ).toFixed(2);
+        document.getElementById("setupWVal").textContent =
+          Number(PLOT_CONFIG.scaleW).toFixed(3) + "×";
+        document.getElementById("setupHVal").textContent =
+          Number(PLOT_CONFIG.scaleH).toFixed(3) + "×";
+        document.getElementById("setupXVal").textContent = Number(
+          PLOT_CONFIG.offsetX,
+        ).toFixed(5);
+        document.getElementById("setupYVal").textContent = Number(
+          PLOT_CONFIG.offsetY,
+        ).toFixed(5);
+      }
+
+      function updateSetupInfo() {
+        const el = document.getElementById("setupInfo");
+        if (!el) return;
+        const b = computeEffectiveBounds();
+        el.textContent =
+          "Live config (current view):\n" +
+          `rotation: ${PLOT_CONFIG.rotation}\n` +
+          `opacity:  ${Number(PLOT_CONFIG.opacity).toFixed(2)}\n` +
+          `scaleW:   ${Number(PLOT_CONFIG.scaleW).toFixed(3)}\n` +
+          `scaleH:   ${Number(PLOT_CONFIG.scaleH).toFixed(3)}\n` +
+          `offsetX:  ${Number(PLOT_CONFIG.offsetX).toFixed(5)}\n` +
+          `offsetY:  ${Number(PLOT_CONFIG.offsetY).toFixed(5)}\n\n` +
+          "Effective bounds:\n" +
+          `N ${b.north.toFixed(7)}  S ${b.south.toFixed(7)}\n` +
+          `E ${b.east.toFixed(7)}   W ${b.west.toFixed(7)}`;
+      }
+
+      function bindSetupDrag() {
+        if (!googleMap || _setupDragListeners.length) return;
+        const s = googleMap.addListener("mousedown", (e) => {
+          if (!setupModeActive) return;
+          setupDragState = {
+            startLat: e.latLng.lat(),
+            startLng: e.latLng.lng(),
+            startOffsetX: PLOT_CONFIG.offsetX,
+            startOffsetY: PLOT_CONFIG.offsetY,
+          };
+        });
+        const d = googleMap.addListener("drag", (e) => {
+          if (!setupModeActive || !setupDragState) return;
+          const dLat = e.latLng.lat() - setupDragState.startLat;
+          const dLng = e.latLng.lng() - setupDragState.startLng;
+          PLOT_CONFIG.offsetY = setupDragState.startOffsetY + dLat;
+          PLOT_CONFIG.offsetX = setupDragState.startOffsetX + dLng;
+          const ox = document.getElementById("setupOffsetX");
+          const oy = document.getElementById("setupOffsetY");
+          if (ox) ox.value = PLOT_CONFIG.offsetX;
+          if (oy) oy.value = PLOT_CONFIG.offsetY;
+          updateSetupLabels();
+          refreshOverlayBoundsOnly();
+          updateSetupInfo();
+        });
+        const u = googleMap.addListener("mouseup", () => {
+          setupDragState = null;
+        });
+        const t = googleMap.addListener("touchstart", (e) => {
+          if (!setupModeActive || !e.latLng) return;
+          setupDragState = {
+            startLat: e.latLng.lat(),
+            startLng: e.latLng.lng(),
+            startOffsetX: PLOT_CONFIG.offsetX,
+            startOffsetY: PLOT_CONFIG.offsetY,
+          };
+        });
+        const t2 = googleMap.addListener("touchmove", (e) => {
+          if (!setupModeActive || !setupDragState || !e.latLng) return;
+          const dLat = e.latLng.lat() - setupDragState.startLat;
+          const dLng = e.latLng.lng() - setupDragState.startLng;
+          PLOT_CONFIG.offsetY = setupDragState.startOffsetY + dLat;
+          PLOT_CONFIG.offsetX = setupDragState.startOffsetX + dLng;
+          const ox = document.getElementById("setupOffsetX");
+          const oy = document.getElementById("setupOffsetY");
+          if (ox) ox.value = PLOT_CONFIG.offsetX;
+          if (oy) oy.value = PLOT_CONFIG.offsetY;
+          updateSetupLabels();
+          refreshOverlayBoundsOnly();
+          updateSetupInfo();
+        });
+        const t3 = googleMap.addListener("touchend", () => {
+          setupDragState = null;
+        });
+        _setupDragListeners = [s, d, u, t, t2, t3];
+      }
+      function unbindSetupDrag() {
+        _setupDragListeners.forEach((l) => {
+          try {
+            google.maps.event.removeListener(l);
+          } catch (_) {}
+        });
+        _setupDragListeners = [];
+        setupDragState = null;
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (!setupModeActive) return;
+        const tag = (e.target.tagName || "").toUpperCase();
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+
+        const step = e.shiftKey ? 0.001 : 0.0001;
+        let handled = true;
+        switch (e.key) {
+          case "ArrowUp":
+            PLOT_CONFIG.offsetY += step;
+            break;
+          case "ArrowDown":
+            PLOT_CONFIG.offsetY -= step;
+            break;
+          case "ArrowLeft":
+            PLOT_CONFIG.offsetX -= step;
+            break;
+          case "ArrowRight":
+            PLOT_CONFIG.offsetX += step;
+            break;
+          case "[":
+            PLOT_CONFIG.rotation = (PLOT_CONFIG.rotation - 1 + 360) % 360;
+            buildPlotImageOverlay();
+            break;
+          case "]":
+            PLOT_CONFIG.rotation = (PLOT_CONFIG.rotation + 1) % 360;
+            buildPlotImageOverlay();
+            break;
+          case "-":
+            PLOT_CONFIG.scaleW = Math.max(0.3, PLOT_CONFIG.scaleW - 0.01);
+            PLOT_CONFIG.scaleH = Math.max(0.3, PLOT_CONFIG.scaleH - 0.01);
+            buildPlotImageOverlay();
+            break;
+          case "+":
+          case "=":
+            PLOT_CONFIG.scaleW = Math.min(3, PLOT_CONFIG.scaleW + 0.01);
+            PLOT_CONFIG.scaleH = Math.min(3, PLOT_CONFIG.scaleH + 0.01);
+            buildPlotImageOverlay();
+            break;
+          case "Escape":
+            closeSetup();
+            handled = false;
+            break;
+          default:
+            handled = false;
+        }
+        if (handled) {
+          e.preventDefault();
+          syncSetupSlidersFromConfig();
+          updateSetupLabels();
+          updateSetupInfo();
+          if (e.key === "[" || e.key === "]") {
+          } else if (
+            e.key === "ArrowUp" ||
+            e.key === "ArrowDown" ||
+            e.key === "ArrowLeft" ||
+            e.key === "ArrowRight"
+          ) {
+            refreshOverlayBoundsOnly();
+          }
+        }
+      });
+
+      function syncSetupSlidersFromConfig() {
+        const rot = document.getElementById("setupRotation");
+        const opa = document.getElementById("setupOpacity");
+        const w = document.getElementById("setupWidth");
+        const h = document.getElementById("setupHeight");
+        const ox = document.getElementById("setupOffsetX");
+        const oy = document.getElementById("setupOffsetY");
+        if (rot) rot.value = PLOT_CONFIG.rotation;
+        if (opa) opa.value = PLOT_CONFIG.opacity;
+        if (w) w.value = PLOT_CONFIG.scaleW;
+        if (h) h.value = PLOT_CONFIG.scaleH;
+        if (ox) ox.value = PLOT_CONFIG.offsetX;
+        if (oy) oy.value = PLOT_CONFIG.offsetY;
+      }
+
+      function saveSetup() {
+        try {
+          localStorage.setItem(PLOT_CONFIG_KEY, JSON.stringify(PLOT_CONFIG));
+          const el = document.getElementById("setupInfo");
+          if (el)
+            el.textContent =
+              "✅ Saved to this browser's localStorage.\n\n" + el.textContent;
+          const s = document.getElementById("cameraStatus");
+          if (s) s.textContent = "✅ Plot image setup saved";
+        } catch (e) {
+          alert("Could not save: " + e.message);
+        }
+      }
+
+      function resetSetupToDefault() {
+        if (!confirm("Reset plot image settings to default?")) return;
+        PLOT_CONFIG = JSON.parse(JSON.stringify(PLOT_CONFIG_DEFAULT));
+        syncSetupSlidersFromConfig();
+        updateSetupLabels();
+        buildPlotImageOverlay();
+        updateSetupInfo();
+        const s = document.getElementById("cameraStatus");
+        if (s)
+          s.textContent = "↺ Reset to default (not saved yet — click Save)";
+      }
+
+      function copySetupConfig() {
+        const out = `const PLOT_CONFIG = {
+    imageUrl: "${PLOT_CONFIG.imageUrl}",
+    imageBounds: {
+        north: ${PLOT_CONFIG.imageBounds.north},
+        south: ${PLOT_CONFIG.imageBounds.south},
+        east:  ${PLOT_CONFIG.imageBounds.east},
+        west:  ${PLOT_CONFIG.imageBounds.west}
+    },
+    opacity:  ${Number(PLOT_CONFIG.opacity).toFixed(2)},
+    rotation: ${PLOT_CONFIG.rotation},
+    scaleW:   ${Number(PLOT_CONFIG.scaleW).toFixed(3)},
+    scaleH:   ${Number(PLOT_CONFIG.scaleH).toFixed(3)},
+    offsetX:  ${Number(PLOT_CONFIG.offsetX).toFixed(5)},
+    offsetY:  ${Number(PLOT_CONFIG.offsetY).toFixed(5)}
+};`;
+        console.log(out);
+        if (navigator.clipboard) {
+          navigator.clipboard
+            .writeText(out)
+            .then(() => alert("Config copied! Also in browser console (F12)."))
+            .catch(() => alert("Printed to browser console (F12)."));
+        } else {
+          alert("Printed to browser console (F12).");
+        }
+      }
+
+      /* =========================================================
+   DRAW MODE + PIN MODE
+========================================================= */
+
+      function toggleDrawMode() {
+        if (activeMode === "draw") {
+          closePanels();
+          return;
+        }
+        closePanels();
+        closeSetup();
+        activeMode = "draw";
+        document.getElementById("drawPanel").classList.add("show");
+        document.getElementById("drawHint").classList.add("show");
+        document.getElementById("drawHint").textContent =
+          "DRAW MODE · Click corners · Finish Plot when done";
+        const db = document.getElementById("drawBtn");
+        if (db) db.classList.add("active");
+        document.getElementById("panelTitle").textContent = "✏️ DRAW PLOT MODE";
+        document.getElementById("labelId").textContent = "Plot ID";
+        document.getElementById("drawId").value = "A-101";
+        document.getElementById("sizeRow").style.display = "";
+        document.getElementById("statusRow").style.display = "";
+        document.getElementById("pinTypeRow").style.display = "none";
+        document.getElementById("finishBtn").textContent = "✓ Finish Plot";
+        pauseAutoRotate();
+        attachMapClick();
+        updateDrawInfo();
+      }
+
+      function togglePinMode() {
+        if (activeMode === "pin") {
+          closePanels();
+          return;
+        }
+        closePanels();
+        closeSetup();
+        activeMode = "pin";
+        document.getElementById("drawPanel").classList.add("show");
+        document.getElementById("drawHint").classList.add("show");
+        document.getElementById("drawHint").textContent =
+          "PIN MODE · Click on the map to drop a landmark";
+        const pb = document.getElementById("pinBtn");
+        if (pb) pb.classList.add("active");
+        document.getElementById("panelTitle").textContent =
+          "📌 ADD LANDMARK PIN";
+        document.getElementById("labelId").textContent = "Landmark Label";
+        document.getElementById("drawId").value = "";
+        document.getElementById("sizeRow").style.display = "none";
+        document.getElementById("statusRow").style.display = "none";
+        document.getElementById("pinTypeRow").style.display = "";
+        document.getElementById("finishBtn").textContent = "✓ Add Pin";
+        pauseAutoRotate();
+        attachMapClick();
+        updateDrawInfo();
+      }
+
+      function closePanels() {
+        activeMode = null;
+        detachMapClick();
+        clearCurrent();
+        document.getElementById("drawPanel").classList.remove("show");
+        document.getElementById("drawHint").classList.remove("show");
+        const db = document.getElementById("drawBtn");
+        if (db) db.classList.remove("active");
+        const pb = document.getElementById("pinBtn");
+        if (pb) pb.classList.remove("active");
+        scheduleAutoResume();
+      }
+
+      function attachMapClick() {
+        if (!googleMap) return;
+        detachMapClick();
+        _mapClickListener = googleMap.addListener("click", (e) => {
+          if (activeMode === "draw") addDrawPoint(e.latLng);
+          else if (activeMode === "pin") addPin(e.latLng);
+        });
+      }
+      function detachMapClick() {
+        if (_mapClickListener) {
+          google.maps.event.removeListener(_mapClickListener);
+          _mapClickListener = null;
+        }
+      }
+
+      function addDrawPoint(latLng) {
+        currentPath.push({ lat: latLng.lat(), lng: latLng.lng() });
+        const marker = new google.maps.Marker({
+          position: latLng,
+          map: googleMap,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 6,
+            fillColor: "#a5c237",
+            fillOpacity: 1,
+            strokeColor: "#fff",
+            strokeWeight: 2,
+          },
+          label: {
+            text: String(currentPath.length),
+            color: "#111",
+            fontSize: "10px",
+            fontWeight: "700",
+          },
+          zIndex: 9999,
+        });
+        currentMarkers.push(marker);
+
+        if (currentShape) {
+          currentShape.setPath(currentPath);
+        } else if (currentPath.length >= 2) {
+          currentShape = new google.maps.Polygon({
+            paths: currentPath,
+            strokeColor: "#a5c237",
+            strokeOpacity: 1,
+            strokeWeight: 2,
+            fillColor: "#a5c237",
+            fillOpacity: 0.35,
+            map: googleMap,
+            zIndex: 9000,
+          });
+        }
+        updateDrawInfo();
+      }
+
+      function undoLastPoint() {
+        if (activeMode === "draw") {
+          if (currentPath.length === 0) return;
+          currentPath.pop();
+          const m = currentMarkers.pop();
+          if (m) m.setMap(null);
+          if (currentShape) {
+            if (currentPath.length < 2) {
+              currentShape.setMap(null);
+              currentShape = null;
+            } else {
+              currentShape.setPath(currentPath);
+            }
+          }
+        } else if (activeMode === "pin") {
+          const last = newLandmarks.pop();
+          if (last) {
+            const idx = LANDMARKS.indexOf(last);
+            if (idx >= 0) LANDMARKS.splice(idx, 1);
+            buildLandmarkMarkers();
+          }
+        }
+        updateDrawInfo();
+      }
+
+      function clearCurrent() {
+        currentPath = [];
+        if (currentShape) {
+          currentShape.setMap(null);
+          currentShape = null;
+        }
+        currentMarkers.forEach((m) => m.setMap(null));
+        currentMarkers = [];
+        updateDrawInfo();
+      }
+
+      function updateDrawInfo() {
+        const el = document.getElementById("drawInfo");
+        if (!el) return;
+        if (activeMode === "draw") {
+          if (currentPath.length === 0) {
+            el.textContent = "Click on the map to place polygon corners…";
+            return;
+          }
+          const lines = currentPath.map(
+            (p, i) => `#${i + 1}  ${p.lat.toFixed(7)}, ${p.lng.toFixed(7)}`,
+          );
+          el.textContent =
+            lines.join("\n") + `\n\n${currentPath.length} point(s) placed.`;
+        } else if (activeMode === "pin") {
+          el.textContent =
+            `Pins added this session: ${newLandmarks.length}\n` +
+            `Total landmarks on map: ${LANDMARKS.length}`;
+        }
+      }
+
+      function finishCurrent() {
+        if (activeMode === "draw") finishPlot();
+        else if (activeMode === "pin") finishPin();
+      }
+
+      function finishPlot() {
+        if (currentPath.length < 3) {
+          alert("Need at least 3 corners to make a plot.");
+          return;
+        }
+        const id =
+          document.getElementById("drawId").value.trim() ||
+          "P-" + (PLOTS.length + 1);
+        const size = document.getElementById("drawSize").value;
+        const status = document.getElementById("drawStatus").value;
+        const plot = {
+          id,
+          size,
+          status,
+          path: currentPath.map((p) => ({
+            lat: Number(p.lat.toFixed(7)),
+            lng: Number(p.lng.toFixed(7)),
+          })),
+        };
+        newPlots.push(plot);
+        PLOTS.push(plot);
+        buildPlotPolygons();
+        updateStatusCounts();
+        autoNextId(id);
+        clearCurrent();
+      }
+
+      function finishPin() {
+        const type = document.getElementById("pinType").value;
+        const label =
+          document.getElementById("drawId").value.trim() ||
+          (PIN_STYLES[type] ? PIN_STYLES[type].label : "Landmark");
+        if (!currentPath.length) {
+          alert("Click on the map to pick the pin location first.");
+          return;
+        }
+        const pos = currentPath[currentPath.length - 1];
+        const lm = {
+          id: "L-" + (LANDMARKS.length + 1),
+          type,
+          label,
+          lat: Number(pos.lat.toFixed(7)),
+          lng: Number(pos.lng.toFixed(7)),
+        };
+        newLandmarks.push(lm);
+        LANDMARKS.push(lm);
+        buildLandmarkMarkers();
+        clearCurrent();
+      }
+
+      function addPin(latLng) {
+        currentPath = [{ lat: latLng.lat(), lng: latLng.lng() }];
+        currentMarkers.forEach((m) => m.setMap(null));
+        currentMarkers = [];
+        const preview = new google.maps.Marker({
+          position: latLng,
+          map: googleMap,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 14,
+            fillColor: "#e7cf42",
+            fillOpacity: 1,
+            strokeColor: "#000",
+            strokeWeight: 2,
+          },
+          zIndex: 9500,
+        });
+        currentMarkers.push(preview);
+        updateDrawInfo();
+      }
+
+      function autoNextId(lastId) {
+        const m = lastId.match(/^(.*?)(\d+)$/);
+        if (!m) return;
+        const prefix = m[1];
+        const num = parseInt(m[2], 10) + 1;
+        const padded = String(num).padStart(m[2].length, "0");
+        document.getElementById("drawId").value = prefix + padded;
+      }
+
+      /* =========================================================
+   EXPORT
+========================================================= */
+
+      function exportAll() {
+        const hasPlots = newPlots.length > 0;
+        const hasPins = newLandmarks.length > 0;
+        if (!hasPlots && !hasPins) {
+          alert("Nothing drawn yet. Draw some plots or add pins first.");
+          return;
+        }
+        let out = "\n";
+        if (hasPlots) {
+          out += "/* ======= PLOTS ======= */\n";
+          out += "const PLOTS = [\n";
+          PLOTS.forEach((p, i) => {
+            out += "    {\n";
+            out += `        id: "${p.id}", size: "${p.size}", status: "${p.status}",\n`;
+            out += "        path: [\n";
+            p.path.forEach((pt) => {
+              out += `            { lat: ${pt.lat}, lng: ${pt.lng} },\n`;
+            });
+            out += "        ]\n";
+            out += "    }" + (i < PLOTS.length - 1 ? "," : "") + "\n";
+          });
+          out += "];\n\n";
+        }
+        if (hasPins) {
+          out += "/* ======= LANDMARKS ======= */\n";
+          out += "const LANDMARKS = [\n";
+          LANDMARKS.forEach((lm, i) => {
+            out += `    { id: "${lm.id}", type: "${lm.type}", label: "${lm.label}", lat: ${lm.lat}, lng: ${lm.lng} }`;
+            out += (i < LANDMARKS.length - 1 ? "," : "") + "\n";
+          });
+          out += "];\n\n";
+        }
+        out += "/* ====================== */\n";
+        console.log(out);
+        if (navigator.clipboard) {
+          navigator.clipboard
+            .writeText(out)
+            .then(() => alert("Copied! Also in browser console (F12)."))
+            .catch(() => alert("Printed in browser console (F12)."));
+        } else {
+          alert("Printed in browser console (F12).");
+        }
+      }
+
+      /* =========================================================
+   HELPERS
+========================================================= */
+
+      function getValue(attr, fallback) {
+        const v = Number(map.getAttribute(attr));
+        return Number.isFinite(v) ? v : fallback;
+      }
+      function normalizeHeading(h) {
+        h = h % 360;
+        if (h < 0) h += 360;
+        return h;
+      }
+      function updateCompass() {
+        const h = getValue("heading", INITIAL_HEADING);
+        const a = document.getElementById("compassArrow");
+        if (a) a.style.transform = "translate(-50%, -50%) rotate(" + h + "deg)";
+      }
+
+      function updateZoomLevelUI() {
+        if (!googleMap) return;
+        const z = googleMap.getZoom();
+        const initZ = rangeToZoom(INITIAL_RANGE_BASE);
+        const factor = Math.pow(2, z - initZ);
+        const txt = "×" + factor.toFixed(1);
+        const el = document.getElementById("zoomLevel");
+        if (el) el.textContent = txt;
+        const elm = document.getElementById("zoomLevelMobile");
+        if (elm) elm.textContent = txt;
+      }
+
+      /* =========================================================
+   CAMERA CONTROLS
+========================================================= */
+
+      function zoomIn() {
+        pauseAutoRotate();
+        let r = getValue("range", INITIAL_RANGE) * ZOOM_IN_STEP;
+        if (r < MIN_RANGE) r = MIN_RANGE;
+        map.setAttribute("range", String(r));
+        updateCompass();
+        scheduleAutoResume();
+      }
+      function zoomOut() {
+        pauseAutoRotate();
+        let r = getValue("range", INITIAL_RANGE) * ZOOM_OUT_STEP;
+        if (r > MAX_RANGE) r = MAX_RANGE;
+        map.setAttribute("range", String(r));
+        updateCompass();
+        scheduleAutoResume();
+      }
+      function tiltUp() {
+        pauseAutoRotate();
+        let t = getValue("tilt", INITIAL_TILT) + 5;
+        if (t > MAX_TILT_EXTENDED) t = MAX_TILT_EXTENDED;
+        map.setAttribute("tilt", String(t));
+        updateCompass();
+        syncTiltSlider();
+        scheduleAutoResume();
+      }
+      function tiltDown() {
+        pauseAutoRotate();
+        let t = getValue("tilt", INITIAL_TILT) - 5;
+        if (t < MIN_TILT) t = MIN_TILT;
+        map.setAttribute("tilt", String(t));
+        updateCompass();
+        syncTiltSlider();
+        scheduleAutoResume();
+      }
+      function rotateLeft() {
+        pauseAutoRotate();
+        let h = getValue("heading", INITIAL_HEADING) - 15;
+        map.setAttribute("heading", String(normalizeHeading(h)));
+        updateCompass();
+        scheduleAutoResume();
+      }
+      function rotateRight() {
+        pauseAutoRotate();
+        let h = getValue("heading", INITIAL_HEADING) + 15;
+        map.setAttribute("heading", String(normalizeHeading(h)));
+        updateCompass();
+        scheduleAutoResume();
+      }
+
+      /* =========================================================
+   AUTO ROTATION
+========================================================= */
+
+      function startAutoRotate() {
+        if (rotationTimer || !googleMap) return;
+        autoRotate = true;
+        const sb = document.getElementById("sidebarAutoBtn");
+        if (sb) sb.classList.add("active");
+        const nb = document.getElementById("navAutoBtn");
+        if (nb) nb.classList.add("active");
+
+        rotationTimer = setInterval(() => {
+          if (!googleMap || !autoRotate) return;
+          const h = (googleMap.getHeading() || 0) + AUTO_ROTATE_STEP;
+          googleMap.setHeading(normalizeHeading(h));
+          updateCompass();
+        }, AUTO_ROTATE_INTERVAL);
+
+        const status = document.getElementById("cameraStatus");
+        if (status && !activeMode && !setupModeActive)
+          status.textContent =
+            "RESIDENTIAL VIEW · Add your plot data using Draw Plot";
+      }
+
+      function stopAutoRotate() {
+        autoRotate = false;
+        if (rotationTimer) {
+          clearInterval(rotationTimer);
+          rotationTimer = null;
+        }
+        const sb = document.getElementById("sidebarAutoBtn");
+        if (sb) sb.classList.remove("active");
+        const nb = document.getElementById("navAutoBtn");
+        if (nb) nb.classList.remove("active");
+        const status = document.getElementById("cameraStatus");
+        if (status && !activeMode && !setupModeActive)
+          status.textContent = "RESIDENTIAL VIEW · Ready for new plot data";
+      }
+
+      function pauseAutoRotate() {
+        autoRotate = false;
+        if (rotationTimer) {
+          clearInterval(rotationTimer);
+          rotationTimer = null;
+        }
+        if (autoResumeTimer) {
+          clearTimeout(autoResumeTimer);
+          autoResumeTimer = null;
+        }
+        const status = document.getElementById("cameraStatus");
+        if (status && !activeMode && !setupModeActive)
+          status.textContent = "Manual mode · rotation paused";
+      }
+
+      function scheduleAutoResume() {
+        if (autoResumeTimer) clearTimeout(autoResumeTimer);
+        autoResumeTimer = setTimeout(() => {
+          if (!activeMode && !setupModeActive && !autoRotate) startAutoRotate();
+        }, AUTO_RESUME_DELAY);
+      }
+
+      function toggleAutoRotate() {
+        if (autoRotate) {
+          stopAutoRotate();
+          if (autoResumeTimer) {
+            clearTimeout(autoResumeTimer);
+            autoResumeTimer = null;
+          }
+        } else {
+          startAutoRotate();
+        }
+      }
+
+      /* =========================================================
+   RESET / GO TO LOCATION
+========================================================= */
+
+      function resetMap() {
+        if (!googleMap) return;
+        pauseAutoRotate();
+        googleMap.setMapTypeId("hybrid");
+        googleMap.setCenter({ lat: LAT, lng: LNG });
+        googleMap.setZoom(rangeToZoom(INITIAL_RANGE));
+        visualTiltExtra = 0;
+        applyVisualTilt(0);
+        apply3DCamera(INITIAL_TILT, INITIAL_HEADING);
+        updateZoomLevelUI();
+        scheduleAutoResume();
+      }
+
+      function goToLocation() {
+        if (!googleMap) return;
+        pauseAutoRotate();
+        googleMap.setCenter({ lat: LAT, lng: LNG });
+        googleMap.setZoom(rangeToZoom(150));
+        updateZoomLevelUI();
+        scheduleAutoResume();
+      }
+
+      /* =========================================================
+   SIDEBAR / MENU / FILTER / FULLSCREEN
+========================================================= */
+
+      function toggleSidebar() {
+        const sb = document.getElementById("sidebar");
+        const btn = document.getElementById("sidebarToggle");
+        sb.classList.toggle("closed");
+        btn.innerHTML = sb.classList.contains("closed") ? "›" : "‹";
+      }
+
+      function selectMenu(section) {
+        document
+          .querySelectorAll(".menu-item")
+          .forEach((i) => i.classList.remove("active"));
+        document
+          .querySelectorAll(".drawer-item")
+          .forEach((i) => i.classList.remove("active"));
+        const sel = document.querySelector('[data-section="' + section + '"]');
+        if (sel) sel.classList.add("active");
+        const dsel = document.querySelector(
+          '.drawer-item[data-section="' + section + '"]',
+        );
+        if (dsel) dsel.classList.add("active");
+
+        if (section === "aerial") {
+          resetMap();
+          return;
+        }
+        if (section === "landmarks") {
+          if (!landmarksVisible) toggleLandmarks();
+          return;
+        }
+        if (section === "intelligence") {
+          goToLocation();
+          return;
+        }
+        if (section === "video") {
+          alert("Walkthrough Video");
+          return;
+        }
+        if (section === "gallery") {
+          alert("Gallery");
+          return;
+        }
+        if (section === "brochure") {
+          alert("Brochure");
+          return;
+        }
+        if (section === "setup") {
+          openSetup();
+          return;
+        }
+        if (section === "contact") {
+          window.open("https://kirtirealty.in/", "_blank");
+          return;
+        }
+      }
+
+      function toggleFilter() {
+        document.getElementById("filterDropdown").classList.toggle("show");
+      }
+      function setFilter(value) {
+        document.getElementById("filterText").textContent = value;
+        document.getElementById("filterDropdown").classList.remove("show");
+        buildPlotPolygons();
+      }
+
+      function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+          if (document.documentElement.requestFullscreen)
+            document.documentElement.requestFullscreen();
+        } else {
+          if (document.exitFullscreen) document.exitFullscreen();
+        }
+      }
+
+      /* =========================================================
+   MOBILE DRAWER
+========================================================= */
+
+      function openDrawer() {
+        document.getElementById("mobileDrawer").classList.add("open");
+        document.getElementById("drawerBackdrop").classList.add("show");
+      }
+      function closeDrawer() {
+        document.getElementById("mobileDrawer").classList.remove("open");
+        document.getElementById("drawerBackdrop").classList.remove("show");
+      }
+
+      /* =========================================================
+   BACKGROUND MUSIC
+========================================================= */
+
+      const bgMusic = document.getElementById("bgMusic");
+      const volumeSlider = document.getElementById("volumeSlider");
+      const volumeWrap = document.getElementById("volumeWrap");
+      const soundBtn = document.getElementById("soundBtn");
+
+      if (bgMusic && volumeSlider)
+        bgMusic.volume = Number(volumeSlider.value) || 0.4;
+      if (volumeSlider) {
+        volumeSlider.addEventListener("input", function () {
+          if (!bgMusic) return;
+          bgMusic.volume = Number(this.value);
+        });
+      }
+
+      function updateSoundUI(isPlaying) {
+        const si = document.getElementById("soundIcon");
+        if (si) si.textContent = isPlaying ? "🔊" : "🔇";
+        if (soundBtn) soundBtn.classList.toggle("active", isPlaying);
+        const nb = document.getElementById("navSoundBtn");
+        if (nb) {
+          const ic = nb.querySelector(".icon");
+          if (ic) ic.textContent = isPlaying ? "🔊" : "🔇";
+          nb.classList.toggle("active", isPlaying);
+        }
+      }
+
+      function tryStartMusic() {
+        if (!bgMusic || musicUserMuted || musicStarted) return;
+        bgMusic
+          .play()
+          .then(() => {
+            musicStarted = true;
+            soundEnabled = true;
+            updateSoundUI(true);
+            const s = document.getElementById("cameraStatus");
+            if (s && !activeMode && !setupModeActive)
+              s.textContent = "🎵 Music playing · Auto-rotating";
+          })
+          .catch(() => {
+            musicStarted = false;
+          });
+      }
+
+      function toggleSound(e) {
+        if (e && e.stopPropagation) e.stopPropagation();
+        if (!bgMusic) return;
+
+        if (bgMusic.paused) {
+          musicUserMuted = false;
+          bgMusic
+            .play()
+            .then(() => {
+              soundEnabled = true;
+              musicStarted = true;
+              updateSoundUI(true);
+              if (volumeWrap) {
+                volumeWrap.classList.add("show");
+                setTimeout(() => volumeWrap.classList.remove("show"), 4000);
+              }
+              const s = document.getElementById("cameraStatus");
+              if (s) s.textContent = "🎵 Music playing";
+            })
+            .catch((err) => {
+              console.warn("Music play failed:", err);
+              alert(
+                "Could not play music. Check that audio/background.mp3 exists.",
+              );
+            });
+        } else {
+          bgMusic.pause();
+          soundEnabled = false;
+          musicUserMuted = true;
+          updateSoundUI(false);
+          if (volumeWrap) volumeWrap.classList.remove("show");
+          const s = document.getElementById("cameraStatus");
+          if (s) s.textContent = "Music paused";
+        }
+      }
+
+      function armAudioUnlock() {
+        const unlock = () => {
+          tryStartMusic();
+          document.removeEventListener("click", unlock);
+          document.removeEventListener("touchstart", unlock);
+          document.removeEventListener("keydown", unlock);
+        };
+        document.addEventListener("click", unlock, { once: true });
+        document.addEventListener("touchstart", unlock, { once: true });
+        document.addEventListener("keydown", unlock, { once: true });
+      }
+
+      /* =========================================================
+   GLOBAL KEYBOARD (skip if setupMode handled it)
+========================================================= */
+
+      document.addEventListener("keydown", function (e) {
+        if (setupModeActive) return;
+        if (
+          e.target.tagName === "INPUT" ||
+          e.target.tagName === "TEXTAREA" ||
+          e.target.tagName === "SELECT"
+        )
+          return;
+        if (e.key === "+" || e.key === "=") zoomIn();
+        else if (e.key === "-") zoomOut();
+        else if (e.key === "ArrowUp") tiltUp();
+        else if (e.key === "ArrowDown") tiltDown();
+        else if (e.key === "ArrowLeft") rotateLeft();
+        else if (e.key === "ArrowRight") rotateRight();
+        else if (e.key === "r" || e.key === "R") resetMap();
+        else if (e.key === "f" || e.key === "F") toggleFullscreen();
+        else if (e.key === "m" || e.key === "M") toggleSound();
+        else if (e.code === "Space") {
+          e.preventDefault();
+          toggleAutoRotate();
+        }
+      });
+
+      /* =========================================================
+   OUTSIDE CLICK
+========================================================= */
+
+      document.addEventListener("click", function (e) {
+        const dd = document.getElementById("filterDropdown");
+        const btn = document.querySelector(".filter-button");
+        if (
+          dd &&
+          dd.classList.contains("show") &&
+          !dd.contains(e.target) &&
+          btn &&
+          !btn.contains(e.target)
+        ) {
+          dd.classList.remove("show");
+        }
+
+        if (volumeWrap && volumeWrap.classList.contains("show")) {
+          if (!volumeWrap.contains(e.target) && e.target !== soundBtn) {
+            volumeWrap.classList.remove("show");
+          }
+        }
+      });
+
+      /* =========================================================
+   KICK OFF
+========================================================= */
+
+      window.addEventListener("load", () => {
+        armAudioUnlock();
+        setTimeout(tryStartMusic, 1200);
+      });
     </script>
+
+    <!-- Google Maps API -->
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw_LNkFLyoUKioC6TnP58zt43M2bCBzYU&v=weekly&loading=async&callback=initGoogleMap"
+    ></script>
   </body>
 </html>
